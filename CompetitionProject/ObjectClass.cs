@@ -18,19 +18,17 @@ namespace CompetitionProject
         public string Email { get; set; }
     }
 
-    public class Employee: Person
+    public class Employee : Person
     {
-        public int EmployeeId { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
 
-        public int CompetitionId { get; set; }
+        public int? CompetitionId { get; set; }
         public Competition Competition { get; set; }
     }
 
     public class Participant : Person
     {
-        public int ParticipantId { get; set; }
         public string Birthday { get; set; }
         public bool Gender { get; set; }
         public double Weight { get; set; }
@@ -40,7 +38,7 @@ namespace CompetitionProject
         private string PassportSerial { get; set; }
         private string PassportNumber { get; set; }
 
-        public int CompetitionId { get; set; }
+        public int? CompetitionId { get; set; }
         public Competition Competition { get; set; }
     }
 
@@ -55,7 +53,6 @@ namespace CompetitionProject
 
     public class SportType
     {
-        [Key]
         public int SportTypeId { get; set; }
         public string Name { get; set; }
         public bool Water { get; set; }
@@ -63,13 +60,12 @@ namespace CompetitionProject
         public bool Motor { get; set; }
         public bool Power { get; set; }
 
-        [Required]
         public Category Category { get; set; }
 
         public int CompetitionId { get; set; }
         public Competition Competition { get; set; }
     }
-   
+
     public class Report
     {
         public string BestAthlete { get; set; }
@@ -84,7 +80,7 @@ namespace CompetitionProject
         public string Participant { get; set; }
 
         public int CompetitionId { get; set; }
-        public CompetitionResult CompetitionResult { get; set; }
+        public CompetitionResult Result { get; set; }
     }
 
     public class Competition
@@ -96,17 +92,17 @@ namespace CompetitionProject
 
         public Report Reports { get; set; }
 
+        public SportType Sport { get; set; }
         public ICollection<CompetitionResult> CompetitionResults { get; set; }
+        public ICollection<Employee> Judges { get; set; }
+        public ICollection<Employee> Organizators { get; set; }
+        public ICollection<Participant> Participants { get; set; }
         public Competition()
         {
             CompetitionResults = new List<CompetitionResult>();
+            Judges = new List<Employee>();        
+            Organizators = new List<Employee>();
+            Participants = new List<Participant>();
         }
-
-        public SportType Sport { get; set; }
-
-        public ICollection<Employee> Judge { get; set; }
-        public ICollection<Employee> Organizator { get; set; }
-
-        public ICollection<Participant> Participant { get; set; }
-    }  
+    }
 }

@@ -1,4 +1,4 @@
-﻿namespace CompetitionProject
+﻿namespace DataBaseArch
 {
     partial class Form1
     {
