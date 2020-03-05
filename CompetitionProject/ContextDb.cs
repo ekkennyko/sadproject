@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
-using CompetitionProject;
+using CompetitionClasses;
 
 
 namespace DataBaseArch
 {
     public class CompetitionDB : DbContext
     {
-        public CompetitionDB() : base("CompetitionProject") { }
+        public CompetitionDB() : base("CompetitionDB") { }
 
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Participant> Participants { get; set; }
