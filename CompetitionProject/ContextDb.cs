@@ -13,6 +13,7 @@ namespace DataBaseArch
     {
         public CompetitionDB() : base("CompetitionDB") { }
 
+        public DbSet<Employee> Employees { get; set; }
         public DbSet<CompetitionJudge> Judges { get; set; }
         public DbSet<CompetitionOrganizator> Organizators { get; set; }
         public DbSet<Participant> Participants { get; set; }

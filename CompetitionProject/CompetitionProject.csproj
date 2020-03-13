@@ -66,11 +66,26 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003130117334_FirstSd.cs" />
+    <Compile Include="Migrations\202003130117334_FirstSd.designer.cs">
+      <DependentUpon>202003130117334_FirstSd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003130219090_SecondSad.cs" />
+    <Compile Include="Migrations\202003130219090_SecondSad.designer.cs">
+      <DependentUpon>202003130219090_SecondSad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ObjectClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003130117334_FirstSd.resx">
+      <DependentUpon>202003130117334_FirstSd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003130219090_SecondSad.resx">
+      <DependentUpon>202003130219090_SecondSad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

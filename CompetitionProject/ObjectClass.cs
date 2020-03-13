@@ -86,6 +86,7 @@ namespace CompetitionClasses
     public class SportType
     {
         [Key]
+        [ForeignKey("Competition")]
         public int SportTypeId { get; set; }
         public string Name { get; set; }
         public bool Water { get; set; }
@@ -100,18 +101,18 @@ namespace CompetitionClasses
             Categories = new List<Category>();
         }
 
-        public int CompetitionId { get; set; }
         public virtual Competition Competition { get; set; }
     }
 
     public class Report
     {
         [Key]
+        [ForeignKey("Competition")]
         public int ReportId { get; set; }
         public string BestAthlete { get; set; }
         public string Winner { get; set; }
 
-        //public int CompetitionId { get; set; }
+
         public virtual Competition Competition { get; set; }
     }
 
@@ -134,8 +135,9 @@ namespace CompetitionClasses
         public string Location { get; set; }
         public DateTime DateCompetition { get; set; }
 
-        public int ReportId { get; set; }
-        public virtual Report Reports { get; set; }
+        //public int ReportId { get; set; }
+       // [ForeignKey("ReportId")]
+        public virtual Report Report { get; set; }
 
         public virtual SportType Sport { get; set; }
         public ICollection<CompetitionResult> CompetitionResults { get; set; }
