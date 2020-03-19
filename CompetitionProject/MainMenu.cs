@@ -21,5 +21,17 @@ namespace CompetitionProject
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormSportType sportType = new FormSportType();
+            sportType.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormCompetition competition = new FormCompetition();
+            competition.Show();
+        }
     }
 }

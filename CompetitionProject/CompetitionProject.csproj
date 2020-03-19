@@ -67,19 +67,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
+    <Compile Include="FormCompetition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCompetition.Designer.cs">
+      <DependentUpon>FormCompetition.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
-=======
+    </Compile>
     <Compile Include="FormSportType.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSportType.Designer.cs">
       <DependentUpon>FormSportType.cs</DependentUpon>
->>>>>>> 9f1e2fabdd66ade5cc395635e640d4bd26dcf373
     </Compile>
     <Compile Include="Migrations\202003130117334_FirstSd.cs" />
     <Compile Include="Migrations\202003130117334_FirstSd.designer.cs">
@@ -96,13 +100,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
+    <EmbeddedResource Include="FormCompetition.resx">
+      <DependentUpon>FormCompetition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSportType.resx">
       <DependentUpon>FormSportType.cs</DependentUpon>
->>>>>>> 9f1e2fabdd66ade5cc395635e640d4bd26dcf373
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003130117334_FirstSd.resx">
       <DependentUpon>202003130117334_FirstSd.cs</DependentUpon>

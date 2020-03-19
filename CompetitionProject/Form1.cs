@@ -35,7 +35,6 @@ namespace CompetitionProject
             //test.SaveChanges();
             MainMenu menu = new MainMenu();
             menu.Show();
-            
         }
     }
 }
