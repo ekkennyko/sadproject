@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CompetitionClasses;
+using DataBaseArch;
 
 namespace CompetitionProject
 {
@@ -24,7 +26,16 @@ namespace CompetitionProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            //CompetitionDB test = new CompetitionDB();
+            //Employee employee = new Employee
+            //{
+            //    Login = "Dvorakovskii", Password = "16081999", FirstName = "Александр", LastName = "Двораковский", MiddleName = "Олегович", Email = "dhrhrhjdjfh@gmail.com", PersonId = 1
+            //};
+            //test.Employees.Add(employee);
+            //test.SaveChanges();
+            MainMenu menu = new MainMenu();
+            menu.Show();
+            
         }
     }
 }
