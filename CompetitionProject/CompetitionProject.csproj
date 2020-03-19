@@ -66,6 +66,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSportType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSportType.Designer.cs">
+      <DependentUpon>FormSportType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202003130117334_FirstSd.cs" />
     <Compile Include="Migrations\202003130117334_FirstSd.designer.cs">
       <DependentUpon>202003130117334_FirstSd.cs</DependentUpon>
@@ -80,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSportType.resx">
+      <DependentUpon>FormSportType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003130117334_FirstSd.resx">
       <DependentUpon>202003130117334_FirstSd.cs</DependentUpon>
