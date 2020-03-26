@@ -89,6 +89,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "Выход";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label1
             // 

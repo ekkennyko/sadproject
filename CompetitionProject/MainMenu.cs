@@ -33,5 +33,9 @@ namespace CompetitionProject
             FormCompetition competition = new FormCompetition();
             competition.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
