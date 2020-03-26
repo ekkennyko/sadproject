@@ -24,6 +24,7 @@ namespace CompetitionClasses
     {
         public string Login { get; set; }
         public string Password { get; set; }
+        public string Job { get; set; }
 
         public ICollection<CompetitionJudge> CompetitionsJ { get; set; }
         public ICollection<CompetitionOrganizator> CompetitionsO { get; set; }

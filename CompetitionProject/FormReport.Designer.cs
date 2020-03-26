@@ -42,7 +42,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(154, 11);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 29);
             this.button1.TabIndex = 0;
@@ -52,7 +52,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(0, 17);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(113, 39);
             this.button2.TabIndex = 1;
@@ -63,18 +63,19 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(0, 17);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(135, 21);
+            this.comboBox1.Size = new System.Drawing.Size(135, 23);
             this.comboBox1.TabIndex = 2;
             // 
             // Список
             // 
             this.Список.FormattingEnabled = true;
+            this.Список.ItemHeight = 15;
             this.Список.Location = new System.Drawing.Point(118, 17);
-            this.Список.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Список.Margin = new System.Windows.Forms.Padding(2);
             this.Список.Name = "Список";
-            this.Список.Size = new System.Drawing.Size(135, 173);
+            this.Список.Size = new System.Drawing.Size(135, 169);
             this.Список.TabIndex = 3;
             this.Список.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -82,10 +83,11 @@
             // 
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(29, 35);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(252, 54);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
@@ -97,10 +99,11 @@
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.Список);
             this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.Location = new System.Drawing.Point(29, 145);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(252, 203);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
@@ -110,7 +113,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(0, 57);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(113, 39);
             this.button3.TabIndex = 4;
@@ -124,7 +127,7 @@
             this.ClientSize = new System.Drawing.Size(310, 358);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormReport";
             this.Text = "FormReport";
             this.groupBox1.ResumeLayout(false);

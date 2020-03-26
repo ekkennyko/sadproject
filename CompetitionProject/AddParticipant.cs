@@ -33,7 +33,7 @@ namespace CompetitionProject
                 FirstName = textBox2.Text,
                 MiddleName = textBox4.Text,
                 Birthday = dateTimePicker1.Value,
-                Gender = textBox5.Text,
+                Gender = comboBox1.Text,
                 Region = textBox6.Text,
                 SportClub = textBox7.Text,
                 Rank = textBox8.Text,
@@ -43,7 +43,13 @@ namespace CompetitionProject
             addParticipant.Participants.Add(newParticipant);
             addParticipant.SaveChanges();
             MessageBox.Show("Новый участник добавлен");
+            this.Close();
 
+        }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

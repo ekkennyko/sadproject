@@ -134,6 +134,10 @@
     <Compile Include="Migrations\202003260743123_FourthSad.designer.cs">
       <DependentUpon>202003260743123_FourthSad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003261455379_FourthSad1.cs" />
+    <Compile Include="Migrations\202003261455379_FourthSad1.designer.cs">
+      <DependentUpon>202003261455379_FourthSad1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ObjectClass.cs" />
     <Compile Include="Program.cs" />
@@ -171,6 +175,9 @@
     <EmbeddedResource Include="Migrations\202003260743123_FourthSad.resx">
       <DependentUpon>202003260743123_FourthSad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003261455379_FourthSad1.resx">
+      <DependentUpon>202003261455379_FourthSad1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -182,6 +189,12 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CompetitionProject.Migrations.Configuration.datasource" />
+    <None Include="Properties\DataSources\CompetitionProject.Migrations.FirstSd.datasource" />
+    <None Include="Properties\DataSources\CompetitionProject.Migrations.FourthSad.datasource" />
+    <None Include="Properties\DataSources\CompetitionProject.Migrations.FourthSad1.datasource" />
+    <None Include="Properties\DataSources\CompetitionProject.Migrations.SecondSad.datasource" />
+    <None Include="Properties\DataSources\CompetitionProject.Migrations.ThirdSad.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -201,6 +214,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
