@@ -43,9 +43,10 @@
             // undoButton
             // 
             this.undoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.undoButton.Location = new System.Drawing.Point(12, 12);
+            this.undoButton.Location = new System.Drawing.Point(9, 10);
+            this.undoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.undoButton.Name = "undoButton";
-            this.undoButton.Size = new System.Drawing.Size(50, 50);
+            this.undoButton.Size = new System.Drawing.Size(38, 41);
             this.undoButton.TabIndex = 0;
             this.undoButton.Text = "❮";
             this.undoButton.UseVisualStyleBackColor = true;
@@ -53,9 +54,10 @@
             // redoButton
             // 
             this.redoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.redoButton.Location = new System.Drawing.Point(68, 12);
+            this.redoButton.Location = new System.Drawing.Point(51, 10);
+            this.redoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.redoButton.Name = "redoButton";
-            this.redoButton.Size = new System.Drawing.Size(50, 50);
+            this.redoButton.Size = new System.Drawing.Size(38, 41);
             this.redoButton.TabIndex = 1;
             this.redoButton.Text = "❯";
             this.redoButton.UseVisualStyleBackColor = true;
@@ -63,9 +65,10 @@
             // refreshButton
             // 
             this.refreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.refreshButton.Location = new System.Drawing.Point(124, 12);
+            this.refreshButton.Location = new System.Drawing.Point(93, 10);
+            this.refreshButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(50, 50);
+            this.refreshButton.Size = new System.Drawing.Size(38, 41);
             this.refreshButton.TabIndex = 2;
             this.refreshButton.Text = "↻";
             this.refreshButton.UseVisualStyleBackColor = true;
@@ -73,9 +76,10 @@
             // homeButton
             // 
             this.homeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.homeButton.Location = new System.Drawing.Point(180, 12);
+            this.homeButton.Location = new System.Drawing.Point(135, 10);
+            this.homeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.homeButton.Name = "homeButton";
-            this.homeButton.Size = new System.Drawing.Size(50, 50);
+            this.homeButton.Size = new System.Drawing.Size(38, 41);
             this.homeButton.TabIndex = 3;
             this.homeButton.Text = "⟰";
             this.homeButton.UseVisualStyleBackColor = true;
@@ -83,19 +87,22 @@
             // addButton
             // 
             this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addButton.Location = new System.Drawing.Point(578, 68);
+            this.addButton.Location = new System.Drawing.Point(434, 55);
+            this.addButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(175, 50);
+            this.addButton.Size = new System.Drawing.Size(131, 41);
             this.addButton.TabIndex = 4;
             this.addButton.Text = "Добавить";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // editButton
             // 
             this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.editButton.Location = new System.Drawing.Point(578, 124);
+            this.editButton.Location = new System.Drawing.Point(434, 101);
+            this.editButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(175, 50);
+            this.editButton.Size = new System.Drawing.Size(131, 41);
             this.editButton.TabIndex = 5;
             this.editButton.Text = "Редактировать";
             this.editButton.UseVisualStyleBackColor = true;
@@ -103,9 +110,10 @@
             // deleteButton
             // 
             this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.deleteButton.Location = new System.Drawing.Point(578, 180);
+            this.deleteButton.Location = new System.Drawing.Point(434, 146);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(175, 50);
+            this.deleteButton.Size = new System.Drawing.Size(131, 41);
             this.deleteButton.TabIndex = 6;
             this.deleteButton.Text = "Удалить";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -113,9 +121,10 @@
             // infoButton
             // 
             this.infoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoButton.Location = new System.Drawing.Point(578, 236);
+            this.infoButton.Location = new System.Drawing.Point(434, 192);
+            this.infoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.infoButton.Name = "infoButton";
-            this.infoButton.Size = new System.Drawing.Size(175, 50);
+            this.infoButton.Size = new System.Drawing.Size(131, 41);
             this.infoButton.TabIndex = 7;
             this.infoButton.Text = "Информация";
             this.infoButton.UseVisualStyleBackColor = true;
@@ -123,18 +132,19 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 68);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 55);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(560, 370);
+            this.dataGridView1.Size = new System.Drawing.Size(420, 301);
             this.dataGridView1.TabIndex = 8;
             // 
             // FormParticipant
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 453);
+            this.ClientSize = new System.Drawing.Size(586, 368);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.infoButton);
             this.Controls.Add(this.deleteButton);
@@ -144,6 +154,7 @@
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.redoButton);
             this.Controls.Add(this.undoButton);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormParticipant";
             this.Text = "FormParticipant";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

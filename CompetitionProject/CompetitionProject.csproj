@@ -75,6 +75,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddParticipant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddParticipant.Designer.cs">
+      <DependentUpon>AddParticipant.cs</DependentUpon>
+    </Compile>
     <Compile Include="ContextDb.cs" />
     <Compile Include="Authorization.cs">
       <SubType>Form</SubType>
@@ -88,19 +94,17 @@
     <Compile Include="FormCompetition.Designer.cs">
       <DependentUpon>FormCompetition.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="FormReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormReport.Designer.cs">
       <DependentUpon>FormReport.cs</DependentUpon>
-=======
+    </Compile>
     <Compile Include="FormParticipant.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormParticipant.Designer.cs">
       <DependentUpon>FormParticipant.cs</DependentUpon>
->>>>>>> f8f3dcda1cbe3610e685c458cc60872a581c14f1
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -122,23 +126,32 @@
     <Compile Include="Migrations\202003130219090_SecondSad.designer.cs">
       <DependentUpon>202003130219090_SecondSad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003260703412_ThirdSad.cs" />
+    <Compile Include="Migrations\202003260703412_ThirdSad.designer.cs">
+      <DependentUpon>202003260703412_ThirdSad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003260743123_FourthSad.cs" />
+    <Compile Include="Migrations\202003260743123_FourthSad.designer.cs">
+      <DependentUpon>202003260743123_FourthSad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ObjectClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddParticipant.resx">
+      <DependentUpon>AddParticipant.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCompetition.resx">
       <DependentUpon>FormCompetition.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="FormReport.resx">
       <DependentUpon>FormReport.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="FormParticipant.resx">
       <DependentUpon>FormParticipant.cs</DependentUpon>
->>>>>>> f8f3dcda1cbe3610e685c458cc60872a581c14f1
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
@@ -151,6 +164,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003130219090_SecondSad.resx">
       <DependentUpon>202003130219090_SecondSad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003260703412_ThirdSad.resx">
+      <DependentUpon>202003260703412_ThirdSad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003260743123_FourthSad.resx">
+      <DependentUpon>202003260743123_FourthSad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

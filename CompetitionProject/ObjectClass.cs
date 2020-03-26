@@ -12,6 +12,7 @@ namespace CompetitionClasses
     public class Person
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PersonId { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
@@ -31,6 +32,7 @@ namespace CompetitionClasses
     public class CompetitionJudge 
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         public int JudgeId { get; set; }
@@ -45,6 +47,7 @@ namespace CompetitionClasses
     public class CompetitionOrganizator
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         public int OrganizatorId { get; set; }
@@ -59,7 +62,7 @@ namespace CompetitionClasses
     public class Participant : Person
     {
         public DateTime Birthday { get; set; }
-        public bool Gender { get; set; }
+        public string Gender { get; set; }
         public double Weight { get; set; }
         public string Region { get; set; }
         public string SportClub { get; set; }
@@ -74,6 +77,7 @@ namespace CompetitionClasses
     public class Category
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CategoryId { get; set; }
         public int Age { get; set; }
         public double Weight { get; set; }
@@ -87,6 +91,7 @@ namespace CompetitionClasses
     {
         [Key]
         [ForeignKey("Competition")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SportTypeId { get; set; }
         public string Name { get; set; }
         public bool Water { get; set; }
@@ -108,6 +113,7 @@ namespace CompetitionClasses
     {
         [Key]
         [ForeignKey("Competition")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ReportId { get; set; }
         public string BestAthlete { get; set; }
         public string Winner { get; set; }
@@ -119,6 +125,7 @@ namespace CompetitionClasses
     public class CompetitionResult
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CompResId { get; set; }
         public int Position { get; set; }
         public string Participant { get; set; }
@@ -130,6 +137,7 @@ namespace CompetitionClasses
     public class Competition
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CompetitionId { get; set; }
         public string Title { get; set; }
         public string Location { get; set; }

@@ -37,5 +37,11 @@ namespace CompetitionProject
         private void button5_Click(object sender, EventArgs e)
         {
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddParticipant addParticipant = new AddParticipant();
+            addParticipant.Show();
+        }
     }
 }
