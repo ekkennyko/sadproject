@@ -46,6 +46,10 @@ namespace CompetitionProject
                 if (textBox1.Text == au.Login && textBox2.Text == au.Password)
                 {
                     MainMenu menu = new MainMenu();
+                    menu.label5.Text = au.LastName;
+                    menu.label6.Text = au.FirstName;
+                    menu.label7.Text = au.MiddleName;
+                    menu.label8.Text = au.Job;
                     menu.Show();
                     this.Hide();
                 }

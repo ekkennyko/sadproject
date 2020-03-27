@@ -88,6 +88,12 @@
     <Compile Include="Authorization.Designer.cs">
       <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditParticipant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditParticipant.Designer.cs">
+      <DependentUpon>EditParticipant.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCompetition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,12 @@
     </Compile>
     <Compile Include="FormParticipant.Designer.cs">
       <DependentUpon>FormParticipant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoParticipant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoParticipant.Designer.cs">
+      <DependentUpon>InfoParticipant.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -138,6 +150,10 @@
     <Compile Include="Migrations\202003261455379_FourthSad1.designer.cs">
       <DependentUpon>202003261455379_FourthSad1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003270523339_FourthSad2.cs" />
+    <Compile Include="Migrations\202003270523339_FourthSad2.designer.cs">
+      <DependentUpon>202003270523339_FourthSad2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ObjectClass.cs" />
     <Compile Include="Program.cs" />
@@ -148,6 +164,9 @@
     <EmbeddedResource Include="Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditParticipant.resx">
+      <DependentUpon>EditParticipant.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCompetition.resx">
       <DependentUpon>FormCompetition.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormParticipant.resx">
       <DependentUpon>FormParticipant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoParticipant.resx">
+      <DependentUpon>InfoParticipant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
@@ -177,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003261455379_FourthSad1.resx">
       <DependentUpon>202003261455379_FourthSad1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003270523339_FourthSad2.resx">
+      <DependentUpon>202003270523339_FourthSad2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -28,20 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.addButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.infoButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toMenu = new System.Windows.Forms.Button();
-            this.thirdSadBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.fourthSad1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.thirdSadBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Refresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thirdSadBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fourthSad1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thirdSadBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // addButton
@@ -66,6 +60,7 @@
             this.editButton.TabIndex = 5;
             this.editButton.Text = "Редактировать";
             this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // deleteButton
             // 
@@ -89,6 +84,7 @@
             this.infoButton.TabIndex = 7;
             this.infoButton.Text = "Информация";
             this.infoButton.UseVisualStyleBackColor = true;
+            this.infoButton.Click += new System.EventHandler(this.infoButton_Click);
             // 
             // dataGridView1
             // 
@@ -117,36 +113,35 @@
             this.toMenu.UseVisualStyleBackColor = true;
             this.toMenu.Click += new System.EventHandler(this.toMenu_Click);
             // 
-            // thirdSadBindingSource1
+            // Refresh
             // 
-            this.thirdSadBindingSource1.DataSource = typeof(CompetitionProject.Migrations.ThirdSad);
-            // 
-            // fourthSad1BindingSource
-            // 
-            this.fourthSad1BindingSource.DataSource = typeof(CompetitionProject.Migrations.FourthSad1);
-            // 
-            // thirdSadBindingSource
-            // 
-            this.thirdSadBindingSource.DataSource = typeof(CompetitionProject.Migrations.ThirdSad);
+            this.Refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Refresh.Location = new System.Drawing.Point(553, 191);
+            this.Refresh.Margin = new System.Windows.Forms.Padding(2);
+            this.Refresh.Name = "Refresh";
+            this.Refresh.Size = new System.Drawing.Size(110, 25);
+            this.Refresh.TabIndex = 10;
+            this.Refresh.Text = "Обновить";
+            this.Refresh.UseVisualStyleBackColor = true;
+            this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
             // 
             // FormParticipant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 321);
+            this.Controls.Add(this.Refresh);
             this.Controls.Add(this.toMenu);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.infoButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.addButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormParticipant";
             this.Text = "Участники";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thirdSadBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fourthSad1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thirdSadBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -158,8 +153,6 @@
         private System.Windows.Forms.Button infoButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button toMenu;
-        private System.Windows.Forms.BindingSource thirdSadBindingSource;
-        private System.Windows.Forms.BindingSource fourthSad1BindingSource;
-        private System.Windows.Forms.BindingSource thirdSadBindingSource1;
+        private System.Windows.Forms.Button Refresh;
     }
 }

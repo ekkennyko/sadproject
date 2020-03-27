@@ -95,11 +95,7 @@ namespace CompetitionClasses
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SportTypeId { get; set; }
         public string Name { get; set; }
-        public bool Water { get; set; }
-        public bool Logic { get; set; }
-        public bool Motor { get; set; }
-        public bool Power { get; set; }
-
+        public string Type { get; set; }
         //[ForeignKey("CategoryId")]
         public ICollection<Category> Categories { get; set; }
         public SportType()

@@ -37,7 +37,7 @@ namespace CompetitionProject
                 Region = textBox6.Text,
                 SportClub = textBox7.Text,
                 Rank = textBox8.Text,
-                Weight = int.Parse(textBox9.Text),
+                Weight = double.Parse(textBox9.Text),
                 Email = textBox10.Text
             };
             addParticipant.Participants.Add(newParticipant);
