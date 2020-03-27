@@ -26,14 +26,15 @@ namespace CompetitionProject
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            CompetitionDB addsportType = new CompetitionDB();
-            SportType newsportType = new SportType()
+            CompetitionDB addSportType = new CompetitionDB();
+            SportType newSportType = new SportType()
             {
+                SportTypeId = 1,
                 Name = textBox1.Text,
-                Type = textBox2.Text,
+                Type = comboBox1.Text,
             };
-            addsportType.SportTypes.Add(newsportType);
-            addsportType.SaveChanges();
+            addSportType.SportTypes.Add(newSportType);
+            addSportType.SaveChanges();
             MessageBox.Show("Новый вид спорта добавлен");
             this.Close();
         }

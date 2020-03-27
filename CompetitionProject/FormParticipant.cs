@@ -26,7 +26,6 @@ namespace CompetitionProject
         {
             AddParticipant addParticipant = new AddParticipant();
             addParticipant.ShowDialog();
-            dataGridView1.Refresh();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -92,6 +91,10 @@ namespace CompetitionProject
                     MessageBox.Show("Информация о участнике обновлена");
                 }
             }
+            else
+            {
+                MessageBox.Show("Для начала выберите участника");
+            }
         }
 
         private void infoButton_Click(object sender, EventArgs e)
@@ -117,6 +120,10 @@ namespace CompetitionProject
                 infoParticipant.label20.Text = participant.Email;
 
                 infoParticipant.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Для начала выберите участника");
             }
         }
 

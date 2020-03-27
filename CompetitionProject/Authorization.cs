@@ -27,19 +27,6 @@ namespace CompetitionProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            //Employee employee = new Employee()
-            //{
-            //    Login = "Dvorakovskii",
-            //    Password = "123456",
-            //    FirstName = "Александр",
-            //    LastName = "Двораковский",
-            //    MiddleName = "Олегович",
-            //    Job = "Организатор",
-            //    Email = "dhrhrhjdjfh@gmail.com"
-            //};
-            //autho.Employees.Add(employee);
-            //autho.SaveChanges();
             var employee = autho.Employees;
             foreach (Employee au in employee)
             {

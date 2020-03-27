@@ -31,7 +31,6 @@ namespace CompetitionProject
         {
             AddSportType addSportType = new AddSportType();
             addSportType.ShowDialog();
-            dataGridView1.Refresh();
         }
 
         private void ToMenu_Click(object sender, EventArgs e)
@@ -83,6 +82,10 @@ namespace CompetitionProject
                     dataGridView1.Refresh();
                     MessageBox.Show("Информация о виде спорта обновлена");
                 }
+                else
+                {
+                    MessageBox.Show("Для начала выберите вид спорта");
+                }
             }
         }
 
@@ -101,6 +104,10 @@ namespace CompetitionProject
                 infoSportType.label4.Text = sportType.Type;
                 infoSportType.ShowDialog();
             }
+            else
+            {
+                MessageBox.Show("Для начала выберите вид спорта");
+            }
         }
 
         private void RefreshButton_Click(object sender, EventArgs e)
@@ -113,7 +120,8 @@ namespace CompetitionProject
                          {
                              Код = sportType.SportTypeId,
                              Название = sportType.Name,
-                             Тип = sportType.Type
+                             Тип = sportType.Type,
+                             Категория = sportType.Categories,
                          };
             dataGridView1.DataSource = result.ToList();
         }
