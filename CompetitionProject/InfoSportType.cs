@@ -10,21 +10,16 @@ using System.Windows.Forms;
 
 namespace CompetitionProject
 {
-    public partial class InfoParticipant : Form
+    public partial class InfoSportType : Form
     {
-        public InfoParticipant()
+        public InfoSportType()
         {
             InitializeComponent();
         }
 
-        private void Add_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void InfoParticipant_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

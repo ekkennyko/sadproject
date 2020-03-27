@@ -81,6 +81,12 @@
     <Compile Include="AddParticipant.Designer.cs">
       <DependentUpon>AddParticipant.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddSportType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSportType.Designer.cs">
+      <DependentUpon>AddSportType.cs</DependentUpon>
+    </Compile>
     <Compile Include="ContextDb.cs" />
     <Compile Include="Authorization.cs">
       <SubType>Form</SubType>
@@ -93,6 +99,12 @@
     </Compile>
     <Compile Include="EditParticipant.Designer.cs">
       <DependentUpon>EditParticipant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditSportType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditSportType.Designer.cs">
+      <DependentUpon>EditSportType.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCompetition.cs">
       <SubType>Form</SubType>
@@ -117,6 +129,12 @@
     </Compile>
     <Compile Include="InfoParticipant.Designer.cs">
       <DependentUpon>InfoParticipant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoSportType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoSportType.Designer.cs">
+      <DependentUpon>InfoSportType.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -161,11 +179,17 @@
     <EmbeddedResource Include="AddParticipant.resx">
       <DependentUpon>AddParticipant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddSportType.resx">
+      <DependentUpon>AddSportType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditParticipant.resx">
       <DependentUpon>EditParticipant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditSportType.resx">
+      <DependentUpon>EditSportType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCompetition.resx">
       <DependentUpon>FormCompetition.cs</DependentUpon>
@@ -178,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InfoParticipant.resx">
       <DependentUpon>InfoParticipant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoSportType.resx">
+      <DependentUpon>InfoSportType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
