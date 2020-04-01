@@ -26,8 +26,8 @@ namespace CompetitionClasses
         public string Password { get; set; }
         public string Job { get; set; }
 
-        public ICollection<CompetitionJudge> CompetitionsJ { get; set; }
-        public ICollection<CompetitionOrganizator> CompetitionsO { get; set; }
+        public virtual ICollection<CompetitionJudge> CompetitionsJ { get; set; }
+        public virtual ICollection<CompetitionOrganizator> CompetitionsO { get; set; }
     }
 
     public class CompetitionJudge 
@@ -40,7 +40,7 @@ namespace CompetitionClasses
         [ForeignKey("JudgeId")]
         public Employee Judge{get;set;}
 
-        public int CompetitionId { get; set; }
+        public int? CompetitionId { get; set; }
         [ForeignKey("CompetitionId")]
         public virtual Competition Competition { get; set; }
     }
@@ -55,7 +55,7 @@ namespace CompetitionClasses
         [ForeignKey("OrganizatorId")]
         public Employee Organizator { get; set; }
 
-        public int CompetitionId { get; set; }
+        public int? CompetitionId { get; set; }
         [ForeignKey("CompetitionId")]
         public virtual Competition Competition { get; set; }
     }
@@ -84,8 +84,8 @@ namespace CompetitionClasses
         public double Weight { get; set; }
         public bool Gender { get; set; }
 
-        public int SportTypeId { get; set; }
-        public virtual SportType Sport { get; set; }
+        public int? CompetitionId { get; set; }
+        public virtual Competition Competition { get; set; }
     }
 
     public class SportType
@@ -96,13 +96,8 @@ namespace CompetitionClasses
         public int SportTypeId { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
-        //[ForeignKey("CategoryId")]
-        public ICollection<Category> Categories { get; set; }
-        public SportType()
-        {
-            Categories = new List<Category>();
-        }
 
+        public int? CompetitionId { get; set; }
         public virtual Competition Competition { get; set; }
     }
 
@@ -115,7 +110,7 @@ namespace CompetitionClasses
         public string BestAthlete { get; set; }
         public string Winner { get; set; }
 
-
+        public int CompetitionId { get; set; }
         public virtual Competition Competition { get; set; }
     }
 
@@ -127,7 +122,7 @@ namespace CompetitionClasses
         public int Position { get; set; }
         public string Participant { get; set; }
 
-        public int CompetitionId { get; set; }
+        public int? CompetitionId { get; set; }
         public virtual CompetitionResult Result { get; set; }
     }
 
@@ -139,22 +134,23 @@ namespace CompetitionClasses
         public string Title { get; set; }
         public string Location { get; set; }
         public DateTime DateCompetition { get; set; }
+        public string BriefInformation { get; set; }
 
-        //public int ReportId { get; set; }
-       // [ForeignKey("ReportId")]
+
         public virtual Report Report { get; set; }
-
-        public virtual SportType Sport { get; set; }
-        public ICollection<CompetitionResult> CompetitionResults { get; set; }
-        public ICollection<CompetitionJudge> Judges { get; set; }
-        public ICollection<CompetitionOrganizator> Organizators { get; set; }
-        public ICollection<Participant> Participants { get; set; }
+        public virtual SportType Sports { get; set; }
+        public virtual ICollection<Category> Categories { get; set; }
+        public virtual ICollection<CompetitionResult> CompetitionResults { get; set; }
+        public virtual ICollection<CompetitionJudge> Judges { get; set; }
+        public virtual ICollection<CompetitionOrganizator> Organizators { get; set; }
+        public virtual ICollection<Participant> Participants { get; set; }
         public Competition()
         {
             CompetitionResults = new List<CompetitionResult>();
             Judges = new List<CompetitionJudge>();        
             Organizators = new List<CompetitionOrganizator>();
             Participants = new List<Participant>();
+            Categories = new List<Category>();
         }
     }
 }

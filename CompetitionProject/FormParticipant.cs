@@ -19,7 +19,7 @@ namespace CompetitionProject
         public FormParticipant()
         {
             InitializeComponent();
-            Refresh_Click(null, null);
+            UpdateList_Click(null, null);
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -127,7 +127,7 @@ namespace CompetitionProject
             }
         }
 
-        private void Refresh_Click(object sender, EventArgs e)
+        private void UpdateList_Click(object sender, EventArgs e)
         {
             db = new CompetitionDB();
             db.Participants.Load();

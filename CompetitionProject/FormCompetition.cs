@@ -41,5 +41,11 @@ namespace CompetitionProject
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            InfoCompetition infoCompetition = new InfoCompetition();
+            infoCompetition.ShowDialog();
+        }
     }
 }

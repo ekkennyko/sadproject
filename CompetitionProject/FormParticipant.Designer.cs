@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.addButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.infoButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toMenu = new System.Windows.Forms.Button();
-            this.Refresh = new System.Windows.Forms.Button();
+            this.UpdateList = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // addButton
@@ -102,6 +105,10 @@
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // personBindingSource
+            // 
+            this.personBindingSource.DataSource = typeof(CompetitionClasses.Person);
+            // 
             // toMenu
             // 
             this.toMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -113,24 +120,24 @@
             this.toMenu.UseVisualStyleBackColor = true;
             this.toMenu.Click += new System.EventHandler(this.toMenu_Click);
             // 
-            // Refresh
+            // UpdateList
             // 
-            this.Refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Refresh.Location = new System.Drawing.Point(553, 191);
-            this.Refresh.Margin = new System.Windows.Forms.Padding(2);
-            this.Refresh.Name = "Refresh";
-            this.Refresh.Size = new System.Drawing.Size(110, 25);
-            this.Refresh.TabIndex = 10;
-            this.Refresh.Text = "Обновить";
-            this.Refresh.UseVisualStyleBackColor = true;
-            this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
+            this.UpdateList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UpdateList.Location = new System.Drawing.Point(553, 191);
+            this.UpdateList.Margin = new System.Windows.Forms.Padding(2);
+            this.UpdateList.Name = "UpdateList";
+            this.UpdateList.Size = new System.Drawing.Size(110, 25);
+            this.UpdateList.TabIndex = 10;
+            this.UpdateList.Text = "Обновить";
+            this.UpdateList.UseVisualStyleBackColor = true;
+            this.UpdateList.Click += new System.EventHandler(this.UpdateList_Click);
             // 
             // FormParticipant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 321);
-            this.Controls.Add(this.Refresh);
+            this.Controls.Add(this.UpdateList);
             this.Controls.Add(this.toMenu);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.infoButton);
@@ -142,6 +149,7 @@
             this.Name = "FormParticipant";
             this.Text = "Участники";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -153,6 +161,7 @@
         private System.Windows.Forms.Button infoButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button toMenu;
-        private System.Windows.Forms.Button Refresh;
+        private System.Windows.Forms.Button UpdateList;
+        private System.Windows.Forms.BindingSource personBindingSource;
     }
 }

@@ -70,12 +70,13 @@ namespace CompetitionProject
                     return;
                 SportType sportType = db.SportTypes.Find(id);
                 EditSportType editSportType = new EditSportType();
-                editSportType.label3.Text = sportType.Name;
+                editSportType.textBox1.Text = sportType.Name;
                 editSportType.textBox2.Text = sportType.Type;
 
                 editSportType.ShowDialog();
                 if (editSportType.result == true)
                 {
+                    sportType.Name = editSportType.textBox1.Text;
                     sportType.Type = editSportType.textBox2.Text;
 
                     db.SaveChanges();
@@ -121,7 +122,6 @@ namespace CompetitionProject
                              Код = sportType.SportTypeId,
                              Название = sportType.Name,
                              Тип = sportType.Type,
-                             Категория = sportType.Categories,
                          };
             dataGridView1.DataSource = result.ToList();
         }

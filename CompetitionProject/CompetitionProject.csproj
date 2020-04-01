@@ -75,6 +75,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCompetition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCompetition.Designer.cs">
+      <DependentUpon>AddCompetition.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddParticipant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,12 @@
     <Compile Include="FormParticipant.Designer.cs">
       <DependentUpon>FormParticipant.cs</DependentUpon>
     </Compile>
+    <Compile Include="InfoCompetition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoCompetition.Designer.cs">
+      <DependentUpon>InfoCompetition.cs</DependentUpon>
+    </Compile>
     <Compile Include="InfoParticipant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,10 +184,29 @@
     <Compile Include="Migrations\202003270523339_FourthSad2.designer.cs">
       <DependentUpon>202003270523339_FourthSad2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003290553168_FourthSad3.cs" />
+    <Compile Include="Migrations\202003290553168_FourthSad3.designer.cs">
+      <DependentUpon>202003290553168_FourthSad3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004010156079_FifthSad.cs" />
+    <Compile Include="Migrations\202004010156079_FifthSad.designer.cs">
+      <DependentUpon>202004010156079_FifthSad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004010218204_FifthSad1.cs" />
+    <Compile Include="Migrations\202004010218204_FifthSad1.designer.cs">
+      <DependentUpon>202004010218204_FifthSad1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004010345229_FifthSad2.cs" />
+    <Compile Include="Migrations\202004010345229_FifthSad2.designer.cs">
+      <DependentUpon>202004010345229_FifthSad2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ObjectClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddCompetition.resx">
+      <DependentUpon>AddCompetition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddParticipant.resx">
       <DependentUpon>AddParticipant.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormParticipant.resx">
       <DependentUpon>FormParticipant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoCompetition.resx">
+      <DependentUpon>InfoCompetition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InfoParticipant.resx">
       <DependentUpon>InfoParticipant.cs</DependentUpon>
@@ -230,6 +264,18 @@
     <EmbeddedResource Include="Migrations\202003270523339_FourthSad2.resx">
       <DependentUpon>202003270523339_FourthSad2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003290553168_FourthSad3.resx">
+      <DependentUpon>202003290553168_FourthSad3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004010156079_FifthSad.resx">
+      <DependentUpon>202004010156079_FifthSad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004010218204_FifthSad1.resx">
+      <DependentUpon>202004010218204_FifthSad1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004010345229_FifthSad2.resx">
+      <DependentUpon>202004010345229_FifthSad2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -241,6 +287,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CompetitionClasses.Participant.datasource" />
+    <None Include="Properties\DataSources\CompetitionClasses.Person.datasource" />
     <None Include="Properties\DataSources\CompetitionProject.Migrations.Configuration.datasource" />
     <None Include="Properties\DataSources\CompetitionProject.Migrations.FirstSd.datasource" />
     <None Include="Properties\DataSources\CompetitionProject.Migrations.FourthSad.datasource" />

@@ -55,7 +55,7 @@
             // Add
             // 
             this.Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Add.Location = new System.Drawing.Point(147, 309);
+            this.Add.Location = new System.Drawing.Point(151, 308);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(87, 27);
             this.Add.TabIndex = 0;
@@ -67,7 +67,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(14, 10);
+            this.label1.Location = new System.Drawing.Point(14, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 15);
             this.label1.TabIndex = 1;
@@ -166,7 +166,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(194, 7);
+            this.textBox1.Location = new System.Drawing.Point(194, 9);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(135, 21);
             this.textBox1.TabIndex = 11;
@@ -175,7 +175,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(194, 38);
+            this.textBox2.Location = new System.Drawing.Point(194, 39);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(135, 21);
             this.textBox2.TabIndex = 12;
@@ -183,7 +183,7 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(194, 68);
+            this.textBox4.Location = new System.Drawing.Point(194, 69);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(135, 21);
             this.textBox4.TabIndex = 14;
@@ -191,7 +191,7 @@
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.Location = new System.Drawing.Point(194, 158);
+            this.textBox6.Location = new System.Drawing.Point(194, 159);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(135, 21);
             this.textBox6.TabIndex = 16;
@@ -199,7 +199,7 @@
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox7.Location = new System.Drawing.Point(194, 188);
+            this.textBox7.Location = new System.Drawing.Point(194, 189);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(135, 21);
             this.textBox7.TabIndex = 17;
@@ -207,7 +207,7 @@
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox8.Location = new System.Drawing.Point(194, 218);
+            this.textBox8.Location = new System.Drawing.Point(194, 219);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(135, 21);
             this.textBox8.TabIndex = 18;
@@ -215,7 +215,7 @@
             // textBox9
             // 
             this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox9.Location = new System.Drawing.Point(194, 248);
+            this.textBox9.Location = new System.Drawing.Point(194, 249);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(135, 21);
             this.textBox9.TabIndex = 19;
@@ -223,7 +223,7 @@
             // textBox10
             // 
             this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox10.Location = new System.Drawing.Point(194, 278);
+            this.textBox10.Location = new System.Drawing.Point(194, 279);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(135, 21);
             this.textBox10.TabIndex = 20;
@@ -231,7 +231,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(194, 98);
+            this.dateTimePicker1.Location = new System.Drawing.Point(194, 99);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(135, 21);
             this.dateTimePicker1.TabIndex = 21;
@@ -240,7 +240,7 @@
             // Cancel
             // 
             this.Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Cancel.Location = new System.Drawing.Point(241, 309);
+            this.Cancel.Location = new System.Drawing.Point(244, 308);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(87, 27);
             this.Cancel.TabIndex = 22;
@@ -254,7 +254,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Мужской",
             "Женский"});
-            this.comboBox1.Location = new System.Drawing.Point(194, 130);
+            this.comboBox1.Location = new System.Drawing.Point(194, 129);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(135, 23);
             this.comboBox1.TabIndex = 23;
