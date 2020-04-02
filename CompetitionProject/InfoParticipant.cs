@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CompetitionProject
 {
-    public partial class InfoParticipant : Form
+    public partial class Participant : Form
     {
-        public InfoParticipant()
+        public Participant()
         {
             InitializeComponent();
         }

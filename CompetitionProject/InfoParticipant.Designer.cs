@@ -1,6 +1,6 @@
 ﻿namespace CompetitionProject
 {
-    partial class InfoParticipant
+    partial class Participant
     {
         /// <summary>
         /// Required designer variable.
@@ -39,16 +39,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Add = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.LastName = new System.Windows.Forms.Label();
+            this.FirstName = new System.Windows.Forms.Label();
+            this.MiddleName = new System.Windows.Forms.Label();
+            this.Birthday = new System.Windows.Forms.Label();
+            this.Gender = new System.Windows.Forms.Label();
+            this.CrntRegion = new System.Windows.Forms.Label();
+            this.SportClub = new System.Windows.Forms.Label();
+            this.Rank = new System.Windows.Forms.Label();
+            this.Weight = new System.Windows.Forms.Label();
+            this.Email = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label10
@@ -154,7 +154,7 @@
             // Add
             // 
             this.Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Add.Location = new System.Drawing.Point(241, 309);
+            this.Add.Location = new System.Drawing.Point(204, 308);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(87, 27);
             this.Add.TabIndex = 24;
@@ -162,111 +162,111 @@
             this.Add.UseVisualStyleBackColor = true;
             this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
-            // label11
+            // LastName
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(180, 12);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 15);
-            this.label11.TabIndex = 35;
-            this.label11.Text = "label11";
+            this.LastName.AutoSize = true;
+            this.LastName.Location = new System.Drawing.Point(85, 12);
+            this.LastName.Name = "LastName";
+            this.LastName.Size = new System.Drawing.Size(64, 15);
+            this.LastName.TabIndex = 35;
+            this.LastName.Text = "LastName";
             // 
-            // label12
+            // FirstName
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(180, 42);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 15);
-            this.label12.TabIndex = 36;
-            this.label12.Text = "label12";
+            this.FirstName.AutoSize = true;
+            this.FirstName.Location = new System.Drawing.Point(55, 42);
+            this.FirstName.Name = "FirstName";
+            this.FirstName.Size = new System.Drawing.Size(64, 15);
+            this.FirstName.TabIndex = 36;
+            this.FirstName.Text = "FirstName";
             // 
-            // label13
+            // MiddleName
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(180, 72);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(48, 15);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "label13";
+            this.MiddleName.AutoSize = true;
+            this.MiddleName.Location = new System.Drawing.Point(86, 72);
+            this.MiddleName.Name = "MiddleName";
+            this.MiddleName.Size = new System.Drawing.Size(79, 15);
+            this.MiddleName.TabIndex = 37;
+            this.MiddleName.Text = "MiddleName";
             // 
-            // label14
+            // Birthday
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(180, 102);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(48, 15);
-            this.label14.TabIndex = 38;
-            this.label14.Text = "label14";
+            this.Birthday.AutoSize = true;
+            this.Birthday.Location = new System.Drawing.Point(122, 102);
+            this.Birthday.Name = "Birthday";
+            this.Birthday.Size = new System.Drawing.Size(51, 15);
+            this.Birthday.TabIndex = 38;
+            this.Birthday.Text = "Birthday";
             // 
-            // label15
+            // Gender
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(180, 132);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(48, 15);
-            this.label15.TabIndex = 39;
-            this.label15.Text = "label15";
+            this.Gender.AutoSize = true;
+            this.Gender.Location = new System.Drawing.Point(53, 132);
+            this.Gender.Name = "Gender";
+            this.Gender.Size = new System.Drawing.Size(48, 15);
+            this.Gender.TabIndex = 39;
+            this.Gender.Text = "Gender";
             // 
-            // label16
+            // CrntRegion
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(180, 162);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(48, 15);
-            this.label16.TabIndex = 40;
-            this.label16.Text = "label16";
+            this.CrntRegion.AutoSize = true;
+            this.CrntRegion.Location = new System.Drawing.Point(71, 162);
+            this.CrntRegion.Name = "CrntRegion";
+            this.CrntRegion.Size = new System.Drawing.Size(47, 15);
+            this.CrntRegion.TabIndex = 40;
+            this.CrntRegion.Text = "Region";
             // 
-            // label17
+            // SportClub
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(180, 192);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(48, 15);
-            this.label17.TabIndex = 41;
-            this.label17.Text = "label17";
+            this.SportClub.AutoSize = true;
+            this.SportClub.Location = new System.Drawing.Point(131, 192);
+            this.SportClub.Name = "SportClub";
+            this.SportClub.Size = new System.Drawing.Size(61, 15);
+            this.SportClub.TabIndex = 41;
+            this.SportClub.Text = "SportClub";
             // 
-            // label18
+            // Rank
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(180, 222);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(48, 15);
-            this.label18.TabIndex = 42;
-            this.label18.Text = "label18";
+            this.Rank.AutoSize = true;
+            this.Rank.Location = new System.Drawing.Point(72, 222);
+            this.Rank.Name = "Rank";
+            this.Rank.Size = new System.Drawing.Size(36, 15);
+            this.Rank.TabIndex = 42;
+            this.Rank.Text = "Rank";
             // 
-            // label19
+            // Weight
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(180, 252);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(48, 15);
-            this.label19.TabIndex = 43;
-            this.label19.Text = "label19";
+            this.Weight.AutoSize = true;
+            this.Weight.Location = new System.Drawing.Point(51, 252);
+            this.Weight.Name = "Weight";
+            this.Weight.Size = new System.Drawing.Size(45, 15);
+            this.Weight.TabIndex = 43;
+            this.Weight.Text = "Weight";
             // 
-            // label20
+            // Email
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(180, 282);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(48, 15);
-            this.label20.TabIndex = 44;
-            this.label20.Text = "label20";
+            this.Email.AutoSize = true;
+            this.Email.Location = new System.Drawing.Point(82, 282);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(39, 15);
+            this.Email.TabIndex = 44;
+            this.Email.Text = "Email";
             // 
-            // InfoParticipant
+            // Participant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 347);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
+            this.ClientSize = new System.Drawing.Size(305, 347);
+            this.Controls.Add(this.Email);
+            this.Controls.Add(this.Weight);
+            this.Controls.Add(this.Rank);
+            this.Controls.Add(this.SportClub);
+            this.Controls.Add(this.CrntRegion);
+            this.Controls.Add(this.Gender);
+            this.Controls.Add(this.Birthday);
+            this.Controls.Add(this.MiddleName);
+            this.Controls.Add(this.FirstName);
+            this.Controls.Add(this.LastName);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -280,7 +280,7 @@
             this.Controls.Add(this.Add);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "InfoParticipant";
+            this.Name = "Participant";
             this.Text = "Информация о участнике";
             this.Load += new System.EventHandler(this.InfoParticipant_Load);
             this.ResumeLayout(false);
@@ -300,15 +300,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Add;
-        public System.Windows.Forms.Label label11;
-        public System.Windows.Forms.Label label12;
-        public System.Windows.Forms.Label label13;
-        public System.Windows.Forms.Label label14;
-        public System.Windows.Forms.Label label15;
-        public System.Windows.Forms.Label label16;
-        public System.Windows.Forms.Label label17;
-        public System.Windows.Forms.Label label18;
-        public System.Windows.Forms.Label label19;
-        public System.Windows.Forms.Label label20;
+        protected internal System.Windows.Forms.Label LastName;
+        protected internal System.Windows.Forms.Label FirstName;
+        protected internal System.Windows.Forms.Label MiddleName;
+        protected internal System.Windows.Forms.Label Birthday;
+        protected internal System.Windows.Forms.Label Gender;
+        protected internal System.Windows.Forms.Label CrntRegion;
+        protected internal System.Windows.Forms.Label SportClub;
+        protected internal System.Windows.Forms.Label Rank;
+        protected internal System.Windows.Forms.Label Weight;
+        protected internal System.Windows.Forms.Label Email;
     }
 }

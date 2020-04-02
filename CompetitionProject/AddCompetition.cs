@@ -51,5 +51,10 @@ namespace CompetitionProject
         {
             this.Close();
         }
+
+        private void OkButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -24,21 +24,21 @@ namespace CompetitionProject
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void OkButton_Click(object sender, EventArgs e)
         {
             CompetitionDB addParticipant = new CompetitionDB();
-            Participant newParticipant = new Participant()
+            CompetitionClasses.Participant newParticipant = new CompetitionClasses.Participant()
             {
-                LastName = textBox1.Text,
-                FirstName = textBox2.Text,
-                MiddleName = textBox4.Text,
-                Birthday = dateTimePicker1.Value,
-                Gender = comboBox1.Text,
-                Region = textBox6.Text,
-                SportClub = textBox7.Text,
-                Rank = textBox8.Text,
-                Weight = double.Parse(textBox9.Text),
-                Email = textBox10.Text
+                LastName = LastName.Text,
+                FirstName = FirstName.Text,
+                MiddleName = MiddleName.Text,
+                Birthday = TimeDate.Value,
+                Gender = Gender.Text,
+                Region = CrntRegion.Text,
+                SportClub = SportClub.Text,
+                Rank = Rank.Text,
+                Weight = double.Parse(Weight.Text),
+                Email = Email.Text
             };
             addParticipant.Participants.Add(newParticipant);
             addParticipant.SaveChanges();
@@ -47,7 +47,7 @@ namespace CompetitionProject
 
         }
 
-        private void Cancel_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }

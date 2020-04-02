@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Add = new System.Windows.Forms.Button();
+            this.OkButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,29 +39,29 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.Cancel = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.LastName = new System.Windows.Forms.TextBox();
+            this.FirstName = new System.Windows.Forms.TextBox();
+            this.MiddleName = new System.Windows.Forms.TextBox();
+            this.CrntRegion = new System.Windows.Forms.TextBox();
+            this.SportClub = new System.Windows.Forms.TextBox();
+            this.Rank = new System.Windows.Forms.TextBox();
+            this.Weight = new System.Windows.Forms.TextBox();
+            this.Email = new System.Windows.Forms.TextBox();
+            this.TimeDate = new System.Windows.Forms.DateTimePicker();
+            this.CancelButton = new System.Windows.Forms.Button();
+            this.Gender = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // Add
+            // OkButton
             // 
-            this.Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Add.Location = new System.Drawing.Point(151, 308);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(87, 27);
-            this.Add.TabIndex = 0;
-            this.Add.Text = "Ок";
-            this.Add.UseVisualStyleBackColor = true;
-            this.Add.Click += new System.EventHandler(this.button1_Click);
+            this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OkButton.Location = new System.Drawing.Point(151, 308);
+            this.OkButton.Name = "OkButton";
+            this.OkButton.Size = new System.Drawing.Size(87, 27);
+            this.OkButton.TabIndex = 0;
+            this.OkButton.Text = "Ок";
+            this.OkButton.UseVisualStyleBackColor = true;
+            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
             // label1
             // 
@@ -163,118 +163,118 @@
             this.label10.TabIndex = 10;
             this.label10.Text = "Эл.почта";
             // 
-            // textBox1
+            // LastName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(194, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 21);
-            this.textBox1.TabIndex = 11;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.LastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LastName.Location = new System.Drawing.Point(151, 11);
+            this.LastName.Name = "LastName";
+            this.LastName.Size = new System.Drawing.Size(180, 21);
+            this.LastName.TabIndex = 11;
+            this.LastName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // FirstName
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(194, 39);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 21);
-            this.textBox2.TabIndex = 12;
+            this.FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FirstName.Location = new System.Drawing.Point(151, 41);
+            this.FirstName.Name = "FirstName";
+            this.FirstName.Size = new System.Drawing.Size(180, 21);
+            this.FirstName.TabIndex = 12;
             // 
-            // textBox4
+            // MiddleName
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(194, 69);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(135, 21);
-            this.textBox4.TabIndex = 14;
+            this.MiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MiddleName.Location = new System.Drawing.Point(151, 71);
+            this.MiddleName.Name = "MiddleName";
+            this.MiddleName.Size = new System.Drawing.Size(180, 21);
+            this.MiddleName.TabIndex = 14;
             // 
-            // textBox6
+            // CrntRegion
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.Location = new System.Drawing.Point(194, 159);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(135, 21);
-            this.textBox6.TabIndex = 16;
+            this.CrntRegion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CrntRegion.Location = new System.Drawing.Point(151, 161);
+            this.CrntRegion.Name = "CrntRegion";
+            this.CrntRegion.Size = new System.Drawing.Size(180, 21);
+            this.CrntRegion.TabIndex = 16;
             // 
-            // textBox7
+            // SportClub
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox7.Location = new System.Drawing.Point(194, 189);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(135, 21);
-            this.textBox7.TabIndex = 17;
+            this.SportClub.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SportClub.Location = new System.Drawing.Point(151, 191);
+            this.SportClub.Name = "SportClub";
+            this.SportClub.Size = new System.Drawing.Size(180, 21);
+            this.SportClub.TabIndex = 17;
             // 
-            // textBox8
+            // Rank
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox8.Location = new System.Drawing.Point(194, 219);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(135, 21);
-            this.textBox8.TabIndex = 18;
+            this.Rank.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Rank.Location = new System.Drawing.Point(151, 221);
+            this.Rank.Name = "Rank";
+            this.Rank.Size = new System.Drawing.Size(180, 21);
+            this.Rank.TabIndex = 18;
             // 
-            // textBox9
+            // Weight
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox9.Location = new System.Drawing.Point(194, 249);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(135, 21);
-            this.textBox9.TabIndex = 19;
+            this.Weight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Weight.Location = new System.Drawing.Point(151, 251);
+            this.Weight.Name = "Weight";
+            this.Weight.Size = new System.Drawing.Size(180, 21);
+            this.Weight.TabIndex = 19;
             // 
-            // textBox10
+            // Email
             // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox10.Location = new System.Drawing.Point(194, 279);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(135, 21);
-            this.textBox10.TabIndex = 20;
+            this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Email.Location = new System.Drawing.Point(151, 281);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(180, 21);
+            this.Email.TabIndex = 20;
             // 
-            // dateTimePicker1
+            // TimeDate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(194, 99);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(135, 21);
-            this.dateTimePicker1.TabIndex = 21;
-            this.dateTimePicker1.Value = new System.DateTime(2020, 3, 27, 0, 0, 0, 0);
+            this.TimeDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TimeDate.Location = new System.Drawing.Point(151, 101);
+            this.TimeDate.Name = "TimeDate";
+            this.TimeDate.Size = new System.Drawing.Size(180, 21);
+            this.TimeDate.TabIndex = 21;
+            this.TimeDate.Value = new System.DateTime(2020, 3, 27, 0, 0, 0, 0);
             // 
-            // Cancel
+            // CancelButton
             // 
-            this.Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Cancel.Location = new System.Drawing.Point(244, 308);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(87, 27);
-            this.Cancel.TabIndex = 22;
-            this.Cancel.Text = "Отмена";
-            this.Cancel.UseVisualStyleBackColor = true;
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            this.CancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CancelButton.Location = new System.Drawing.Point(244, 308);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(87, 27);
+            this.CancelButton.TabIndex = 22;
+            this.CancelButton.Text = "Отмена";
+            this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // comboBox1
+            // Gender
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.Gender.FormattingEnabled = true;
+            this.Gender.Items.AddRange(new object[] {
             "Мужской",
             "Женский"});
-            this.comboBox1.Location = new System.Drawing.Point(194, 129);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(135, 23);
-            this.comboBox1.TabIndex = 23;
+            this.Gender.Location = new System.Drawing.Point(151, 131);
+            this.Gender.Name = "Gender";
+            this.Gender.Size = new System.Drawing.Size(180, 23);
+            this.Gender.TabIndex = 23;
             // 
             // AddParticipant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(343, 347);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.Cancel);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Gender);
+            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.TimeDate);
+            this.Controls.Add(this.Email);
+            this.Controls.Add(this.Weight);
+            this.Controls.Add(this.Rank);
+            this.Controls.Add(this.SportClub);
+            this.Controls.Add(this.CrntRegion);
+            this.Controls.Add(this.MiddleName);
+            this.Controls.Add(this.FirstName);
+            this.Controls.Add(this.LastName);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -285,7 +285,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Add);
+            this.Controls.Add(this.OkButton);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AddParticipant";
@@ -297,7 +297,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button Add;
+        private System.Windows.Forms.Button OkButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -308,16 +308,16 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button Cancel;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox LastName;
+        private System.Windows.Forms.TextBox FirstName;
+        private System.Windows.Forms.TextBox MiddleName;
+        private System.Windows.Forms.TextBox CrntRegion;
+        private System.Windows.Forms.TextBox SportClub;
+        private System.Windows.Forms.TextBox Rank;
+        private System.Windows.Forms.TextBox Weight;
+        private System.Windows.Forms.TextBox Email;
+        private System.Windows.Forms.DateTimePicker TimeDate;
+        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.ComboBox Gender;
     }
 }

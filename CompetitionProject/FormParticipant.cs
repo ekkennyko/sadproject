@@ -19,10 +19,10 @@ namespace CompetitionProject
         public FormParticipant()
         {
             InitializeComponent();
-            UpdateList_Click(null, null);
+            RefreshButton_Click(null, null);
         }
 
-        private void addButton_Click(object sender, EventArgs e)
+        private void AddButton_Click(object sender, EventArgs e)
         {
             AddParticipant addParticipant = new AddParticipant();
             addParticipant.ShowDialog();
@@ -33,12 +33,12 @@ namespace CompetitionProject
 
         }
 
-        private void toMenu_Click(object sender, EventArgs e)
+        private void MenuButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
+        private void RemoveButton_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -47,7 +47,7 @@ namespace CompetitionProject
                 bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
                 if (converted == false)
                     return;
-                Participant participant = db.Participants.Find(id);
+                CompetitionClasses.Participant participant = db.Participants.Find(id);
                 db.Participants.Remove(participant);
                 db.SaveChanges();
                 MessageBox.Show("Участник удален");
@@ -59,7 +59,7 @@ namespace CompetitionProject
             }
         }
 
-        private void editButton_Click(object sender, EventArgs e)
+        private void EditButton_Click(object sender, EventArgs e)
         {
             if(dataGridView1.SelectedRows.Count == 1)
             {
@@ -68,23 +68,23 @@ namespace CompetitionProject
                 bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
                 if (converted == false)
                     return;
-                Participant participant = db.Participants.Find(id);
+                CompetitionClasses.Participant participant = db.Participants.Find(id);
                 EditParticipant editParticipant = new EditParticipant();
-                editParticipant.label4.Text = participant.LastName;
-                editParticipant.label5.Text = participant.FirstName;
-                editParticipant.label10.Text = participant.MiddleName;
-                editParticipant.textBox6.Text = participant.Region;
-                editParticipant.textBox7.Text = participant.SportClub;
-                editParticipant.textBox8.Text = participant.Rank;
-                editParticipant.textBox9.Text = participant.Weight.ToString();
+                editParticipant.LastName.Text = participant.LastName;
+                editParticipant.FirstName.Text = participant.FirstName;
+                editParticipant.MiddleName.Text = participant.MiddleName;
+                editParticipant.CrntRegion.Text = participant.Region;
+                editParticipant.SportClub.Text = participant.SportClub;
+                editParticipant.Rank.Text = participant.Rank;
+                editParticipant.Weight.Text = participant.Weight.ToString();
 
                 editParticipant.ShowDialog();
                 if (editParticipant.result == true)
                 {
-                    participant.Region = editParticipant.textBox6.Text;
-                    participant.SportClub = editParticipant.textBox7.Text;
-                    participant.Rank = editParticipant.textBox8.Text;
-                    participant.Weight = double.Parse(editParticipant.textBox9.Text);
+                    participant.Region = editParticipant.CrntRegion.Text;
+                    participant.SportClub = editParticipant.SportClub.Text;
+                    participant.Rank = editParticipant.Rank.Text;
+                    participant.Weight = double.Parse(editParticipant.Weight.Text);
 
                     db.SaveChanges();
                     dataGridView1.Refresh();
@@ -97,7 +97,7 @@ namespace CompetitionProject
             }
         }
 
-        private void infoButton_Click(object sender, EventArgs e)
+        private void InfoButton_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 1)
             {
@@ -106,18 +106,18 @@ namespace CompetitionProject
                 bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
                 if (converted == false)
                     return;
-                Participant participant = db.Participants.Find(id);
-                InfoParticipant infoParticipant = new InfoParticipant();
-                infoParticipant.label11.Text = participant.LastName;
-                infoParticipant.label12.Text = participant.FirstName;
-                infoParticipant.label13.Text = participant.MiddleName;
-                infoParticipant.label14.Text = participant.Birthday.ToShortDateString();
-                infoParticipant.label15.Text = participant.Gender;
-                infoParticipant.label16.Text = participant.Region;
-                infoParticipant.label17.Text = participant.SportClub;
-                infoParticipant.label18.Text = participant.Rank;
-                infoParticipant.label19.Text = participant.Weight.ToString();
-                infoParticipant.label20.Text = participant.Email;
+                CompetitionClasses.Participant participant = db.Participants.Find(id);
+                Participant infoParticipant = new Participant();
+                infoParticipant.LastName.Text = participant.LastName;
+                infoParticipant.FirstName.Text = participant.FirstName;
+                infoParticipant.MiddleName.Text = participant.MiddleName;
+                infoParticipant.Birthday.Text = participant.Birthday.ToShortDateString();
+                infoParticipant.Gender.Text = participant.Gender;
+                infoParticipant.CrntRegion.Text = participant.Region;
+                infoParticipant.SportClub.Text = participant.SportClub;
+                infoParticipant.Rank.Text = participant.Rank;
+                infoParticipant.Weight.Text = participant.Weight.ToString();
+                infoParticipant.Email.Text = participant.Email;
 
                 infoParticipant.ShowDialog();
             }
@@ -127,7 +127,7 @@ namespace CompetitionProject
             }
         }
 
-        private void UpdateList_Click(object sender, EventArgs e)
+        private void RefreshButton_Click(object sender, EventArgs e)
         {
             db = new CompetitionDB();
             db.Participants.Load();

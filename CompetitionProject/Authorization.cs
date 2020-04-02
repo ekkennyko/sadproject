@@ -25,18 +25,19 @@ namespace CompetitionProject
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+        private void OkButton_Click(object sender, EventArgs e)
+        { 
             var employee = autho.Employees;
             foreach (Employee au in employee)
             {
-                if (textBox1.Text == au.Login && textBox2.Text == au.Password)
+                if (Login.Text == au.Login && Password.Text == au.Password)
                 {
                     MainMenu menu = new MainMenu();
-                    menu.label5.Text = au.LastName;
-                    menu.label6.Text = au.FirstName;
-                    menu.label7.Text = au.MiddleName;
-                    menu.label8.Text = au.Job;
+                    menu.LastName.Text = au.LastName;
+                    menu.FirstName.Text = au.FirstName;
+                    menu.MiddleName.Text = au.MiddleName;
+                    menu.Job.Text = au.Job;
+                    menu.Email.Text = au.Email;
                     menu.Show();
                     this.Hide();
                 }

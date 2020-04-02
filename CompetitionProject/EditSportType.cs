@@ -21,15 +21,15 @@ namespace CompetitionProject
             InitializeComponent();
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void OkButton_Click(object sender, EventArgs e)
         {
-            result = false;
+            result = true;
             this.Close();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
-            result = true;
+            result = false;
             this.Close();
         }
     }

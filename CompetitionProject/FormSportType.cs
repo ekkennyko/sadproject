@@ -70,14 +70,14 @@ namespace CompetitionProject
                     return;
                 SportType sportType = db.SportTypes.Find(id);
                 EditSportType editSportType = new EditSportType();
-                editSportType.textBox1.Text = sportType.Name;
-                editSportType.textBox2.Text = sportType.Type;
+                editSportType.NameSport.Text = sportType.Name;
+                editSportType.Type.Text = sportType.Type;
 
                 editSportType.ShowDialog();
                 if (editSportType.result == true)
                 {
-                    sportType.Name = editSportType.textBox1.Text;
-                    sportType.Type = editSportType.textBox2.Text;
+                    sportType.Name = editSportType.NameSport.Text;
+                    sportType.Type = editSportType.Type.Text;
 
                     db.SaveChanges();
                     dataGridView1.Refresh();
@@ -101,8 +101,8 @@ namespace CompetitionProject
                     return;
                 SportType sportType = db.SportTypes.Find(id);
                 InfoSportType infoSportType = new InfoSportType();
-                infoSportType.label3.Text = sportType.Name;
-                infoSportType.label4.Text = sportType.Type;
+                infoSportType.NameSport.Text = sportType.Name;
+                infoSportType.Type.Text = sportType.Type;
                 infoSportType.ShowDialog();
             }
             else

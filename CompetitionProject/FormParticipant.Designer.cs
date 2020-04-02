@@ -28,140 +28,132 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.addButton = new System.Windows.Forms.Button();
-            this.editButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.infoButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.EditButton = new System.Windows.Forms.Button();
+            this.RemoveButton = new System.Windows.Forms.Button();
+            this.InfoButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toMenu = new System.Windows.Forms.Button();
-            this.UpdateList = new System.Windows.Forms.Button();
+            this.MenuButton = new System.Windows.Forms.Button();
+            this.RefreshButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // addButton
+            // AddButton
             // 
-            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addButton.Location = new System.Drawing.Point(553, 11);
-            this.addButton.Margin = new System.Windows.Forms.Padding(2);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(110, 25);
-            this.addButton.TabIndex = 4;
-            this.addButton.Text = "Добавить";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddButton.Location = new System.Drawing.Point(645, 13);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(128, 31);
+            this.AddButton.TabIndex = 4;
+            this.AddButton.Text = "Добавить";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // editButton
+            // EditButton
             // 
-            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.editButton.Location = new System.Drawing.Point(553, 56);
-            this.editButton.Margin = new System.Windows.Forms.Padding(2);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(110, 25);
-            this.editButton.TabIndex = 5;
-            this.editButton.Text = "Редактировать";
-            this.editButton.UseVisualStyleBackColor = true;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            this.EditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EditButton.Location = new System.Drawing.Point(645, 65);
+            this.EditButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(128, 31);
+            this.EditButton.TabIndex = 5;
+            this.EditButton.Text = "Редактировать";
+            this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
-            // deleteButton
+            // RemoveButton
             // 
-            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.deleteButton.Location = new System.Drawing.Point(553, 101);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(2);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(110, 25);
-            this.deleteButton.TabIndex = 6;
-            this.deleteButton.Text = "Удалить";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            this.RemoveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RemoveButton.Location = new System.Drawing.Point(645, 117);
+            this.RemoveButton.Margin = new System.Windows.Forms.Padding(2);
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(128, 31);
+            this.RemoveButton.TabIndex = 6;
+            this.RemoveButton.Text = "Удалить";
+            this.RemoveButton.UseVisualStyleBackColor = true;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
-            // infoButton
+            // InfoButton
             // 
-            this.infoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoButton.Location = new System.Drawing.Point(553, 146);
-            this.infoButton.Margin = new System.Windows.Forms.Padding(2);
-            this.infoButton.Name = "infoButton";
-            this.infoButton.Size = new System.Drawing.Size(110, 25);
-            this.infoButton.TabIndex = 7;
-            this.infoButton.Text = "Информация";
-            this.infoButton.UseVisualStyleBackColor = true;
-            this.infoButton.Click += new System.EventHandler(this.infoButton_Click);
+            this.InfoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.InfoButton.Location = new System.Drawing.Point(645, 168);
+            this.InfoButton.Margin = new System.Windows.Forms.Padding(2);
+            this.InfoButton.Name = "InfoButton";
+            this.InfoButton.Size = new System.Drawing.Size(128, 31);
+            this.InfoButton.TabIndex = 7;
+            this.InfoButton.Text = "Информация";
+            this.InfoButton.UseVisualStyleBackColor = true;
+            this.InfoButton.Click += new System.EventHandler(this.InfoButton_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 11);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 13);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(528, 300);
+            this.dataGridView1.Size = new System.Drawing.Size(616, 346);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // personBindingSource
+            // MenuButton
             // 
-            this.personBindingSource.DataSource = typeof(CompetitionClasses.Person);
+            this.MenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MenuButton.Location = new System.Drawing.Point(645, 327);
+            this.MenuButton.Name = "MenuButton";
+            this.MenuButton.Size = new System.Drawing.Size(128, 31);
+            this.MenuButton.TabIndex = 9;
+            this.MenuButton.Text = "Главное меню";
+            this.MenuButton.UseVisualStyleBackColor = true;
+            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
-            // toMenu
+            // RefreshButton
             // 
-            this.toMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.toMenu.Location = new System.Drawing.Point(553, 286);
-            this.toMenu.Name = "toMenu";
-            this.toMenu.Size = new System.Drawing.Size(110, 25);
-            this.toMenu.TabIndex = 9;
-            this.toMenu.Text = "Главное меню";
-            this.toMenu.UseVisualStyleBackColor = true;
-            this.toMenu.Click += new System.EventHandler(this.toMenu_Click);
-            // 
-            // UpdateList
-            // 
-            this.UpdateList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.UpdateList.Location = new System.Drawing.Point(553, 191);
-            this.UpdateList.Margin = new System.Windows.Forms.Padding(2);
-            this.UpdateList.Name = "UpdateList";
-            this.UpdateList.Size = new System.Drawing.Size(110, 25);
-            this.UpdateList.TabIndex = 10;
-            this.UpdateList.Text = "Обновить";
-            this.UpdateList.UseVisualStyleBackColor = true;
-            this.UpdateList.Click += new System.EventHandler(this.UpdateList_Click);
+            this.RefreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RefreshButton.Location = new System.Drawing.Point(645, 220);
+            this.RefreshButton.Margin = new System.Windows.Forms.Padding(2);
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(128, 31);
+            this.RefreshButton.TabIndex = 10;
+            this.RefreshButton.Text = "Обновить";
+            this.RefreshButton.UseVisualStyleBackColor = true;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // FormParticipant
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 321);
-            this.Controls.Add(this.UpdateList);
-            this.Controls.Add(this.toMenu);
+            this.ClientSize = new System.Drawing.Size(798, 370);
+            this.Controls.Add(this.RefreshButton);
+            this.Controls.Add(this.MenuButton);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.infoButton);
-            this.Controls.Add(this.deleteButton);
-            this.Controls.Add(this.editButton);
-            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.InfoButton);
+            this.Controls.Add(this.RemoveButton);
+            this.Controls.Add(this.EditButton);
+            this.Controls.Add(this.AddButton);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormParticipant";
             this.Text = "Участники";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button editButton;
-        private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.Button infoButton;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Button EditButton;
+        private System.Windows.Forms.Button RemoveButton;
+        private System.Windows.Forms.Button InfoButton;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button toMenu;
-        private System.Windows.Forms.Button UpdateList;
-        private System.Windows.Forms.BindingSource personBindingSource;
+        private System.Windows.Forms.Button MenuButton;
+        private System.Windows.Forms.Button RefreshButton;
     }
 }

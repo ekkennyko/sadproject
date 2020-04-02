@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.Title = new System.Windows.Forms.Label();
-            this.Location = new System.Windows.Forms.Label();
+            this.PlaceLocation = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,8 +44,8 @@
             this.CategoryList = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.OrgList = new System.Windows.Forms.ListBox();
+            this.JudgeList = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // Title
@@ -57,14 +57,14 @@
             this.Title.TabIndex = 0;
             this.Title.Text = "Title";
             // 
-            // Location
+            // PlaceLocation
             // 
-            this.Location.AutoSize = true;
-            this.Location.Location = new System.Drawing.Point(141, 42);
-            this.Location.Name = "Location";
-            this.Location.Size = new System.Drawing.Size(54, 15);
-            this.Location.TabIndex = 1;
-            this.Location.Text = "Location";
+            this.PlaceLocation.AutoSize = true;
+            this.PlaceLocation.Location = new System.Drawing.Point(141, 42);
+            this.PlaceLocation.Name = "PlaceLocation";
+            this.PlaceLocation.Size = new System.Drawing.Size(54, 15);
+            this.PlaceLocation.TabIndex = 1;
+            this.PlaceLocation.Text = "Location";
             // 
             // label1
             // 
@@ -194,31 +194,31 @@
             this.label9.Text = "Судьи:";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // listBox1
+            // OrgList
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(17, 342);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(180, 109);
-            this.listBox1.TabIndex = 17;
+            this.OrgList.FormattingEnabled = true;
+            this.OrgList.ItemHeight = 15;
+            this.OrgList.Location = new System.Drawing.Point(17, 342);
+            this.OrgList.Name = "OrgList";
+            this.OrgList.Size = new System.Drawing.Size(180, 109);
+            this.OrgList.TabIndex = 17;
             // 
-            // listBox2
+            // JudgeList
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 15;
-            this.listBox2.Location = new System.Drawing.Point(248, 342);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(180, 109);
-            this.listBox2.TabIndex = 18;
+            this.JudgeList.FormattingEnabled = true;
+            this.JudgeList.ItemHeight = 15;
+            this.JudgeList.Location = new System.Drawing.Point(248, 342);
+            this.JudgeList.Name = "JudgeList";
+            this.JudgeList.Size = new System.Drawing.Size(180, 109);
+            this.JudgeList.TabIndex = 18;
             // 
             // InfoCompetition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(440, 467);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.JudgeList);
+            this.Controls.Add(this.OrgList);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.CategoryList);
@@ -233,7 +233,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Location);
+            this.Controls.Add(this.PlaceLocation);
             this.Controls.Add(this.Title);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Name = "InfoCompetition";
@@ -246,7 +246,7 @@
         #endregion
 
         private System.Windows.Forms.Label Title;
-        private System.Windows.Forms.Label Location;
+        private System.Windows.Forms.Label PlaceLocation;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -261,7 +261,7 @@
         private System.Windows.Forms.ListBox CategoryList;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox OrgList;
+        private System.Windows.Forms.ListBox JudgeList;
     }
 }

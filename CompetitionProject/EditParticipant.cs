@@ -21,13 +21,13 @@ namespace CompetitionProject
             InitializeComponent();
         }
 
-        private void Edit_Click(object sender, EventArgs e)
+        private void OkButton_Click(object sender, EventArgs e)
         {
             result = true;
             this.Close();
         }
 
-        private void Cancel_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             result = false;
             this.Close();

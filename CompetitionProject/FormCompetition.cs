@@ -47,5 +47,10 @@ namespace CompetitionProject
             InfoCompetition infoCompetition = new InfoCompetition();
             infoCompetition.ShowDialog();
         }
+
+        private void MenuButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

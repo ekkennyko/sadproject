@@ -14,28 +14,27 @@ namespace CompetitionProject
 {
     public partial class AddSportType : Form
     {
+        CompetitionDB addSportType = new CompetitionDB();
         public AddSportType()
         {
             InitializeComponent();
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void OkButton_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            CompetitionDB addSportType = new CompetitionDB();
             SportType newSportType = new SportType()
             {
-                SportTypeId = 1,
-                Name = textBox1.Text,
-                Type = comboBox1.Text,
+                Name = NameSport.Text,
+                Type = Type.Text,
             };
             addSportType.SportTypes.Add(newSportType);
             addSportType.SaveChanges();
             MessageBox.Show("Новый вид спорта добавлен");
+            this.Close();
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
