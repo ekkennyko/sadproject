@@ -122,7 +122,7 @@ namespace CompetitionClasses
         [ForeignKey("Report")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CompResId { get; set; }
-        public int Position { get; set; }
+        public string Position { get; set; }
         public string Participant { get; set; }
 
         public int? CompetitionId { get; set; }
