@@ -53,7 +53,7 @@
             this.AddButton.TabIndex = 0;
             this.AddButton.Text = "Добавить";
             this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.button1_Click);
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // EditButton
             // 
@@ -65,7 +65,7 @@
             this.EditButton.TabIndex = 1;
             this.EditButton.Text = "Редактировать";
             this.EditButton.UseVisualStyleBackColor = true;
-            this.EditButton.Click += new System.EventHandler(this.button2_Click);
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // RemoveButton
             // 
@@ -77,6 +77,7 @@
             this.RemoveButton.TabIndex = 2;
             this.RemoveButton.Text = "Удалить";
             this.RemoveButton.UseVisualStyleBackColor = true;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // InfoButton
             // 
@@ -88,7 +89,7 @@
             this.InfoButton.TabIndex = 3;
             this.InfoButton.Text = "Информация";
             this.InfoButton.UseVisualStyleBackColor = true;
-            this.InfoButton.Click += new System.EventHandler(this.button4_Click);
+            this.InfoButton.Click += new System.EventHandler(this.InfoButton_Click);
             // 
             // dataGridView1
             // 
@@ -147,7 +148,7 @@
             this.PickDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PickDateTime.Location = new System.Drawing.Point(135, 14);
             this.PickDateTime.Name = "PickDateTime";
-            this.PickDateTime.Size = new System.Drawing.Size(494, 21);
+            this.PickDateTime.Size = new System.Drawing.Size(494, 24);
             this.PickDateTime.TabIndex = 12;
             // 
             // label1
@@ -156,13 +157,13 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(10, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 15);
+            this.label1.Size = new System.Drawing.Size(116, 18);
             this.label1.TabIndex = 13;
             this.label1.Text = "Выберите дату:";
             // 
             // FormCompetition
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 370);
             this.Controls.Add(this.label1);

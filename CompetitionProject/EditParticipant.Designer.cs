@@ -62,7 +62,7 @@
             this.Weight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Weight.Location = new System.Drawing.Point(194, 192);
             this.Weight.Name = "Weight";
-            this.Weight.Size = new System.Drawing.Size(135, 21);
+            this.Weight.Size = new System.Drawing.Size(135, 24);
             this.Weight.TabIndex = 41;
             // 
             // Rank
@@ -70,7 +70,7 @@
             this.Rank.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Rank.Location = new System.Drawing.Point(194, 162);
             this.Rank.Name = "Rank";
-            this.Rank.Size = new System.Drawing.Size(135, 21);
+            this.Rank.Size = new System.Drawing.Size(135, 24);
             this.Rank.TabIndex = 40;
             // 
             // SportClub
@@ -78,7 +78,7 @@
             this.SportClub.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SportClub.Location = new System.Drawing.Point(194, 132);
             this.SportClub.Name = "SportClub";
-            this.SportClub.Size = new System.Drawing.Size(135, 21);
+            this.SportClub.Size = new System.Drawing.Size(135, 24);
             this.SportClub.TabIndex = 39;
             // 
             // CrntRegion
@@ -86,8 +86,9 @@
             this.CrntRegion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CrntRegion.Location = new System.Drawing.Point(194, 102);
             this.CrntRegion.Name = "CrntRegion";
-            this.CrntRegion.Size = new System.Drawing.Size(135, 21);
+            this.CrntRegion.Size = new System.Drawing.Size(135, 24);
             this.CrntRegion.TabIndex = 38;
+            this.CrntRegion.TextChanged += new System.EventHandler(this.CrntRegion_TextChanged);
             // 
             // label9
             // 
@@ -95,7 +96,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(14, 192);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(31, 15);
+            this.label9.Size = new System.Drawing.Size(38, 18);
             this.label9.TabIndex = 33;
             this.label9.Text = "Вес:";
             // 
@@ -105,7 +106,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(14, 162);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 15);
+            this.label8.Size = new System.Drawing.Size(63, 18);
             this.label8.TabIndex = 32;
             this.label8.Text = "Разряд:";
             // 
@@ -115,7 +116,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(14, 132);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 15);
+            this.label7.Size = new System.Drawing.Size(135, 18);
             this.label7.TabIndex = 31;
             this.label7.Text = "Спортивный клуб:";
             // 
@@ -125,7 +126,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(14, 102);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 15);
+            this.label6.Size = new System.Drawing.Size(61, 18);
             this.label6.TabIndex = 30;
             this.label6.Text = "Регион:";
             // 
@@ -135,7 +136,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(14, 74);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 15);
+            this.label3.Size = new System.Drawing.Size(79, 18);
             this.label3.TabIndex = 27;
             this.label3.Text = "Отчество:";
             // 
@@ -145,7 +146,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(14, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 15);
+            this.label2.Size = new System.Drawing.Size(42, 18);
             this.label2.TabIndex = 26;
             this.label2.Text = "Имя:";
             // 
@@ -155,7 +156,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(14, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 15);
+            this.label1.Size = new System.Drawing.Size(77, 18);
             this.label1.TabIndex = 25;
             this.label1.Text = "Фамилия:";
             // 
@@ -176,7 +177,7 @@
             this.LastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LastName.Location = new System.Drawing.Point(190, 13);
             this.LastName.Name = "LastName";
-            this.LastName.Size = new System.Drawing.Size(64, 15);
+            this.LastName.Size = new System.Drawing.Size(76, 18);
             this.LastName.TabIndex = 45;
             this.LastName.Text = "LastName";
             // 
@@ -186,7 +187,7 @@
             this.FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FirstName.Location = new System.Drawing.Point(190, 44);
             this.FirstName.Name = "FirstName";
-            this.FirstName.Size = new System.Drawing.Size(64, 15);
+            this.FirstName.Size = new System.Drawing.Size(77, 18);
             this.FirstName.TabIndex = 46;
             this.FirstName.Text = "FirstName";
             // 
@@ -196,13 +197,13 @@
             this.MiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MiddleName.Location = new System.Drawing.Point(190, 74);
             this.MiddleName.Name = "MiddleName";
-            this.MiddleName.Size = new System.Drawing.Size(79, 15);
+            this.MiddleName.Size = new System.Drawing.Size(91, 18);
             this.MiddleName.TabIndex = 47;
             this.MiddleName.Text = "MiddleName";
             // 
             // EditParticipant
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(343, 263);
             this.Controls.Add(this.MiddleName);

@@ -23,5 +23,10 @@ namespace CompetitionProject
             result = true;
             this.Close();
         }
+
+        private void NameBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

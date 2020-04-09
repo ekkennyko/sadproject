@@ -70,5 +70,10 @@ namespace CompetitionProject
         {
             this.Close();
         }
+
+        private void FirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,13 +10,12 @@ using System.Windows.Forms;
 using DataBaseArch;
 using CompetitionClasses;
 
-namespace CompetitionProject
+namespace CompetitionProject.Migrations
 {
-    public partial class EditSportType : Form
+    public partial class EditCompetition : Form
     {
-        CompetitionDB db;
-        public bool result = false;
-        public EditSportType()
+        protected internal bool result = false;
+        public EditCompetition()
         {
             InitializeComponent();
         }
@@ -33,7 +32,7 @@ namespace CompetitionProject
             this.Close();
         }
 
-        private void NameSport_TextChanged(object sender, EventArgs e)
+        private void EditCompetition_Load(object sender, EventArgs e)
         {
 
         }

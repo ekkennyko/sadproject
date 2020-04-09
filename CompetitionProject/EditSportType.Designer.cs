@@ -46,7 +46,7 @@
             "Водный"});
             this.Type.Location = new System.Drawing.Point(109, 43);
             this.Type.Name = "Type";
-            this.Type.Size = new System.Drawing.Size(164, 23);
+            this.Type.Size = new System.Drawing.Size(164, 26);
             this.Type.TabIndex = 12;
             // 
             // NameSport
@@ -55,8 +55,9 @@
             this.NameSport.Location = new System.Drawing.Point(109, 15);
             this.NameSport.Margin = new System.Windows.Forms.Padding(2);
             this.NameSport.Name = "NameSport";
-            this.NameSport.Size = new System.Drawing.Size(164, 21);
+            this.NameSport.Size = new System.Drawing.Size(164, 24);
             this.NameSport.TabIndex = 11;
+            this.NameSport.TextChanged += new System.EventHandler(this.NameSport_TextChanged);
             // 
             // label2
             // 
@@ -65,7 +66,7 @@
             this.label2.Location = new System.Drawing.Point(16, 46);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 15);
+            this.label2.Size = new System.Drawing.Size(33, 18);
             this.label2.TabIndex = 10;
             this.label2.Text = "Тип";
             // 
@@ -76,7 +77,7 @@
             this.label1.Location = new System.Drawing.Point(16, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 15);
+            this.label1.Size = new System.Drawing.Size(75, 18);
             this.label1.TabIndex = 9;
             this.label1.Text = "Название";
             // 
@@ -106,7 +107,7 @@
             // 
             // EditSportType
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 117);
             this.Controls.Add(this.Type);

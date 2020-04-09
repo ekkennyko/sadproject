@@ -235,6 +235,12 @@
       <DependentUpon>202004090338573_FifthSad3.3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="EditCompetition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCompetition.Designer.cs">
+      <DependentUpon>EditCompetition.cs</DependentUpon>
+    </Compile>
     <Compile Include="ObjectClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditCategory.resx">
       <DependentUpon>EditCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCompetition.resx">
+      <DependentUpon>EditCompetition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditParticipant.resx">
       <DependentUpon>EditParticipant.cs</DependentUpon>

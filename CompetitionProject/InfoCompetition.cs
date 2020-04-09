@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataBaseArch;
+using CompetitionClasses;
 
 namespace CompetitionProject
 {
@@ -28,6 +30,11 @@ namespace CompetitionProject
         }
 
         private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Title_Click(object sender, EventArgs e)
         {
 
         }
