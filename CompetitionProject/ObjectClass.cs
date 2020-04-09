@@ -110,6 +110,8 @@ namespace CompetitionClasses
         public string BestAthlete { get; set; }
         public string Winner { get; set; }
 
+        public CompetitionResult Result { get; set; }
+
         public int CompetitionId { get; set; }
         public virtual Competition Competition { get; set; }
     }
@@ -117,6 +119,7 @@ namespace CompetitionClasses
     public class CompetitionResult
     {
         [Key]
+        [ForeignKey("Report")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CompResId { get; set; }
         public int Position { get; set; }
@@ -124,6 +127,7 @@ namespace CompetitionClasses
 
         public int? CompetitionId { get; set; }
         public virtual CompetitionResult Result { get; set; }
+        public virtual Report Report { get; set; }
     }
 
     public class Competition

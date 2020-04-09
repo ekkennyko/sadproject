@@ -88,7 +88,6 @@
             this.CrntRegion.Name = "CrntRegion";
             this.CrntRegion.Size = new System.Drawing.Size(135, 24);
             this.CrntRegion.TabIndex = 38;
-            this.CrntRegion.TextChanged += new System.EventHandler(this.CrntRegion_TextChanged);
             // 
             // label9
             // 

@@ -16,12 +16,13 @@ namespace CompetitionProject
 {
     public partial class FormCompetition : Form
     {
+        CompetitionDB db;
         public FormCompetition()
         {
             InitializeComponent();
             RefreshButton_Click(null, null);
         }
-        CompetitionDB db;
+
         private void AddButton_Click(object sender, EventArgs e)
         {
             AddCompetition addCompetition = new AddCompetition();
@@ -37,8 +38,8 @@ namespace CompetitionProject
                 bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
                 if (converted == false)
                     return;
-                CompetitionClasses.Participant participant = db.Participants.Find(id);
-                db.Participants.Remove(participant);
+                CompetitionClasses.Competition competition = db.Competitions.Find(id);
+                db.Competitions.Remove(competition);
                 db.SaveChanges();
                 MessageBox.Show("Соревнование удалено");
 
@@ -78,18 +79,18 @@ namespace CompetitionProject
                 bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
                 if (converted == false)
                     return;
-                CompetitionClasses.Competition category = db.Competitions.Find(id);
+                CompetitionClasses.Competition competition = db.Competitions.Find(id);
                 EditCompetition editCompetition = new EditCompetition();
-                editCompetition.TitleBox.Text = category.Title;
-                editCompetition.LocationBox.Text = category.Location;
-                editCompetition.dateTimePicker1.Date = category.DateCompetition;
+                editCompetition.TitleBox.Text = competition.Title;
+                editCompetition.LocationBox.Text = competition.Location;
+                editCompetition.dateTimePicker1.Value = competition.DateCompetition;
                 
                 editCompetition.ShowDialog();
                 if (editCompetition.result == true)
                 {
                     competition.Title = editCompetition.TitleBox.Text;
                     competition.Location = editCompetition.LocationBox.Text;
-                    competition.Date = editCompetition.DateTimePicker1.Date;
+                    competition.DateCompetition = editCompetition.dateTimePicker1.Value;
 
                     db.SaveChanges();
                     dataGridView1.Refresh();
@@ -112,12 +113,12 @@ namespace CompetitionProject
                 if (converted == false)
                     return;
                 CompetitionClasses.Competition competition = db.Competitions.Find(id);
-                Competition infoCompetition = new Competition();
-                infoCompetition.Title.Text = competition.Title;
-                infoCompetition.Location.Text = competition.Location;
-                infoCompetition.TimeDate.Date = competition.TimeDate;
-                infoCompetition.TypeSport.Text = competition.TypeSport;
-                infoCompetition.BriefInformation.Text = competition.BriefInformation;
+                InfoCompetition infoCompetition = new InfoCompetition();
+                infoCompetition.Title.Text= competition.Title;
+                infoCompetition.PlaceLocation.Text = competition.Location;
+                infoCompetition.TimeDate.Text = competition.DateCompetition.ToString();
+                //
+                infoCompetition.BriefInfo.Text = competition.BriefInformation;
 
                 infoCompetition.ShowDialog();
             }
@@ -133,6 +134,11 @@ namespace CompetitionProject
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void RefreshButton_Click_1(object sender, EventArgs e)
         {
 
         }

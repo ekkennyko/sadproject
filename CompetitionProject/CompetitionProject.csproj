@@ -234,6 +234,10 @@
     <Compile Include="Migrations\202004090338573_FifthSad3.3.designer.cs">
       <DependentUpon>202004090338573_FifthSad3.3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004090748258_FifthSad3.4.cs" />
+    <Compile Include="Migrations\202004090748258_FifthSad3.4.designer.cs">
+      <DependentUpon>202004090748258_FifthSad3.4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="EditCompetition.cs">
       <SubType>Form</SubType>
@@ -339,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004090338573_FifthSad3.3.resx">
       <DependentUpon>202004090338573_FifthSad3.3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004090748258_FifthSad3.4.resx">
+      <DependentUpon>202004090748258_FifthSad3.4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

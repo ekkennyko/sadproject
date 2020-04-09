@@ -126,6 +126,6 @@ namespace CompetitionProject.Migrations
         protected internal System.Windows.Forms.TextBox TitleBox;
         protected internal System.Windows.Forms.TextBox LocationBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        protected internal System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

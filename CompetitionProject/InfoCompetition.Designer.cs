@@ -246,23 +246,23 @@
 
         #endregion
 
-        private System.Windows.Forms.Label Title;
-        private System.Windows.Forms.Label PlaceLocation;
+        protected internal System.Windows.Forms.Label Title;
+        protected internal System.Windows.Forms.Label PlaceLocation;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label TimeDate;
-        private System.Windows.Forms.Label TypeSport;
-        private System.Windows.Forms.Label BriefInfo;
+        protected internal System.Windows.Forms.Label TimeDate;
+        protected internal System.Windows.Forms.Label TypeSport;
+        protected internal System.Windows.Forms.Label BriefInfo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ListBox ParticipantList;
+        protected internal System.Windows.Forms.ListBox ParticipantList;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListBox CategoryList;
+        protected internal System.Windows.Forms.ListBox CategoryList;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ListBox OrgList;
-        private System.Windows.Forms.ListBox JudgeList;
+        protected internal System.Windows.Forms.ListBox OrgList;
+        protected internal System.Windows.Forms.ListBox JudgeList;
     }
 }
