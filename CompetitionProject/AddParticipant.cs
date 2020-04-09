@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CompetitionClasses;
 using DataBaseArch;
+using CompetitionClasses;
 
 namespace CompetitionProject
 {
@@ -38,12 +38,31 @@ namespace CompetitionProject
                 SportClub = SportClub.Text,
                 Rank = Rank.Text,
                 Weight = double.Parse(Weight.Text),
-                Email = Email.Text
+                Email = Email.Text,
+                Passport = Passport.Text
             };
-            addParticipant.Participants.Add(newParticipant);
-            addParticipant.SaveChanges();
-            MessageBox.Show("Новый участник добавлен");
-            this.Close();
+            try
+            {
+                var participant = addParticipant.Participants;
+                foreach (CompetitionClasses.Participant pt in participant)
+                {
+                    if (Passport.Text != pt.Passport)
+                    {
+                        addParticipant.Participants.Add(newParticipant);
+                        addParticipant.SaveChanges();
+                        MessageBox.Show("Новый участник добавлен");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Такой участник уже существует");
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при добавлении");
+            }
 
         }
 

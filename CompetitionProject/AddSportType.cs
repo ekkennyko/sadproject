@@ -27,10 +27,28 @@ namespace CompetitionProject
                 Name = NameSport.Text,
                 Type = Type.Text,
             };
-            addSportType.SportTypes.Add(newSportType);
-            addSportType.SaveChanges();
-            MessageBox.Show("Новый вид спорта добавлен");
-            this.Close();
+            try
+            {
+                var sportype = addSportType.SportTypes;
+                foreach (SportType st in sportype)
+                {
+                    if (NameSport.Text != st.Name && Type.Text != st.Type)
+                    {
+                        addSportType.SportTypes.Add(newSportType);
+                        addSportType.SaveChanges();
+                        MessageBox.Show("Новый вид спорта добавлен");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Такой вид спорта уже сущесвует");
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при добавлении");
+            }
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

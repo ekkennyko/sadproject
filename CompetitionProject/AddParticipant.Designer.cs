@@ -50,12 +50,14 @@
             this.TimeDate = new System.Windows.Forms.DateTimePicker();
             this.CancelButton = new System.Windows.Forms.Button();
             this.Gender = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.Passport = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // OkButton
             // 
             this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OkButton.Location = new System.Drawing.Point(151, 308);
+            this.OkButton.Location = new System.Drawing.Point(195, 336);
             this.OkButton.Name = "OkButton";
             this.OkButton.Size = new System.Drawing.Size(87, 27);
             this.OkButton.TabIndex = 0;
@@ -166,7 +168,7 @@
             // LastName
             // 
             this.LastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LastName.Location = new System.Drawing.Point(151, 11);
+            this.LastName.Location = new System.Drawing.Point(195, 9);
             this.LastName.Name = "LastName";
             this.LastName.Size = new System.Drawing.Size(180, 21);
             this.LastName.TabIndex = 11;
@@ -175,7 +177,7 @@
             // FirstName
             // 
             this.FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FirstName.Location = new System.Drawing.Point(151, 41);
+            this.FirstName.Location = new System.Drawing.Point(195, 39);
             this.FirstName.Name = "FirstName";
             this.FirstName.Size = new System.Drawing.Size(180, 21);
             this.FirstName.TabIndex = 12;
@@ -183,7 +185,7 @@
             // MiddleName
             // 
             this.MiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MiddleName.Location = new System.Drawing.Point(151, 71);
+            this.MiddleName.Location = new System.Drawing.Point(195, 69);
             this.MiddleName.Name = "MiddleName";
             this.MiddleName.Size = new System.Drawing.Size(180, 21);
             this.MiddleName.TabIndex = 14;
@@ -191,7 +193,7 @@
             // CrntRegion
             // 
             this.CrntRegion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CrntRegion.Location = new System.Drawing.Point(151, 161);
+            this.CrntRegion.Location = new System.Drawing.Point(195, 159);
             this.CrntRegion.Name = "CrntRegion";
             this.CrntRegion.Size = new System.Drawing.Size(180, 21);
             this.CrntRegion.TabIndex = 16;
@@ -199,7 +201,7 @@
             // SportClub
             // 
             this.SportClub.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SportClub.Location = new System.Drawing.Point(151, 191);
+            this.SportClub.Location = new System.Drawing.Point(195, 189);
             this.SportClub.Name = "SportClub";
             this.SportClub.Size = new System.Drawing.Size(180, 21);
             this.SportClub.TabIndex = 17;
@@ -207,7 +209,7 @@
             // Rank
             // 
             this.Rank.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Rank.Location = new System.Drawing.Point(151, 221);
+            this.Rank.Location = new System.Drawing.Point(195, 219);
             this.Rank.Name = "Rank";
             this.Rank.Size = new System.Drawing.Size(180, 21);
             this.Rank.TabIndex = 18;
@@ -215,7 +217,7 @@
             // Weight
             // 
             this.Weight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Weight.Location = new System.Drawing.Point(151, 251);
+            this.Weight.Location = new System.Drawing.Point(195, 249);
             this.Weight.Name = "Weight";
             this.Weight.Size = new System.Drawing.Size(180, 21);
             this.Weight.TabIndex = 19;
@@ -223,7 +225,7 @@
             // Email
             // 
             this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Email.Location = new System.Drawing.Point(151, 281);
+            this.Email.Location = new System.Drawing.Point(195, 279);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(180, 21);
             this.Email.TabIndex = 20;
@@ -231,7 +233,7 @@
             // TimeDate
             // 
             this.TimeDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TimeDate.Location = new System.Drawing.Point(151, 101);
+            this.TimeDate.Location = new System.Drawing.Point(195, 99);
             this.TimeDate.Name = "TimeDate";
             this.TimeDate.Size = new System.Drawing.Size(180, 21);
             this.TimeDate.TabIndex = 21;
@@ -240,7 +242,7 @@
             // CancelButton
             // 
             this.CancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CancelButton.Location = new System.Drawing.Point(244, 308);
+            this.CancelButton.Location = new System.Drawing.Point(288, 336);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(87, 27);
             this.CancelButton.TabIndex = 22;
@@ -254,16 +256,36 @@
             this.Gender.Items.AddRange(new object[] {
             "Мужской",
             "Женский"});
-            this.Gender.Location = new System.Drawing.Point(151, 131);
+            this.Gender.Location = new System.Drawing.Point(195, 129);
             this.Gender.Name = "Gender";
             this.Gender.Size = new System.Drawing.Size(180, 23);
             this.Gender.TabIndex = 23;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(14, 312);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(146, 15);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Паспорт (серия-номер):";
+            // 
+            // Passport
+            // 
+            this.Passport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Passport.Location = new System.Drawing.Point(195, 309);
+            this.Passport.Name = "Passport";
+            this.Passport.Size = new System.Drawing.Size(180, 21);
+            this.Passport.TabIndex = 25;
             // 
             // AddParticipant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 347);
+            this.ClientSize = new System.Drawing.Size(387, 378);
+            this.Controls.Add(this.Passport);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.Gender);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.TimeDate);
@@ -319,5 +341,7 @@
         private System.Windows.Forms.DateTimePicker TimeDate;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.ComboBox Gender;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox Passport;
     }
 }

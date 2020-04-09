@@ -55,7 +55,7 @@ namespace CompetitionProject
             }
             else
             {
-                MessageBox.Show("Для начала выберите участника");
+                MessageBox.Show("Выберите участника");
             }
         }
 
@@ -93,7 +93,7 @@ namespace CompetitionProject
             }
             else
             {
-                MessageBox.Show("Для начала выберите участника");
+                MessageBox.Show("Выберите участника");
             }
         }
 
@@ -123,7 +123,7 @@ namespace CompetitionProject
             }
             else
             {
-                MessageBox.Show("Для начала выберите участника");
+                MessageBox.Show("Выберите участника");
             }
         }
 

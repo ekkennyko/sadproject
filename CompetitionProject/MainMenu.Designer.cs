@@ -43,6 +43,7 @@
             this.Job = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.Email = new System.Windows.Forms.Label();
+            this.CategoryButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // competitionButton
@@ -70,7 +71,7 @@
             // typeSportButton
             // 
             this.typeSportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.typeSportButton.Location = new System.Drawing.Point(360, 81);
+            this.typeSportButton.Location = new System.Drawing.Point(360, 80);
             this.typeSportButton.Name = "typeSportButton";
             this.typeSportButton.Size = new System.Drawing.Size(118, 27);
             this.typeSportButton.TabIndex = 2;
@@ -81,7 +82,7 @@
             // reportButton
             // 
             this.reportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reportButton.Location = new System.Drawing.Point(360, 114);
+            this.reportButton.Location = new System.Drawing.Point(360, 146);
             this.reportButton.Name = "reportButton";
             this.reportButton.Size = new System.Drawing.Size(118, 27);
             this.reportButton.TabIndex = 3;
@@ -92,7 +93,7 @@
             // exitButton
             // 
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exitButton.Location = new System.Drawing.Point(360, 148);
+            this.exitButton.Location = new System.Drawing.Point(360, 179);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(118, 27);
             this.exitButton.TabIndex = 4;
@@ -200,11 +201,23 @@
             this.Email.TabIndex = 14;
             this.Email.Text = "Email";
             // 
+            // CategoryButton
+            // 
+            this.CategoryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CategoryButton.Location = new System.Drawing.Point(360, 113);
+            this.CategoryButton.Name = "CategoryButton";
+            this.CategoryButton.Size = new System.Drawing.Size(118, 27);
+            this.CategoryButton.TabIndex = 15;
+            this.CategoryButton.Text = "Категории";
+            this.CategoryButton.UseVisualStyleBackColor = true;
+            this.CategoryButton.Click += new System.EventHandler(this.CategoryButton_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 185);
+            this.ClientSize = new System.Drawing.Size(492, 216);
+            this.Controls.Add(this.CategoryButton);
             this.Controls.Add(this.Email);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.Job);
@@ -246,5 +259,6 @@
         protected internal System.Windows.Forms.Label Job;
         private System.Windows.Forms.Label label9;
         protected internal System.Windows.Forms.Label Email;
+        private System.Windows.Forms.Button CategoryButton;
     }
 }

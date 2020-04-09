@@ -81,7 +81,7 @@
             // InfoButton
             // 
             this.InfoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.InfoButton.Location = new System.Drawing.Point(645, 168);
+            this.InfoButton.Location = new System.Drawing.Point(645, 169);
             this.InfoButton.Margin = new System.Windows.Forms.Padding(2);
             this.InfoButton.Name = "InfoButton";
             this.InfoButton.Size = new System.Drawing.Size(128, 31);
@@ -134,7 +134,7 @@
             // RefreshButton
             // 
             this.RefreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RefreshButton.Location = new System.Drawing.Point(645, 220);
+            this.RefreshButton.Location = new System.Drawing.Point(645, 221);
             this.RefreshButton.Margin = new System.Windows.Forms.Padding(2);
             this.RefreshButton.Name = "RefreshButton";
             this.RefreshButton.Size = new System.Drawing.Size(128, 31);

@@ -95,9 +95,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(14, 192);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(28, 15);
+            this.label9.Size = new System.Drawing.Size(31, 15);
             this.label9.TabIndex = 33;
-            this.label9.Text = "Вес";
+            this.label9.Text = "Вес:";
             // 
             // label8
             // 
@@ -105,9 +105,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(14, 162);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 15);
+            this.label8.Size = new System.Drawing.Size(52, 15);
             this.label8.TabIndex = 32;
-            this.label8.Text = "Разряд";
+            this.label8.Text = "Разряд:";
             // 
             // label7
             // 
@@ -115,9 +115,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(14, 132);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 15);
+            this.label7.Size = new System.Drawing.Size(111, 15);
             this.label7.TabIndex = 31;
-            this.label7.Text = "Спортивный клуб";
+            this.label7.Text = "Спортивный клуб:";
             // 
             // label6
             // 
@@ -125,9 +125,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(14, 102);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 15);
+            this.label6.Size = new System.Drawing.Size(51, 15);
             this.label6.TabIndex = 30;
-            this.label6.Text = "Регион";
+            this.label6.Text = "Регион:";
             // 
             // label3
             // 
@@ -135,9 +135,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(14, 74);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 15);
+            this.label3.Size = new System.Drawing.Size(66, 15);
             this.label3.TabIndex = 27;
-            this.label3.Text = "Отчество";
+            this.label3.Text = "Отчество:";
             // 
             // label2
             // 
@@ -145,9 +145,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(14, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 15);
+            this.label2.Size = new System.Drawing.Size(35, 15);
             this.label2.TabIndex = 26;
-            this.label2.Text = "Имя";
+            this.label2.Text = "Имя:";
             // 
             // label1
             // 
@@ -155,9 +155,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(14, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 15);
+            this.label1.Size = new System.Drawing.Size(65, 15);
             this.label1.TabIndex = 25;
-            this.label1.Text = "Фамилия";
+            this.label1.Text = "Фамилия:";
             // 
             // OkButton
             // 

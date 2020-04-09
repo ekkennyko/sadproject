@@ -68,8 +68,7 @@ namespace CompetitionClasses
         public string Region { get; set; }
         public string SportClub { get; set; }
         public string Rank { get; set; }
-        private string PassportSerial { get; set; }
-        private string PassportNumber { get; set; }
+        public string Passport { get; set; }
 
         public int? CompetitionId { get; set; }
         public virtual Competition Competition { get; set; }
@@ -80,9 +79,10 @@ namespace CompetitionClasses
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CategoryId { get; set; }
-        public int Age { get; set; }
-        public double Weight { get; set; }
-        public bool Gender { get; set; }
+        public string Name { get; set; }
+        public string Age { get; set; }
+        public string Weight { get; set; }
+        public string Gender { get; set; }
 
         public int? CompetitionId { get; set; }
         public virtual Competition Competition { get; set; }

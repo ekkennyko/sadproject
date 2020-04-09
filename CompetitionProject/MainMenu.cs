@@ -56,5 +56,11 @@ namespace CompetitionProject
             FormReport formReport = new FormReport();
             formReport.Show();
         }
+
+        private void CategoryButton_Click(object sender, EventArgs e)
+        {
+            FormCategory formCategory = new FormCategory();
+            formCategory.Show();
+        }
     }
 }

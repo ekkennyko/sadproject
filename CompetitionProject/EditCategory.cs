@@ -7,28 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DataBaseArch;
-using CompetitionClasses;
 
 namespace CompetitionProject
 {
-    public partial class EditParticipant : Form
+    public partial class EditCategory : Form
     {
         protected internal bool result = false;
-        public EditParticipant()
-        { 
+        public EditCategory()
+        {
             InitializeComponent();
         }
 
         private void OkButton_Click(object sender, EventArgs e)
         {
             result = true;
-            this.Close();
-        }
-
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-            result = false;
             this.Close();
         }
     }

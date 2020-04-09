@@ -100,6 +100,12 @@
     <Compile Include="Authorization.Designer.cs">
       <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCategory.Designer.cs">
+      <DependentUpon>EditCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditParticipant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,18 @@
     </Compile>
     <Compile Include="EditSportType.Designer.cs">
       <DependentUpon>EditSportType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCategory.Designer.cs">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCategory.Designer.cs">
+      <DependentUpon>FormCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCompetition.cs">
       <SubType>Form</SubType>
@@ -200,6 +218,22 @@
     <Compile Include="Migrations\202004010345229_FifthSad2.designer.cs">
       <DependentUpon>202004010345229_FifthSad2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004090226210_FifthSad3.cs" />
+    <Compile Include="Migrations\202004090226210_FifthSad3.designer.cs">
+      <DependentUpon>202004090226210_FifthSad3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004090229208_FifthSad3.1.cs" />
+    <Compile Include="Migrations\202004090229208_FifthSad3.1.designer.cs">
+      <DependentUpon>202004090229208_FifthSad3.1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004090333388_FifthSad3.2.cs" />
+    <Compile Include="Migrations\202004090333388_FifthSad3.2.designer.cs">
+      <DependentUpon>202004090333388_FifthSad3.2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004090338573_FifthSad3.3.cs" />
+    <Compile Include="Migrations\202004090338573_FifthSad3.3.designer.cs">
+      <DependentUpon>202004090338573_FifthSad3.3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ObjectClass.cs" />
     <Compile Include="Program.cs" />
@@ -216,11 +250,20 @@
     <EmbeddedResource Include="Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditCategory.resx">
+      <DependentUpon>EditCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditParticipant.resx">
       <DependentUpon>EditParticipant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditSportType.resx">
       <DependentUpon>EditSportType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCategory.resx">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCategory.resx">
+      <DependentUpon>FormCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCompetition.resx">
       <DependentUpon>FormCompetition.cs</DependentUpon>
@@ -275,6 +318,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004010345229_FifthSad2.resx">
       <DependentUpon>202004010345229_FifthSad2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004090226210_FifthSad3.resx">
+      <DependentUpon>202004090226210_FifthSad3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004090229208_FifthSad3.1.resx">
+      <DependentUpon>202004090229208_FifthSad3.1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004090333388_FifthSad3.2.resx">
+      <DependentUpon>202004090333388_FifthSad3.2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004090338573_FifthSad3.3.resx">
+      <DependentUpon>202004090338573_FifthSad3.3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
