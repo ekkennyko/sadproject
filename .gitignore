@@ -1,4 +1,5 @@
 bin
 obj
 EntityFramework.6.4.0
+iTextSharp.5.5.13.1
 *.suo
