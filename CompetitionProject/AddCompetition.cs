@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataBaseArch;
+using CompetitionClasses;
 
 namespace CompetitionProject
 {
@@ -19,12 +21,14 @@ namespace CompetitionProject
 
         private void ParticipantButton_Click(object sender, EventArgs e)
         {
-
+            SelectParticipant selectParticipant = new SelectParticipant();
+            selectParticipant.ShowDialog();
         }
 
         private void CategoryButton_Click(object sender, EventArgs e)
         {
-
+            SelectCategory selectCategory = new SelectCategory();
+            selectCategory.ShowDialog();
         }
 
         private void AddCompetition_Load(object sender, EventArgs e)
@@ -34,17 +38,20 @@ namespace CompetitionProject
 
         private void SportButton_Click(object sender, EventArgs e)
         {
-
+            SelectSportType selectSportType = new SelectSportType();
+            selectSportType.ShowDialog();
         }
 
         private void JudgeButton_Click(object sender, EventArgs e)
         {
-
+            SelectJudge selectJudge = new SelectJudge();
+            selectJudge.ShowDialog();
         }
 
         private void OrgButton_Click(object sender, EventArgs e)
         {
-
+            SelectOrganizator selectOrganizator = new SelectOrganizator();
+            selectOrganizator.ShowDialog();
         }
 
         private void Cancel_Click(object sender, EventArgs e)

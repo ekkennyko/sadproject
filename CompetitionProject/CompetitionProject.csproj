@@ -257,6 +257,36 @@
     <Compile Include="ResultEdit.Designer.cs">
       <DependentUpon>ResultEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelectCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectCategory.Designer.cs">
+      <DependentUpon>SelectCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectJudge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectJudge.Designer.cs">
+      <DependentUpon>SelectJudge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectOrganizator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectOrganizator.Designer.cs">
+      <DependentUpon>SelectOrganizator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectParticipant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectParticipant.Designer.cs">
+      <DependentUpon>SelectParticipant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectSportType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectSportType.Designer.cs">
+      <DependentUpon>SelectSportType.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddCompetition.resx">
       <DependentUpon>AddCompetition.cs</DependentUpon>
     </EmbeddedResource>
@@ -368,6 +398,21 @@
     </Compile>
     <EmbeddedResource Include="ResultEdit.resx">
       <DependentUpon>ResultEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectCategory.resx">
+      <DependentUpon>SelectCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectJudge.resx">
+      <DependentUpon>SelectJudge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectOrganizator.resx">
+      <DependentUpon>SelectOrganizator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectParticipant.resx">
+      <DependentUpon>SelectParticipant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectSportType.resx">
+      <DependentUpon>SelectSportType.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CompetitionClasses.Participant.datasource" />
