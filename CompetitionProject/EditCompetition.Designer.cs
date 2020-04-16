@@ -36,6 +36,8 @@ namespace CompetitionProject.Migrations
             this.LocationBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.CancelButton = new System.Windows.Forms.Button();
+            this.OkButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -90,11 +92,33 @@ namespace CompetitionProject.Migrations
             this.dateTimePicker1.TabIndex = 59;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
+            // CancelButton
+            // 
+            this.CancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CancelButton.Location = new System.Drawing.Point(253, 136);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(87, 27);
+            this.CancelButton.TabIndex = 61;
+            this.CancelButton.Text = "Отмена";
+            this.CancelButton.UseVisualStyleBackColor = true;
+            // 
+            // OkButton
+            // 
+            this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OkButton.Location = new System.Drawing.Point(162, 136);
+            this.OkButton.Name = "OkButton";
+            this.OkButton.Size = new System.Drawing.Size(87, 27);
+            this.OkButton.TabIndex = 60;
+            this.OkButton.Text = "Ок";
+            this.OkButton.UseVisualStyleBackColor = true;
+            // 
             // EditCompetition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(343, 175);
+            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.OkButton);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.LocationBox);
             this.Controls.Add(this.TitleBox);
@@ -127,5 +151,7 @@ namespace CompetitionProject.Migrations
         protected internal System.Windows.Forms.TextBox LocationBox;
         private System.Windows.Forms.Label label2;
         protected internal System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button OkButton;
     }
 }

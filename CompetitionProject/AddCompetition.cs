@@ -61,7 +61,43 @@ namespace CompetitionProject
 
         private void OkButton_Click(object sender, EventArgs e)
         {
+            {
+                CompetitionDB addCompetition = new CompetitionDB();
+                CompetitionClasses.Competition newCompetition = new CompetitionClasses.Competition()
+                {
+                    Title = Title.Text,
+                    Location = PlaceLocation.Text,
+                    DateCompetition = dateTimePicker1.Value,
+                    Organizators = OrgButton.String,
 
+
+
+
+                    BriefInformation=BriefInfo.Text,
+                };
+                try
+                {
+                    var competition = addCompetition.Competitions;
+                    foreach (Competition comp in competition)
+                    {
+                        if (Title.Text != comp.Title && PlaceLocation.Text != comp.Location)
+                        {
+                            addCompetition.Competitions.Add(newCompetition);
+                            addCompetition.SaveChanges();
+                            MessageBox.Show("Новое соревнование добавлено");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Такое соревнование уже существует");
+                        }
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка при добавлении");
+                }
+            }
         }
 
         private void Title_TextChanged(object sender, EventArgs e)
