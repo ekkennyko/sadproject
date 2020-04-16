@@ -49,6 +49,7 @@
             this.CancelButton.TabIndex = 60;
             this.CancelButton.Text = "Отмена";
             this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // WeightBox
             // 

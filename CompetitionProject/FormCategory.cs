@@ -36,8 +36,8 @@ namespace CompetitionProject
                 bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
                 if (converted == false)
                     return;
-                CompetitionClasses.Participant participant = db.Participants.Find(id);
-                db.Participants.Remove(participant);
+                CompetitionClasses.Category category = db.Categories.Find(id);
+                db.Categories.Remove(category);
                 db.SaveChanges();
                 MessageBox.Show("Категория удалена");
 

@@ -28,5 +28,11 @@ namespace CompetitionProject
         {
 
         }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            result = false;
+            this.Close();
+        }
     }
 }

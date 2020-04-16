@@ -55,7 +55,7 @@ namespace CompetitionProject
             }
             else
             {
-                MessageBox.Show("Для начала выберите вид спорта");
+                MessageBox.Show("Сначала выберите вид спорта");
             }
         }
 
@@ -85,7 +85,7 @@ namespace CompetitionProject
                 }
                 else
                 {
-                    MessageBox.Show("Для начала выберите вид спорта");
+                    MessageBox.Show("Сначала выберите вид спорта");
                 }
             }
         }
@@ -107,7 +107,7 @@ namespace CompetitionProject
             }
             else
             {
-                MessageBox.Show("Для начала выберите вид спорта");
+                MessageBox.Show("Сначала выберите вид спорта");
             }
         }
 
