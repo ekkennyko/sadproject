@@ -87,6 +87,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Password.Location = new System.Drawing.Point(14, 80);
             this.Password.Name = "Password";
+            this.Password.PasswordChar = '*';
             this.Password.Size = new System.Drawing.Size(277, 21);
             this.Password.TabIndex = 4;
             // 

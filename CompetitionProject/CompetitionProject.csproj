@@ -84,6 +84,12 @@
     <Compile Include="AddCompetition.Designer.cs">
       <DependentUpon>AddCompetition.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddEmployeeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmployeeAdmin.Designer.cs">
+      <DependentUpon>AddEmployeeAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddParticipant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,12 @@
     </Compile>
     <Compile Include="FormCompetition.Designer.cs">
       <DependentUpon>FormCompetition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEmployeeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmployeeAdmin.Designer.cs">
+      <DependentUpon>FormEmployeeAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="FormReport.cs">
       <SubType>Form</SubType>
@@ -241,6 +253,10 @@
     <Compile Include="Migrations\202004090748258_FifthSad3.4.designer.cs">
       <DependentUpon>202004090748258_FifthSad3.4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004171009401_TestSad.cs" />
+    <Compile Include="Migrations\202004171009401_TestSad.designer.cs">
+      <DependentUpon>202004171009401_TestSad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="EditCompetition.cs">
       <SubType>Form</SubType>
@@ -290,6 +306,9 @@
     <EmbeddedResource Include="AddCompetition.resx">
       <DependentUpon>AddCompetition.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddEmployeeAdmin.resx">
+      <DependentUpon>AddEmployeeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddParticipant.resx">
       <DependentUpon>AddParticipant.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCompetition.resx">
       <DependentUpon>FormCompetition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmployeeAdmin.resx">
+      <DependentUpon>FormEmployeeAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReport.resx">
       <DependentUpon>FormReport.cs</DependentUpon>
@@ -385,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004090748258_FifthSad3.4.resx">
       <DependentUpon>202004090748258_FifthSad3.4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004171009401_TestSad.resx">
+      <DependentUpon>202004171009401_TestSad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

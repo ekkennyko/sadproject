@@ -68,7 +68,7 @@ namespace CompetitionProject
                     Title = Title.Text,
                     Location = PlaceLocation.Text,
                     DateCompetition = dateTimePicker1.Value,
-                    Organizators = OrgButton.String,
+                    //Organizators = OrgButton.String,
 
 
 
@@ -106,6 +106,11 @@ namespace CompetitionProject
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
 
         }

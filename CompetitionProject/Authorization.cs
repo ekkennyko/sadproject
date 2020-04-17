@@ -26,7 +26,7 @@ namespace CompetitionProject
         }
 
         private void OkButton_Click(object sender, EventArgs e)
-        { 
+        {
             var employee = autho.Employees;
             foreach (Employee au in employee)
             {
@@ -43,7 +43,7 @@ namespace CompetitionProject
                 }
                 else
                 {
-                    MessageBox.Show("Ошибка");
+                    MessageBox.Show("Неверный логин или пароль");
                 }
             }
         }

@@ -44,6 +44,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.Email = new System.Windows.Forms.Label();
             this.CategoryButton = new System.Windows.Forms.Button();
+            this.EmployeeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // competitionButton
@@ -212,11 +213,23 @@
             this.CategoryButton.UseVisualStyleBackColor = true;
             this.CategoryButton.Click += new System.EventHandler(this.CategoryButton_Click);
             // 
+            // EmployeeButton
+            // 
+            this.EmployeeButton.BackColor = System.Drawing.Color.Crimson;
+            this.EmployeeButton.Location = new System.Drawing.Point(250, 14);
+            this.EmployeeButton.Name = "EmployeeButton";
+            this.EmployeeButton.Size = new System.Drawing.Size(104, 27);
+            this.EmployeeButton.TabIndex = 16;
+            this.EmployeeButton.Text = "Сотрудники";
+            this.EmployeeButton.UseVisualStyleBackColor = false;
+            this.EmployeeButton.Click += new System.EventHandler(this.OrgButton_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 216);
+            this.Controls.Add(this.EmployeeButton);
             this.Controls.Add(this.CategoryButton);
             this.Controls.Add(this.Email);
             this.Controls.Add(this.label9);
@@ -260,5 +273,6 @@
         private System.Windows.Forms.Label label9;
         protected internal System.Windows.Forms.Label Email;
         private System.Windows.Forms.Button CategoryButton;
+        private System.Windows.Forms.Button EmployeeButton;
     }
 }

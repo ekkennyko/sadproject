@@ -25,7 +25,10 @@ namespace CompetitionProject
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-
+            if(Job.Text == "Организатор" || Job.Text == "Судья")
+            {
+                EmployeeButton.Visible = false;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -61,6 +64,12 @@ namespace CompetitionProject
         {
             FormCategory formCategory = new FormCategory();
             formCategory.Show();
+        }
+
+        private void OrgButton_Click(object sender, EventArgs e)
+        {
+            FormEmployeeAdmin employeeAdmin = new FormEmployeeAdmin();
+            employeeAdmin.Show();
         }
     }
 }
