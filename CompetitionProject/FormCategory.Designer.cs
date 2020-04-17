@@ -34,13 +34,14 @@
             this.RemoveButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
+            this.infoButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // RefreshButton
             // 
             this.RefreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RefreshButton.Location = new System.Drawing.Point(645, 169);
+            this.RefreshButton.Location = new System.Drawing.Point(645, 217);
             this.RefreshButton.Margin = new System.Windows.Forms.Padding(2);
             this.RefreshButton.Name = "RefreshButton";
             this.RefreshButton.Size = new System.Drawing.Size(128, 31);
@@ -111,11 +112,24 @@
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
+            // infoButton
+            // 
+            this.infoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.infoButton.Location = new System.Drawing.Point(645, 166);
+            this.infoButton.Margin = new System.Windows.Forms.Padding(2);
+            this.infoButton.Name = "infoButton";
+            this.infoButton.Size = new System.Drawing.Size(128, 31);
+            this.infoButton.TabIndex = 18;
+            this.infoButton.Text = "Информация";
+            this.infoButton.UseVisualStyleBackColor = true;
+            this.infoButton.Click += new System.EventHandler(this.InfoButton_Click);
+            // 
             // FormCategory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 370);
+            this.Controls.Add(this.infoButton);
             this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.MenuButton);
             this.Controls.Add(this.dataGridView1);
@@ -138,5 +152,6 @@
         private System.Windows.Forms.Button RemoveButton;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button EditButton;
+        private System.Windows.Forms.Button infoButton;
     }
 }

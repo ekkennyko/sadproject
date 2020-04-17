@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
+using CompetitionClasses;
 using DataBaseArch;
 
 namespace CompetitionProject
@@ -96,6 +97,31 @@ namespace CompetitionProject
                     dataGridView1.Refresh();
                     MessageBox.Show("Информация о участнике обновлена");
                 }
+            }
+            else
+            {
+                MessageBox.Show("Выберите участника");
+            }
+        }
+
+        private void InfoButton_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                int index = dataGridView1.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                if (converted == false)
+                    return;
+                CompetitionClasses.Category category = db.Categories.Find(id);
+                InfoCategory infoCategory = new InfoCategory();
+                infoCategory.Name.Text= category.Name;
+                infoCategory.Age.Text = category.Age;
+                infoCategory.Weight.Text = category.Weight;
+                infoCategory.Gender.Text = category.Gender;
+                
+
+                infoCategory.ShowDialog();
             }
             else
             {

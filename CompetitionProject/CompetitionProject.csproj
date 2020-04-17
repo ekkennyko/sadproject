@@ -163,6 +163,12 @@
     <Compile Include="FormParticipant.Designer.cs">
       <DependentUpon>FormParticipant.cs</DependentUpon>
     </Compile>
+    <Compile Include="InfoCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoCategory.Designer.cs">
+      <DependentUpon>InfoCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="InfoCompetition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -347,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormParticipant.resx">
       <DependentUpon>FormParticipant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoCategory.resx">
+      <DependentUpon>InfoCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InfoCompetition.resx">
       <DependentUpon>InfoCompetition.cs</DependentUpon>
