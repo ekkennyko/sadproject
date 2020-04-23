@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectCategory));
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.CancelButton = new System.Windows.Forms.Button();
             this.OkButton = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(12, 12);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(268, 144);
             this.dataGridView.TabIndex = 10;
@@ -70,6 +72,7 @@
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OkButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SelectCategory";
             this.Text = "SelectCategory";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();

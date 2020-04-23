@@ -114,5 +114,10 @@ namespace CompetitionProject
         {
             dgvtopdf(dataGridView1, "Отчет");
         }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

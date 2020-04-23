@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSportType));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuButton = new System.Windows.Forms.Button();
             this.infoButton = new System.Windows.Forms.Button();
@@ -42,7 +43,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(13, 13);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -65,7 +66,7 @@
             // 
             this.infoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.infoButton.Location = new System.Drawing.Point(645, 167);
-            this.infoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.infoButton.Margin = new System.Windows.Forms.Padding(2);
             this.infoButton.Name = "infoButton";
             this.infoButton.Size = new System.Drawing.Size(128, 31);
             this.infoButton.TabIndex = 14;
@@ -77,7 +78,7 @@
             // 
             this.removeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.removeButton.Location = new System.Drawing.Point(645, 117);
-            this.removeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.removeButton.Margin = new System.Windows.Forms.Padding(2);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(128, 31);
             this.removeButton.TabIndex = 13;
@@ -89,7 +90,7 @@
             // 
             this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.editButton.Location = new System.Drawing.Point(645, 65);
-            this.editButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editButton.Margin = new System.Windows.Forms.Padding(2);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(128, 31);
             this.editButton.TabIndex = 12;
@@ -101,7 +102,7 @@
             // 
             this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.addButton.Location = new System.Drawing.Point(645, 13);
-            this.addButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addButton.Margin = new System.Windows.Forms.Padding(2);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(128, 31);
             this.addButton.TabIndex = 11;
@@ -113,7 +114,7 @@
             // 
             this.refreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.refreshButton.Location = new System.Drawing.Point(645, 219);
-            this.refreshButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refreshButton.Margin = new System.Windows.Forms.Padding(2);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(128, 31);
             this.refreshButton.TabIndex = 16;
@@ -123,7 +124,7 @@
             // 
             // FormSportType
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 370);
             this.Controls.Add(this.refreshButton);
@@ -134,7 +135,8 @@
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormSportType";
             this.Text = "Виды спорта";
             this.Load += new System.EventHandler(this.FormSportType_Load);

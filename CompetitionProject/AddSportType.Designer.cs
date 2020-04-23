@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSportType));
             this.Type = new System.Windows.Forms.ComboBox();
             this.NameSport = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,7 +47,7 @@
             "Водный"});
             this.Type.Location = new System.Drawing.Point(129, 39);
             this.Type.Name = "Type";
-            this.Type.Size = new System.Drawing.Size(191, 23);
+            this.Type.Size = new System.Drawing.Size(191, 26);
             this.Type.TabIndex = 18;
             // 
             // NameSport
@@ -55,7 +56,7 @@
             this.NameSport.Location = new System.Drawing.Point(129, 9);
             this.NameSport.Margin = new System.Windows.Forms.Padding(2);
             this.NameSport.Name = "NameSport";
-            this.NameSport.Size = new System.Drawing.Size(191, 21);
+            this.NameSport.Size = new System.Drawing.Size(191, 24);
             this.NameSport.TabIndex = 17;
             // 
             // label2
@@ -65,7 +66,7 @@
             this.label2.Location = new System.Drawing.Point(14, 42);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 15);
+            this.label2.Size = new System.Drawing.Size(37, 18);
             this.label2.TabIndex = 16;
             this.label2.Text = "Тип:";
             // 
@@ -76,7 +77,7 @@
             this.label1.Location = new System.Drawing.Point(14, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.Size = new System.Drawing.Size(79, 18);
             this.label1.TabIndex = 15;
             this.label1.Text = "Название:";
             // 
@@ -106,7 +107,7 @@
             // 
             // AddSportType
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(331, 111);
             this.Controls.Add(this.Type);
@@ -117,6 +118,7 @@
             this.Controls.Add(this.OkButton);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddSportType";
             this.Text = "Добавление вида спорта";

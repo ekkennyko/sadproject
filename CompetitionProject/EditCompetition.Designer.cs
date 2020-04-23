@@ -30,6 +30,7 @@ namespace CompetitionProject.Migrations
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditCompetition));
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TitleBox = new System.Windows.Forms.TextBox();
@@ -125,8 +126,9 @@ namespace CompetitionProject.Migrations
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditCompetition";
-            this.Text = "EditCompetition";
+            this.Text = "Редактирование соревнований";
             this.Load += new System.EventHandler(this.EditCompetition_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

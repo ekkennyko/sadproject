@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoCompetition));
             this.Title = new System.Windows.Forms.Label();
             this.PlaceLocation = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -237,6 +238,7 @@
             this.Controls.Add(this.PlaceLocation);
             this.Controls.Add(this.Title);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InfoCompetition";
             this.Text = "Информация о соревновании";
             this.ResumeLayout(false);

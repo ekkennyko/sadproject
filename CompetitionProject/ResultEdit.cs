@@ -23,5 +23,11 @@ namespace CompetitionProject
             result = true;
             this.Close();
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            result = false;
+            this.Close();
+        }
     }
 }

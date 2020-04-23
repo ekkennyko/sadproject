@@ -27,6 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.OkButton = new System.Windows.Forms.Button();
@@ -42,7 +43,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(14, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 15);
+            this.label1.Size = new System.Drawing.Size(50, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Логин";
             // 
@@ -54,7 +55,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(14, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 15);
+            this.label2.Size = new System.Drawing.Size(61, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Пароль";
             // 
@@ -66,7 +67,7 @@
             this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OkButton.Location = new System.Drawing.Point(14, 110);
             this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(67, 27);
+            this.OkButton.Size = new System.Drawing.Size(67, 28);
             this.OkButton.TabIndex = 2;
             this.OkButton.Text = "Войти";
             this.OkButton.UseVisualStyleBackColor = true;
@@ -78,7 +79,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Login.Location = new System.Drawing.Point(14, 32);
             this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(277, 21);
+            this.Login.Size = new System.Drawing.Size(277, 24);
             this.Login.TabIndex = 3;
             // 
             // Password
@@ -88,12 +89,12 @@
             this.Password.Location = new System.Drawing.Point(14, 80);
             this.Password.Name = "Password";
             this.Password.PasswordChar = '*';
-            this.Password.Size = new System.Drawing.Size(277, 21);
+            this.Password.Size = new System.Drawing.Size(277, 24);
             this.Password.TabIndex = 4;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(306, 150);
             this.Controls.Add(this.Password);
@@ -102,6 +103,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Авторизация";
             this.Load += new System.EventHandler(this.Form1_Load);

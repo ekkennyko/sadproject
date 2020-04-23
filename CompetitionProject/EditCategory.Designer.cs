@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditCategory));
             this.CancelButton = new System.Windows.Forms.Button();
             this.WeightBox = new System.Windows.Forms.TextBox();
             this.AgeBox = new System.Windows.Forms.TextBox();
@@ -153,6 +154,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.OkButton);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditCategory";
             this.Text = "Редактирование категории";
             this.ResumeLayout(false);
