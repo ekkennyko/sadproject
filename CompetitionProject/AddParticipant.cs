@@ -43,21 +43,21 @@ namespace CompetitionProject
             };
             try
             {
-                //var participant = addParticipant.Participants;
-                //foreach (CompetitionClasses.Participant pt in participant)
-                //{
-                   // if (Passport.Text != pt.Passport)
-                   // {
+                var participant = addParticipant.Participants;
+                foreach (CompetitionClasses.Participant pt in participant)
+                {
+                   if (Passport.Text != pt.Passport)
+                    {
                         addParticipant.Participants.Add(newParticipant);
                         addParticipant.SaveChanges();
                         MessageBox.Show("Новый участник добавлен");
                         this.Close();
-                   // }
-                   // else
-                  //  {
-                   //     MessageBox.Show("Такой участник уже существует");
-                  //  }
-                //}
+                    }
+                    else
+                    {
+                      MessageBox.Show("Такой участник уже существует");
+                    }
+                }
             }
             catch
             {
