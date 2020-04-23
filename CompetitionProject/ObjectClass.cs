@@ -30,7 +30,7 @@ namespace CompetitionClasses
         public virtual ICollection<CompetitionOrganizator> CompetitionsO { get; set; }
     }
 
-    public class CompetitionJudge 
+    public class CompetitionJudge
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -38,7 +38,7 @@ namespace CompetitionClasses
 
         public int JudgeId { get; set; }
         [ForeignKey("JudgeId")]
-        public Employee Judge{get;set;}
+        public Employee Judge { get; set; }
 
         public int? CompetitionId { get; set; }
         [ForeignKey("CompetitionId")]
@@ -85,21 +85,12 @@ namespace CompetitionClasses
         public string Gender { get; set; }
 
         public int? CompetitionId { get; set; }
-        public virtual Competition Competition { get; set; }
+        public Competition Competition { get; set; }
     }
 
-    public class SportType
-    {
-        [Key]
-        [ForeignKey("Competition")]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int SportTypeId { get; set; }
-        public string Name { get; set; }
-        public string Type { get; set; }
+    /// <summary>
 
-        public int? CompetitionId { get; set; }
-        public virtual Competition Competition { get; set; }
-    }
+    /// </summary>
 
     public class Report
     {
@@ -142,7 +133,8 @@ namespace CompetitionClasses
 
 
         public virtual Report Report { get; set; }
-        public virtual SportType Sports { get; set; }
+        public int SportTypeId { get; set; }
+        public virtual SportType SportType { get; set; }
         public virtual ICollection<Category> Categories { get; set; }
         public virtual ICollection<CompetitionResult> CompetitionResults { get; set; }
         public virtual ICollection<CompetitionJudge> Judges { get; set; }
@@ -151,10 +143,21 @@ namespace CompetitionClasses
         public Competition()
         {
             CompetitionResults = new List<CompetitionResult>();
-            Judges = new List<CompetitionJudge>();        
+            Judges = new List<CompetitionJudge>();
             Organizators = new List<CompetitionOrganizator>();
             Participants = new List<Participant>();
             Categories = new List<Category>();
         }
+    }
+    public class SportType
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int SportTypeId { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
+
+        //[ForeignKey("Competition")]
+        public virtual ICollection<Competition> Competitions { get; set; }
     }
 }

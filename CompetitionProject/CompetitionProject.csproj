@@ -263,6 +263,14 @@
     <Compile Include="Migrations\202004171009401_TestSad.designer.cs">
       <DependentUpon>202004171009401_TestSad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004230713268_testsad1.cs" />
+    <Compile Include="Migrations\202004230713268_testsad1.designer.cs">
+      <DependentUpon>202004230713268_testsad1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004230739035_testsad2.cs" />
+    <Compile Include="Migrations\202004230739035_testsad2.designer.cs">
+      <DependentUpon>202004230739035_testsad2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="EditCompetition.cs">
       <SubType>Form</SubType>
@@ -419,6 +427,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004171009401_TestSad.resx">
       <DependentUpon>202004171009401_TestSad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004230713268_testsad1.resx">
+      <DependentUpon>202004230713268_testsad1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004230739035_testsad2.resx">
+      <DependentUpon>202004230739035_testsad2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

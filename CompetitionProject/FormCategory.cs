@@ -115,7 +115,7 @@ namespace CompetitionProject
                     return;
                 CompetitionClasses.Category category = db.Categories.Find(id);
                 InfoCategory infoCategory = new InfoCategory();
-                infoCategory.Name.Text= category.Name;
+                infoCategory.Title.Text= category.Name;
                 infoCategory.Age.Text = category.Age;
                 infoCategory.Weight.Text = category.Weight;
                 infoCategory.Gender.Text = category.Gender;

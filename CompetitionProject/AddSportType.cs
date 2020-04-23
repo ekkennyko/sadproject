@@ -24,30 +24,39 @@ namespace CompetitionProject
         {
             SportType newSportType = new SportType()
             {
+                SportTypeId = 1,
                 Name = NameSport.Text,
                 Type = Type.Text,
             };
             try
             {
-                var sportype = addSportType.SportTypes;
-                foreach (SportType st in sportype)
-                {
-                    if (NameSport.Text != st.Name && Type.Text != st.Type)
-                    {
+                //var sportype = addSportType.SportTypes;
+                //foreach (SportType st in sportype)
+                //{
+                  //  if (NameSport.Text != st.Name && Type.Text != st.Type)
+                    //{
                         addSportType.SportTypes.Add(newSportType);
                         addSportType.SaveChanges();
                         MessageBox.Show("Новый вид спорта добавлен");
                         this.Close();
-                    }
-                    else
+                    //}
+                    //else
+                    //{
+                     //   MessageBox.Show("Такой вид спорта уже сущесвует");
+                    //}
+                //}
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException ex)
+            {
+                string s = "";
+                foreach (var et in ex.EntityValidationErrors)
+                {
+                    foreach (var er in et.ValidationErrors)
                     {
-                        MessageBox.Show("Такой вид спорта уже сущесвует");
+                        s += er.PropertyName + ". Message: " + er.ErrorMessage;
                     }
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Ошибка при добавлении");
+                MessageBox.Show(s);
             }
         }
 
