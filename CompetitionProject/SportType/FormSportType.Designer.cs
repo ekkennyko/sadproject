@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSportType));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuButton = new System.Windows.Forms.Button();
-            this.infoButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
@@ -61,18 +60,6 @@
             this.menuButton.Text = "Главное меню";
             this.menuButton.UseVisualStyleBackColor = true;
             this.menuButton.Click += new System.EventHandler(this.ToMenu_Click);
-            // 
-            // infoButton
-            // 
-            this.infoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoButton.Location = new System.Drawing.Point(645, 167);
-            this.infoButton.Margin = new System.Windows.Forms.Padding(2);
-            this.infoButton.Name = "infoButton";
-            this.infoButton.Size = new System.Drawing.Size(128, 31);
-            this.infoButton.TabIndex = 14;
-            this.infoButton.Text = "Информация";
-            this.infoButton.UseVisualStyleBackColor = true;
-            this.infoButton.Click += new System.EventHandler(this.InfoButton_Click);
             // 
             // removeButton
             // 
@@ -113,7 +100,7 @@
             // refreshButton
             // 
             this.refreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.refreshButton.Location = new System.Drawing.Point(645, 219);
+            this.refreshButton.Location = new System.Drawing.Point(645, 167);
             this.refreshButton.Margin = new System.Windows.Forms.Padding(2);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(128, 31);
@@ -124,12 +111,11 @@
             // 
             // FormSportType
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 370);
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.menuButton);
-            this.Controls.Add(this.infoButton);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.addButton);
@@ -148,7 +134,6 @@
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button menuButton;
-        private System.Windows.Forms.Button infoButton;
         private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button addButton;

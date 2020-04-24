@@ -56,7 +56,7 @@
             "Администратор"});
             this.Job.Location = new System.Drawing.Point(194, 99);
             this.Job.Name = "Job";
-            this.Job.Size = new System.Drawing.Size(180, 26);
+            this.Job.Size = new System.Drawing.Size(180, 23);
             this.Job.TabIndex = 47;
             // 
             // CancelButton
@@ -68,13 +68,14 @@
             this.CancelButton.TabIndex = 46;
             this.CancelButton.Text = "Отмена";
             this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // MiddleName
             // 
             this.MiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MiddleName.Location = new System.Drawing.Point(194, 72);
             this.MiddleName.Name = "MiddleName";
-            this.MiddleName.Size = new System.Drawing.Size(180, 24);
+            this.MiddleName.Size = new System.Drawing.Size(180, 21);
             this.MiddleName.TabIndex = 39;
             // 
             // FirstName
@@ -82,7 +83,7 @@
             this.FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FirstName.Location = new System.Drawing.Point(194, 42);
             this.FirstName.Name = "FirstName";
-            this.FirstName.Size = new System.Drawing.Size(180, 24);
+            this.FirstName.Size = new System.Drawing.Size(180, 21);
             this.FirstName.TabIndex = 38;
             // 
             // LastName
@@ -90,7 +91,7 @@
             this.LastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LastName.Location = new System.Drawing.Point(194, 12);
             this.LastName.Name = "LastName";
-            this.LastName.Size = new System.Drawing.Size(180, 24);
+            this.LastName.Size = new System.Drawing.Size(180, 21);
             this.LastName.TabIndex = 37;
             // 
             // label5
@@ -99,7 +100,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(14, 132);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 18);
+            this.label5.Size = new System.Drawing.Size(46, 15);
             this.label5.TabIndex = 31;
             this.label5.Text = "Почта:";
             // 
@@ -109,7 +110,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(14, 102);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 18);
+            this.label4.Size = new System.Drawing.Size(76, 15);
             this.label4.TabIndex = 30;
             this.label4.Text = "Должность:";
             // 
@@ -119,7 +120,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(14, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 18);
+            this.label3.Size = new System.Drawing.Size(66, 15);
             this.label3.TabIndex = 29;
             this.label3.Text = "Отчество:";
             // 
@@ -129,7 +130,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(12, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 18);
+            this.label2.Size = new System.Drawing.Size(35, 15);
             this.label2.TabIndex = 28;
             this.label2.Text = "Имя:";
             // 
@@ -139,7 +140,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(14, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 18);
+            this.label1.Size = new System.Drawing.Size(65, 15);
             this.label1.TabIndex = 27;
             this.label1.Text = "Фамилия:";
             // 
@@ -159,7 +160,7 @@
             this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Email.Location = new System.Drawing.Point(195, 129);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(180, 24);
+            this.Email.Size = new System.Drawing.Size(180, 21);
             this.Email.TabIndex = 48;
             // 
             // Login
@@ -167,7 +168,7 @@
             this.Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Login.Location = new System.Drawing.Point(195, 159);
             this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(180, 24);
+            this.Login.Size = new System.Drawing.Size(180, 21);
             this.Login.TabIndex = 50;
             // 
             // label6
@@ -176,7 +177,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(14, 162);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 18);
+            this.label6.Size = new System.Drawing.Size(44, 15);
             this.label6.TabIndex = 49;
             this.label6.Text = "Логин:";
             // 
@@ -185,7 +186,7 @@
             this.Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Password.Location = new System.Drawing.Point(195, 189);
             this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(180, 24);
+            this.Password.Size = new System.Drawing.Size(180, 21);
             this.Password.TabIndex = 52;
             // 
             // label7
@@ -194,13 +195,13 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(14, 192);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 18);
+            this.label7.Size = new System.Drawing.Size(54, 15);
             this.label7.TabIndex = 51;
             this.label7.Text = "Пароль:";
             // 
             // AddEmployeeAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 253);
             this.Controls.Add(this.Password);

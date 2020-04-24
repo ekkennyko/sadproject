@@ -24,7 +24,6 @@ namespace CompetitionProject
         {
             SportType newSportType = new SportType()
             {
-                SportTypeId = 1,
                 Name = NameSport.Text,
                 Type = Type.Text,
             };

@@ -7,18 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DataBaseArch;
-using CompetitionClasses;
 
-namespace CompetitionProject
+
+namespace CompetitionProject.Admin
 {
-    public partial class EditSportType : Form
+    public partial class EditEmployeeAdmin : Form
     {
-        CompetitionDB db;
-        public bool result = false;
-        public EditSportType()
+        protected internal bool result = false;
+        public EditEmployeeAdmin()
         {
             InitializeComponent();
+        }
+
+        private void EditEmployeeAdmin_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void OkButton_Click(object sender, EventArgs e)
@@ -31,11 +34,6 @@ namespace CompetitionProject
         {
             result = false;
             this.Close();
-        }
-
-        private void NameSport_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

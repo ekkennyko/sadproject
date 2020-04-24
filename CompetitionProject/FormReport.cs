@@ -50,7 +50,7 @@ namespace CompetitionProject
                 if (converted == false)
                     return;
                 CompetitionClasses.CompetitionResult competitionResult = db.CompetitionsResults.Find(id);
-                ResultEdit resultEdit = new ResultEdit();
+                EditResult resultEdit = new EditResult();
                 resultEdit.textBox1.Text = competitionResult.Position;
 
 

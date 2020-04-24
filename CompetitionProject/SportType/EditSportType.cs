@@ -7,27 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataBaseArch;
+using CompetitionClasses;
 
 namespace CompetitionProject
 {
-    public partial class ResultEdit : Form
+    public partial class EditSportType : Form
     {
+        CompetitionDB db;
         protected internal bool result = false;
-        public ResultEdit()
+        public EditSportType()
         {
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void OkButton_Click(object sender, EventArgs e)
         {
             result = true;
             this.Close();
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             result = false;
             this.Close();
+        }
+
+        private void NameSport_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

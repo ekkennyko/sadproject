@@ -133,6 +133,7 @@ namespace CompetitionClasses
 
 
         public virtual Report Report { get; set; }
+        [ForeignKey("SportType")]
         public int SportTypeId { get; set; }
         public virtual SportType SportType { get; set; }
         public virtual ICollection<Category> Categories { get; set; }
@@ -153,7 +154,7 @@ namespace CompetitionClasses
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int SportTypeId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
 
