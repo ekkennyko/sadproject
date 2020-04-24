@@ -29,21 +29,31 @@ namespace CompetitionProject
             };
             try
             {
-                //var sportype = addSportType.SportTypes;
-                //foreach (SportType st in sportype)
-                //{
-                  //  if (NameSport.Text != st.Name && Type.Text != st.Type)
-                    //{
+                bool res = false;
+                var sportype = addSportType.SportTypes;
+                foreach (CompetitionClasses.SportType st in sportype)
+                {
+                    if (NameSport.Text != st.Name && Type.Text != st.Type)
+                    {
                         addSportType.SportTypes.Add(newSportType);
                         addSportType.SaveChanges();
                         MessageBox.Show("Новый вид спорта добавлен");
+                        res = true;
                         this.Close();
-                    //}
-                    //else
-                    //{
-                     //   MessageBox.Show("Такой вид спорта уже сущесвует");
-                    //}
-                //}
+                    }
+                    else
+                    {
+                        res = true;
+                        MessageBox.Show("Такой вид спорта уже сущесвует");
+                    }
+                }
+                if (res == false)
+                {
+                    addSportType.SportTypes.Add(newSportType);
+                    addSportType.SaveChanges();
+                    MessageBox.Show("Новый вид спорта добавлен");
+                    this.Close();
+                }
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException ex)
             {

@@ -64,6 +64,7 @@ namespace CompetitionProject
             var result = from category in db.Categories
                          select new
                          {
+                             Код = category.CategoryId,
                              Название = category.Name,
                              Пол = category.Gender,
                              Возраст = category.Age,
@@ -104,7 +105,7 @@ namespace CompetitionProject
 
                         db.SaveChanges();
                         dataGridView1.Refresh();
-                        MessageBox.Show("Информация о участнике обновлена");
+                        MessageBox.Show("Информация о категории обновлена");
                     }
                     catch
                     {
@@ -114,33 +115,9 @@ namespace CompetitionProject
             }
             else
             {
-                MessageBox.Show("Выберите участника");
+                MessageBox.Show("Выберите категорию");
             }
         }
 
-        private void InfoButton_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count == 1)
-            {
-                int index = dataGridView1.SelectedRows[0].Index;
-                int id = 0;
-                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
-                if (converted == false)
-                    return;
-                CompetitionClasses.Category category = db.Categories.Find(id);
-                InfoCategory infoCategory = new InfoCategory();
-                infoCategory.Title.Text= category.Name;
-                infoCategory.Age.Text = category.Age;
-                infoCategory.Weight.Text = category.Weight;
-                infoCategory.Gender.Text = category.Gender;
-                
-
-                infoCategory.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Выберите участника");
-            }
-        }
     }
 }

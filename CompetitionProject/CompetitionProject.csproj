@@ -181,12 +181,6 @@
     <Compile Include="Participant\FormParticipant.Designer.cs">
       <DependentUpon>FormParticipant.cs</DependentUpon>
     </Compile>
-    <Compile Include="Category\InfoCategory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Category\InfoCategory.Designer.cs">
-      <DependentUpon>InfoCategory.cs</DependentUpon>
-    </Compile>
     <Compile Include="Competition\InfoCompetition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,12 +323,6 @@
     <Compile Include="Competition\SelectSportType.Designer.cs">
       <DependentUpon>SelectSportType.cs</DependentUpon>
     </Compile>
-    <Compile Include="SportType\InfoSportType.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SportType\InfoSportType.Designer.cs">
-      <DependentUpon>InfoSportType.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Admin\EditEmployeeAdmin.resx">
       <DependentUpon>EditEmployeeAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -391,9 +379,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Participant\FormParticipant.resx">
       <DependentUpon>FormParticipant.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Category\InfoCategory.resx">
-      <DependentUpon>InfoCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Competition\InfoCompetition.resx">
       <DependentUpon>InfoCompetition.cs</DependentUpon>
@@ -488,9 +473,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Competition\SelectSportType.resx">
       <DependentUpon>SelectSportType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SportType\InfoSportType.resx">
-      <DependentUpon>InfoSportType.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CompetitionClasses.Participant.datasource" />

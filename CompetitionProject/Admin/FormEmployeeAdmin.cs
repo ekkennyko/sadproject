@@ -98,15 +98,15 @@ namespace CompetitionProject
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
-            {              
+            {
                 int index = dataGridView1.SelectedRows[0].Index;
                 int id = 0;
-                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);               
+                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
                 if (converted == false)
-                    return;              
-                CompetitionClasses.Employee employee = db.Employees.Find(id);             
+                    return;
+                CompetitionClasses.Employee employee = db.Employees.Find(id);
                 try
-                {                    
+                {
                     db.Employees.Remove(employee);
                     db.SaveChanges();
                     MessageBox.Show("Сотрудник удален");

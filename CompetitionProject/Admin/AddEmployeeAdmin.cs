@@ -36,36 +36,36 @@ namespace CompetitionProject
             };
             try
             {
+                bool res = false;
                 var employee = db.Employees;
                 foreach (CompetitionClasses.Employee el in employee)
                 {
-                    //if (employee != null)
-                    //{
-                        if (Email.Text != el.Email && Email.Text != el.Job)
-                        {
-                            db.Employees.Add(newEmployee);
-                            db.SaveChanges();
-                            MessageBox.Show("Новый сотрудник добавлен");
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Такой сотрудник уже существует");
-                        }
-                    //}
-                    //else
-                    //{
-                    //    db.Employees.Add(newEmployee);
-                    //    db.SaveChanges();
-                    //    MessageBox.Show("Новый сотрудник добавлен");
-                    //    this.Close();
-                    //}
+
+                    if (Email.Text != el.Email && Email.Text != el.Job)
+                    {
+                        db.Employees.Add(newEmployee);
+                        db.SaveChanges();
+                        MessageBox.Show("Новый сотрудник добавлен");
+                        res = true;
+                        this.Close();
+                    }
+                    else
+                    {
+                        res = true;
+                        MessageBox.Show("Такой сотрудник уже существует");
+                    }
+                }
+                if (res == false)
+                {
+                    db.Employees.Add(newEmployee);
+                    db.SaveChanges();
+                    MessageBox.Show("Новый сотрудник добавлен");
+                    this.Close();
                 }
             }
             catch
             {
                 MessageBox.Show("Ошибка при добавлении");
-
             }
         }
 

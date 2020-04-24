@@ -34,13 +34,14 @@ namespace CompetitionProject
             CompetitionDB addCategory = new CompetitionDB();
             CompetitionClasses.Category newCategory = new CompetitionClasses.Category()
             {
-               Name = NameBox.Text,
-               Age = AgeBox.Text,
-               Weight = WeightBox.Text,
-               Gender = GenderBox.Text
+                Name = NameBox.Text,
+                Age = AgeBox.Text,
+                Weight = WeightBox.Text,
+                Gender = GenderBox.Text
             };
             try
             {
+                bool res = false;
                 var category = addCategory.Categories;
                 foreach (Category cat in category)
                 {
@@ -49,12 +50,21 @@ namespace CompetitionProject
                         addCategory.Categories.Add(newCategory);
                         addCategory.SaveChanges();
                         MessageBox.Show("Новая категория добавлена");
+                        res = true;
                         this.Close();
                     }
                     else
                     {
+                        res = true;
                         MessageBox.Show("Такая категория уже существует");
                     }
+                }
+                if (res == false)
+                {
+                    addCategory.Categories.Add(newCategory);
+                    addCategory.SaveChanges();
+                    MessageBox.Show("Новая категория добавлена");
+                    this.Close();
                 }
             }
             catch

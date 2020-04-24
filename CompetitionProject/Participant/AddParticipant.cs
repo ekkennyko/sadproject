@@ -43,6 +43,7 @@ namespace CompetitionProject
             };
             try
             {
+                bool res = false;
                 var participant = addParticipant.Participants;
                 foreach (CompetitionClasses.Participant pt in participant)
                 {
@@ -51,12 +52,21 @@ namespace CompetitionProject
                         addParticipant.Participants.Add(newParticipant);
                         addParticipant.SaveChanges();
                         MessageBox.Show("Новый участник добавлен");
+                        res = true;
                         this.Close();
                     }
                     else
                     {
-                      MessageBox.Show("Такой участник уже существует");
+                        res = true;
+                        MessageBox.Show("Такой участник уже существует");
                     }
+                }
+                if(res == false)
+                {
+                    addParticipant.Participants.Add(newParticipant);
+                    addParticipant.SaveChanges();
+                    MessageBox.Show("Новый участник добавлен");
+                    this.Close();
                 }
             }
             catch
