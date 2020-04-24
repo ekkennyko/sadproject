@@ -78,28 +78,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddCompetition.cs">
+    <Compile Include="Admin\EditEmployeeAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddCompetition.Designer.cs">
+    <Compile Include="Admin\EditEmployeeAdmin.Designer.cs">
+      <DependentUpon>EditEmployeeAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Competition\AddCompetition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Competition\AddCompetition.Designer.cs">
       <DependentUpon>AddCompetition.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddEmployeeAdmin.cs">
+    <Compile Include="Admin\AddEmployeeAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddEmployeeAdmin.Designer.cs">
+    <Compile Include="Admin\AddEmployeeAdmin.Designer.cs">
       <DependentUpon>AddEmployeeAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddParticipant.cs">
+    <Compile Include="Migrations\202004240446370_FifthSad3.5.cs" />
+    <Compile Include="Migrations\202004240446370_FifthSad3.5.designer.cs">
+      <DependentUpon>202004240446370_FifthSad3.5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004240458379_SixthSad.cs" />
+    <Compile Include="Migrations\202004240458379_SixthSad.designer.cs">
+      <DependentUpon>202004240458379_SixthSad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004240507150_SixthSad1.cs" />
+    <Compile Include="Migrations\202004240507150_SixthSad1.designer.cs">
+      <DependentUpon>202004240507150_SixthSad1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Participant\AddParticipant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddParticipant.Designer.cs">
+    <Compile Include="Participant\AddParticipant.Designer.cs">
       <DependentUpon>AddParticipant.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddSportType.cs">
+    <Compile Include="SportType\AddSportType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddSportType.Designer.cs">
+    <Compile Include="SportType\AddSportType.Designer.cs">
       <DependentUpon>AddSportType.cs</DependentUpon>
     </Compile>
     <Compile Include="ContextDb.cs" />
@@ -109,46 +127,46 @@
     <Compile Include="Authorization.Designer.cs">
       <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditCategory.cs">
+    <Compile Include="Category\EditCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditCategory.Designer.cs">
+    <Compile Include="Category\EditCategory.Designer.cs">
       <DependentUpon>EditCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditParticipant.cs">
+    <Compile Include="Participant\EditParticipant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditParticipant.Designer.cs">
+    <Compile Include="Participant\EditParticipant.Designer.cs">
       <DependentUpon>EditParticipant.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditSportType.cs">
+    <Compile Include="SportType\EditSportType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditSportType.Designer.cs">
+    <Compile Include="SportType\EditSportType.Designer.cs">
       <DependentUpon>EditSportType.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddCategory.cs">
+    <Compile Include="Category\AddCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddCategory.Designer.cs">
+    <Compile Include="Category\AddCategory.Designer.cs">
       <DependentUpon>AddCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCategory.cs">
+    <Compile Include="Category\FormCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCategory.Designer.cs">
+    <Compile Include="Category\FormCategory.Designer.cs">
       <DependentUpon>FormCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCompetition.cs">
+    <Compile Include="Competition\FormCompetition.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCompetition.Designer.cs">
+    <Compile Include="Competition\FormCompetition.Designer.cs">
       <DependentUpon>FormCompetition.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEmployeeAdmin.cs">
+    <Compile Include="Admin\FormEmployeeAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEmployeeAdmin.Designer.cs">
+    <Compile Include="Admin\FormEmployeeAdmin.Designer.cs">
       <DependentUpon>FormEmployeeAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="FormReport.cs">
@@ -157,35 +175,29 @@
     <Compile Include="FormReport.Designer.cs">
       <DependentUpon>FormReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormParticipant.cs">
+    <Compile Include="Participant\FormParticipant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormParticipant.Designer.cs">
+    <Compile Include="Participant\FormParticipant.Designer.cs">
       <DependentUpon>FormParticipant.cs</DependentUpon>
     </Compile>
-    <Compile Include="InfoCategory.cs">
+    <Compile Include="Category\InfoCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InfoCategory.Designer.cs">
+    <Compile Include="Category\InfoCategory.Designer.cs">
       <DependentUpon>InfoCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="InfoCompetition.cs">
+    <Compile Include="Competition\InfoCompetition.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InfoCompetition.Designer.cs">
+    <Compile Include="Competition\InfoCompetition.Designer.cs">
       <DependentUpon>InfoCompetition.cs</DependentUpon>
     </Compile>
-    <Compile Include="InfoParticipant.cs">
+    <Compile Include="Participant\InfoParticipant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InfoParticipant.Designer.cs">
+    <Compile Include="Participant\InfoParticipant.Designer.cs">
       <DependentUpon>InfoParticipant.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InfoSportType.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InfoSportType.Designer.cs">
-      <DependentUpon>InfoSportType.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -193,10 +205,10 @@
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSportType.cs">
+    <Compile Include="SportType\FormSportType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSportType.Designer.cs">
+    <Compile Include="SportType\FormSportType.Designer.cs">
       <DependentUpon>FormSportType.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202003130117334_FirstSd.cs" />
@@ -263,113 +275,136 @@
     <Compile Include="Migrations\202004171009401_TestSad.designer.cs">
       <DependentUpon>202004171009401_TestSad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004230713268_testsad1.cs" />
+    <Compile Include="Migrations\202004230713268_testsad1.designer.cs">
+      <DependentUpon>202004230713268_testsad1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004230739035_testsad2.cs" />
+    <Compile Include="Migrations\202004230739035_testsad2.designer.cs">
+      <DependentUpon>202004230739035_testsad2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="EditCompetition.cs">
+    <Compile Include="Competition\EditCompetition.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditCompetition.Designer.cs">
+    <Compile Include="Competition\EditCompetition.Designer.cs">
       <DependentUpon>EditCompetition.cs</DependentUpon>
     </Compile>
     <Compile Include="ObjectClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResultEdit.cs">
+    <Compile Include="EditResult.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ResultEdit.Designer.cs">
-      <DependentUpon>ResultEdit.cs</DependentUpon>
+    <Compile Include="EditResult.Designer.cs">
+      <DependentUpon>EditResult.cs</DependentUpon>
     </Compile>
-    <Compile Include="SelectCategory.cs">
+    <Compile Include="Competition\SelectCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelectCategory.Designer.cs">
+    <Compile Include="Competition\SelectCategory.Designer.cs">
       <DependentUpon>SelectCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="SelectJudge.cs">
+    <Compile Include="Competition\SelectJudge.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelectJudge.Designer.cs">
+    <Compile Include="Competition\SelectJudge.Designer.cs">
       <DependentUpon>SelectJudge.cs</DependentUpon>
     </Compile>
-    <Compile Include="SelectOrganizator.cs">
+    <Compile Include="Competition\SelectOrganizator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelectOrganizator.Designer.cs">
+    <Compile Include="Competition\SelectOrganizator.Designer.cs">
       <DependentUpon>SelectOrganizator.cs</DependentUpon>
     </Compile>
-    <Compile Include="SelectParticipant.cs">
+    <Compile Include="Competition\SelectParticipant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelectParticipant.Designer.cs">
+    <Compile Include="Competition\SelectParticipant.Designer.cs">
       <DependentUpon>SelectParticipant.cs</DependentUpon>
     </Compile>
-    <Compile Include="SelectSportType.cs">
+    <Compile Include="Competition\SelectSportType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelectSportType.Designer.cs">
+    <Compile Include="Competition\SelectSportType.Designer.cs">
       <DependentUpon>SelectSportType.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddCompetition.resx">
+    <Compile Include="SportType\InfoSportType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SportType\InfoSportType.Designer.cs">
+      <DependentUpon>InfoSportType.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin\EditEmployeeAdmin.resx">
+      <DependentUpon>EditEmployeeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Competition\AddCompetition.resx">
       <DependentUpon>AddCompetition.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddEmployeeAdmin.resx">
+    <EmbeddedResource Include="Admin\AddEmployeeAdmin.resx">
       <DependentUpon>AddEmployeeAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddParticipant.resx">
+    <EmbeddedResource Include="Migrations\202004240446370_FifthSad3.5.resx">
+      <DependentUpon>202004240446370_FifthSad3.5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004240458379_SixthSad.resx">
+      <DependentUpon>202004240458379_SixthSad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004240507150_SixthSad1.resx">
+      <DependentUpon>202004240507150_SixthSad1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Participant\AddParticipant.resx">
       <DependentUpon>AddParticipant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddSportType.resx">
+    <EmbeddedResource Include="SportType\AddSportType.resx">
       <DependentUpon>AddSportType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditCategory.resx">
+    <EmbeddedResource Include="Category\EditCategory.resx">
       <DependentUpon>EditCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditCompetition.resx">
+    <EmbeddedResource Include="Competition\EditCompetition.resx">
       <DependentUpon>EditCompetition.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditParticipant.resx">
+    <EmbeddedResource Include="Participant\EditParticipant.resx">
       <DependentUpon>EditParticipant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditSportType.resx">
+    <EmbeddedResource Include="SportType\EditSportType.resx">
       <DependentUpon>EditSportType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddCategory.resx">
+    <EmbeddedResource Include="Category\AddCategory.resx">
       <DependentUpon>AddCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCategory.resx">
+    <EmbeddedResource Include="Category\FormCategory.resx">
       <DependentUpon>FormCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCompetition.resx">
+    <EmbeddedResource Include="Competition\FormCompetition.resx">
       <DependentUpon>FormCompetition.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEmployeeAdmin.resx">
+    <EmbeddedResource Include="Admin\FormEmployeeAdmin.resx">
       <DependentUpon>FormEmployeeAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReport.resx">
       <DependentUpon>FormReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormParticipant.resx">
+    <EmbeddedResource Include="Participant\FormParticipant.resx">
       <DependentUpon>FormParticipant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InfoCategory.resx">
+    <EmbeddedResource Include="Category\InfoCategory.resx">
       <DependentUpon>InfoCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InfoCompetition.resx">
+    <EmbeddedResource Include="Competition\InfoCompetition.resx">
       <DependentUpon>InfoCompetition.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InfoParticipant.resx">
+    <EmbeddedResource Include="Participant\InfoParticipant.resx">
       <DependentUpon>InfoParticipant.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InfoSportType.resx">
-      <DependentUpon>InfoSportType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSportType.resx">
+    <EmbeddedResource Include="SportType\FormSportType.resx">
       <DependentUpon>FormSportType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003130117334_FirstSd.resx">
@@ -420,6 +455,12 @@
     <EmbeddedResource Include="Migrations\202004171009401_TestSad.resx">
       <DependentUpon>202004171009401_TestSad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004230713268_testsad1.resx">
+      <DependentUpon>202004230713268_testsad1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004230739035_testsad2.resx">
+      <DependentUpon>202004230739035_testsad2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -430,23 +471,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ResultEdit.resx">
-      <DependentUpon>ResultEdit.cs</DependentUpon>
+    <EmbeddedResource Include="EditResult.resx">
+      <DependentUpon>EditResult.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelectCategory.resx">
+    <EmbeddedResource Include="Competition\SelectCategory.resx">
       <DependentUpon>SelectCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelectJudge.resx">
+    <EmbeddedResource Include="Competition\SelectJudge.resx">
       <DependentUpon>SelectJudge.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelectOrganizator.resx">
+    <EmbeddedResource Include="Competition\SelectOrganizator.resx">
       <DependentUpon>SelectOrganizator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelectParticipant.resx">
+    <EmbeddedResource Include="Competition\SelectParticipant.resx">
       <DependentUpon>SelectParticipant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelectSportType.resx">
+    <EmbeddedResource Include="Competition\SelectSportType.resx">
       <DependentUpon>SelectSportType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SportType\InfoSportType.resx">
+      <DependentUpon>InfoSportType.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CompetitionClasses.Participant.datasource" />
@@ -480,6 +524,7 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -58,7 +58,7 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.Location = new System.Drawing.Point(14, 282);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 18);
+            this.label10.Size = new System.Drawing.Size(62, 15);
             this.label10.TabIndex = 34;
             this.label10.Text = "Эл.почта:";
             // 
@@ -68,7 +68,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(14, 252);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 18);
+            this.label9.Size = new System.Drawing.Size(31, 15);
             this.label9.TabIndex = 33;
             this.label9.Text = "Вес:";
             // 
@@ -78,7 +78,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(14, 222);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 18);
+            this.label8.Size = new System.Drawing.Size(52, 15);
             this.label8.TabIndex = 32;
             this.label8.Text = "Разряд:";
             // 
@@ -88,7 +88,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(14, 192);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(135, 18);
+            this.label7.Size = new System.Drawing.Size(111, 15);
             this.label7.TabIndex = 31;
             this.label7.Text = "Спортивный клуб:";
             // 
@@ -98,7 +98,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(14, 162);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 18);
+            this.label6.Size = new System.Drawing.Size(51, 15);
             this.label6.TabIndex = 30;
             this.label6.Text = "Регион:";
             // 
@@ -108,7 +108,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(14, 132);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 18);
+            this.label5.Size = new System.Drawing.Size(33, 15);
             this.label5.TabIndex = 29;
             this.label5.Text = "Пол:";
             // 
@@ -118,7 +118,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(14, 102);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 18);
+            this.label4.Size = new System.Drawing.Size(102, 15);
             this.label4.TabIndex = 28;
             this.label4.Text = "Дата Рождения:";
             // 
@@ -128,7 +128,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(14, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 18);
+            this.label3.Size = new System.Drawing.Size(66, 15);
             this.label3.TabIndex = 27;
             this.label3.Text = "Отчество:";
             // 
@@ -138,7 +138,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(14, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 18);
+            this.label2.Size = new System.Drawing.Size(35, 15);
             this.label2.TabIndex = 26;
             this.label2.Text = "Имя:";
             // 
@@ -148,7 +148,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(14, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 18);
+            this.label1.Size = new System.Drawing.Size(65, 15);
             this.label1.TabIndex = 25;
             this.label1.Text = "Фамилия:";
             // 
@@ -168,7 +168,7 @@
             this.LastName.AutoSize = true;
             this.LastName.Location = new System.Drawing.Point(85, 12);
             this.LastName.Name = "LastName";
-            this.LastName.Size = new System.Drawing.Size(76, 18);
+            this.LastName.Size = new System.Drawing.Size(64, 15);
             this.LastName.TabIndex = 35;
             this.LastName.Text = "LastName";
             // 
@@ -177,7 +177,7 @@
             this.FirstName.AutoSize = true;
             this.FirstName.Location = new System.Drawing.Point(55, 42);
             this.FirstName.Name = "FirstName";
-            this.FirstName.Size = new System.Drawing.Size(77, 18);
+            this.FirstName.Size = new System.Drawing.Size(64, 15);
             this.FirstName.TabIndex = 36;
             this.FirstName.Text = "FirstName";
             // 
@@ -186,7 +186,7 @@
             this.MiddleName.AutoSize = true;
             this.MiddleName.Location = new System.Drawing.Point(86, 72);
             this.MiddleName.Name = "MiddleName";
-            this.MiddleName.Size = new System.Drawing.Size(91, 18);
+            this.MiddleName.Size = new System.Drawing.Size(79, 15);
             this.MiddleName.TabIndex = 37;
             this.MiddleName.Text = "MiddleName";
             // 
@@ -195,7 +195,7 @@
             this.Birthday.AutoSize = true;
             this.Birthday.Location = new System.Drawing.Point(122, 102);
             this.Birthday.Name = "Birthday";
-            this.Birthday.Size = new System.Drawing.Size(61, 18);
+            this.Birthday.Size = new System.Drawing.Size(51, 15);
             this.Birthday.TabIndex = 38;
             this.Birthday.Text = "Birthday";
             // 
@@ -204,7 +204,7 @@
             this.Gender.AutoSize = true;
             this.Gender.Location = new System.Drawing.Point(53, 132);
             this.Gender.Name = "Gender";
-            this.Gender.Size = new System.Drawing.Size(57, 18);
+            this.Gender.Size = new System.Drawing.Size(48, 15);
             this.Gender.TabIndex = 39;
             this.Gender.Text = "Gender";
             // 
@@ -213,7 +213,7 @@
             this.CrntRegion.AutoSize = true;
             this.CrntRegion.Location = new System.Drawing.Point(71, 162);
             this.CrntRegion.Name = "CrntRegion";
-            this.CrntRegion.Size = new System.Drawing.Size(55, 18);
+            this.CrntRegion.Size = new System.Drawing.Size(47, 15);
             this.CrntRegion.TabIndex = 40;
             this.CrntRegion.Text = "Region";
             // 
@@ -222,7 +222,7 @@
             this.SportClub.AutoSize = true;
             this.SportClub.Location = new System.Drawing.Point(131, 192);
             this.SportClub.Name = "SportClub";
-            this.SportClub.Size = new System.Drawing.Size(74, 18);
+            this.SportClub.Size = new System.Drawing.Size(61, 15);
             this.SportClub.TabIndex = 41;
             this.SportClub.Text = "SportClub";
             // 
@@ -231,7 +231,7 @@
             this.Rank.AutoSize = true;
             this.Rank.Location = new System.Drawing.Point(72, 222);
             this.Rank.Name = "Rank";
-            this.Rank.Size = new System.Drawing.Size(43, 18);
+            this.Rank.Size = new System.Drawing.Size(36, 15);
             this.Rank.TabIndex = 42;
             this.Rank.Text = "Rank";
             // 
@@ -240,7 +240,7 @@
             this.Weight.AutoSize = true;
             this.Weight.Location = new System.Drawing.Point(51, 252);
             this.Weight.Name = "Weight";
-            this.Weight.Size = new System.Drawing.Size(54, 18);
+            this.Weight.Size = new System.Drawing.Size(45, 15);
             this.Weight.TabIndex = 43;
             this.Weight.Text = "Weight";
             // 
@@ -249,13 +249,13 @@
             this.Email.AutoSize = true;
             this.Email.Location = new System.Drawing.Point(82, 282);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(45, 18);
+            this.Email.Size = new System.Drawing.Size(39, 15);
             this.Email.TabIndex = 44;
             this.Email.Text = "Email";
             // 
             // Participant
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(305, 347);
             this.Controls.Add(this.Email);

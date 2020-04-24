@@ -48,9 +48,16 @@ namespace CompetitionProject
                 if (converted == false)
                     return;
                 CompetitionClasses.Participant participant = db.Participants.Find(id);
-                db.Participants.Remove(participant);
-                db.SaveChanges();
-                MessageBox.Show("Участник удален");
+                try
+                {
+                    db.Participants.Remove(participant);
+                    db.SaveChanges();
+                    MessageBox.Show("Участник удален");
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка");
+                }
 
             }
             else
@@ -81,14 +88,21 @@ namespace CompetitionProject
                 editParticipant.ShowDialog();
                 if (editParticipant.result == true)
                 {
-                    participant.Region = editParticipant.CrntRegion.Text;
-                    participant.SportClub = editParticipant.SportClub.Text;
-                    participant.Rank = editParticipant.Rank.Text;
-                    participant.Weight = double.Parse(editParticipant.Weight.Text);
+                    try
+                    {
+                        participant.Region = editParticipant.CrntRegion.Text;
+                        participant.SportClub = editParticipant.SportClub.Text;
+                        participant.Rank = editParticipant.Rank.Text;
+                        participant.Weight = double.Parse(editParticipant.Weight.Text);
 
-                    db.SaveChanges();
-                    dataGridView1.Refresh();
-                    MessageBox.Show("Информация о участнике обновлена");
+                        db.SaveChanges();
+                        dataGridView1.Refresh();
+                        MessageBox.Show("Информация о участнике обновлена");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Ошибка");
+                    }
                 }
             }
             else

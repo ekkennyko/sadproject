@@ -38,9 +38,16 @@ namespace CompetitionProject
                 if (converted == false)
                     return;
                 CompetitionClasses.Category category = db.Categories.Find(id);
-                db.Categories.Remove(category);
-                db.SaveChanges();
-                MessageBox.Show("Категория удалена");
+                try
+                {
+                    db.Categories.Remove(category);
+                    db.SaveChanges();
+                    MessageBox.Show("Категория удалена");
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка");
+                }
 
             }
             else
@@ -89,13 +96,20 @@ namespace CompetitionProject
                 editCategory.ShowDialog();
                 if (editCategory.result == true)
                 {
-                    category.Name = editCategory.NameBox.Text;
-                    category.Age = editCategory.AgeBox.Text;
-                    category.Weight = editCategory.WeightBox.Text;
+                    try
+                    {
+                        category.Name = editCategory.NameBox.Text;
+                        category.Age = editCategory.AgeBox.Text;
+                        category.Weight = editCategory.WeightBox.Text;
 
-                    db.SaveChanges();
-                    dataGridView1.Refresh();
-                    MessageBox.Show("Информация о участнике обновлена");
+                        db.SaveChanges();
+                        dataGridView1.Refresh();
+                        MessageBox.Show("Информация о участнике обновлена");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Ошибка");
+                    }
                 }
             }
             else
@@ -115,7 +129,7 @@ namespace CompetitionProject
                     return;
                 CompetitionClasses.Category category = db.Categories.Find(id);
                 InfoCategory infoCategory = new InfoCategory();
-                infoCategory.Name.Text= category.Name;
+                infoCategory.Title.Text= category.Name;
                 infoCategory.Age.Text = category.Age;
                 infoCategory.Weight.Text = category.Weight;
                 infoCategory.Gender.Text = category.Gender;

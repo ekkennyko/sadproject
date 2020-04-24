@@ -46,7 +46,7 @@ namespace CompetitionProject
                 var participant = addParticipant.Participants;
                 foreach (CompetitionClasses.Participant pt in participant)
                 {
-                    if (Passport.Text != pt.Passport)
+                   if (Passport.Text != pt.Passport)
                     {
                         addParticipant.Participants.Add(newParticipant);
                         addParticipant.SaveChanges();
@@ -55,7 +55,7 @@ namespace CompetitionProject
                     }
                     else
                     {
-                        MessageBox.Show("Такой участник уже существует");
+                      MessageBox.Show("Такой участник уже существует");
                     }
                 }
             }

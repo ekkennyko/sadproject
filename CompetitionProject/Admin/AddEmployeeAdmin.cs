@@ -39,8 +39,8 @@ namespace CompetitionProject
                 var employee = db.Employees;
                 foreach (CompetitionClasses.Employee el in employee)
                 {
-                    if (employee != null)
-                    {
+                    //if (employee != null)
+                    //{
                         if (Email.Text != el.Email && Email.Text != el.Job)
                         {
                             db.Employees.Add(newEmployee);
@@ -52,14 +52,14 @@ namespace CompetitionProject
                         {
                             MessageBox.Show("Такой сотрудник уже существует");
                         }
-                    }
-                    else
-                    {
-                        db.Employees.Add(newEmployee);
-                        db.SaveChanges();
-                        MessageBox.Show("Новый сотрудник добавлен");
-                        this.Close();
-                    }
+                    //}
+                    //else
+                    //{
+                    //    db.Employees.Add(newEmployee);
+                    //    db.SaveChanges();
+                    //    MessageBox.Show("Новый сотрудник добавлен");
+                    //    this.Close();
+                    //}
                 }
             }
             catch
@@ -67,6 +67,11 @@ namespace CompetitionProject
                 MessageBox.Show("Ошибка при добавлении");
 
             }
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

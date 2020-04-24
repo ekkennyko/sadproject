@@ -42,8 +42,10 @@ namespace CompetitionProject
             try
             {
                 var category = addCategory.Categories;
-                foreach (Category cat in category) {
-                    if (NameBox.Text != cat.Name && GenderBox.Text != cat.Gender) {
+                foreach (Category cat in category)
+                {
+                    if (NameBox.Text != cat.Name && GenderBox.Text != cat.Gender)
+                    {
                         addCategory.Categories.Add(newCategory);
                         addCategory.SaveChanges();
                         MessageBox.Show("Новая категория добавлена");

@@ -47,10 +47,17 @@ namespace CompetitionProject
                 bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
                 if (converted == false)
                     return;
-                SportType sportType = db.SportTypes.Find(id);
-                db.SportTypes.Remove(sportType);
-                db.SaveChanges();
-                MessageBox.Show("Вид спорта удален");
+                CompetitionClasses.SportType sportType = db.SportTypes.Find(id);
+                try
+                {
+                    db.SportTypes.Remove(sportType);
+                    db.SaveChanges();
+                    MessageBox.Show("Вид спорта удален");
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка");
+                }
 
             }
             else
@@ -68,7 +75,7 @@ namespace CompetitionProject
                 bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
                 if (converted == false)
                     return;
-                SportType sportType = db.SportTypes.Find(id);
+                CompetitionClasses.SportType sportType = db.SportTypes.Find(id);
                 EditSportType editSportType = new EditSportType();
                 editSportType.NameSport.Text = sportType.Name;
                 editSportType.Type.Text = sportType.Type;
@@ -76,34 +83,20 @@ namespace CompetitionProject
                 editSportType.ShowDialog();
                 if (editSportType.result == true)
                 {
-                    sportType.Name = editSportType.NameSport.Text;
-                    sportType.Type = editSportType.Type.Text;
+                    try
+                    {
+                        sportType.Name = editSportType.NameSport.Text;
+                        sportType.Type = editSportType.Type.Text;
 
-                    db.SaveChanges();
-                    dataGridView1.Refresh();
-                    MessageBox.Show("Информация о виде спорта обновлена");
+                        db.SaveChanges();
+                        dataGridView1.Refresh();
+                        MessageBox.Show("Информация о виде спорта обновлена");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Ошибка");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Сначала выберите вид спорта");
-                }
-            }
-        }
-
-        private void InfoButton_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count == 1)
-            {
-                int index = dataGridView1.SelectedRows[0].Index;
-                int id = 0;
-                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
-                if (converted == false)
-                    return;
-                SportType sportType = db.SportTypes.Find(id);
-                InfoSportType infoSportType = new InfoSportType();
-                infoSportType.NameSport.Text = sportType.Name;
-                infoSportType.Type.Text = sportType.Type;
-                infoSportType.ShowDialog();
             }
             else
             {
@@ -119,7 +112,7 @@ namespace CompetitionProject
             var result = from sportType in db.SportTypes
                          select new
                          {
-                             Код = sportType.SportTypeId,
+                             Код = sportType.Id,
                              Название = sportType.Name,
                              Тип = sportType.Type,
                          };
@@ -129,6 +122,29 @@ namespace CompetitionProject
         private void FormSportType_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void InfoButton_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                int index = dataGridView1.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                if (converted == false)
+                    return;
+                CompetitionClasses.SportType sportType = db.SportTypes.Find(id);
+                SportType.InfoSportType infoSportType = new SportType.InfoSportType();
+                infoSportType.NameST.Text = sportType.Name;
+                infoSportType.TypeST.Text = sportType.Type;
+
+
+                infoSportType.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите вид спорта");
+            }
         }
     }
 }
