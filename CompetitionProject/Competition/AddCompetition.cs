@@ -14,6 +14,7 @@ namespace CompetitionProject
 {
     public partial class AddCompetition : Form
     {
+        protected internal bool res = false;
         public AddCompetition()
         {
             InitializeComponent();
@@ -29,6 +30,14 @@ namespace CompetitionProject
         {
             SelectCategory selectCategory = new SelectCategory();
             selectCategory.ShowDialog();
+            if (res == true)
+            {
+                CheckCat.Checked = true;
+            }
+            else
+            {
+                CheckCat.Checked = false;
+            }
         }
 
         private void AddCompetition_Load(object sender, EventArgs e)
@@ -40,6 +49,7 @@ namespace CompetitionProject
         {
             SelectSportType selectSportType = new SelectSportType();
             selectSportType.ShowDialog();
+            CheckCat.Checked = true;
         }
 
         private void JudgeButton_Click(object sender, EventArgs e)

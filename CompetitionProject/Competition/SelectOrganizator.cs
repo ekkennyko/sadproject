@@ -15,7 +15,6 @@ namespace CompetitionProject
     public partial class SelectOrganizator : Form
     {
         CompetitionDB db;
-        public bool result = false;
         public SelectOrganizator()
         {
             InitializeComponent();

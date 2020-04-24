@@ -8,32 +8,43 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataBaseArch;
-using CompetitionClasses;
+using CompetitionClasses; 
 
 namespace CompetitionProject
 {
     public partial class SelectCategory : Form
     {
-        CompetitionDB db;
-        public bool result = false;
+        CompetitionDB db = new CompetitionDB();
+        AddCompetition competition = new AddCompetition();
         public SelectCategory()
         {
             InitializeComponent();
-            //comboBox1.DataSource = ;
-            comboBox1.DisplayMember = "Name";
-            comboBox1.ValueMember = "CategoryId";
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            listBox1.DisplayMember = "Name";
-            listBox1.ValueMember = "CategoryId";
+
+            List<Category> categories = db.Categories.ToList();
+            dbCombo.DataSource = categories;
+            dbCombo.DisplayMember = "Name";
+            dbCombo.ValueMember = "CategoryId";
+
+            dbCombo.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+
+            dbList.DisplayMember = "Name";
+            dbList.ValueMember = "CategoryId";
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Organizators organizator = (Organizators)comboBox1.SelectedItem;
-            //listBox1.Items.Add(organizator);
+            Category category = (Category)dbCombo.SelectedItem;
+            dbList.Items.Add(category);
         }
         private void OkButton_Click(object sender, EventArgs e)
         {
+            competition.res = true;
+            this.Close();
+        }
 
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            competition.res = false;
+            this.Close();
         }
     }
 }
