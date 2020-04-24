@@ -7,48 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataBaseArch;
+using CompetitionClasses;
 
 namespace CompetitionProject
 {
     public partial class SelectOrganizator : Form
     {
+        CompetitionDB db;
+        public bool result = false;
         public SelectOrganizator()
         {
             InitializeComponent();
+            //comboBox1.DataSource = ;
+            comboBox1.DisplayMember = "Name";
+            comboBox1.ValueMember = "OrganizatorId";
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            listBox1.DisplayMember = "Name";
+            listBox1.ValueMember = "OrganizatorId";
         }
 
-        private void SelectCompetition_Load(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Organizators organizator = (Organizators)comboBox1.SelectedItem;
+            //listBox1.Items.Add(organizator);
+        }
+        private void OkButton_Click(object sender, EventArgs e)
         {
 
         }
-        public static void SelectDataGridViewCell(DataGridView dataGridView, int rowIndex, int cellIndex)
-        {
-            DataGridViewCell cell = dataGridView.Rows[rowIndex].Cells[0];
-            dataGridView.CurrentCell = cell;
-            dataGridView.CurrentCell.Selected = true;
-        }
-
-        public static void SelectDataGridViewRow(DataGridView dataGridView, int rowNum)
-        {
-            SelectDataGridViewCell(dataGridView, rowNum, 0);
-        }
-
-        public static int CalculateNewSelRowIndex(int oldRowCount, int newRowCount, int oldRowIndex)
-        {
-            int newRowIndex = 0;
-
-            if (newRowCount >= oldRowCount)
-            {
-                newRowIndex = oldRowIndex;
-            }
-            else if (newRowCount > 1)
-            {
-                newRowIndex = newRowCount - 1;
-            }
-
-            return newRowIndex;
-        }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
 
         }
