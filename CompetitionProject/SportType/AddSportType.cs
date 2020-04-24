@@ -22,7 +22,7 @@ namespace CompetitionProject
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            SportType newSportType = new SportType()
+            CompetitionClasses.SportType newSportType = new CompetitionClasses.SportType()
             {
                 Name = NameSport.Text,
                 Type = Type.Text,

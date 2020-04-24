@@ -35,6 +35,7 @@
             this.editButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.refreshButton = new System.Windows.Forms.Button();
+            this.infoButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,7 +101,7 @@
             // refreshButton
             // 
             this.refreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.refreshButton.Location = new System.Drawing.Point(645, 167);
+            this.refreshButton.Location = new System.Drawing.Point(645, 218);
             this.refreshButton.Margin = new System.Windows.Forms.Padding(2);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(128, 31);
@@ -109,11 +110,22 @@
             this.refreshButton.UseVisualStyleBackColor = true;
             this.refreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
+            // infoButton
+            // 
+            this.infoButton.Location = new System.Drawing.Point(645, 170);
+            this.infoButton.Name = "infoButton";
+            this.infoButton.Size = new System.Drawing.Size(128, 31);
+            this.infoButton.TabIndex = 17;
+            this.infoButton.Text = "Информация";
+            this.infoButton.UseVisualStyleBackColor = true;
+            this.infoButton.Click += new System.EventHandler(this.InfoButton_Click);
+            // 
             // FormSportType
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 370);
+            this.Controls.Add(this.infoButton);
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.removeButton);
@@ -138,5 +150,6 @@
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button refreshButton;
+        private System.Windows.Forms.Button infoButton;
     }
 }

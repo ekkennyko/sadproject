@@ -47,7 +47,7 @@ namespace CompetitionProject
                 bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
                 if (converted == false)
                     return;
-                SportType sportType = db.SportTypes.Find(id);
+                CompetitionClasses.SportType sportType = db.SportTypes.Find(id);
                 try
                 {
                     db.SportTypes.Remove(sportType);
@@ -75,7 +75,7 @@ namespace CompetitionProject
                 bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
                 if (converted == false)
                     return;
-                SportType sportType = db.SportTypes.Find(id);
+                CompetitionClasses.SportType sportType = db.SportTypes.Find(id);
                 EditSportType editSportType = new EditSportType();
                 editSportType.NameSport.Text = sportType.Name;
                 editSportType.Type.Text = sportType.Type;
@@ -122,6 +122,29 @@ namespace CompetitionProject
         private void FormSportType_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void InfoButton_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                int index = dataGridView1.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                if (converted == false)
+                    return;
+                CompetitionClasses.SportType sportType = db.SportTypes.Find(id);
+                SportType.InfoSportType infoSportType = new SportType.InfoSportType();
+                infoSportType.NameST.Text = sportType.Name;
+                infoSportType.TypeST.Text = sportType.Type;
+
+
+                infoSportType.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите вид спорта");
+            }
         }
     }
 }
