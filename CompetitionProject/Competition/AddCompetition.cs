@@ -14,7 +14,9 @@ namespace CompetitionProject
 {
     public partial class AddCompetition : Form
     {
-        protected internal bool res = false;
+        protected internal bool resComp;
+        CompetitionDB addCompetition = new CompetitionDB();
+        public CompetitionClasses.Competition newCompetition = new CompetitionClasses.Competition();
         public AddCompetition()
         {
             InitializeComponent();
@@ -30,7 +32,7 @@ namespace CompetitionProject
         {
             SelectCategory selectCategory = new SelectCategory();
             selectCategory.ShowDialog();
-            if (res == true)
+            if (selectCategory.DialogResult == DialogResult.OK)
             {
                 CheckCat.Checked = true;
             }
