@@ -69,9 +69,17 @@ namespace CompetitionProject
                     this.Close();
                 }
             }
-            catch
+            catch (System.Data.Entity.Validation.DbEntityValidationException ex)
             {
-                MessageBox.Show("Ошибка при добавлении");
+                string s = "";
+                foreach (var et in ex.EntityValidationErrors)
+                {
+                    foreach (var er in et.ValidationErrors)
+                    {
+                        s += er.PropertyName + ". Message: " + er.ErrorMessage;
+                    }
+                }
+                MessageBox.Show(s);
             }
 
         }

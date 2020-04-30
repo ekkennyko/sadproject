@@ -56,7 +56,7 @@ namespace CompetitionProject
                     else
                     {
                         res = true;
-                        MessageBox.Show("Такая категория уже существует");
+                        MessageBox.Show("Данная категория уже существует");
                     }
                 }
                 if (res == false)

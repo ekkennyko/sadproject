@@ -25,21 +25,6 @@ namespace CompetitionProject
         CompetitionDB db;
         DataGridView DGV = new DataGridView();
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 1)
