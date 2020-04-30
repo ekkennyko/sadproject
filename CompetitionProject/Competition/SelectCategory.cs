@@ -38,27 +38,27 @@ namespace CompetitionProject
         }
         private void OkButton_Click(object sender, EventArgs e)
         {
-            //Category category = (Category)dbList.SelectedItem;
-            if (dbList.Items.Count > 0)
-            {
-                for (int i = 0; i < dbList.Items.Count; i++)
-                {
-                    DataRowView D1 = dbList.Selec as DataRowView;
+            ////Category category = (Category)dbList.SelectedItem;
+            //if (dbList.Items.Count > 0)
+            //{
+            //    for (int i = 0; i < dbList.Items.Count; i++)
+            //    {
+            //        DataRowView D1 = dbList.Selec as DataRowView;
 
-                    int id = (int)D1[1];
+            //        int id = (int)D1[1];
               
-                    Category category = db.Categories.Find(id);
-                    try
-                    {
+            //        Category category = db.Categories.Find(id);
+            //        try
+            //        {
 
-                        competitionForm.newCompetition.Categories.Add(category);
-                    }
-                    catch
-                    {
+            //            competitionForm.newCompetition.Categories.Add(category);
+            //        }
+            //        catch
+            //        {
 
-                    }
-                }
-            }
+            //        }
+            //    }
+            //}
 
             competitionForm.resComp = true;
             this.Close();
@@ -66,7 +66,7 @@ namespace CompetitionProject
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            competition.resComp = false;
+            competitionForm.resComp = false;
             this.Close();
         }
     }

@@ -29,43 +29,46 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectJudge));
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dbList = new System.Windows.Forms.ListBox();
+            this.dbCombo = new System.Windows.Forms.ComboBox();
             this.CancelButton = new System.Windows.Forms.Button();
             this.OkButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listBox1
+            // dbList
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(22, 66);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(252, 68);
-            this.listBox1.TabIndex = 15;
+            this.dbList.FormattingEnabled = true;
+            this.dbList.Location = new System.Drawing.Point(16, 54);
+            this.dbList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dbList.Name = "dbList";
+            this.dbList.Size = new System.Drawing.Size(190, 56);
+            this.dbList.TabIndex = 15;
             // 
-            // comboBox1
+            // dbCombo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(22, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(253, 24);
-            this.comboBox1.TabIndex = 14;
+            this.dbCombo.FormattingEnabled = true;
+            this.dbCombo.Location = new System.Drawing.Point(16, 18);
+            this.dbCombo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dbCombo.Name = "dbCombo";
+            this.dbCombo.Size = new System.Drawing.Size(191, 21);
+            this.dbCombo.TabIndex = 14;
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(165, 156);
+            this.CancelButton.Location = new System.Drawing.Point(124, 127);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(109, 34);
+            this.CancelButton.Size = new System.Drawing.Size(82, 28);
             this.CancelButton.TabIndex = 13;
             this.CancelButton.Text = "Отмена";
             this.CancelButton.UseVisualStyleBackColor = true;
             // 
             // OkButton
             // 
-            this.OkButton.Location = new System.Drawing.Point(22, 156);
+            this.OkButton.Location = new System.Drawing.Point(16, 127);
+            this.OkButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(109, 34);
+            this.OkButton.Size = new System.Drawing.Size(82, 28);
             this.OkButton.TabIndex = 12;
             this.OkButton.Text = "Ок";
             this.OkButton.UseVisualStyleBackColor = true;
@@ -73,14 +76,15 @@
             // 
             // SelectJudge
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 213);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(223, 173);
+            this.Controls.Add(this.dbList);
+            this.Controls.Add(this.dbCombo);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OkButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SelectJudge";
             this.Text = "SelectJudge";
             this.ResumeLayout(false);
@@ -89,8 +93,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ListBox dbList;
+        private System.Windows.Forms.ComboBox dbCombo;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button OkButton;
     }

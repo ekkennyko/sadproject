@@ -15,36 +15,55 @@ namespace CompetitionProject
 {
     public partial class AddEmployeeAdmin : Form
     {
+        CompetitionDB db = new CompetitionDB();
+
+        CompetitionJudge judge = new CompetitionJudge();
+        CompetitionOrganizator organizator = new CompetitionOrganizator();
+        Employee newEmployee = new Employee();
 
         public AddEmployeeAdmin()
         {
             InitializeComponent();
         }
 
+        private void toList()
+        {
+            if (checkJudge.Checked == true)
+            {
+                judge.JudgeId = newEmployee.PersonId;
+                db.Judges.Add(judge);
+                db.SaveChanges();
+            }
+            else if (checkOrg.Checked == true)
+            {
+                organizator.OrganizatorId = newEmployee.PersonId;
+                db.Organizators.Add(organizator);
+                db.SaveChanges();
+            }
+        }
+
         private void OkButton_Click(object sender, EventArgs e)
         {
-            CompetitionDB db = new CompetitionDB();
-            Employee newEmployee = new Employee()
-            {
-                LastName = LastName.Text,
-                FirstName = FirstName.Text,
-                MiddleName = MiddleName.Text,
-                Job = Job.Text,
-                Email = Email.Text,
-                Login = Login.Text,
-                Password = Password.Text,
-            };
+            newEmployee.LastName = LastName.Text;
+            newEmployee.FirstName = FirstName.Text;
+            newEmployee.MiddleName = MiddleName.Text;
+            newEmployee.Job = Job.Text;
+            newEmployee.Email = Email.Text;
+            newEmployee.Login = Login.Text;
+            newEmployee.Password = Password.Text;
+
             try
             {
+
                 bool res = false;
                 var employee = db.Employees;
                 foreach (CompetitionClasses.Employee el in employee)
                 {
-
                     if (Email.Text != el.Email && Email.Text != el.Job)
                     {
                         db.Employees.Add(newEmployee);
                         db.SaveChanges();
+                        toList();
                         MessageBox.Show("Новый сотрудник добавлен");
                         res = true;
                         this.Close();
@@ -59,14 +78,19 @@ namespace CompetitionProject
                 {
                     db.Employees.Add(newEmployee);
                     db.SaveChanges();
+                    toList();
                     MessageBox.Show("Новый сотрудник добавлен");
                     this.Close();
+
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Ошибка при добавлении");
+                MessageBox.Show("Ошибка при добавлении:\n" + ex);
             }
+
+
+
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

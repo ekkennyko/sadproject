@@ -14,23 +14,35 @@ namespace CompetitionProject
 {
     public partial class SelectParticipant : Form
     {
-        CompetitionDB db;
-        public bool result = false;
+        CompetitionDB db = new CompetitionDB();
         public SelectParticipant()
         {
-            InitializeComponent();//comboBox1.DataSource = ;
-            comboBox1.DisplayMember = "Name";
-            comboBox1.ValueMember = "ParticipantId";
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            listBox1.DisplayMember = "Name";
-            listBox1.ValueMember = "ParticipantId";
+            InitializeComponent();
+
+            List<CompetitionClasses.Participant> participants = db.Participants.ToList();
+            dbCombo.DataSource = participants;
+            dbCombo.DisplayMember = "LastName" //+ "FirstName " + "MiddleName"
+                ;
+            dbCombo.ValueMember = "PersonId";
+
+            dbCombo.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+
+            dbList.DisplayMember = "LastName" //+ "FirstName " + "MiddleName"
+                ;
+            dbList.ValueMember = "PersonId";
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Organizators organizator = (Organizators)comboBox1.SelectedItem;
-            //listBox1.Items.Add(organizator);
+            Participant participant = (Participant)dbCombo.SelectedItem;
+
+            dbList.Items.Add(participant);
         }
         private void OkButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dbCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

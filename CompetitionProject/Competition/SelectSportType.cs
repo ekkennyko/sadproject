@@ -14,28 +14,37 @@ namespace CompetitionProject
 {
     public partial class SelectSportType : Form
     {
-        CompetitionDB db;
-        public bool result = false;
+        CompetitionDB db = new CompetitionDB();
         public SelectSportType()
         {
             InitializeComponent();
-            //comboBox1.DataSource = ;
-            comboBox1.DisplayMember = "Name";
-            comboBox1.ValueMember = "SportTypeId";
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            listBox1.DisplayMember = "Name";
-            listBox1.ValueMember = "SportTypeId";
+
+            List<SportType> sportTypes = db.SportTypes.ToList();
+            dbCombo.DataSource = sportTypes;
+            dbCombo.DisplayMember = "Name";
+            dbCombo.ValueMember = "Id";
+
+            dbCombo.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+
+            dbList.DisplayMember = "Name";
+            dbList.ValueMember = "Id";
         }
         
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Organizators organizator = (Organizators)comboBox1.SelectedItem;
-            //listBox1.Items.Add(organizator);
+            SportType sportType = (SportType)dbCombo.SelectedItem;
+
+            dbList.Items.Add(sportType);
         }
 
         private void OkButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

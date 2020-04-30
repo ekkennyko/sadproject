@@ -45,6 +45,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.Password = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.checkOrg = new System.Windows.Forms.CheckBox();
+            this.checkJudge = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // Job
@@ -62,7 +64,7 @@
             // CancelButton
             // 
             this.CancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CancelButton.Location = new System.Drawing.Point(288, 216);
+            this.CancelButton.Location = new System.Drawing.Point(287, 217);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(87, 27);
             this.CancelButton.TabIndex = 46;
@@ -147,7 +149,7 @@
             // OkButton
             // 
             this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OkButton.Location = new System.Drawing.Point(194, 216);
+            this.OkButton.Location = new System.Drawing.Point(194, 217);
             this.OkButton.Name = "OkButton";
             this.OkButton.Size = new System.Drawing.Size(87, 27);
             this.OkButton.TabIndex = 26;
@@ -199,11 +201,33 @@
             this.label7.TabIndex = 51;
             this.label7.Text = "Пароль:";
             // 
+            // checkOrg
+            // 
+            this.checkOrg.AutoSize = true;
+            this.checkOrg.Location = new System.Drawing.Point(14, 222);
+            this.checkOrg.Name = "checkOrg";
+            this.checkOrg.Size = new System.Drawing.Size(102, 19);
+            this.checkOrg.TabIndex = 53;
+            this.checkOrg.Text = "Организатор";
+            this.checkOrg.UseVisualStyleBackColor = true;
+            // 
+            // checkJudge
+            // 
+            this.checkJudge.AutoSize = true;
+            this.checkJudge.Location = new System.Drawing.Point(122, 222);
+            this.checkJudge.Name = "checkJudge";
+            this.checkJudge.Size = new System.Drawing.Size(60, 19);
+            this.checkJudge.TabIndex = 54;
+            this.checkJudge.Text = "Судья";
+            this.checkJudge.UseVisualStyleBackColor = true;
+            // 
             // AddEmployeeAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 253);
+            this.ClientSize = new System.Drawing.Size(387, 257);
+            this.Controls.Add(this.checkJudge);
+            this.Controls.Add(this.checkOrg);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Login);
@@ -246,5 +270,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox checkOrg;
+        private System.Windows.Forms.CheckBox checkJudge;
     }
 }
