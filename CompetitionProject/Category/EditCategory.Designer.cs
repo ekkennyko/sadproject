@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditCategory));
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.exiButton = new System.Windows.Forms.Button();
             this.WeightBox = new System.Windows.Forms.TextBox();
             this.AgeBox = new System.Windows.Forms.TextBox();
             this.NameBox = new System.Windows.Forms.TextBox();
@@ -43,14 +43,14 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CancelButton.Location = new System.Drawing.Point(251, 130);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(80, 27);
-            this.CancelButton.TabIndex = 60;
-            this.CancelButton.Text = "Отмена";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.exiButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exiButton.Location = new System.Drawing.Point(251, 130);
+            this.exiButton.Name = "CancelButton";
+            this.exiButton.Size = new System.Drawing.Size(80, 27);
+            this.exiButton.TabIndex = 60;
+            this.exiButton.Text = "Отмена";
+            this.exiButton.UseVisualStyleBackColor = true;
+            this.exiButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // WeightBox
             // 
@@ -144,7 +144,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(343, 175);
             this.Controls.Add(this.GenderBox);
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.exiButton);
             this.Controls.Add(this.WeightBox);
             this.Controls.Add(this.AgeBox);
             this.Controls.Add(this.NameBox);
@@ -163,7 +163,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button exiButton;
         protected internal System.Windows.Forms.TextBox WeightBox;
         protected internal System.Windows.Forms.TextBox AgeBox;
         protected internal System.Windows.Forms.TextBox NameBox;

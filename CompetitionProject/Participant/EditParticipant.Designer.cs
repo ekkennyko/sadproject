@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditParticipant));
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.Weight = new System.Windows.Forms.TextBox();
             this.Rank = new System.Windows.Forms.TextBox();
             this.SportClub = new System.Windows.Forms.TextBox();
@@ -49,14 +49,14 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CancelButton.Location = new System.Drawing.Point(244, 224);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(87, 27);
-            this.CancelButton.TabIndex = 44;
-            this.CancelButton.Text = "Отмена";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitButton.Location = new System.Drawing.Point(244, 224);
+            this.exitButton.Name = "CancelButton";
+            this.exitButton.Size = new System.Drawing.Size(87, 27);
+            this.exitButton.TabIndex = 44;
+            this.exitButton.Text = "Отмена";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // Weight
             // 
@@ -209,7 +209,7 @@
             this.Controls.Add(this.MiddleName);
             this.Controls.Add(this.FirstName);
             this.Controls.Add(this.LastName);
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.Weight);
             this.Controls.Add(this.Rank);
             this.Controls.Add(this.SportClub);
@@ -232,7 +232,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button exitButton;
         protected internal System.Windows.Forms.TextBox Weight;
         protected internal System.Windows.Forms.TextBox Rank;
         protected internal System.Windows.Forms.TextBox SportClub;

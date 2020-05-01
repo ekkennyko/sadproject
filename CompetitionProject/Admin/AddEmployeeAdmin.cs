@@ -20,78 +20,82 @@ namespace CompetitionProject
             InitializeComponent();
         }
 
-        private void toList(Employee newEmployee, CompetitionDB db)
+        private void toList(Employee newEmployee)
         {
-            CompetitionJudge judge = new CompetitionJudge();
-            CompetitionOrganizator organizator = new CompetitionOrganizator();
+            using (CompetitionDB db = new CompetitionDB())
+            {
+                CompetitionJudge judge = new CompetitionJudge();
+                CompetitionOrganizator organizator = new CompetitionOrganizator();
 
-            if (checkJudge.Checked == true)
-            {
-                judge.JudgeId = newEmployee.PersonId;
-                db.Judges.Add(judge);
-                db.SaveChanges();
-            }
-            else if (checkOrg.Checked == true)
-            {
-                organizator.OrganizatorId = newEmployee.PersonId;
-                db.Organizators.Add(organizator);
-                db.SaveChanges();
+                if (checkJudge.Checked == true)
+                {
+                    judge.JudgeId = newEmployee.PersonId;
+                    db.Judges.Add(judge);
+                    db.SaveChanges();
+                }
+                else if (checkOrg.Checked == true)
+                {
+                    organizator.OrganizatorId = newEmployee.PersonId;
+                    db.Organizators.Add(organizator);
+                    db.SaveChanges();
+                }
             }
         }
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            CompetitionDB db = new CompetitionDB();
-            Employee newEmployee = new Employee
+            using (CompetitionDB db = new CompetitionDB())
             {
-                LastName = LastName.Text,
-                FirstName = FirstName.Text,
-                MiddleName = MiddleName.Text,
-                Job = Job.Text,
-                Email = Email.Text,
-                Login = Login.Text,
-                Password = Password.Text
-            };
-
-            try
-            {
-
                 bool res = false;
-                var employee = db.Employees;
-                foreach (CompetitionClasses.Employee el in employee)
+                int count = 0;
+                Employee newEmployee = new Employee
                 {
-                    if (Email.Text != el.Email && Email.Text != el.Job)
+                    LastName = LastName.Text,
+                    FirstName = FirstName.Text,
+                    MiddleName = MiddleName.Text,
+                    Job = Job.Text,
+                    Email = Email.Text,
+                    Login = Login.Text,
+                    Password = Password.Text
+                };
+                try
+                { 
+                    var employee = db.Employees.ToList();
+                    foreach (CompetitionClasses.Employee el in employee)
+                    {
+                        if (Email.Text != el.Email && Email.Text != el.Job)
+                        {
+                            if (count == employee.Count - 1)
+                            {
+                                db.Employees.Add(newEmployee);
+                                db.SaveChanges();
+                                toList(newEmployee);
+                                res = true;
+                                MessageBox.Show("Новый сотрудник добавлен");
+                                this.Close();
+                            }
+                            count++;
+                        }
+                        else
+                        {
+                            res = true;
+                            MessageBox.Show("Такой сотрудник уже существует");
+                        }
+                    }
+                    if (res == false)
                     {
                         db.Employees.Add(newEmployee);
                         db.SaveChanges();
-                        toList(newEmployee, db);
+                        toList(newEmployee);
                         MessageBox.Show("Новый сотрудник добавлен");
-                        res = true;
                         this.Close();
                     }
-                    else
-                    {
-                        res = true;
-                        MessageBox.Show("Такой сотрудник уже существует");
-                    }
                 }
-                if (res == false)
+                catch (Exception ex)
                 {
-                    db.Employees.Add(newEmployee);
-                    db.SaveChanges();
-                    toList(newEmployee, db);
-                    MessageBox.Show("Новый сотрудник добавлен");
-                    this.Close();
-
+                    MessageBox.Show("Ошибка при добавлении:\n" + ex);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка при добавлении:\n" + ex);
-            }
-
-
-
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

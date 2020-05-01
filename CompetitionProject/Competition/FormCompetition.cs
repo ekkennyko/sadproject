@@ -16,7 +16,6 @@ namespace CompetitionProject
 {
     public partial class FormCompetition : Form
     {
-        CompetitionDB db;
         public FormCompetition()
         {
             InitializeComponent();
@@ -31,38 +30,42 @@ namespace CompetitionProject
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            using (CompetitionDB db = new CompetitionDB())
             {
-                int index = dataGridView1.SelectedRows[0].Index;
-                int id = 0;
-                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
-                if (converted == false)
-                    return;
-                CompetitionClasses.Competition competition = db.Competitions.Find(id);
-                db.Competitions.Remove(competition);
-                db.SaveChanges();
-                MessageBox.Show("Соревнование удалено");
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    int index = dataGridView1.SelectedRows[0].Index;
+                    int id = 0;
+                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                    if (converted == false)
+                        return;
+                    CompetitionClasses.Competition competition = db.Competitions.Find(id);
+                    db.Competitions.Remove(competition);
+                    db.SaveChanges();
+                    MessageBox.Show("Соревнование удалено");
 
-            }
-            else
-            {
-                MessageBox.Show("Выберите соревнование");
+                }
+                else
+                {
+                    MessageBox.Show("Выберите соревнование");
+                }
             }
         }
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
-            db = new CompetitionDB();
-            db.Competitions.Load();
-
-            var result = from competition in db.Competitions
-                         select new
-                         {
-                             Название = competition.Title,
-                             Дата = competition.DateCompetition,
-                             Место_проведения = competition.Location,
-                         };
-            dataGridView1.DataSource = result.ToList();
+            using (CompetitionDB db = new CompetitionDB())
+            {
+                db.Competitions.Load();
+                var result = from competition in db.Competitions
+                             select new
+                             {
+                                 Название = competition.Title,
+                                 Дата = competition.DateCompetition,
+                                 Место_проведения = competition.Location,
+                             };
+                dataGridView1.DataSource = result.ToList();
+            }
         }
 
         private void MenuButton_Click(object sender, EventArgs e)
@@ -72,59 +75,65 @@ namespace CompetitionProject
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
+            using (CompetitionDB db = new CompetitionDB())
             {
-                int index = dataGridView1.SelectedRows[0].Index;
-                int id = 0;
-                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
-                if (converted == false)
-                    return;
-                CompetitionClasses.Competition competition = db.Competitions.Find(id);
-                EditCompetition editCompetition = new EditCompetition();
-                editCompetition.TitleBox.Text = competition.Title;
-                editCompetition.LocationBox.Text = competition.Location;
-                editCompetition.dateTimePicker1.Value = competition.DateCompetition;
-                
-                editCompetition.ShowDialog();
-                if (editCompetition.result == true)
+                if (dataGridView1.SelectedRows.Count == 1)
                 {
-                    competition.Title = editCompetition.TitleBox.Text;
-                    competition.Location = editCompetition.LocationBox.Text;
-                    competition.DateCompetition = editCompetition.dateTimePicker1.Value;
+                    int index = dataGridView1.SelectedRows[0].Index;
+                    int id = 0;
+                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                    if (converted == false)
+                        return;
+                    CompetitionClasses.Competition competition = db.Competitions.Find(id);
+                    EditCompetition editCompetition = new EditCompetition();
+                    editCompetition.TitleBox.Text = competition.Title;
+                    editCompetition.LocationBox.Text = competition.Location;
+                    editCompetition.dateTimePicker1.Value = competition.DateCompetition;
 
-                    db.SaveChanges();
-                    dataGridView1.Refresh();
-                    MessageBox.Show("Информация о соревновании обновлена");
+                    editCompetition.ShowDialog();
+                    if (editCompetition.result == true)
+                    {
+                        competition.Title = editCompetition.TitleBox.Text;
+                        competition.Location = editCompetition.LocationBox.Text;
+                        competition.DateCompetition = editCompetition.dateTimePicker1.Value;
+
+                        db.SaveChanges();
+                        dataGridView1.Refresh();
+                        MessageBox.Show("Информация о соревновании обновлена");
+                    }
                 }
-            }
-            else
-            {
-                MessageBox.Show("Выберите соревнование");
+                else
+                {
+                    MessageBox.Show("Выберите соревнование");
+                }
             }
         }
 
         private void InfoButton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
+            using (CompetitionDB db = new CompetitionDB())
             {
-                int index = dataGridView1.SelectedRows[0].Index;
-                int id = 0;
-                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
-                if (converted == false)
-                    return;
-                CompetitionClasses.Competition competition = db.Competitions.Find(id);
-                InfoCompetition infoCompetition = new InfoCompetition();
-                infoCompetition.Title.Text= competition.Title;
-                infoCompetition.PlaceLocation.Text = competition.Location;
-                infoCompetition.TimeDate.Text = competition.DateCompetition.ToString();
-                //
-                infoCompetition.BriefInfo.Text = competition.BriefInformation;
+                if (dataGridView1.SelectedRows.Count == 1)
+                {
+                    int index = dataGridView1.SelectedRows[0].Index;
+                    int id = 0;
+                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                    if (converted == false)
+                        return;
+                    CompetitionClasses.Competition competition = db.Competitions.Find(id);
+                    InfoCompetition infoCompetition = new InfoCompetition();
+                    infoCompetition.Title.Text = competition.Title;
+                    infoCompetition.PlaceLocation.Text = competition.Location;
+                    infoCompetition.TimeDate.Text = competition.DateCompetition.ToString();
+                    //
+                    infoCompetition.BriefInfo.Text = competition.BriefInformation;
 
-                infoCompetition.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Выберите соревнование");
+                    infoCompetition.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Выберите соревнование");
+                }
             }
         }
 

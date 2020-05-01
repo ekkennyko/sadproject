@@ -22,11 +22,11 @@ namespace CompetitionProject
         {
             InitializeComponent();
         }
-        CompetitionDB db;
         DataGridView DGV = new DataGridView();
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            CompetitionDB db = new CompetitionDB();
             if (dataGridView1.SelectedRows.Count == 1)
             {
                 int index = dataGridView1.SelectedRows[0].Index;

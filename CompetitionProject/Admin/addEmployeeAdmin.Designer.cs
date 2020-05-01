@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEmployeeAdmin));
             this.Job = new System.Windows.Forms.ComboBox();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.MiddleName = new System.Windows.Forms.TextBox();
             this.FirstName = new System.Windows.Forms.TextBox();
             this.LastName = new System.Windows.Forms.TextBox();
@@ -39,7 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.OkButton = new System.Windows.Forms.Button();
+            this.okButton = new System.Windows.Forms.Button();
             this.Email = new System.Windows.Forms.TextBox();
             this.Login = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -61,16 +61,16 @@
             this.Job.Size = new System.Drawing.Size(180, 23);
             this.Job.TabIndex = 47;
             // 
-            // CancelButton
+            // exitButton
             // 
-            this.CancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CancelButton.Location = new System.Drawing.Point(287, 217);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(87, 27);
-            this.CancelButton.TabIndex = 46;
-            this.CancelButton.Text = "Отмена";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitButton.Location = new System.Drawing.Point(287, 217);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(87, 27);
+            this.exitButton.TabIndex = 46;
+            this.exitButton.Text = "Отмена";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // MiddleName
             // 
@@ -146,16 +146,16 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Фамилия:";
             // 
-            // OkButton
+            // okButton
             // 
-            this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OkButton.Location = new System.Drawing.Point(194, 217);
-            this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(87, 27);
-            this.OkButton.TabIndex = 26;
-            this.OkButton.Text = "Ок";
-            this.OkButton.UseVisualStyleBackColor = true;
-            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
+            this.okButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.okButton.Location = new System.Drawing.Point(194, 217);
+            this.okButton.Name = "okButton";
+            this.okButton.Size = new System.Drawing.Size(87, 27);
+            this.okButton.TabIndex = 26;
+            this.okButton.Text = "Ок";
+            this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
             // Email
             // 
@@ -234,7 +234,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Email);
             this.Controls.Add(this.Job);
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.MiddleName);
             this.Controls.Add(this.FirstName);
             this.Controls.Add(this.LastName);
@@ -243,7 +243,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.OkButton);
+            this.Controls.Add(this.okButton);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddEmployeeAdmin";
@@ -255,7 +255,7 @@
 
         #endregion
         private System.Windows.Forms.ComboBox Job;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.TextBox MiddleName;
         private System.Windows.Forms.TextBox FirstName;
         private System.Windows.Forms.TextBox LastName;
@@ -264,7 +264,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button OkButton;
+        private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.TextBox Email;
         private System.Windows.Forms.TextBox Login;
         private System.Windows.Forms.Label label6;

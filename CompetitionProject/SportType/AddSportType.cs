@@ -14,7 +14,6 @@ namespace CompetitionProject
 {
     public partial class AddSportType : Form
     {
-        CompetitionDB addSportType = new CompetitionDB();
         public AddSportType()
         {
             InitializeComponent();
@@ -22,42 +21,50 @@ namespace CompetitionProject
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            CompetitionClasses.SportType newSportType = new CompetitionClasses.SportType()
-            {
-                Name = NameSport.Text,
-                Type = Type.Text,
-            };
-            try
+            using (CompetitionDB db = new CompetitionDB())
             {
                 bool res = false;
-                var sportype = addSportType.SportTypes;
-                foreach (CompetitionClasses.SportType st in sportype)
+                int count = 0;
+                SportType newSportType = new SportType()
                 {
-                    if (NameSport.Text != st.Name && Type.Text != st.Type)
+                    Name = NameSport.Text,
+                    Type = Type.Text,
+                };
+                try
+                {
+                    var sportype = db.SportTypes.ToList();
+                    foreach (SportType st in sportype)
                     {
-                        addSportType.SportTypes.Add(newSportType);
-                        addSportType.SaveChanges();
+                        if (NameSport.Text != st.Name && Type.Text != st.Type)
+                        {
+                            if (count == sportype.Count - 1)
+                            {
+                                db.SportTypes.Add(newSportType);
+                                db.SaveChanges();
+                                res = true;
+                                MessageBox.Show("Новый вид спорта добавлен");
+                                this.Close();
+                            }
+                            count++;
+                        }
+                        else
+                        {
+                            res = true;
+                            MessageBox.Show("Такой вид спорта уже сущесвует");
+                        }
+                    }
+                    if (res == false)
+                    {
+                        db.SportTypes.Add(newSportType);
+                        db.SaveChanges();
                         MessageBox.Show("Новый вид спорта добавлен");
-                        res = true;
                         this.Close();
                     }
-                    else
-                    {
-                        res = true;
-                        MessageBox.Show("Такой вид спорта уже сущесвует");
-                    }
                 }
-                if (res == false)
+                catch (Exception ex)
                 {
-                    addSportType.SportTypes.Add(newSportType);
-                    addSportType.SaveChanges();
-                    MessageBox.Show("Новый вид спорта добавлен");
-                    this.Close();
+                    MessageBox.Show("Ошибка при добавлении:\n" + ex);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка при добавлении:\n" + ex);
             }
         }
 

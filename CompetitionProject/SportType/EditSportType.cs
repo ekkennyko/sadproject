@@ -14,7 +14,6 @@ namespace CompetitionProject
 {
     public partial class EditSportType : Form
     {
-        CompetitionDB db;
         protected internal bool result = false;
         public EditSportType()
         {

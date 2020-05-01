@@ -14,7 +14,6 @@ namespace CompetitionProject.Competition
 {
     public partial class SelectParticipant : Form
     {
-        CompetitionDB db = new CompetitionDB();
         public SelectParticipant()
         {
             InitializeComponent();
@@ -28,18 +27,21 @@ namespace CompetitionProject.Competition
 
         private void loadToList()
         {
-            db.Participants.Load();
-            var result = from participant in db.Participants
-                         select new
-                         {
-                             Код = participant.PersonId,
-                             Фамилия = participant.LastName,
-                             Имя = participant.FirstName,
-                             Отчество = participant.MiddleName,
-                             Ранг = participant.Rank,
-                             Регион = participant.Region
-                         };
-            dataGridView1.DataSource = result.ToList();
+            using (CompetitionDB db = new CompetitionDB())
+            {
+                db.Participants.Load();
+                var result = from participant in db.Participants
+                             select new
+                             {
+                                 Код = participant.PersonId,
+                                 Фамилия = participant.LastName,
+                                 Имя = participant.FirstName,
+                                 Отчество = participant.MiddleName,
+                                 Ранг = participant.Rank,
+                                 Регион = participant.Region
+                             };
+                dataGridView1.DataSource = result.ToList();
+            }
         }
     }
 }

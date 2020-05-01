@@ -14,7 +14,6 @@ namespace CompetitionProject
 {
     public partial class Form1 : Form
     {
-        CompetitionDB autho = new CompetitionDB();
         public Form1()
         {
             InitializeComponent();
@@ -27,23 +26,34 @@ namespace CompetitionProject
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            var employee = autho.Employees;
-            foreach (Employee au in employee)
+            using (CompetitionDB db = new CompetitionDB())
             {
-                if (Login.Text == au.Login && Password.Text == au.Password)
+                try
                 {
-                    MainMenu menu = new MainMenu();
-                    menu.LastName.Text = au.LastName;
-                    menu.FirstName.Text = au.FirstName;
-                    menu.MiddleName.Text = au.MiddleName;
-                    menu.Job.Text = au.Job;
-                    menu.Email.Text = au.Email;
-                    menu.Show();
-                    this.Hide();
+                    var employee = db.Employees;
+                    foreach (Employee au in employee)
+                    {
+                        if (Login.Text == au.Login && Password.Text == au.Password)
+                        {
+                            MainMenu menu = new MainMenu();
+                            menu.LastName.Text = au.LastName;
+                            menu.FirstName.Text = au.FirstName;
+                            menu.MiddleName.Text = au.MiddleName;
+                            menu.Job.Text = au.Job;
+                            menu.Email.Text = au.Email;
+                            menu.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Неверный логин или пароль");
+                        }
+
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Неверный логин или пароль");
+                    MessageBox.Show("Такого пользователя не существует:\n" + ex);
                 }
             }
         }

@@ -16,8 +16,6 @@ namespace CompetitionProject
     public partial class AddCompetition : Form
     {
         protected internal bool resComp;
-        CompetitionDB addCompetition = new CompetitionDB();
-        public CompetitionClasses.Competition newCompetition = new CompetitionClasses.Competition();
         public AddCompetition()
         {
             InitializeComponent();
@@ -52,7 +50,7 @@ namespace CompetitionProject
         {
             SelectSportType selectSportType = new SelectSportType();
             selectSportType.ShowDialog();
-            CheckCat.Checked = true;
+            //CheckCat.Checked = true;
         }
 
         private void JudgeButton_Click(object sender, EventArgs e)

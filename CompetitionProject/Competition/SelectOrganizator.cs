@@ -14,11 +14,9 @@ namespace CompetitionProject.Competition
 {
     public partial class SelectOrganizator : Form
     {
-        CompetitionDB db = new CompetitionDB();
         public SelectOrganizator()
         {
             InitializeComponent();
-
             loadToList();
         }
 
@@ -29,16 +27,19 @@ namespace CompetitionProject.Competition
 
         private void loadToList()
         {
-            db.Organizators.Load();
-            var result = from organizator in db.Organizators
-                         select new
-                         {
-                             Код = organizator.OrganizatorId,
-                             Фамилия = organizator.Organizator.LastName,
-                             Имя = organizator.Organizator.FirstName,
-                             Отчество = organizator.Organizator.MiddleName,
-                         };
-            dataGridView1.DataSource = result.ToList();
+            using (CompetitionDB db = new CompetitionDB())
+            {
+                db.Organizators.Load();
+                var result = from organizator in db.Organizators
+                             select new
+                             {
+                                 Код = organizator.OrganizatorId,
+                                 Фамилия = organizator.Organizator.LastName,
+                                 Имя = organizator.Organizator.FirstName,
+                                 Отчество = organizator.Organizator.MiddleName,
+                             };
+                dataGridView1.DataSource = result.ToList();
+            }
         }
     }
 }

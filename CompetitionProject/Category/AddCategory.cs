@@ -31,45 +31,52 @@ namespace CompetitionProject
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            CompetitionDB addCategory = new CompetitionDB();
-            CompetitionClasses.Category newCategory = new CompetitionClasses.Category()
-            {
-                Name = NameBox.Text,
-                Age = AgeBox.Text,
-                Weight = WeightBox.Text,
-                Gender = GenderBox.Text
-            };
-            try
+            using (CompetitionDB db = new CompetitionDB())
             {
                 bool res = false;
-                var category = addCategory.Categories;
-                foreach (Category cat in category)
+                int count = 0;
+                CompetitionClasses.Category newCategory = new CompetitionClasses.Category()
                 {
-                    if (NameBox.Text != cat.Name && GenderBox.Text != cat.Gender)
+                    Name = NameBox.Text,
+                    Age = AgeBox.Text,
+                    Weight = WeightBox.Text,
+                    Gender = GenderBox.Text
+                };
+                try
+                {
+                    var category = db.Categories.ToList();
+                    foreach (Category cat in category)
                     {
-                        addCategory.Categories.Add(newCategory);
-                        addCategory.SaveChanges();
+                        if (NameBox.Text != cat.Name && GenderBox.Text != cat.Gender)
+                        {
+                            if (count == category.Count - 1)
+                            {
+                                db.Categories.Add(newCategory);
+                                db.SaveChanges();
+                                res = true;
+                                MessageBox.Show("Новая категория добавлена");
+                                this.Close();
+                            }
+                            count++;
+                        }
+                        else
+                        {
+                            res = true;
+                            MessageBox.Show("Данная категория уже существует");
+                        }
+                    }
+                    if (res == false)
+                    {
+                        db.Categories.Add(newCategory);
+                        db.SaveChanges();
                         MessageBox.Show("Новая категория добавлена");
-                        res = true;
                         this.Close();
                     }
-                    else
-                    {
-                        res = true;
-                        MessageBox.Show("Данная категория уже существует");
-                    }
                 }
-                if (res == false)
+                catch (Exception ex)
                 {
-                    addCategory.Categories.Add(newCategory);
-                    addCategory.SaveChanges();
-                    MessageBox.Show("Новая категория добавлена");
-                    this.Close();
+                    MessageBox.Show("Ошибка при добавлении:\n" + ex);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка при добавлении:\n" + ex);
             }
         }
     }

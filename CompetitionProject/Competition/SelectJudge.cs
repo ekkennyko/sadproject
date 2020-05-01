@@ -14,7 +14,6 @@ namespace CompetitionProject.Competition
 {
     public partial class SelectJudge : Form
     {
-        CompetitionDB db = new CompetitionDB();
         public SelectJudge()
         {
             InitializeComponent();
@@ -53,16 +52,19 @@ namespace CompetitionProject.Competition
 
         private void loadToList()
         {
-            db.Judges.Load();
-            var result = from judge in db.Judges
-                         select new
-                         {
-                             Код = judge.JudgeId,
-                             Фамилия = judge.Judge.LastName,
-                             Имя = judge.Judge.FirstName,
-                             Отчество = judge.Judge.MiddleName,
-                         };
-            dataGridView1.DataSource = result.ToList();
+            using (CompetitionDB db = new CompetitionDB())
+            {
+                db.Judges.Load();
+                var result = from judge in db.Judges
+                             select new
+                             {
+                                 Код = judge.JudgeId,
+                                 Фамилия = judge.Judge.LastName,
+                                 Имя = judge.Judge.FirstName,
+                                 Отчество = judge.Judge.MiddleName,
+                             };
+                dataGridView1.DataSource = result.ToList();
+            }
         }
     }
 }

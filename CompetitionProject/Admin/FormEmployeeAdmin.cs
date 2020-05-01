@@ -16,7 +16,6 @@ namespace CompetitionProject
 {
     public partial class FormEmployeeAdmin : Form
     {
-        CompetitionDB db;
         public FormEmployeeAdmin()
         {
             InitializeComponent();
@@ -25,20 +24,21 @@ namespace CompetitionProject
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
-            db = new CompetitionDB();
-            db.Employees.Load();
-
-            var result = from employee in db.Employees
-                         select new
-                         {
-                             Код = employee.PersonId,
-                             Фамилия = employee.LastName,
-                             Имя = employee.FirstName,
-                             Отчество = employee.MiddleName,
-                             Почта = employee.Email,
-                             Должность = employee.Job,
-                         };
-            dataGridView1.DataSource = result.ToList();
+            using (CompetitionDB db = new CompetitionDB())
+            {
+                db.Employees.Load();
+                var result = from employee in db.Employees
+                             select new
+                             {
+                                 Код = employee.PersonId,
+                                 Фамилия = employee.LastName,
+                                 Имя = employee.FirstName,
+                                 Отчество = employee.MiddleName,
+                                 Почта = employee.Email,
+                                 Должность = employee.Job,
+                             };
+                dataGridView1.DataSource = result.ToList();
+            }
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -54,72 +54,78 @@ namespace CompetitionProject
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
+            using (CompetitionDB db = new CompetitionDB())
             {
-                int index = dataGridView1.SelectedRows[0].Index;
-                int id = 0;
-                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
-                if (converted == false)
-                    return;
-                CompetitionClasses.Employee employee = db.Employees.Find(id);
-                EditEmployeeAdmin editEmployee = new EditEmployeeAdmin();
-                editEmployee.LastName.Text = employee.LastName;
-                editEmployee.FirstName.Text = employee.FirstName;
-                editEmployee.MiddleName.Text = employee.MiddleName;
-                editEmployee.Job.Text = employee.Job;
-                editEmployee.Login.Text = employee.Login;
-                editEmployee.Password.Text = employee.Password;
-                editEmployee.Email.Text = employee.Email;
-
-                editEmployee.ShowDialog();
-                if (editEmployee.result == true)
+                if (dataGridView1.SelectedRows.Count == 1)
                 {
-                    try
-                    {
-                        employee.Password = editEmployee.Password.Text;
-                        employee.Email = editEmployee.Email.Text;
+                    int index = dataGridView1.SelectedRows[0].Index;
+                    int id = 0;
+                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                    if (converted == false)
+                        return;
+                    CompetitionClasses.Employee employee = db.Employees.Find(id);
+                    EditEmployeeAdmin editEmployee = new EditEmployeeAdmin();
+                    editEmployee.LastName.Text = employee.LastName;
+                    editEmployee.FirstName.Text = employee.FirstName;
+                    editEmployee.MiddleName.Text = employee.MiddleName;
+                    editEmployee.Job.Text = employee.Job;
+                    editEmployee.Login.Text = employee.Login;
+                    editEmployee.Password.Text = employee.Password;
+                    editEmployee.Email.Text = employee.Email;
 
-                        db.SaveChanges();
-                        dataGridView1.Refresh();
-                        MessageBox.Show("Информация о сотруднике обновлена");
-                    }
-                    catch
+                    editEmployee.ShowDialog();
+                    if (editEmployee.result == true)
                     {
-                        MessageBox.Show("Ошибка");
+                        try
+                        {
+                            employee.Password = editEmployee.Password.Text;
+                            employee.Email = editEmployee.Email.Text;
+
+                            db.SaveChanges();
+                            dataGridView1.Refresh();
+                            MessageBox.Show("Информация о сотруднике обновлена");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Ошибка:\n" + ex);
+                        }
                     }
                 }
-            }
-            else
-            {
-                MessageBox.Show("Выберите сотрудника");
+                else
+                {
+                    MessageBox.Show("Выберите сотрудника");
+                }
             }
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            using (CompetitionDB db = new CompetitionDB())
             {
-                int index = dataGridView1.SelectedRows[0].Index;
-                int id = 0;
-                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
-                if (converted == false)
-                    return;
-                CompetitionClasses.Employee employee = db.Employees.Find(id);
-                try
+                if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    db.Employees.Remove(employee);
-                    db.SaveChanges();
-                    MessageBox.Show("Сотрудник удален");
-                }
-                catch
-                {
-                    MessageBox.Show("Ошибка");
-                }
+                    int index = dataGridView1.SelectedRows[0].Index;
+                    int id = 0;
+                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                    if (converted == false)
+                        return;
+                    CompetitionClasses.Employee employee = db.Employees.Find(id);
+                    try
+                    {
+                        db.Employees.Remove(employee);
+                        db.SaveChanges();
+                        MessageBox.Show("Сотрудник удален");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ошибка:\n" + ex);
+                    }
 
-            }
-            else
-            {
-                MessageBox.Show("Выберите сотрудника");
+                }
+                else
+                {
+                    MessageBox.Show("Выберите сотрудника");
+                }
             }
         }
     }

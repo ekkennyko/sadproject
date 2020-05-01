@@ -36,5 +36,10 @@ namespace CompetitionProject.Migrations
         {
 
         }
+
+        private void OkButton_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

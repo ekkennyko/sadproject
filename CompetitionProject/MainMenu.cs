@@ -14,13 +14,9 @@ namespace CompetitionProject
 {
     public partial class MainMenu : Form
     {
-        CompetitionDB db;
         public MainMenu()
         {
             InitializeComponent();
-
-            db = new CompetitionDB();
-
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
@@ -39,8 +35,8 @@ namespace CompetitionProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormCompetition competition = new FormCompetition();
-            competition.Show();
+           FormCompetition competition = new FormCompetition();
+           competition.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)

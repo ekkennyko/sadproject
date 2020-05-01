@@ -37,88 +37,97 @@ namespace CompetitionProject.Migrations
             this.LocationBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.OkButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 30);
+            this.label1.Location = new System.Drawing.Point(9, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 17);
+            this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Название";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 69);
+            this.label3.Location = new System.Drawing.Point(9, 56);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 17);
+            this.label3.Size = new System.Drawing.Size(102, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Место проведения";
             // 
             // TitleBox
             // 
             this.TitleBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TitleBox.Location = new System.Drawing.Point(185, 25);
+            this.TitleBox.Location = new System.Drawing.Point(139, 20);
+            this.TitleBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TitleBox.Name = "TitleBox";
-            this.TitleBox.Size = new System.Drawing.Size(135, 24);
+            this.TitleBox.Size = new System.Drawing.Size(102, 21);
             this.TitleBox.TabIndex = 57;
             this.TitleBox.TextChanged += new System.EventHandler(this.TitleBox_TextChanged);
             // 
             // LocationBox
             // 
             this.LocationBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LocationBox.Location = new System.Drawing.Point(185, 64);
+            this.LocationBox.Location = new System.Drawing.Point(139, 52);
+            this.LocationBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LocationBox.Name = "LocationBox";
-            this.LocationBox.Size = new System.Drawing.Size(135, 24);
+            this.LocationBox.Size = new System.Drawing.Size(102, 21);
             this.LocationBox.TabIndex = 58;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 105);
+            this.label2.Location = new System.Drawing.Point(9, 85);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 17);
+            this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Дата проведения";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(162, 100);
+            this.dateTimePicker1.Location = new System.Drawing.Point(122, 81);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(169, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(128, 20);
             this.dateTimePicker1.TabIndex = 59;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // CancelButton
+            // exitButton
             // 
-            this.CancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CancelButton.Location = new System.Drawing.Point(253, 136);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(87, 27);
-            this.CancelButton.TabIndex = 61;
-            this.CancelButton.Text = "Отмена";
-            this.CancelButton.UseVisualStyleBackColor = true;
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitButton.Location = new System.Drawing.Point(190, 110);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(65, 22);
+            this.exitButton.TabIndex = 61;
+            this.exitButton.Text = "Отмена";
+            this.exitButton.UseVisualStyleBackColor = true;
             // 
             // OkButton
             // 
             this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OkButton.Location = new System.Drawing.Point(162, 136);
+            this.OkButton.Location = new System.Drawing.Point(122, 110);
+            this.OkButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(87, 27);
+            this.OkButton.Size = new System.Drawing.Size(65, 22);
             this.OkButton.TabIndex = 60;
             this.OkButton.Text = "Ок";
             this.OkButton.UseVisualStyleBackColor = true;
+            this.OkButton.Click += new System.EventHandler(this.OkButton_Click_1);
             // 
             // EditCompetition
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 175);
-            this.Controls.Add(this.CancelButton);
+            this.ClientSize = new System.Drawing.Size(257, 142);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.OkButton);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.LocationBox);
@@ -127,6 +136,7 @@ namespace CompetitionProject.Migrations
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EditCompetition";
             this.Text = "Редактирование соревнований";
             this.Load += new System.EventHandler(this.EditCompetition_Load);
@@ -153,7 +163,7 @@ namespace CompetitionProject.Migrations
         protected internal System.Windows.Forms.TextBox LocationBox;
         private System.Windows.Forms.Label label2;
         protected internal System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button OkButton;
     }
 }

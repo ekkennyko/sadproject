@@ -15,7 +15,6 @@ namespace CompetitionProject
 {
     public partial class SelectCategory : Form
     {
-        CompetitionDB db = new CompetitionDB();
         AddCompetition competitionForm = new AddCompetition();
         public SelectCategory()
         {
@@ -36,16 +35,19 @@ namespace CompetitionProject
 
         private void loadToList()
         {
-            db.Categories.Load();
+            using (CompetitionDB db = new CompetitionDB())
+            {
+                db.Categories.Load();
 
-            var result = from category in db.Categories
-                         select new
-                         {
-                             Код = category.CategoryId,
-                             Название = category.Name,
-                             Вес = category.Weight
-                         };
-            dataGridView1.DataSource = result.ToList();
+                var result = from category in db.Categories
+                             select new
+                             {
+                                 Код = category.CategoryId,
+                                 Название = category.Name,
+                                 Вес = category.Weight
+                             };
+                dataGridView1.DataSource = result.ToList();
+            }
         }
     }
 }

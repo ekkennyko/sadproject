@@ -38,5 +38,10 @@ namespace CompetitionProject
         {
 
         }
+
+        private void InfoCompetition_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
