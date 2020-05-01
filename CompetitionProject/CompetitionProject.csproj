@@ -96,6 +96,30 @@
     <Compile Include="Admin\AddEmployeeAdmin.Designer.cs">
       <DependentUpon>AddEmployeeAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Competition\SelectJudge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Competition\SelectJudge.Designer.cs">
+      <DependentUpon>SelectJudge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Competition\SelectOrganizator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Competition\SelectOrganizator.Designer.cs">
+      <DependentUpon>SelectOrganizator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Competition\SelectParticipant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Competition\SelectParticipant.Designer.cs">
+      <DependentUpon>SelectParticipant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Competition\SelectSportType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Competition\SelectSportType.Designer.cs">
+      <DependentUpon>SelectSportType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202004240446370_FifthSad3.5.cs" />
     <Compile Include="Migrations\202004240446370_FifthSad3.5.designer.cs">
       <DependentUpon>202004240446370_FifthSad3.5.cs</DependentUpon>
@@ -299,30 +323,6 @@
     <Compile Include="Competition\SelectCategory.Designer.cs">
       <DependentUpon>SelectCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Competition\SelectJudge.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Competition\SelectJudge.Designer.cs">
-      <DependentUpon>SelectJudge.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Competition\SelectOrganizator.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Competition\SelectOrganizator.Designer.cs">
-      <DependentUpon>SelectOrganizator.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Competition\SelectParticipant.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Competition\SelectParticipant.Designer.cs">
-      <DependentUpon>SelectParticipant.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Competition\SelectSportType.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Competition\SelectSportType.Designer.cs">
-      <DependentUpon>SelectSportType.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Admin\EditEmployeeAdmin.resx">
       <DependentUpon>EditEmployeeAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -331,6 +331,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\AddEmployeeAdmin.resx">
       <DependentUpon>AddEmployeeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Competition\SelectJudge.resx">
+      <DependentUpon>SelectJudge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Competition\SelectOrganizator.resx">
+      <DependentUpon>SelectOrganizator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Competition\SelectParticipant.resx">
+      <DependentUpon>SelectParticipant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Competition\SelectSportType.resx">
+      <DependentUpon>SelectSportType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004240446370_FifthSad3.5.resx">
       <DependentUpon>202004240446370_FifthSad3.5.cs</DependentUpon>
@@ -461,18 +473,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Competition\SelectCategory.resx">
       <DependentUpon>SelectCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Competition\SelectJudge.resx">
-      <DependentUpon>SelectJudge.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Competition\SelectOrganizator.resx">
-      <DependentUpon>SelectOrganizator.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Competition\SelectParticipant.resx">
-      <DependentUpon>SelectParticipant.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Competition\SelectSportType.resx">
-      <DependentUpon>SelectSportType.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CompetitionClasses.Participant.datasource" />

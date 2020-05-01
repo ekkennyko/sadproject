@@ -67,9 +67,9 @@ namespace CompetitionProject
                     this.Close();
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Ошибка при добавлении");
+                MessageBox.Show("Ошибка при добавлении:\n" + ex);
             }
         }
     }

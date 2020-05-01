@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataBaseArch;
 using CompetitionClasses;
+using System.Data.Entity;
 
-namespace CompetitionProject
+namespace CompetitionProject.Competition
 {
     public partial class SelectSportType : Form
     {
@@ -18,33 +19,25 @@ namespace CompetitionProject
         public SelectSportType()
         {
             InitializeComponent();
-
-            List<SportType> sportTypes = db.SportTypes.ToList();
-            dbCombo.DataSource = sportTypes;
-            dbCombo.DisplayMember = "Name";
-            dbCombo.ValueMember = "Id";
-
-            dbCombo.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-
-            dbList.DisplayMember = "Name";
-            dbList.ValueMember = "Id";
-        }
-        
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SportType sportType = (SportType)dbCombo.SelectedItem;
-
-            dbList.Items.Add(sportType);
+            loadToList();
         }
 
-        private void OkButton_Click(object sender, EventArgs e)
+        private void okButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
+        private void loadToList()
         {
-            this.Close();
+            db.SportTypes.Load();
+            var result = from sportType in db.SportTypes
+                         select new
+                         {
+                             Код = sportType.Id,
+                             Название = sportType.Name,
+                             Тип = sportType.Type
+                         };
+            dataGridView1.DataSource = result.ToList();
         }
     }
 }

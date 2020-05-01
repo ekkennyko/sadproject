@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
 using DataBaseArch;
-using CompetitionClasses;
 
-namespace CompetitionProject
+namespace CompetitionProject.Competition
 {
     public partial class SelectParticipant : Form
     {
@@ -18,33 +18,28 @@ namespace CompetitionProject
         public SelectParticipant()
         {
             InitializeComponent();
-
-            List<CompetitionClasses.Participant> participants = db.Participants.ToList();
-            dbCombo.DataSource = participants;
-            dbCombo.DisplayMember = "LastName" //+ "FirstName " + "MiddleName"
-                ;
-            dbCombo.ValueMember = "PersonId";
-
-            dbCombo.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-
-            dbList.DisplayMember = "LastName" //+ "FirstName " + "MiddleName"
-                ;
-            dbList.ValueMember = "PersonId";
+            loadToList();
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Participant participant = (Participant)dbCombo.SelectedItem;
 
-            dbList.Items.Add(participant);
-        }
-        private void OkButton_Click(object sender, EventArgs e)
+        private void okButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void dbCombo_SelectedIndexChanged(object sender, EventArgs e)
+        private void loadToList()
         {
-
+            db.Participants.Load();
+            var result = from participant in db.Participants
+                         select new
+                         {
+                             Код = participant.PersonId,
+                             Фамилия = participant.LastName,
+                             Имя = participant.FirstName,
+                             Отчество = participant.MiddleName,
+                             Ранг = participant.Rank,
+                             Регион = participant.Region
+                         };
+            dataGridView1.DataSource = result.ToList();
         }
     }
 }

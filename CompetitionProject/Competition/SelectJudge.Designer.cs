@@ -1,4 +1,4 @@
-﻿namespace CompetitionProject
+﻿namespace CompetitionProject.Competition
 {
     partial class SelectJudge
     {
@@ -29,73 +29,104 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectJudge));
-            this.dbList = new System.Windows.Forms.ListBox();
-            this.dbCombo = new System.Windows.Forms.ComboBox();
-            this.CancelButton = new System.Windows.Forms.Button();
-            this.OkButton = new System.Windows.Forms.Button();
+            this.removeButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.okButton = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dbList
+            // removeButton
             // 
-            this.dbList.FormattingEnabled = true;
-            this.dbList.Location = new System.Drawing.Point(16, 54);
-            this.dbList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dbList.Name = "dbList";
-            this.dbList.Size = new System.Drawing.Size(190, 56);
-            this.dbList.TabIndex = 15;
+            this.removeButton.Location = new System.Drawing.Point(390, 188);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(44, 35);
+            this.removeButton.TabIndex = 17;
+            this.removeButton.Text = "X";
+            this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
-            // dbCombo
+            // addButton
             // 
-            this.dbCombo.FormattingEnabled = true;
-            this.dbCombo.Location = new System.Drawing.Point(16, 18);
-            this.dbCombo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dbCombo.Name = "dbCombo";
-            this.dbCombo.Size = new System.Drawing.Size(191, 21);
-            this.dbCombo.TabIndex = 14;
+            this.addButton.Location = new System.Drawing.Point(390, 121);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(44, 35);
+            this.addButton.TabIndex = 16;
+            this.addButton.Text = "->";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // CancelButton
+            // exitButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(124, 127);
-            this.CancelButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(82, 28);
-            this.CancelButton.TabIndex = 13;
-            this.CancelButton.Text = "Отмена";
-            this.CancelButton.UseVisualStyleBackColor = true;
+            this.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.exitButton.Location = new System.Drawing.Point(683, 363);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(128, 31);
+            this.exitButton.TabIndex = 15;
+            this.exitButton.Text = "Отмена";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // OkButton
+            // okButton
             // 
-            this.OkButton.Location = new System.Drawing.Point(16, 127);
-            this.OkButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(82, 28);
-            this.OkButton.TabIndex = 12;
-            this.OkButton.Text = "Ок";
-            this.OkButton.UseVisualStyleBackColor = true;
-            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
+            this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.okButton.Location = new System.Drawing.Point(549, 363);
+            this.okButton.Name = "okButton";
+            this.okButton.Size = new System.Drawing.Size(128, 31);
+            this.okButton.TabIndex = 14;
+            this.okButton.Text = "Ок";
+            this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(440, 13);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(371, 345);
+            this.dataGridView2.TabIndex = 13;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 13);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(371, 345);
+            this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // SelectJudge
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(223, 173);
-            this.Controls.Add(this.dbList);
-            this.Controls.Add(this.dbCombo);
-            this.Controls.Add(this.CancelButton);
-            this.Controls.Add(this.OkButton);
+            this.ClientSize = new System.Drawing.Size(823, 407);
+            this.Controls.Add(this.removeButton);
+            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.okButton);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SelectJudge";
             this.Text = "SelectJudge";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox dbList;
-        private System.Windows.Forms.ComboBox dbCombo;
-        private System.Windows.Forms.Button CancelButton;
-        private System.Windows.Forms.Button OkButton;
+        private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Button okButton;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

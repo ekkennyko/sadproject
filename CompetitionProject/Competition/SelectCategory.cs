@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataBaseArch;
 using CompetitionClasses;
+using System.Data.Entity;
 
 namespace CompetitionProject
 {
@@ -20,54 +21,31 @@ namespace CompetitionProject
         {
             InitializeComponent();
 
-            List<Category> categories = db.Categories.ToList();
-            dbCombo.DataSource = categories;
-            dbCombo.DisplayMember = "Name";
-            dbCombo.ValueMember = "CategoryId";
-
-            dbCombo.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-
-            dbList.DisplayMember = "Name";
-            dbList.ValueMember = "CategoryId";
-        }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Category category = (Category)dbCombo.SelectedItem;
-
-            dbList.Items.Add(category);
-        }
-        private void OkButton_Click(object sender, EventArgs e)
-        {
-            ////Category category = (Category)dbList.SelectedItem;
-            //if (dbList.Items.Count > 0)
-            //{
-            //    for (int i = 0; i < dbList.Items.Count; i++)
-            //    {
-            //        DataRowView D1 = dbList.Selec as DataRowView;
-
-            //        int id = (int)D1[1];
-              
-            //        Category category = db.Categories.Find(id);
-            //        try
-            //        {
-
-            //            competitionForm.newCompetition.Categories.Add(category);
-            //        }
-            //        catch
-            //        {
-
-            //        }
-            //    }
-            //}
-
-            competitionForm.resComp = true;
-            this.Close();
+            loadToList();
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
+        private void exitButton_Click(object sender, EventArgs e)
         {
-            competitionForm.resComp = false;
-            this.Close();
+
+        }
+
+        private void okButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loadToList()
+        {
+            db.Categories.Load();
+
+            var result = from category in db.Categories
+                         select new
+                         {
+                             Код = category.CategoryId,
+                             Название = category.Name,
+                             Вес = category.Weight
+                         };
+            dataGridView1.DataSource = result.ToList();
         }
     }
 }

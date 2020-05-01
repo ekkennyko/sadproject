@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataBaseArch;
-using CompetitionClasses;
+using System.Data.Entity;
 
-namespace CompetitionProject
+namespace CompetitionProject.Competition
 {
     public partial class SelectJudge : Form
     {
@@ -18,26 +18,51 @@ namespace CompetitionProject
         public SelectJudge()
         {
             InitializeComponent();
-
-            List<CompetitionJudge> judges = db.Judges.ToList();
-            dbCombo.DataSource = judges;
-            dbCombo.DisplayMember = "LastName" + "FirstName" + "MiddleName";
-            dbCombo.ValueMember = "JudgeId";
-
-            dbCombo.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-
-            dbList.DisplayMember = "LastName" + "FirstName" + "MiddleName";
-            dbList.ValueMember = "JudgeId";
+            loadToList();
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CompetitionJudge competitionJudge = (CompetitionJudge)dbCombo.SelectedItem;
 
-            dbList.Items.Add(competitionJudge);
-        }
-        private void OkButton_Click(object sender, EventArgs e)
+        private void okButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void loadToList()
+        {
+            db.Judges.Load();
+            var result = from judge in db.Judges
+                         select new
+                         {
+                             Код = judge.JudgeId,
+                             Фамилия = judge.Judge.LastName,
+                             Имя = judge.Judge.FirstName,
+                             Отчество = judge.Judge.MiddleName,
+                         };
+            dataGridView1.DataSource = result.ToList();
         }
     }
 }

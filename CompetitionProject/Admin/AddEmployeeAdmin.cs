@@ -15,19 +15,16 @@ namespace CompetitionProject
 {
     public partial class AddEmployeeAdmin : Form
     {
-        CompetitionDB db = new CompetitionDB();
-
-        CompetitionJudge judge = new CompetitionJudge();
-        CompetitionOrganizator organizator = new CompetitionOrganizator();
-        Employee newEmployee = new Employee();
-
         public AddEmployeeAdmin()
         {
             InitializeComponent();
         }
 
-        private void toList()
+        private void toList(Employee newEmployee, CompetitionDB db)
         {
+            CompetitionJudge judge = new CompetitionJudge();
+            CompetitionOrganizator organizator = new CompetitionOrganizator();
+
             if (checkJudge.Checked == true)
             {
                 judge.JudgeId = newEmployee.PersonId;
@@ -44,13 +41,17 @@ namespace CompetitionProject
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            newEmployee.LastName = LastName.Text;
-            newEmployee.FirstName = FirstName.Text;
-            newEmployee.MiddleName = MiddleName.Text;
-            newEmployee.Job = Job.Text;
-            newEmployee.Email = Email.Text;
-            newEmployee.Login = Login.Text;
-            newEmployee.Password = Password.Text;
+            CompetitionDB db = new CompetitionDB();
+            Employee newEmployee = new Employee
+            {
+                LastName = LastName.Text,
+                FirstName = FirstName.Text,
+                MiddleName = MiddleName.Text,
+                Job = Job.Text,
+                Email = Email.Text,
+                Login = Login.Text,
+                Password = Password.Text
+            };
 
             try
             {
@@ -63,7 +64,7 @@ namespace CompetitionProject
                     {
                         db.Employees.Add(newEmployee);
                         db.SaveChanges();
-                        toList();
+                        toList(newEmployee, db);
                         MessageBox.Show("Новый сотрудник добавлен");
                         res = true;
                         this.Close();
@@ -78,7 +79,7 @@ namespace CompetitionProject
                 {
                     db.Employees.Add(newEmployee);
                     db.SaveChanges();
-                    toList();
+                    toList(newEmployee, db);
                     MessageBox.Show("Новый сотрудник добавлен");
                     this.Close();
 

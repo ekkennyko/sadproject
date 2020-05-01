@@ -29,87 +29,101 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectCategory));
-            this.CancelButton = new System.Windows.Forms.Button();
-            this.OkButton = new System.Windows.Forms.Button();
-            this.dbCombo = new System.Windows.Forms.ComboBox();
-            this.dbList = new System.Windows.Forms.ListBox();
-            this.RemoveButton = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.okButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
+            this.removeButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
-            // CancelButton
+            // dataGridView1
             // 
-            this.CancelButton.Location = new System.Drawing.Point(140, 149);
-            this.CancelButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(96, 32);
-            this.CancelButton.TabIndex = 9;
-            this.CancelButton.Text = "Отмена";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 13);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(371, 345);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // OkButton
+            // dataGridView2
             // 
-            this.OkButton.Location = new System.Drawing.Point(14, 149);
-            this.OkButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(96, 32);
-            this.OkButton.TabIndex = 8;
-            this.OkButton.Text = "Ок";
-            this.OkButton.UseVisualStyleBackColor = true;
-            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(440, 13);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(371, 345);
+            this.dataGridView2.TabIndex = 1;
             // 
-            // dbCombo
+            // okButton
             // 
-            this.dbCombo.FormattingEnabled = true;
-            this.dbCombo.Location = new System.Drawing.Point(14, 14);
-            this.dbCombo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dbCombo.Name = "dbCombo";
-            this.dbCombo.Size = new System.Drawing.Size(222, 23);
-            this.dbCombo.TabIndex = 10;
+            this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.okButton.Location = new System.Drawing.Point(549, 363);
+            this.okButton.Name = "okButton";
+            this.okButton.Size = new System.Drawing.Size(128, 31);
+            this.okButton.TabIndex = 2;
+            this.okButton.Text = "Ок";
+            this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
-            // dbList
+            // exitButton
             // 
-            this.dbList.FormattingEnabled = true;
-            this.dbList.ItemHeight = 15;
-            this.dbList.Location = new System.Drawing.Point(14, 50);
-            this.dbList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dbList.Name = "dbList";
-            this.dbList.Size = new System.Drawing.Size(222, 79);
-            this.dbList.TabIndex = 11;
+            this.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.exitButton.Location = new System.Drawing.Point(683, 363);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(128, 31);
+            this.exitButton.TabIndex = 3;
+            this.exitButton.Text = "Отмена";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // RemoveButton
+            // addButton
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(241, 50);
-            this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(96, 32);
-            this.RemoveButton.TabIndex = 12;
-            this.RemoveButton.Text = "Убрать";
-            this.RemoveButton.UseVisualStyleBackColor = true;
+            this.addButton.Location = new System.Drawing.Point(390, 121);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(44, 35);
+            this.addButton.TabIndex = 4;
+            this.addButton.Text = "->";
+            this.addButton.UseVisualStyleBackColor = true;
+            // 
+            // removeButton
+            // 
+            this.removeButton.Location = new System.Drawing.Point(390, 188);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(44, 35);
+            this.removeButton.TabIndex = 5;
+            this.removeButton.Text = "X";
+            this.removeButton.UseVisualStyleBackColor = true;
             // 
             // SelectCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 200);
-            this.Controls.Add(this.RemoveButton);
-            this.Controls.Add(this.dbList);
-            this.Controls.Add(this.dbCombo);
-            this.Controls.Add(this.CancelButton);
-            this.Controls.Add(this.OkButton);
+            this.ClientSize = new System.Drawing.Size(823, 407);
+            this.Controls.Add(this.removeButton);
+            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.okButton);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SelectCategory";
             this.Text = "SelectCategory";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button CancelButton;
-        private System.Windows.Forms.Button OkButton;
-        private System.Windows.Forms.ComboBox dbCombo;
-        private System.Windows.Forms.ListBox dbList;
-        private System.Windows.Forms.Button RemoveButton;
+
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button okButton;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button removeButton;
     }
 }

@@ -26,7 +26,7 @@ namespace CompetitionProject
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            CompetitionDB addParticipant = new CompetitionDB();
+            CompetitionDB db = new CompetitionDB();
             CompetitionClasses.Participant newParticipant = new CompetitionClasses.Participant()
             {
                 LastName = LastName.Text,
@@ -44,13 +44,13 @@ namespace CompetitionProject
             try
             {
                 bool res = false;
-                var participant = addParticipant.Participants;
+                var participant = db.Participants;
                 foreach (CompetitionClasses.Participant pt in participant)
                 {
                    if (Passport.Text != pt.Passport)
                     {
-                        addParticipant.Participants.Add(newParticipant);
-                        addParticipant.SaveChanges();
+                        db.Participants.Add(newParticipant);
+                        db.SaveChanges();
                         MessageBox.Show("Новый участник добавлен");
                         res = true;
                         this.Close();
@@ -63,23 +63,15 @@ namespace CompetitionProject
                 }
                 if(res == false)
                 {
-                    addParticipant.Participants.Add(newParticipant);
-                    addParticipant.SaveChanges();
+                    db.Participants.Add(newParticipant);
+                    db.SaveChanges();
                     MessageBox.Show("Новый участник добавлен");
                     this.Close();
                 }
             }
-            catch (System.Data.Entity.Validation.DbEntityValidationException ex)
+            catch (Exception ex)
             {
-                string s = "";
-                foreach (var et in ex.EntityValidationErrors)
-                {
-                    foreach (var er in et.ValidationErrors)
-                    {
-                        s += er.PropertyName + ". Message: " + er.ErrorMessage;
-                    }
-                }
-                MessageBox.Show(s);
+                MessageBox.Show("Ошибка при добавлении:\n" + ex);
             }
 
         }
