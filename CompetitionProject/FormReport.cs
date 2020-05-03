@@ -95,14 +95,34 @@ namespace CompetitionProject
                 }
             }
         }
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            dgvtopdf(dataGridView1, "Отчет");
-        }
+        //private void Button2_Click(object sender, EventArgs e)
+        //{
+        //    dgvtopdf(dataGridView1, "Отчет");
+        //}
 
         private void Button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void SaveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "PDF|*.pdf";
+            saveFileDialog1.Title = "Save an PDF File";
+            saveFileDialog1.ShowDialog();
+
+            if (saveFileDialog1.FileName != "")
+            {
+                FileStream fs = (FileStream)saveFileDialog1.OpenFile();
+                dgvtopdf(dataGridView1, saveFileDialog1.FileName);
+                fs.Close();
+            }
         }
     }
 }
