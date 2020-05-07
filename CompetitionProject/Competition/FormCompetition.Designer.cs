@@ -38,6 +38,7 @@
             this.RefreshButton = new System.Windows.Forms.Button();
             this.PickDateTime = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.ResultButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,11 +143,22 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "Выберите дату:";
             // 
+            // ResultButton
+            // 
+            this.ResultButton.Location = new System.Drawing.Point(645, 273);
+            this.ResultButton.Name = "ResultButton";
+            this.ResultButton.Size = new System.Drawing.Size(128, 31);
+            this.ResultButton.TabIndex = 14;
+            this.ResultButton.Text = "Результаты";
+            this.ResultButton.UseVisualStyleBackColor = true;
+            this.ResultButton.Click += new System.EventHandler(this.ResultButton_Click);
+            // 
             // FormCompetition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 370);
+            this.Controls.Add(this.ResultButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PickDateTime);
             this.Controls.Add(this.RefreshButton);
@@ -179,5 +191,6 @@
         private System.Windows.Forms.Button RefreshButton;
         private System.Windows.Forms.DateTimePicker PickDateTime;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ResultButton;
     }
 }

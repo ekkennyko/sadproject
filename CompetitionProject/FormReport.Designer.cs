@@ -1,4 +1,6 @@
-﻿namespace CompetitionProject
+﻿using System;
+
+namespace CompetitionProject
 {
     partial class FormReport
     {
@@ -112,6 +114,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

@@ -151,5 +151,11 @@ namespace CompetitionProject
         {
 
         }
+
+        private void ResultButton_Click(object sender, EventArgs e)
+        {
+            FormResult formResult = new FormResult();
+            formResult.ShowDialog();
+        }
     }
 }
