@@ -85,6 +85,7 @@
             this.addButton.TabIndex = 4;
             this.addButton.Text = "->";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // removeButton
             // 
@@ -94,6 +95,7 @@
             this.removeButton.TabIndex = 5;
             this.removeButton.Text = "X";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // SelectCategory
             // 

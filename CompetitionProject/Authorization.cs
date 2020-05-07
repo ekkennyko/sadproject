@@ -28,32 +28,30 @@ namespace CompetitionProject
         {
             using (CompetitionDB db = new CompetitionDB())
             {
-                try
+                bool res = false;
+                var employee = db.Employees;
+                foreach (Employee au in employee)
                 {
-                    var employee = db.Employees;
-                    foreach (Employee au in employee)
+                    if (Login.Text == au.Login && Password.Text == au.Password)
                     {
-                        if (Login.Text == au.Login && Password.Text == au.Password)
-                        {
-                            MainMenu menu = new MainMenu();
-                            menu.LastName.Text = au.LastName;
-                            menu.FirstName.Text = au.FirstName;
-                            menu.MiddleName.Text = au.MiddleName;
-                            menu.Job.Text = au.Job;
-                            menu.Email.Text = au.Email;
-                            menu.Show();
-                            this.Hide();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Неверный логин или пароль");
-                        }
-
+                        MainMenu menu = new MainMenu();
+                        menu.LastName.Text = au.LastName;
+                        menu.FirstName.Text = au.FirstName;
+                        menu.MiddleName.Text = au.MiddleName;
+                        menu.Job.Text = au.Job;
+                        menu.Email.Text = au.Email;
+                        menu.Show();
+                        this.Hide();
+                        res = true;
+                    }
+                    else if ((res != true && Login.Text == au.Login))
+                    {
+                        MessageBox.Show("Неверный логин или пароль");
                     }
                 }
-                catch (Exception ex)
+                if (res != true)
                 {
-                    MessageBox.Show("Такого пользователя не существует:\n" + ex);
+                    MessageBox.Show("Такого пользователя не существует");
                 }
             }
         }
