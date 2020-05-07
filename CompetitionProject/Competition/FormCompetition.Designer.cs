@@ -39,7 +39,6 @@
             this.PickDateTime = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.ResultButton = new System.Windows.Forms.Button();
-            this.SaveInPDF = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -132,7 +131,7 @@
             this.PickDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PickDateTime.Location = new System.Drawing.Point(135, 14);
             this.PickDateTime.Name = "PickDateTime";
-            this.PickDateTime.Size = new System.Drawing.Size(494, 24);
+            this.PickDateTime.Size = new System.Drawing.Size(494, 21);
             this.PickDateTime.TabIndex = 12;
             // 
             // label1
@@ -141,7 +140,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(10, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 18);
+            this.label1.Size = new System.Drawing.Size(98, 15);
             this.label1.TabIndex = 13;
             this.label1.Text = "Выберите дату:";
             // 
@@ -155,23 +154,11 @@
             this.ResultButton.UseVisualStyleBackColor = true;
             this.ResultButton.Click += new System.EventHandler(this.ResultButton_Click);
             // 
-            // SaveInPDF
-            // 
-            this.SaveInPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SaveInPDF.Location = new System.Drawing.Point(645, 329);
-            this.SaveInPDF.Name = "SaveInPDF";
-            this.SaveInPDF.Size = new System.Drawing.Size(178, 31);
-            this.SaveInPDF.TabIndex = 15;
-            this.SaveInPDF.Text = "Сохранить в PDF";
-            this.SaveInPDF.UseVisualStyleBackColor = true;
-            this.SaveInPDF.Click += new System.EventHandler(this.SaveInPDF_Click);
-            // 
             // FormCompetition
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 420);
-            this.Controls.Add(this.SaveInPDF);
             this.Controls.Add(this.ResultButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PickDateTime);
@@ -206,7 +193,6 @@
         private System.Windows.Forms.DateTimePicker PickDateTime;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ResultButton;
-        private System.Windows.Forms.Button SaveInPDF;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

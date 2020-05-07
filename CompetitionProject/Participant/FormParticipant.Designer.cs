@@ -36,7 +36,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.MenuButton = new System.Windows.Forms.Button();
             this.RefreshButton = new System.Windows.Forms.Button();
-            this.SaveInPDF = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -128,24 +127,11 @@
             this.RefreshButton.UseVisualStyleBackColor = true;
             this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
-            // SaveInPDF
-            // 
-            this.SaveInPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SaveInPDF.Location = new System.Drawing.Point(645, 274);
-            this.SaveInPDF.Margin = new System.Windows.Forms.Padding(2);
-            this.SaveInPDF.Name = "SaveInPDF";
-            this.SaveInPDF.Size = new System.Drawing.Size(149, 31);
-            this.SaveInPDF.TabIndex = 11;
-            this.SaveInPDF.Text = "Сохранить в PDF";
-            this.SaveInPDF.UseVisualStyleBackColor = true;
-            this.SaveInPDF.Click += new System.EventHandler(this.SaveInPDF_Click);
-            // 
             // FormParticipant
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 370);
-            this.Controls.Add(this.SaveInPDF);
             this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.MenuButton);
             this.Controls.Add(this.dataGridView1);
@@ -172,7 +158,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button MenuButton;
         private System.Windows.Forms.Button RefreshButton;
-        private System.Windows.Forms.Button SaveInPDF;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

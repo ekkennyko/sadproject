@@ -26,8 +26,6 @@ namespace CompetitionProject
             RefreshButton_Click_1(null, null);
         }
 
-        DataGridView DGV = new DataGridView();
-
         private void AddButton_Click(object sender, EventArgs e)
         {
             AddCompetition addCompetition = new AddCompetition();
@@ -154,62 +152,6 @@ namespace CompetitionProject
         {
             FormResult formResult = new FormResult();
             formResult.ShowDialog();
-        }
-
-        private void SaveInPDF_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "PDF|*.pdf";
-            saveFileDialog1.Title = "Save an PDF File";
-            saveFileDialog1.ShowDialog();
-
-            if (saveFileDialog1.FileName != "")
-            {
-                FileStream fs = (FileStream)saveFileDialog1.OpenFile();
-                dgvtopdf(dataGridView1, saveFileDialog1.FileName);
-                fs.Close();
-            }
-        }
-
-        public void dgvtopdf(DataGridView dgv, string filename)
-        {
-            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.EMBEDDED);
-            PdfPTable pdftable = new PdfPTable(dgv.Columns.Count);
-            pdftable.DefaultCell.Padding = 3;
-            pdftable.WidthPercentage = 100;
-            pdftable.HorizontalAlignment = Element.ALIGN_LEFT;
-            pdftable.DefaultCell.BorderWidth = 1;
-            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
-
-            foreach (DataGridViewColumn column in dgv.Columns)
-            {
-                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, text));
-                pdftable.AddCell(cell);
-            }
-
-            foreach (DataGridViewRow row in dgv.Rows)
-            {
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    pdftable.AddCell(new Phrase(cell.Value.ToString(), text));
-                }
-            }
-
-            var savefiledialoge = new SaveFileDialog();
-            savefiledialoge.FileName = filename;
-            savefiledialoge.DefaultExt = ".pdf";
-            if (savefiledialoge.ShowDialog() == DialogResult.OK)
-            {
-                using (FileStream stream = new FileStream(savefiledialoge.FileName, FileMode.Create))
-                {
-                    Document pdfdoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
-                    PdfWriter.GetInstance(pdfdoc, stream);
-                    pdfdoc.Open();
-                    pdfdoc.Add(pdftable);
-                    pdfdoc.Close();
-                    stream.Close();
-                }
-            }
         }
     }
 }
