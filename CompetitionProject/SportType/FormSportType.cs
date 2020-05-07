@@ -44,8 +44,7 @@ namespace CompetitionProject
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
                     int index = dataGridView1.SelectedRows[0].Index;
-                    int id = 0;
-                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out int id);
                     if (converted == false)
                         return;
                     CompetitionClasses.SportType sportType = db.SportTypes.Find(id);
@@ -75,8 +74,7 @@ namespace CompetitionProject
                 if (dataGridView1.SelectedRows.Count == 1)
                 {
                     int index = dataGridView1.SelectedRows[0].Index;
-                    int id = 0;
-                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out int id);
                     if (converted == false)
                         return;
                     CompetitionClasses.SportType sportType = db.SportTypes.Find(id);

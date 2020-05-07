@@ -31,10 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectSportType));
             this.removeButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
-            this.exitButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.exitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +50,7 @@
             this.removeButton.TabIndex = 11;
             this.removeButton.Text = "X";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // addButton
             // 
@@ -56,16 +60,7 @@
             this.addButton.TabIndex = 10;
             this.addButton.Text = "->";
             this.addButton.UseVisualStyleBackColor = true;
-            // 
-            // exitButton
-            // 
-            this.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.exitButton.Location = new System.Drawing.Point(683, 363);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(128, 31);
-            this.exitButton.TabIndex = 9;
-            this.exitButton.Text = "Отмена";
-            this.exitButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // okButton
             // 
@@ -81,10 +76,32 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Title,
+            this.Type});
             this.dataGridView2.Location = new System.Drawing.Point(440, 13);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(371, 345);
             this.dataGridView2.TabIndex = 7;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Код";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Title
+            // 
+            this.Title.HeaderText = "Название";
+            this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
+            // 
+            // Type
+            // 
+            this.Type.HeaderText = "Тип";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
             // 
             // dataGridView1
             // 
@@ -94,14 +111,25 @@
             this.dataGridView1.Size = new System.Drawing.Size(371, 345);
             this.dataGridView1.TabIndex = 6;
             // 
+            // exitButton
+            // 
+            this.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.exitButton.Location = new System.Drawing.Point(683, 363);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(128, 31);
+            this.exitButton.TabIndex = 12;
+            this.exitButton.Text = "Отмена";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
             // SelectSportType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(823, 407);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.addButton);
-            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
@@ -119,9 +147,12 @@
 
         private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
+        private System.Windows.Forms.Button exitButton;
     }
 }

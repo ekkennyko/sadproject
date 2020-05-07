@@ -35,6 +35,10 @@
             this.okButton = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MiddleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +88,11 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.LastName,
+            this.FirstName,
+            this.MiddleName});
             this.dataGridView2.Location = new System.Drawing.Point(440, 13);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(371, 345);
@@ -98,6 +107,30 @@
             this.dataGridView1.Size = new System.Drawing.Size(371, 345);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Код";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "Фамилия";
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "Имя";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            // 
+            // MiddleName
+            // 
+            this.MiddleName.HeaderText = "Отчество";
+            this.MiddleName.Name = "MiddleName";
+            this.MiddleName.ReadOnly = true;
             // 
             // SelectJudge
             // 
@@ -128,5 +161,9 @@
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MiddleName;
     }
 }

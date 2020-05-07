@@ -19,7 +19,7 @@ namespace CompetitionProject
         public FormCompetition()
         {
             InitializeComponent();
-            RefreshButton_Click(null, null);
+            RefreshButton_Click_1(null, null);
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -35,8 +35,7 @@ namespace CompetitionProject
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
                     int index = dataGridView1.SelectedRows[0].Index;
-                    int id = 0;
-                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out int id);
                     if (converted == false)
                         return;
                     CompetitionClasses.Competition competition = db.Competitions.Find(id);
@@ -52,22 +51,6 @@ namespace CompetitionProject
             }
         }
 
-        private void RefreshButton_Click(object sender, EventArgs e)
-        {
-            using (CompetitionDB db = new CompetitionDB())
-            {
-                db.Competitions.Load();
-                var result = from competition in db.Competitions
-                             select new
-                             {
-                                 Название = competition.Title,
-                                 Дата = competition.DateCompetition,
-                                 Место_проведения = competition.Location,
-                             };
-                dataGridView1.DataSource = result.ToList();
-            }
-        }
-
         private void MenuButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -80,8 +63,7 @@ namespace CompetitionProject
                 if (dataGridView1.SelectedRows.Count == 1)
                 {
                     int index = dataGridView1.SelectedRows[0].Index;
-                    int id = 0;
-                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out int id);
                     if (converted == false)
                         return;
                     CompetitionClasses.Competition competition = db.Competitions.Find(id);
@@ -116,8 +98,7 @@ namespace CompetitionProject
                 if (dataGridView1.SelectedRows.Count == 1)
                 {
                     int index = dataGridView1.SelectedRows[0].Index;
-                    int id = 0;
-                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out int id);
                     if (converted == false)
                         return;
                     CompetitionClasses.Competition competition = db.Competitions.Find(id);
@@ -125,7 +106,7 @@ namespace CompetitionProject
                     infoCompetition.Title.Text = competition.Title;
                     infoCompetition.PlaceLocation.Text = competition.Location;
                     infoCompetition.TimeDate.Text = competition.DateCompetition.ToString();
-                    //
+                    
                     infoCompetition.BriefInfo.Text = competition.BriefInformation;
 
                     infoCompetition.ShowDialog();
@@ -149,7 +130,18 @@ namespace CompetitionProject
 
         private void RefreshButton_Click_1(object sender, EventArgs e)
         {
-
+            using (CompetitionDB db = new CompetitionDB())
+            {
+                db.Competitions.Load();
+                var result = from competition in db.Competitions
+                             select new
+                             {
+                                 Название = competition.Title,
+                                 Дата = competition.DateCompetition,
+                                 Место_проведения = competition.Location,
+                             };
+                dataGridView1.DataSource = result.ToList();
+            }
         }
 
         private void ResultButton_Click(object sender, EventArgs e)

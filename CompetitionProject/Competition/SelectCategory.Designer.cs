@@ -35,6 +35,9 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +53,10 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Title,
+            this.Weight});
             this.dataGridView2.Location = new System.Drawing.Point(440, 13);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(371, 345);
@@ -97,6 +104,24 @@
             this.removeButton.UseVisualStyleBackColor = true;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Код";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Title
+            // 
+            this.Title.HeaderText = "Название";
+            this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
+            // 
+            // Weight
+            // 
+            this.Weight.HeaderText = "Вес";
+            this.Weight.Name = "Weight";
+            this.Weight.ReadOnly = true;
+            // 
             // SelectCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -127,5 +152,8 @@
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Weight;
     }
 }

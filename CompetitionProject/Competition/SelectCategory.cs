@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DataBaseArch;
 using CompetitionClasses;
 using System.Data.Entity;
+using CompetitionProject.Competition;
 
 namespace CompetitionProject
 {
@@ -22,15 +23,29 @@ namespace CompetitionProject
 
             loadToList();
         }
-
+  
         private void exitButton_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void okButton_Click(object sender, EventArgs e)
         {
-
+            using (CompetitionDB db = new CompetitionDB())
+            {
+                if (dataGridView2.Rows.Count > 0)
+                {
+                    int index = dataGridView2.Rows[0].Index;
+                    bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
+                    if (converted == false)
+                        return;
+                    AddCompetition.category = db.Categories.Find(id);              
+                }
+                else
+                {
+                    MessageBox.Show("Добавьте категорию");
+                }
+            }
         }
 
         private void loadToList()
@@ -52,10 +67,6 @@ namespace CompetitionProject
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewColumn c in dataGridView1.Columns)
-            {
-                dataGridView2.Columns.Add(c.Clone() as DataGridViewColumn);
-            }
             foreach (DataGridViewRow r in dataGridView1.SelectedRows)
             {
                 int index = dataGridView2.Rows.Add(r.Clone() as DataGridViewRow);

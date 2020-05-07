@@ -31,13 +31,11 @@ namespace CompetitionProject
                 {
                     judge.JudgeId = newEmployee.PersonId;
                     db.Judges.Add(judge);
-                    db.SaveChanges();
                 }
                 else if (checkOrg.Checked == true)
                 {
                     organizator.OrganizatorId = newEmployee.PersonId;
                     db.Organizators.Add(organizator);
-                    db.SaveChanges();
                 }
             }
         }

@@ -15,6 +15,12 @@ namespace CompetitionProject
 {
     public partial class AddCompetition : Form
     {
+        public static Category category;
+        public static SportType sportType;
+        public static CompetitionJudge judge;
+        public static CompetitionOrganizator organizator;
+        public static CompetitionClasses.Participant participant;
+        public CompetitionClasses.Competition competition = new CompetitionClasses.Competition();
         protected internal bool resComp;
         public AddCompetition()
         {
@@ -23,21 +29,36 @@ namespace CompetitionProject
 
         private void ParticipantButton_Click(object sender, EventArgs e)
         {
-            SelectParticipant selectParticipant = new SelectParticipant();
-            selectParticipant.ShowDialog();
+            using (CompetitionDB db = new CompetitionDB()) {
+                SelectParticipant selectParticipant = new SelectParticipant();
+                selectParticipant.ShowDialog();
+                if(selectParticipant.DialogResult == DialogResult.OK)
+                {
+                    competition.Participants.Add(participant);
+                    CheckPart.Checked = true;
+                }
+                else
+                {
+                    CheckPart.Checked = false;
+                }
+            }
         }
 
         private void CategoryButton_Click(object sender, EventArgs e)
         {
-            SelectCategory selectCategory = new SelectCategory();
-            selectCategory.ShowDialog();
-            if (selectCategory.DialogResult == DialogResult.OK)
+            using (CompetitionDB db = new CompetitionDB())
             {
-                CheckCat.Checked = true;
-            }
-            else
-            {
-                CheckCat.Checked = false;
+                SelectCategory selectCategory = new SelectCategory();
+                selectCategory.ShowDialog();
+                if (selectCategory.DialogResult == DialogResult.OK)
+                {
+                    competition.Categories.Add(category);
+                    CheckCat.Checked = true;
+                }
+                else
+                {
+                    CheckCat.Checked = false;
+                }
             }
         }
 
@@ -47,22 +68,57 @@ namespace CompetitionProject
         }
 
         private void SportButton_Click(object sender, EventArgs e)
-        {
-            SelectSportType selectSportType = new SelectSportType();
-            selectSportType.ShowDialog();
-            //CheckCat.Checked = true;
+        {    
+            using (CompetitionDB db = new CompetitionDB())
+            {
+                SelectSportType selectSportType = new SelectSportType();
+                selectSportType.ShowDialog();
+                if (selectSportType.DialogResult == DialogResult.OK)
+                {
+                    competition.SportType = sportType;
+                    CheckSport.Checked = true;
+                }
+                else
+                {
+                    CheckSport.Checked = false;
+                }
+            }
         }
 
         private void JudgeButton_Click(object sender, EventArgs e)
-        {
-            SelectJudge selectJudge = new SelectJudge();
-            selectJudge.ShowDialog();
+        {      
+            using (CompetitionDB db = new CompetitionDB())
+            {
+                SelectJudge selectJudge = new SelectJudge();
+                selectJudge.ShowDialog();
+                if (selectJudge.DialogResult == DialogResult.OK)
+                {
+                    competition.Judges.Add(judge);
+                    CheckJudge.Checked = true;
+                }
+                else
+                {
+                    CheckJudge.Checked = false;
+                }
+            }
         }
 
         private void OrgButton_Click(object sender, EventArgs e)
         {
-            SelectOrganizator selectOrganizator = new SelectOrganizator();
-            selectOrganizator.ShowDialog();
+            using (CompetitionDB db = new CompetitionDB())
+            {
+                SelectOrganizator selectOrganizator = new SelectOrganizator();
+                selectOrganizator.ShowDialog();
+                if(selectOrganizator.DialogResult == DialogResult.OK)
+                {
+                    competition.Organizators.Add(organizator);
+                    CheckOrg.Checked = true;
+                }
+                else
+                {
+                    CheckOrg.Checked = false;
+                }
+            }
         }
 
         private void Cancel_Click(object sender, EventArgs e)
@@ -72,43 +128,50 @@ namespace CompetitionProject
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            //{
-            //    CompetitionDB addCompetition = new CompetitionDB();
-            //    CompetitionClasses.Competition newCompetition = new CompetitionClasses.Competition()
-            //    {
-            //        Title = Title.Text,
-            //        Location = PlaceLocation.Text,
-            //        DateCompetition = dateTimePicker1.Value,
-            //        //Organizators = OrgButton.String,
-
-
-
-
-            //        BriefInformation=BriefInfo.Text,
-            //    };
-            //    try
-            //    {
-            //        var competition = addCompetition.Competitions;
-            //        foreach (Competition comp in competition)
-            //        {
-            //            if (Title.Text != comp.Title && PlaceLocation.Text != comp.Location)
-            //            {
-            //                addCompetition.Competitions.Add(newCompetition);
-            //                addCompetition.SaveChanges();
-            //                MessageBox.Show("Новое соревнование добавлено");
-            //                this.Close();
-            //            }
-            //            else
-            //            {
-            //                MessageBox.Show("Такое соревнование уже существует");
-            //            }
-            //        }
-            //    }
-            //    catch
-            //    {
-            //        MessageBox.Show("Ошибка при добавлении");
-            //    }
-            //}
+            using (CompetitionDB db = new CompetitionDB())
+            {
+                bool res = false;
+                int count = 0;
+                competition.Title = Title.Text;
+                competition.Location = PlaceLocation.Text;
+                competition.DateCompetition = dateTimePicker1.Value;
+                competition.BriefInformation = BriefInfo.Text;
+                try
+                {
+                    var tempCompetition = db.Competitions.ToList();
+                    foreach (CompetitionClasses.Competition comp in tempCompetition)
+                    {
+                        if (Title.Text != comp.Title && PlaceLocation.Text != comp.Location)
+                        {
+                            if (count == tempCompetition.Count - 1)
+                            {
+                                db.Competitions.Add(competition);
+                                db.SaveChanges();
+                                res = true;
+                                MessageBox.Show("Новое соревнование добавлено");
+                                this.Close();
+                            }
+                            count++;
+                        }
+                        else
+                        {
+                            res = true;
+                            MessageBox.Show("Такое соревнование уже существует");
+                        }
+                    }
+                    if( res == false)
+                    {
+                        db.Competitions.Add(competition);
+                        db.SaveChanges();
+                        MessageBox.Show("Новое соревнование добавлено");
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при добавлении:\n" + ex);
+                }
+            }
         }
 
         private void Title_TextChanged(object sender, EventArgs e)
