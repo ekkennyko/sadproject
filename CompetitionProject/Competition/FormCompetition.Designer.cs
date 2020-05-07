@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ResultButton = new System.Windows.Forms.Button();
             this.SaveInPDF = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -206,5 +207,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ResultButton;
         private System.Windows.Forms.Button SaveInPDF;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
