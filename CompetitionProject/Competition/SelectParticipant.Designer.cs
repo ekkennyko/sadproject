@@ -40,7 +40,7 @@
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MiddleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rank = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Region = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -96,7 +96,7 @@
             this.FirstName,
             this.MiddleName,
             this.Rank,
-            this.Region});
+            this.City});
             this.dataGridView2.Location = new System.Drawing.Point(440, 13);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(371, 345);
@@ -142,9 +142,9 @@
             // 
             // Region
             // 
-            this.Region.HeaderText = "Регион";
-            this.Region.Name = "Region";
-            this.Region.ReadOnly = true;
+            this.City.HeaderText = "Регион";
+            this.City.Name = "Region";
+            this.City.ReadOnly = true;
             // 
             // SelectParticipant
             // 
@@ -180,6 +180,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn MiddleName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rank;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Region;
+        private System.Windows.Forms.DataGridViewTextBoxColumn City;
     }
 }

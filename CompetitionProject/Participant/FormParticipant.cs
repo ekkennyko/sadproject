@@ -102,7 +102,6 @@ namespace CompetitionProject
                             participant.Weight = double.Parse(editParticipant.Weight.Text);
 
                             db.SaveChanges();
-                            dataGridView1.Refresh();
                             MessageBox.Show("Информация о участнике обновлена");
                         }
                         catch (Exception ex)
@@ -129,7 +128,7 @@ namespace CompetitionProject
                     if (converted == false)
                         return;
                     CompetitionClasses.Participant participant = db.Participants.Find(id);
-                    Participant infoParticipant = new Participant();
+                    InfoParticipant infoParticipant = new InfoParticipant();
                     infoParticipant.LastName.Text = participant.LastName;
                     infoParticipant.FirstName.Text = participant.FirstName;
                     infoParticipant.MiddleName.Text = participant.MiddleName;

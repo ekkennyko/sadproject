@@ -14,6 +14,7 @@ namespace CompetitionProject.Competition
 {
     public partial class SelectSportType : Form
     {
+        public CompetitionDB db = new CompetitionDB();
         public SelectSportType()
         {
             InitializeComponent();
@@ -22,38 +23,31 @@ namespace CompetitionProject.Competition
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            using (CompetitionDB db = new CompetitionDB())
+            if (dataGridView2.Rows.Count > 0)
             {
-                if (dataGridView2.Rows.Count > 0)
-                {
-                    int index = dataGridView2.Rows[0].Index;
-                    bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
-                    if (converted == false)
-                        return;
-                    AddCompetition.sportType = db.SportTypes.Find(id);
-
-                }
-                else
-                {
-                    MessageBox.Show("Добавьте категорию");
-                }
+                int index = dataGridView2.Rows[0].Index;
+                bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
+                if (converted == false)
+                    return;
+                AddCompetition.sportType = AddCompetition.db.SportTypes.FirstOrDefault(temp => temp.Id == id);
+            }
+            else
+            {
+                MessageBox.Show("Добавьте вид спорта");
             }
         }
 
         private void loadToList()
         {
-            using (CompetitionDB db = new CompetitionDB())
-            {
-                db.SportTypes.Load();
-                var result = from sportType in db.SportTypes
-                             select new
-                             {
-                                 Код = sportType.Id,
-                                 Название = sportType.Name,
-                                 Тип = sportType.Type
-                             };
-                dataGridView1.DataSource = result.ToList();
-            }
+            AddCompetition.db.SportTypes.Load();
+            var result = from sportType in AddCompetition.db.SportTypes
+                         select new
+                         {
+                             Код = sportType.Id,
+                             Название = sportType.Name,
+                             Тип = sportType.Type
+                         };
+            dataGridView1.DataSource = result.ToList();
         }
 
         private void addButton_Click(object sender, EventArgs e)

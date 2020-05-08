@@ -20,7 +20,7 @@ namespace CompetitionProject
         public static CompetitionJudge judge;
         public static CompetitionOrganizator organizator;
         public static CompetitionClasses.Participant participant;
-        public CompetitionClasses.Competition competition = new CompetitionClasses.Competition();
+        public static CompetitionDB db = new CompetitionDB();
         protected internal bool resComp;
         public AddCompetition()
         {
@@ -29,36 +29,31 @@ namespace CompetitionProject
 
         private void ParticipantButton_Click(object sender, EventArgs e)
         {
-            using (CompetitionDB db = new CompetitionDB()) {
-                SelectParticipant selectParticipant = new SelectParticipant();
-                selectParticipant.ShowDialog();
-                if(selectParticipant.DialogResult == DialogResult.OK)
-                {
-                    competition.Participants.Add(participant);
-                    CheckPart.Checked = true;
-                }
-                else
-                {
-                    CheckPart.Checked = false;
-                }
+            SelectParticipant selectParticipant = new SelectParticipant();
+            selectParticipant.ShowDialog();
+            if (selectParticipant.DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show(participant.LastName);
+                CheckPart.Checked = true;
+            }
+            else
+            {
+                CheckPart.Checked = false;
             }
         }
 
         private void CategoryButton_Click(object sender, EventArgs e)
         {
-            using (CompetitionDB db = new CompetitionDB())
+            SelectCategory selectCategory = new SelectCategory();
+            selectCategory.ShowDialog();
+            if (selectCategory.DialogResult == DialogResult.OK)
             {
-                SelectCategory selectCategory = new SelectCategory();
-                selectCategory.ShowDialog();
-                if (selectCategory.DialogResult == DialogResult.OK)
-                {
-                    competition.Categories.Add(category);
-                    CheckCat.Checked = true;
-                }
-                else
-                {
-                    CheckCat.Checked = false;
-                }
+                MessageBox.Show(category.Name);
+                CheckCat.Checked = true;
+            }
+            else
+            {
+                CheckCat.Checked = false;
             }
         }
 
@@ -68,56 +63,49 @@ namespace CompetitionProject
         }
 
         private void SportButton_Click(object sender, EventArgs e)
-        {    
-            using (CompetitionDB db = new CompetitionDB())
+        {
+            SelectSportType selectSportType = new SelectSportType();
+            selectSportType.ShowDialog();
+            if (selectSportType.DialogResult == DialogResult.OK)
             {
-                SelectSportType selectSportType = new SelectSportType();
-                selectSportType.ShowDialog();
-                if (selectSportType.DialogResult == DialogResult.OK)
-                {
-                    competition.SportType = sportType;
-                    CheckSport.Checked = true;
-                }
-                else
-                {
-                    CheckSport.Checked = false;
-                }
+                MessageBox.Show(sportType.Name);
+                CheckSport.Checked = true;
+            }
+            else
+            {
+                CheckSport.Checked = false;
             }
         }
 
         private void JudgeButton_Click(object sender, EventArgs e)
-        {      
-            using (CompetitionDB db = new CompetitionDB())
+        {
+            SelectJudge selectJudge = new SelectJudge();
+            selectJudge.ShowDialog();
+            if (selectJudge.DialogResult == DialogResult.OK)
             {
-                SelectJudge selectJudge = new SelectJudge();
-                selectJudge.ShowDialog();
-                if (selectJudge.DialogResult == DialogResult.OK)
-                {
-                    competition.Judges.Add(judge);
-                    CheckJudge.Checked = true;
-                }
-                else
-                {
-                    CheckJudge.Checked = false;
-                }
+                MessageBox.Show(judge.JudgeId.ToString());
+                MessageBox.Show(judge.Judge.LastName);
+                CheckJudge.Checked = true;
+            }
+            else
+            {
+                CheckJudge.Checked = false;
             }
         }
 
         private void OrgButton_Click(object sender, EventArgs e)
         {
-            using (CompetitionDB db = new CompetitionDB())
+            SelectOrganizator selectOrganizator = new SelectOrganizator();
+            selectOrganizator.ShowDialog();
+            if (selectOrganizator.DialogResult == DialogResult.OK)
             {
-                SelectOrganizator selectOrganizator = new SelectOrganizator();
-                selectOrganizator.ShowDialog();
-                if(selectOrganizator.DialogResult == DialogResult.OK)
-                {
-                    competition.Organizators.Add(organizator);
-                    CheckOrg.Checked = true;
-                }
-                else
-                {
-                    CheckOrg.Checked = false;
-                }
+                MessageBox.Show(organizator.OrganizatorId.ToString());
+                MessageBox.Show(organizator.Organizator.LastName);
+                CheckOrg.Checked = true;
+            }
+            else
+            {
+                CheckOrg.Checked = false;
             }
         }
 
@@ -126,51 +114,74 @@ namespace CompetitionProject
             this.Close();
         }
 
+        private void toList(CompetitionClasses.Competition competition)
+        {
+            judge.CompetitionId = competition.CompetitionId;
+            organizator.CompetitionId = competition.CompetitionId;
+            participant.CompetitionId = competition.CompetitionId;
+            competition.SportType = sportType;
+            competition.Category = category;
+
+            //MessageBox.Show(judge.CompetitionId.ToString() + " " + judge.Judge.FirstName.ToString() + " = " + competition.CompetitionId.ToString());
+            //MessageBox.Show(organizator.CompetitionId.ToString() + " " + organizator.Organizator.FirstName.ToString() + " = " + competition.CompetitionId.ToString());
+            //MessageBox.Show(participant.CompetitionId.ToString() + " " + participant.LastName.ToString() + " = " + competition.CompetitionId.ToString());
+            //MessageBox.Show(competition.SportTypeId.ToString() + " " + competition.Title.ToString() + " = " + sportType.Id.ToString() + " " + sportType.Name.ToString());
+            //MessageBox.Show(competition.CategoryId.ToString() + " " + competition.Title.ToString() + " = " + category.CategoryId.ToString() + " " + category.Name.ToString());
+
+
+
+            db.SaveChanges();
+
+        }
+
         private void OkButton_Click(object sender, EventArgs e)
         {
-            using (CompetitionDB db = new CompetitionDB())
+            bool res = false;
+            int count = 0;
+            CompetitionClasses.Competition competition = new CompetitionClasses.Competition()
             {
-                bool res = false;
-                int count = 0;
-                competition.Title = Title.Text;
-                competition.Location = PlaceLocation.Text;
-                competition.DateCompetition = dateTimePicker1.Value;
-                competition.BriefInformation = BriefInfo.Text;
-                try
+                Title = Title.Text,
+                Location = PlaceLocation.Text,
+                DateCompetition = dateTimePicker1.Value,
+                BriefInformation = BriefInfo.Text,
+                Status = statusBox.Text,
+            };
+            try
+            {
+                var tempCompetition = db.Competitions.ToList();
+                foreach (CompetitionClasses.Competition comp in tempCompetition)
                 {
-                    var tempCompetition = db.Competitions.ToList();
-                    foreach (CompetitionClasses.Competition comp in tempCompetition)
+                    if (Title.Text != comp.Title && PlaceLocation.Text != comp.Location)
                     {
-                        if (Title.Text != comp.Title && PlaceLocation.Text != comp.Location)
+                        if (count == tempCompetition.Count - 1)
                         {
-                            if (count == tempCompetition.Count - 1)
-                            {
-                                db.Competitions.Add(competition);
-                                db.SaveChanges();
-                                res = true;
-                                MessageBox.Show("Новое соревнование добавлено");
-                                this.Close();
-                            }
-                            count++;
-                        }
-                        else
-                        {
+                            db.Competitions.Add(competition);
+                            db.SaveChanges();
+                            toList(competition);
                             res = true;
-                            MessageBox.Show("Такое соревнование уже существует");
+                            MessageBox.Show("Новое соревнование добавлено");
+                            this.Close();
                         }
+                        count++;
                     }
-                    if( res == false)
+                    else
                     {
-                        db.Competitions.Add(competition);
-                        db.SaveChanges();
-                        MessageBox.Show("Новое соревнование добавлено");
-                        this.Close();
+                        res = true;
+                        MessageBox.Show("Такое соревнование уже существует");
                     }
                 }
-                catch (Exception ex)
+                if (res == false)
                 {
-                    MessageBox.Show("Ошибка при добавлении:\n" + ex);
+                    db.Competitions.Add(competition);
+                    db.SaveChanges();
+                    toList(competition);
+                    MessageBox.Show("Новое соревнование добавлено");
+                    this.Close();
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при добавлении:\n" + ex);
             }
         }
 

@@ -14,6 +14,7 @@ namespace CompetitionProject.Competition
 {
     public partial class SelectParticipant : Form
     {
+        public CompetitionDB db = new CompetitionDB();
         public SelectParticipant()
         {
             InitializeComponent();
@@ -22,40 +23,34 @@ namespace CompetitionProject.Competition
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            using (CompetitionDB db = new CompetitionDB())
+            if (dataGridView2.Rows.Count > 0)
             {
-                if (dataGridView2.Rows.Count > 0)
-                {
-                    int index = dataGridView2.Rows[0].Index;
-                    bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
-                    if (converted == false)
-                        return;
-                    AddCompetition.participant = db.Participants.Find(id);
-                }
-                else
-                {
-                    MessageBox.Show("Добавьте участника");
-                }
+                int index = dataGridView2.Rows[0].Index;
+                bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
+                if (converted == false)
+                    return;
+                AddCompetition.participant = AddCompetition.db.Participants.FirstOrDefault(temp => temp.PersonId == id);
+            }
+            else
+            {
+                MessageBox.Show("Добавьте участника");
             }
         }
 
         private void loadToList()
         {
-            using (CompetitionDB db = new CompetitionDB())
-            {
-                db.Participants.Load();
-                var result = from participant in db.Participants
-                             select new
-                             {
-                                 Код = participant.PersonId,
-                                 Фамилия = participant.LastName,
-                                 Имя = participant.FirstName,
-                                 Отчество = participant.MiddleName,
-                                 Ранг = participant.Rank,
-                                 Регион = participant.Region
-                             };
-                dataGridView1.DataSource = result.ToList();
-            }
+            AddCompetition.db.Participants.Load();
+            var result = from participant in AddCompetition.db.Participants
+                         select new
+                         {
+                             Код = participant.PersonId,
+                             Фамилия = participant.LastName,
+                             Имя = participant.FirstName,
+                             Отчество = participant.MiddleName,
+                             Ранг = participant.Rank,
+                             Регион = participant.Region
+                         };
+            dataGridView1.DataSource = result.ToList();
         }
 
         private void addButton_Click(object sender, EventArgs e)

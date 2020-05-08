@@ -22,21 +22,20 @@ namespace CompetitionProject.Competition
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            using (CompetitionDB db = new CompetitionDB())
+
+            if (dataGridView2.Rows.Count > 0)
             {
-                if (dataGridView2.Rows.Count > 0)
-                {
-                    int index = dataGridView2.Rows[0].Index;
-                    bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
-                    if (converted == false)
-                        return;
-                    AddCompetition.judge = db.Judges.Find(id);
-                }
-                else
-                {
-                    MessageBox.Show("Добавьте категорию");
-                }
+                int index = dataGridView2.Rows[0].Index;
+                bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
+                if (converted == false)
+                    return;
+                AddCompetition.judge = AddCompetition.db.Judges.Include(temp => temp.Judge).FirstOrDefault(temp => temp.Id == id);
             }
+            else
+            {
+                MessageBox.Show("Добавьте судью");
+            }
+
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -79,19 +78,16 @@ namespace CompetitionProject.Competition
 
         private void loadToList()
         {
-            using (CompetitionDB db = new CompetitionDB())
-            {
-                db.Judges.Load();
-                var result = from judge in db.Judges
-                             select new
-                             {
-                                 Код = judge.JudgeId,
-                                 Фамилия = judge.Judge.LastName,
-                                 Имя = judge.Judge.FirstName,
-                                 Отчество = judge.Judge.MiddleName,
-                             };
-                dataGridView1.DataSource = result.ToList();
-            }
+            AddCompetition.db.Judges.Load();
+            var result = from judge in AddCompetition.db.Judges
+                         select new
+                         {
+                             Код = judge.Id,
+                             Фамилия = judge.Judge.LastName,
+                             Имя = judge.Judge.FirstName,
+                             Отчество = judge.Judge.MiddleName,
+                         };
+            dataGridView1.DataSource = result.ToList();
         }
     }
 }

@@ -54,12 +54,14 @@
             this.CheckSport = new System.Windows.Forms.CheckBox();
             this.CheckCat = new System.Windows.Forms.CheckBox();
             this.CheckPart = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.statusBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // ExitButton
             // 
             this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ExitButton.Location = new System.Drawing.Point(339, 308);
+            this.ExitButton.Location = new System.Drawing.Point(352, 337);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(87, 27);
             this.ExitButton.TabIndex = 44;
@@ -70,7 +72,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(247, 70);
+            this.dateTimePicker1.Location = new System.Drawing.Point(262, 70);
             this.dateTimePicker1.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(177, 21);
@@ -81,7 +83,7 @@
             // BriefInfo
             // 
             this.BriefInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BriefInfo.Location = new System.Drawing.Point(182, 249);
+            this.BriefInfo.Location = new System.Drawing.Point(197, 279);
             this.BriefInfo.Multiline = true;
             this.BriefInfo.Name = "BriefInfo";
             this.BriefInfo.Size = new System.Drawing.Size(242, 52);
@@ -90,7 +92,7 @@
             // PlaceLocation
             // 
             this.PlaceLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PlaceLocation.Location = new System.Drawing.Point(247, 38);
+            this.PlaceLocation.Location = new System.Drawing.Point(262, 38);
             this.PlaceLocation.Name = "PlaceLocation";
             this.PlaceLocation.Size = new System.Drawing.Size(177, 21);
             this.PlaceLocation.TabIndex = 36;
@@ -98,7 +100,7 @@
             // Title
             // 
             this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Title.Location = new System.Drawing.Point(247, 8);
+            this.Title.Location = new System.Drawing.Point(262, 8);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(177, 21);
             this.Title.TabIndex = 35;
@@ -108,7 +110,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(14, 252);
+            this.label9.Location = new System.Drawing.Point(14, 282);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(138, 15);
             this.label9.TabIndex = 33;
@@ -197,7 +199,7 @@
             // OkButton
             // 
             this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OkButton.Location = new System.Drawing.Point(247, 308);
+            this.OkButton.Location = new System.Drawing.Point(247, 337);
             this.OkButton.Name = "OkButton";
             this.OkButton.Size = new System.Drawing.Size(87, 27);
             this.OkButton.TabIndex = 24;
@@ -208,7 +210,7 @@
             // OrgButton
             // 
             this.OrgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OrgButton.Location = new System.Drawing.Point(247, 99);
+            this.OrgButton.Location = new System.Drawing.Point(262, 99);
             this.OrgButton.Name = "OrgButton";
             this.OrgButton.Size = new System.Drawing.Size(177, 24);
             this.OrgButton.TabIndex = 45;
@@ -219,7 +221,7 @@
             // JudgeButton
             // 
             this.JudgeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.JudgeButton.Location = new System.Drawing.Point(247, 129);
+            this.JudgeButton.Location = new System.Drawing.Point(262, 129);
             this.JudgeButton.Name = "JudgeButton";
             this.JudgeButton.Size = new System.Drawing.Size(177, 24);
             this.JudgeButton.TabIndex = 46;
@@ -230,7 +232,7 @@
             // ParticipantButton
             // 
             this.ParticipantButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ParticipantButton.Location = new System.Drawing.Point(247, 219);
+            this.ParticipantButton.Location = new System.Drawing.Point(262, 219);
             this.ParticipantButton.Name = "ParticipantButton";
             this.ParticipantButton.Size = new System.Drawing.Size(177, 24);
             this.ParticipantButton.TabIndex = 47;
@@ -241,7 +243,7 @@
             // CategoryButton
             // 
             this.CategoryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CategoryButton.Location = new System.Drawing.Point(247, 189);
+            this.CategoryButton.Location = new System.Drawing.Point(262, 189);
             this.CategoryButton.Name = "CategoryButton";
             this.CategoryButton.Size = new System.Drawing.Size(177, 24);
             this.CategoryButton.TabIndex = 48;
@@ -252,7 +254,7 @@
             // SportButton
             // 
             this.SportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SportButton.Location = new System.Drawing.Point(247, 159);
+            this.SportButton.Location = new System.Drawing.Point(262, 159);
             this.SportButton.Name = "SportButton";
             this.SportButton.Size = new System.Drawing.Size(177, 24);
             this.SportButton.TabIndex = 49;
@@ -264,7 +266,7 @@
             // 
             this.CheckOrg.AutoCheck = false;
             this.CheckOrg.AutoSize = true;
-            this.CheckOrg.Location = new System.Drawing.Point(430, 104);
+            this.CheckOrg.Location = new System.Drawing.Point(241, 104);
             this.CheckOrg.Name = "CheckOrg";
             this.CheckOrg.Size = new System.Drawing.Size(15, 14);
             this.CheckOrg.TabIndex = 50;
@@ -274,7 +276,7 @@
             // 
             this.CheckJudge.AutoCheck = false;
             this.CheckJudge.AutoSize = true;
-            this.CheckJudge.Location = new System.Drawing.Point(430, 134);
+            this.CheckJudge.Location = new System.Drawing.Point(241, 134);
             this.CheckJudge.Name = "CheckJudge";
             this.CheckJudge.Size = new System.Drawing.Size(15, 14);
             this.CheckJudge.TabIndex = 51;
@@ -284,7 +286,7 @@
             // 
             this.CheckSport.AutoCheck = false;
             this.CheckSport.AutoSize = true;
-            this.CheckSport.Location = new System.Drawing.Point(430, 164);
+            this.CheckSport.Location = new System.Drawing.Point(241, 164);
             this.CheckSport.Name = "CheckSport";
             this.CheckSport.Size = new System.Drawing.Size(15, 14);
             this.CheckSport.TabIndex = 52;
@@ -295,7 +297,7 @@
             // 
             this.CheckCat.AutoSize = true;
             this.CheckCat.Enabled = false;
-            this.CheckCat.Location = new System.Drawing.Point(430, 194);
+            this.CheckCat.Location = new System.Drawing.Point(241, 194);
             this.CheckCat.Name = "CheckCat";
             this.CheckCat.Size = new System.Drawing.Size(15, 14);
             this.CheckCat.TabIndex = 53;
@@ -305,17 +307,41 @@
             // 
             this.CheckPart.AutoCheck = false;
             this.CheckPart.AutoSize = true;
-            this.CheckPart.Location = new System.Drawing.Point(430, 224);
+            this.CheckPart.Location = new System.Drawing.Point(241, 224);
             this.CheckPart.Name = "CheckPart";
             this.CheckPart.Size = new System.Drawing.Size(15, 14);
             this.CheckPart.TabIndex = 54;
             this.CheckPart.UseVisualStyleBackColor = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(14, 252);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 15);
+            this.label10.TabIndex = 55;
+            this.label10.Text = "Статус:";
+            // 
+            // statusBox
+            // 
+            this.statusBox.FormattingEnabled = true;
+            this.statusBox.Items.AddRange(new object[] {
+            "Не начат",
+            "Начат",
+            "Закончён"});
+            this.statusBox.Location = new System.Drawing.Point(262, 249);
+            this.statusBox.Name = "statusBox";
+            this.statusBox.Size = new System.Drawing.Size(177, 23);
+            this.statusBox.TabIndex = 56;
+            // 
             // AddCompetition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 347);
+            this.ClientSize = new System.Drawing.Size(451, 376);
+            this.Controls.Add(this.statusBox);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.CheckPart);
             this.Controls.Add(this.CheckCat);
             this.Controls.Add(this.CheckSport);
@@ -378,5 +404,7 @@
         protected internal System.Windows.Forms.CheckBox CheckSport;
         protected internal System.Windows.Forms.CheckBox CheckCat;
         protected internal System.Windows.Forms.CheckBox CheckPart;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox statusBox;
     }
 }

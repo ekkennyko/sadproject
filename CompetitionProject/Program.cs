@@ -19,16 +19,6 @@ namespace CompetitionProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //using(CompetitionDB db = new CompetitionDB())
-            //{
-            //    SportType newSportType = new SportType()
-            //    {
-            //        Name = "Плавание",
-            //        Type = "Водный",
-            //    };
-            //    db.SportTypes.Add(newSportType);
-            //    db.SaveChanges();
-            //}
             Application.Run(new Form1());          
         }
     }

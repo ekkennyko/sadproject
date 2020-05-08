@@ -71,26 +71,9 @@ namespace CompetitionClasses
         public string Passport { get; set; }
 
         public int? CompetitionId { get; set; }
+        [ForeignKey("CompetitionId")]
         public virtual Competition Competition { get; set; }
     }
-
-    public class Category
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int CategoryId { get; set; }
-        public string Name { get; set; }
-        public string Age { get; set; }
-        public string Weight { get; set; }
-        public string Gender { get; set; }
-
-        public int? CompetitionId { get; set; }
-        public Competition Competition { get; set; }
-    }
-
-    /// <summary>
-
-    /// </summary>
 
     public class Report
     {
@@ -130,13 +113,16 @@ namespace CompetitionClasses
         public string Location { get; set; }
         public DateTime DateCompetition { get; set; }
         public string BriefInformation { get; set; }
+        public string Status { get; set; }
 
 
         public virtual Report Report { get; set; }
-        [ForeignKey("SportType")]
-        public int SportTypeId { get; set; }
+        public int? SportTypeId { get; set; }
+        [ForeignKey("SportTypeId")]
         public virtual SportType SportType { get; set; }
-        public virtual ICollection<Category> Categories { get; set; }
+        public int? CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
+        public virtual Category Category { get; set; }
         public virtual ICollection<CompetitionResult> CompetitionResults { get; set; }
         public virtual ICollection<CompetitionJudge> Judges { get; set; }
         public virtual ICollection<CompetitionOrganizator> Organizators { get; set; }
@@ -147,9 +133,9 @@ namespace CompetitionClasses
             Judges = new List<CompetitionJudge>();
             Organizators = new List<CompetitionOrganizator>();
             Participants = new List<Participant>();
-            Categories = new List<Category>();
         }
     }
+
     public class SportType
     {
         [Key]
@@ -158,7 +144,19 @@ namespace CompetitionClasses
         public string Name { get; set; }
         public string Type { get; set; }
 
-        //[ForeignKey("Competition")]
+        public virtual ICollection<Competition> Competitions { get; set; }
+    }
+
+    public class Category
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int CategoryId { get; set; }
+        public string Name { get; set; }
+        public string Age { get; set; }
+        public string Weight { get; set; }
+        public string Gender { get; set; }
+
         public virtual ICollection<Competition> Competitions { get; set; }
     }
 }

@@ -16,14 +16,13 @@ namespace CompetitionProject
 {
     public partial class SelectCategory : Form
     {
-        AddCompetition competitionForm = new AddCompetition();
         public SelectCategory()
         {
             InitializeComponent();
 
             loadToList();
         }
-  
+
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -31,38 +30,32 @@ namespace CompetitionProject
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            using (CompetitionDB db = new CompetitionDB())
+            if (dataGridView2.Rows.Count > 0)
             {
-                if (dataGridView2.Rows.Count > 0)
-                {
-                    int index = dataGridView2.Rows[0].Index;
-                    bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
-                    if (converted == false)
-                        return;
-                    AddCompetition.category = db.Categories.Find(id);              
-                }
-                else
-                {
-                    MessageBox.Show("Добавьте категорию");
-                }
+                int index = dataGridView2.Rows[0].Index;
+                bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
+                if (converted == false)
+                    return;
+                AddCompetition.category = AddCompetition.db.Categories.FirstOrDefault(temp => temp.CategoryId == id);
+            }
+            else
+            {
+                MessageBox.Show("Добавьте категорию");
             }
         }
 
         private void loadToList()
         {
-            using (CompetitionDB db = new CompetitionDB())
-            {
-                db.Categories.Load();
+            AddCompetition.db.Categories.Load();
 
-                var result = from category in db.Categories
-                             select new
-                             {
-                                 Код = category.CategoryId,
-                                 Название = category.Name,
-                                 Вес = category.Weight
-                             };
-                dataGridView1.DataSource = result.ToList();
-            }
+            var result = from category in AddCompetition.db.Categories
+                         select new
+                         {
+                             Код = category.CategoryId,
+                             Название = category.Name,
+                             Вес = category.Weight
+                         };
+            dataGridView1.DataSource = result.ToList();
         }
 
         private void addButton_Click(object sender, EventArgs e)

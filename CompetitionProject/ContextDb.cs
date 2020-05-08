@@ -11,7 +11,10 @@ namespace DataBaseArch
 {
     public class CompetitionDB : DbContext
     {
-        public CompetitionDB() : base("CompetitionDB") { }
+        public CompetitionDB() : base("CompetitionDB")
+        {
+            this.Configuration.LazyLoadingEnabled = false;
+        }
 
         public DbSet<Employee> Employees { get; set; }
         public DbSet<CompetitionJudge> Judges { get; set; }
