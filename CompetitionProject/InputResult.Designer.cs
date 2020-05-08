@@ -1,6 +1,6 @@
 ﻿namespace CompetitionProject
 {
-    partial class InputResult
+    partial class inputResult
     {
         /// <summary>
         /// Required designer variable.
@@ -60,6 +60,7 @@
             this.Position.Name = "Position";
             this.Position.Size = new System.Drawing.Size(131, 22);
             this.Position.TabIndex = 3;
+            this.Position.TextChanged += new System.EventHandler(this.Position_TextChanged);
             // 
             // selectParticipant
             // 
@@ -69,7 +70,7 @@
             this.selectParticipant.Size = new System.Drawing.Size(131, 24);
             this.selectParticipant.TabIndex = 4;
             this.selectParticipant.Text = "Выбрать";
-            this.selectParticipant.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.selectParticipant.SelectedIndexChanged += new System.EventHandler(this.selectParticipant_SelectedIndexChanged);
             // 
             // okButton
             // 
@@ -79,6 +80,7 @@
             this.okButton.TabIndex = 5;
             this.okButton.Text = "Ок";
             this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // cancelButton
             // 
@@ -88,8 +90,9 @@
             this.cancelButton.TabIndex = 6;
             this.cancelButton.Text = "Отмена";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // InputResult
+            // inputResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,8 +103,8 @@
             this.Controls.Add(this.Position);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "InputResult";
-            this.Text = "InputResult";
+            this.Name = "inputResult";
+            this.Text = "Внести результаты";
             this.ResumeLayout(false);
             this.PerformLayout();
 

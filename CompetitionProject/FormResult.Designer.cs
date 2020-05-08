@@ -28,16 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataResults = new System.Windows.Forms.DataGridView();
             this.inputResult = new System.Windows.Forms.Button();
             this.outReport = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.participantBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.personIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Place = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataResults)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.participantBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataResults
             // 
+            this.dataResults.AutoGenerateColumns = false;
             this.dataResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.personIdDataGridViewTextBoxColumn,
+            this.firstNameDataGridViewTextBoxColumn,
+            this.middleNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
+            this.Place});
+            this.dataResults.DataSource = this.participantBindingSource;
             this.dataResults.Location = new System.Drawing.Point(24, 59);
             this.dataResults.Name = "dataResults";
             this.dataResults.RowTemplate.Height = 24;
@@ -62,15 +78,51 @@
             this.outReport.TabIndex = 2;
             this.outReport.Text = "Вывести отчет";
             this.outReport.UseVisualStyleBackColor = true;
+            this.outReport.Click += new System.EventHandler(this.outReport_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 19);
+            this.label1.Location = new System.Drawing.Point(21, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(169, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Название соревнования";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // participantBindingSource
+            // 
+            this.participantBindingSource.DataSource = typeof(CompetitionClasses.Participant);
+            // 
+            // personIdDataGridViewTextBoxColumn
+            // 
+            this.personIdDataGridViewTextBoxColumn.DataPropertyName = "PersonId";
+            this.personIdDataGridViewTextBoxColumn.HeaderText = "PersonId";
+            this.personIdDataGridViewTextBoxColumn.Name = "personIdDataGridViewTextBoxColumn";
+            this.personIdDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            // 
+            // middleNameDataGridViewTextBoxColumn
+            // 
+            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
+            this.middleNameDataGridViewTextBoxColumn.HeaderText = "MiddleName";
+            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // Place
+            // 
+            this.Place.HeaderText = "Место";
+            this.Place.Name = "Place";
             // 
             // FormResult
             // 
@@ -84,6 +136,7 @@
             this.Name = "FormResult";
             this.Text = "Результаты";
             ((System.ComponentModel.ISupportInitialize)(this.dataResults)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.participantBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,5 +148,11 @@
         private System.Windows.Forms.Button inputResult;
         private System.Windows.Forms.Button outReport;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Place;
+        private System.Windows.Forms.BindingSource participantBindingSource;
     }
 }
