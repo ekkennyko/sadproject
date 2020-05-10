@@ -24,11 +24,14 @@ namespace CompetitionProject.Competition
         {
             if (dataGridView2.Rows.Count > 0)
             {
-                int index = dataGridView2.Rows[0].Index;
-                bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
-                if (converted == false)
-                    return;
-                AddCompetition.organizator = AddCompetition.db.Organizators.Include(temp=>temp.Organizator).FirstOrDefault(temp => temp.Id == id);
+                for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                {
+                    int index = dataGridView2.Rows[i].Index;
+                    bool converted = Int32.TryParse(dataGridView2[i, index].Value.ToString(), out int id);
+                    if (converted == false)
+                        return;
+                    AddCompetition.organizator = AddCompetition.db.Organizators.Include(temp => temp.Organizator).FirstOrDefault(temp => temp.Id == id);
+                }
             }
             else
             {

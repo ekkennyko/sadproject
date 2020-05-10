@@ -35,17 +35,50 @@ namespace CompetitionProject
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedRows.Count == 1)
             {
                 int index = dataGridView1.SelectedRows[0].Index;
                 bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out int id);
                 if (converted == false)
                     return;
                 CompetitionClasses.Competition competition = db.Competitions.Find(id);
-                db.Competitions.Remove(competition);
-                db.SaveChanges();
-                MessageBox.Show("Соревнование удалено");
 
+                //var tempParticipant = db.Participants.Where(c => c.CompetitionId == id).Select(t => new
+                //{
+                //    compId = t.CompetitionId,
+                //    partId = t.PersonId
+                //}
+                //    ).FirstOrDefault();
+
+                //CompetitionClasses.Competition competition1 = new CompetitionClasses.Competition
+                //{
+                //    CompetitionId = (int)tempParticipant.compId,
+                //    Participants = new List<Participant>
+                //    {
+                //        new Participant
+                //        {
+                //            PersonId = tempParticipant.partId,
+                //            CompetitionId = tempParticipant.compId
+                //        }
+                //    }
+                //};
+
+                //db.Competitions.Attach(competition1);
+                //db.Entry(competition1.Participants.First()).State = System.Data.Entity.EntityState.Deleted;
+                    
+
+                //foreach (CompetitionClasses.Competition ct in db.Competitions.Include(ct => ct.Participants))
+                //{
+                //    foreach (Participant pc in ct.Participants)
+                //    {
+                //        pc.Competition = db.Participants.FirstOrDefault(temp => temp.CompetitionId == id).Competition;
+                //        pc.CompetitionId = db.Participants.FirstOrDefault(temp => temp.CompetitionId == id).CompetitionId;
+                //    }
+                //}
+
+                //db.Competitions.Remove(competition);
+                //db.SaveChanges();
+                //MessageBox.Show("Соревнование удалено");
             }
             else
             {
@@ -94,6 +127,7 @@ namespace CompetitionProject
         {
             if (dataGridView1.SelectedRows.Count == 1)
             {
+                int number = 0;
                 List<InfoParticipant> participants = new List<InfoParticipant>();
                 List<CompetitionJudge> judges = new List<CompetitionJudge>();
                 List<CompetitionOrganizator> orgs = new List<CompetitionOrganizator>();
@@ -115,26 +149,27 @@ namespace CompetitionProject
                 {
                     foreach (Participant pc in ct.Participants)
                     {
-                        infoCompetition.participantBox.Text = pc.LastName + " " + pc.FirstName + " " + pc.MiddleName + "\n";
+                        number++;
+                        infoCompetition.participantBox.Text = number.ToString() + ". " + pc.LastName + " " + pc.FirstName + " " + pc.MiddleName + "\n";
                         
                     }
                 }
-
-                foreach (CompetitionClasses.Competition ct in db.Competitions.Include(ct => ct.Judges))
+                number = 0;
+                foreach (CompetitionClasses.Competition ct in db.Competitions.Include(ct => ct.Judges).ToList())
                 {
-                    foreach (CompetitionJudge pc in ct.Judges)
+                    foreach (CompetitionJudge pc in ct.Judges.ToList())
                     {
-                        infoCompetition.judgeBox.Text = pc.Judge.LastName + " " + pc.Judge.FirstName + " " + pc.Judge.MiddleName + "\n";
-
+                        number++;
+                        infoCompetition.judgeBox.Text = number.ToString() + ". " + db.Employees.FirstOrDefault(f => f.PersonId == pc.JudgeId).LastName + " " + db.Employees.FirstOrDefault(f => f.PersonId == pc.JudgeId).FirstName + " " + db.Employees.FirstOrDefault(f => f.PersonId == pc.JudgeId).MiddleName + "\n";
                     }
                 }
-
-                foreach (CompetitionClasses.Competition ct in db.Competitions.Include(ct => ct.Organizators))
+                number = 0;
+                foreach (CompetitionClasses.Competition ct in db.Competitions.Include(ct => ct.Organizators).ToList())
                 {
-                    foreach (CompetitionOrganizator pc in ct.Organizators)
+                    foreach (CompetitionOrganizator pc in ct.Organizators.ToList())
                     {
-                        infoCompetition.orgBox.Text = pc.Organizator.LastName + " " + pc.Organizator.FirstName + " " + pc.Organizator.MiddleName + "\n";
-
+                        number++;
+                        infoCompetition.orgBox.Text = number.ToString() + ". " + db.Employees.FirstOrDefault(f => f.PersonId == pc.OrganizatorId).LastName + " " + db.Employees.FirstOrDefault(f => f.PersonId == pc.OrganizatorId).FirstName + " " + db.Employees.FirstOrDefault(f => f.PersonId == pc.OrganizatorId).MiddleName + "\n";
                     }
                 }
 

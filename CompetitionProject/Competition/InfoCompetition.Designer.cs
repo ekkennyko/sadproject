@@ -143,7 +143,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 192);
+            this.label6.Location = new System.Drawing.Point(295, 12);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 15);
             this.label6.TabIndex = 10;
@@ -161,7 +161,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(240, 192);
+            this.label8.Location = new System.Drawing.Point(562, 12);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 15);
             this.label8.TabIndex = 15;
@@ -170,7 +170,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(240, 342);
+            this.label9.Location = new System.Drawing.Point(562, 162);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 15);
             this.label9.TabIndex = 16;
@@ -188,39 +188,39 @@
             // 
             // participantBox
             // 
-            this.participantBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
-            this.participantBox.Location = new System.Drawing.Point(12, 222);
+            this.participantBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.participantBox.Location = new System.Drawing.Point(298, 42);
             this.participantBox.Multiline = true;
             this.participantBox.Name = "participantBox";
             this.participantBox.ReadOnly = true;
-            this.participantBox.Size = new System.Drawing.Size(182, 251);
+            this.participantBox.Size = new System.Drawing.Size(240, 247);
             this.participantBox.TabIndex = 20;
             // 
             // orgBox
             // 
-            this.orgBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
-            this.orgBox.Location = new System.Drawing.Point(241, 222);
+            this.orgBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.orgBox.Location = new System.Drawing.Point(565, 42);
             this.orgBox.Multiline = true;
             this.orgBox.Name = "orgBox";
             this.orgBox.ReadOnly = true;
-            this.orgBox.Size = new System.Drawing.Size(182, 94);
+            this.orgBox.Size = new System.Drawing.Size(240, 94);
             this.orgBox.TabIndex = 21;
             // 
             // judgeBox
             // 
-            this.judgeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
-            this.judgeBox.Location = new System.Drawing.Point(243, 379);
+            this.judgeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.judgeBox.Location = new System.Drawing.Point(565, 195);
             this.judgeBox.Multiline = true;
             this.judgeBox.Name = "judgeBox";
             this.judgeBox.ReadOnly = true;
-            this.judgeBox.Size = new System.Drawing.Size(182, 94);
+            this.judgeBox.Size = new System.Drawing.Size(240, 94);
             this.judgeBox.TabIndex = 22;
             // 
             // InfoCompetition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 485);
+            this.ClientSize = new System.Drawing.Size(822, 309);
             this.Controls.Add(this.judgeBox);
             this.Controls.Add(this.orgBox);
             this.Controls.Add(this.participantBox);
