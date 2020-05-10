@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataBaseArch;
 using System.Data.Entity;
+using CompetitionProject.Migrations;
 
 namespace CompetitionProject.Competition
 {

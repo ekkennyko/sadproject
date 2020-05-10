@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DataBaseArch;
 using CompetitionClasses;
 using System.Data.Entity;
-using CompetitionProject.Competition;
+using CompetitionProject.Migrations;
 
 namespace CompetitionProject
 {

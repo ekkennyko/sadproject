@@ -20,7 +20,7 @@ namespace CompetitionProject
 {
     public partial class FormCompetition : Form
     {
-        public CompetitionDB db = new CompetitionDB();
+        public static CompetitionDB db = new CompetitionDB();
         public FormCompetition()
         {
             InitializeComponent();
@@ -100,20 +100,19 @@ namespace CompetitionProject
                 if (converted == false)
                     return;
                 CompetitionClasses.Competition competition = db.Competitions.Find(id);
+                EditCompetition.competition = db.Competitions.Find(id);
+
                 EditCompetition editCompetition = new EditCompetition();
-                editCompetition.TitleBox.Text = competition.Title;
-                editCompetition.LocationBox.Text = competition.Location;
+                editCompetition.TitleLabel.Text = competition.Title;
+                editCompetition.PlaceLocation.Text = competition.Location;
                 editCompetition.dateTimePicker1.Value = competition.DateCompetition;
+                editCompetition.statusBox.Text = competition.Status;
 
+                
                 editCompetition.ShowDialog();
-                if (editCompetition.result == true)
-                {
-                    competition.Title = editCompetition.TitleBox.Text;
-                    competition.Location = editCompetition.LocationBox.Text;
-                    competition.DateCompetition = editCompetition.dateTimePicker1.Value;
 
-                    db.SaveChanges();
-                    dataGridView1.Refresh();
+                if (editCompetition.DialogResult == DialogResult.OK)
+                {
                     MessageBox.Show("Информация о соревновании обновлена");
                 }
             }

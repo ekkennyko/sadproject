@@ -48,7 +48,7 @@
             this.AddButton.Location = new System.Drawing.Point(645, 13);
             this.AddButton.Margin = new System.Windows.Forms.Padding(2);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(178, 31);
+            this.AddButton.Size = new System.Drawing.Size(183, 31);
             this.AddButton.TabIndex = 0;
             this.AddButton.Text = "Добавить";
             this.AddButton.UseVisualStyleBackColor = true;
@@ -60,7 +60,7 @@
             this.EditButton.Location = new System.Drawing.Point(645, 65);
             this.EditButton.Margin = new System.Windows.Forms.Padding(2);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(178, 31);
+            this.EditButton.Size = new System.Drawing.Size(183, 31);
             this.EditButton.TabIndex = 1;
             this.EditButton.Text = "Редактировать";
             this.EditButton.UseVisualStyleBackColor = true;
@@ -72,7 +72,7 @@
             this.RemoveButton.Location = new System.Drawing.Point(645, 117);
             this.RemoveButton.Margin = new System.Windows.Forms.Padding(2);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(178, 31);
+            this.RemoveButton.Size = new System.Drawing.Size(183, 31);
             this.RemoveButton.TabIndex = 2;
             this.RemoveButton.Text = "Удалить";
             this.RemoveButton.UseVisualStyleBackColor = true;
@@ -84,7 +84,7 @@
             this.InfoButton.Location = new System.Drawing.Point(645, 169);
             this.InfoButton.Margin = new System.Windows.Forms.Padding(2);
             this.InfoButton.Name = "InfoButton";
-            this.InfoButton.Size = new System.Drawing.Size(178, 31);
+            this.InfoButton.Size = new System.Drawing.Size(183, 31);
             this.InfoButton.TabIndex = 3;
             this.InfoButton.Text = "Информация";
             this.InfoButton.UseVisualStyleBackColor = true;
@@ -105,9 +105,9 @@
             // MenuButton
             // 
             this.MenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MenuButton.Location = new System.Drawing.Point(645, 377);
+            this.MenuButton.Location = new System.Drawing.Point(645, 378);
             this.MenuButton.Name = "MenuButton";
-            this.MenuButton.Size = new System.Drawing.Size(178, 31);
+            this.MenuButton.Size = new System.Drawing.Size(183, 31);
             this.MenuButton.TabIndex = 10;
             this.MenuButton.Text = "Главное меню";
             this.MenuButton.UseVisualStyleBackColor = true;
@@ -116,10 +116,10 @@
             // RefreshButton
             // 
             this.RefreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RefreshButton.Location = new System.Drawing.Point(645, 221);
+            this.RefreshButton.Location = new System.Drawing.Point(645, 273);
             this.RefreshButton.Margin = new System.Windows.Forms.Padding(2);
             this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(178, 31);
+            this.RefreshButton.Size = new System.Drawing.Size(183, 31);
             this.RefreshButton.TabIndex = 11;
             this.RefreshButton.Text = "Обновить";
             this.RefreshButton.UseVisualStyleBackColor = true;
@@ -145,9 +145,9 @@
             // 
             // ResultButton
             // 
-            this.ResultButton.Location = new System.Drawing.Point(645, 273);
+            this.ResultButton.Location = new System.Drawing.Point(645, 221);
             this.ResultButton.Name = "ResultButton";
-            this.ResultButton.Size = new System.Drawing.Size(178, 31);
+            this.ResultButton.Size = new System.Drawing.Size(183, 31);
             this.ResultButton.TabIndex = 14;
             this.ResultButton.Text = "Результаты";
             this.ResultButton.UseVisualStyleBackColor = true;
@@ -157,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 420);
+            this.ClientSize = new System.Drawing.Size(839, 420);
             this.Controls.Add(this.ResultButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PickDateTime);

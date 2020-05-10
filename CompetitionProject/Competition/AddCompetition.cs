@@ -17,108 +17,18 @@ namespace CompetitionProject
     {
         public static Category category;
         public static SportType sportType;
-        public static CompetitionJudge judge;
-        public static CompetitionOrganizator organizator;
-        public static CompetitionClasses.Participant participant;
         public static CompetitionDB db = new CompetitionDB();
-        protected internal bool resComp;
         public AddCompetition()
         {
             InitializeComponent();
-        }
-
-        private void ParticipantButton_Click(object sender, EventArgs e)
-        {
-            SelectParticipant selectParticipant = new SelectParticipant();
-            selectParticipant.ShowDialog();
-            if (selectParticipant.DialogResult == DialogResult.OK)
-            {
-                MessageBox.Show(participant.LastName);
-                CheckPart.Checked = true;
-            }
-            else
-            {
-                CheckPart.Checked = false;
-            }
-        }
-
-        private void CategoryButton_Click(object sender, EventArgs e)
-        {
-            SelectCategory selectCategory = new SelectCategory();
-            selectCategory.ShowDialog();
-            if (selectCategory.DialogResult == DialogResult.OK)
-            {
-                MessageBox.Show(category.Name);
-                CheckCat.Checked = true;
-            }
-            else
-            {
-                CheckCat.Checked = false;
-            }
-        }
-
-        private void AddCompetition_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SportButton_Click(object sender, EventArgs e)
-        {
-            SelectSportType selectSportType = new SelectSportType();
-            selectSportType.ShowDialog();
-            if (selectSportType.DialogResult == DialogResult.OK)
-            {
-                MessageBox.Show(sportType.Name);
-                CheckSport.Checked = true;
-            }
-            else
-            {
-                CheckSport.Checked = false;
-            }
-        }
-
-        private void JudgeButton_Click(object sender, EventArgs e)
-        {
-            SelectJudge selectJudge = new SelectJudge();
-            selectJudge.ShowDialog();
-            if (selectJudge.DialogResult == DialogResult.OK)
-            {
-                MessageBox.Show(judge.JudgeId.ToString());
-                MessageBox.Show(judge.Judge.LastName);
-                CheckJudge.Checked = true;
-            }
-            else
-            {
-                CheckJudge.Checked = false;
-            }
-        }
-
-        private void OrgButton_Click(object sender, EventArgs e)
-        {
-            SelectOrganizator selectOrganizator = new SelectOrganizator();
-            selectOrganizator.ShowDialog();
-            if (selectOrganizator.DialogResult == DialogResult.OK)
-            {
-                MessageBox.Show(organizator.OrganizatorId.ToString());
-                MessageBox.Show(organizator.Organizator.LastName);
-                CheckOrg.Checked = true;
-            }
-            else
-            {
-                CheckOrg.Checked = false;
-            }
         }
 
         private void Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void toList(CompetitionClasses.Competition competition)
         {
-            judge.CompetitionId = competition.CompetitionId;
-            organizator.CompetitionId = competition.CompetitionId;
-            participant.CompetitionId = competition.CompetitionId;
             competition.SportType = sportType;
             competition.Category = category;
 
@@ -128,10 +38,7 @@ namespace CompetitionProject
             //MessageBox.Show(competition.SportTypeId.ToString() + " " + competition.Title.ToString() + " = " + sportType.Id.ToString() + " " + sportType.Name.ToString());
             //MessageBox.Show(competition.CategoryId.ToString() + " " + competition.Title.ToString() + " = " + category.CategoryId.ToString() + " " + category.Name.ToString());
 
-
-
             db.SaveChanges();
-
         }
 
         private void OkButton_Click(object sender, EventArgs e)
@@ -156,8 +63,8 @@ namespace CompetitionProject
                         if (count == tempCompetition.Count - 1)
                         {
                             db.Competitions.Add(competition);
-                            db.SaveChanges();
                             toList(competition);
+                            db.SaveChanges();
                             res = true;
                             MessageBox.Show("Новое соревнование добавлено");
                             this.Close();
@@ -173,8 +80,8 @@ namespace CompetitionProject
                 if (res == false)
                 {
                     db.Competitions.Add(competition);
-                    db.SaveChanges();
                     toList(competition);
+                    db.SaveChanges();
                     MessageBox.Show("Новое соревнование добавлено");
                     this.Close();
                 }
@@ -184,7 +91,7 @@ namespace CompetitionProject
                 MessageBox.Show("Ошибка при добавлении:\n" + ex);
             }
         }
-
+        
         private void Title_TextChanged(object sender, EventArgs e)
         {
 
@@ -198,6 +105,35 @@ namespace CompetitionProject
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void CategoryButton_Click(object sender, EventArgs e)
+        {
+            SelectCategory selectCategory = new SelectCategory();
+            selectCategory.ShowDialog();
+            if (selectCategory.DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show(category.Name);
+                CheckCat.Checked = true;
+            }
+            else
+            {
+                CheckCat.Checked = false;
+            }
+        }
+        private void SportButton_Click(object sender, EventArgs e)
+        {
+            SelectSportType selectSportType = new SelectSportType();
+            selectSportType.ShowDialog();
+            if (selectSportType.DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show(sportType.Name);
+                CheckSport.Checked = true;
+            }
+            else
+            {
+                CheckSport.Checked = false;
+            }
         }
     }
 }

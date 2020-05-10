@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 using DataBaseArch;
+using CompetitionProject.Migrations;
 
 namespace CompetitionProject.Competition
 {
@@ -24,13 +25,14 @@ namespace CompetitionProject.Competition
         {
             if (dataGridView2.Rows.Count > 0)
             {
-                for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
                 {
+                    MessageBox.Show(dataGridView2.Rows.Count.ToString() + " " + i.ToString());
                     int index = dataGridView2.Rows[i].Index;
                     bool converted = Int32.TryParse(dataGridView2[i, index].Value.ToString(), out int id);
                     if (converted == false)
                         return;
-                    AddCompetition.organizator = AddCompetition.db.Organizators.Include(temp => temp.Organizator).FirstOrDefault(temp => temp.Id == id);
+                    EditCompetition.organizator = EditCompetition.db.Organizators.Include(temp => temp.Organizator).FirstOrDefault(temp => temp.Id == id);
                 }
             }
             else
@@ -41,8 +43,8 @@ namespace CompetitionProject.Competition
 
         private void loadToList()
         {
-            AddCompetition.db.Organizators.Load();
-            var result = from organizator in AddCompetition.db.Organizators
+            EditCompetition.db.Organizators.Load();
+            var result = from organizator in EditCompetition.db.Organizators
                          select new
                          {
                              Код = organizator.Id,
