@@ -15,7 +15,7 @@ namespace CompetitionProject
 {
     public partial class inputResult : Form
     {
-        public static CompetitionClasses.Participant participant;
+        public static CompetitionClasses.CompetitionResult result;
         public static CompetitionDB db = new CompetitionDB();
         public inputResult()
         {
@@ -31,20 +31,41 @@ namespace CompetitionProject
         {
             {
                 bool res = false;
-                //int count = 0;
-                CompetitionClasses.CompetitionResult competitionResult = new CompetitionClasses.CompetitionResult()
+                int count = 0;
+                CompetitionClasses.CompetitionResult newResult = new CompetitionClasses.CompetitionResult()
                 {
                     Participant = selectParticipant.Text,
                     Position = Position.Text,
                 };
                 try
                 {
-                    var tempCompetition = db.Competitions.ToList();
+                    var Result = db.CompetitionsResults.ToList();
+                    foreach (CompetitionClasses.CompetitionResult el in Result)
+                    {
+                        int max= 3;
+                        if (count == max - 1)
+                        {
+                            {
+                                db.CompetitionsResults.Add(newResult);
+                                db.SaveChanges();
+                                MessageBox.Show(newResult.CompResId.ToString());
+                                MessageBox.Show("Результат добавлен");
+                                res = true;
+                                this.Close();
+                            }
+                            count++;
+
+                        }
+                        else
+                        {
+                            res = true;
+                            MessageBox.Show("Такой результат уже существует");
+                        }
+                    }
                     if (res == false)
                     {
-                        //db.Competitions.Add(competi);
+                        db.CompetitionsResults.Add(newResult);
                         db.SaveChanges();
-                       // toList(competition);
                         MessageBox.Show("Результат добавлен");
                         this.Close();
                     }

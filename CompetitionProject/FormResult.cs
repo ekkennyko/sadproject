@@ -38,5 +38,10 @@ namespace CompetitionProject
         {
            
         }
+
+        private void participantBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

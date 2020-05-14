@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormResult));
             this.dataResults = new System.Windows.Forms.DataGridView();
-            this.inputResult = new System.Windows.Forms.Button();
-            this.outReport = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.participantBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.personIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Place = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.participantBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inputResult = new System.Windows.Forms.Button();
+            this.outReport = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataResults)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.participantBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -56,9 +57,53 @@
             this.dataResults.DataSource = this.participantBindingSource;
             this.dataResults.Location = new System.Drawing.Point(24, 59);
             this.dataResults.Name = "dataResults";
+            this.dataResults.RowHeadersWidth = 51;
             this.dataResults.RowTemplate.Height = 24;
             this.dataResults.Size = new System.Drawing.Size(443, 228);
             this.dataResults.TabIndex = 0;
+            // 
+            // personIdDataGridViewTextBoxColumn
+            // 
+            this.personIdDataGridViewTextBoxColumn.DataPropertyName = "PersonId";
+            this.personIdDataGridViewTextBoxColumn.HeaderText = "PersonId";
+            this.personIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.personIdDataGridViewTextBoxColumn.Name = "personIdDataGridViewTextBoxColumn";
+            this.personIdDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // middleNameDataGridViewTextBoxColumn
+            // 
+            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
+            this.middleNameDataGridViewTextBoxColumn.HeaderText = "MiddleName";
+            this.middleNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
+            this.middleNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Place
+            // 
+            this.Place.HeaderText = "Место";
+            this.Place.MinimumWidth = 6;
+            this.Place.Name = "Place";
+            this.Place.Width = 125;
+            // 
+            // participantBindingSource
+            // 
+            this.participantBindingSource.DataSource = typeof(CompetitionClasses.Participant);
             // 
             // inputResult
             // 
@@ -93,36 +138,37 @@
             // participantBindingSource
             // 
             this.participantBindingSource.DataSource = typeof(CompetitionClasses.Participant);
+            this.participantBindingSource.CurrentChanged += new System.EventHandler(this.participantBindingSource_CurrentChanged);
             // 
-            // personIdDataGridViewTextBoxColumn
+            // inputResult
             // 
-            this.personIdDataGridViewTextBoxColumn.DataPropertyName = "PersonId";
-            this.personIdDataGridViewTextBoxColumn.HeaderText = "PersonId";
-            this.personIdDataGridViewTextBoxColumn.Name = "personIdDataGridViewTextBoxColumn";
-            this.personIdDataGridViewTextBoxColumn.Width = 70;
+            this.inputResult.Location = new System.Drawing.Point(487, 59);
+            this.inputResult.Name = "inputResult";
+            this.inputResult.Size = new System.Drawing.Size(143, 45);
+            this.inputResult.TabIndex = 1;
+            this.inputResult.Text = "Внести результаты";
+            this.inputResult.UseVisualStyleBackColor = true;
+            this.inputResult.Click += new System.EventHandler(this.inputResult_Click);
             // 
-            // firstNameDataGridViewTextBoxColumn
+            // outReport
             // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.outReport.Location = new System.Drawing.Point(487, 140);
+            this.outReport.Name = "outReport";
+            this.outReport.Size = new System.Drawing.Size(143, 45);
+            this.outReport.TabIndex = 2;
+            this.outReport.Text = "Вывести отчет";
+            this.outReport.UseVisualStyleBackColor = true;
+            this.outReport.Click += new System.EventHandler(this.outReport_Click);
             // 
-            // middleNameDataGridViewTextBoxColumn
+            // label1
             // 
-            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
-            this.middleNameDataGridViewTextBoxColumn.HeaderText = "MiddleName";
-            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // Place
-            // 
-            this.Place.HeaderText = "Место";
-            this.Place.Name = "Place";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(169, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Название соревнования";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // FormResult
             // 
@@ -133,6 +179,7 @@
             this.Controls.Add(this.outReport);
             this.Controls.Add(this.inputResult);
             this.Controls.Add(this.dataResults);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormResult";
             this.Text = "Результаты";
             ((System.ComponentModel.ISupportInitialize)(this.dataResults)).EndInit();

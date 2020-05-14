@@ -24,36 +24,6 @@ namespace CompetitionProject
         }
         DataGridView DGV = new DataGridView();
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            CompetitionDB db = new CompetitionDB();
-            if (dataGridView1.SelectedRows.Count == 1)
-            {
-                int index = dataGridView1.SelectedRows[0].Index;
-                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out int id);
-                if (converted == false)
-                    return;
-                CompetitionClasses.CompetitionResult competitionResult = db.CompetitionsResults.Find(id);
-                EditResult resultEdit = new EditResult();
-                resultEdit.textBox1.Text = competitionResult.Position;
-
-
-                resultEdit.ShowDialog();
-                if (resultEdit.result == true)
-                {
-                    competitionResult.Position = resultEdit.textBox1.Text;
-
-                    db.SaveChanges();
-                    dataGridView1.Refresh();
-                    MessageBox.Show("Информация о результатах обновлена");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Выберите участника");
-            }
-        }
-
         public void dgvtopdf(DataGridView dgv, string filename)
         {
             BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.EMBEDDED);
