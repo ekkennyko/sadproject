@@ -35,33 +35,24 @@
             this.PlaceLocation = new System.Windows.Forms.TextBox();
             this.Title = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.OkButton = new System.Windows.Forms.Button();
-            this.OrgButton = new System.Windows.Forms.Button();
-            this.JudgeButton = new System.Windows.Forms.Button();
-            this.ParticipantButton = new System.Windows.Forms.Button();
-            this.CategoryButton = new System.Windows.Forms.Button();
-            this.SportButton = new System.Windows.Forms.Button();
-            this.CheckOrg = new System.Windows.Forms.CheckBox();
-            this.CheckJudge = new System.Windows.Forms.CheckBox();
-            this.CheckSport = new System.Windows.Forms.CheckBox();
-            this.CheckCat = new System.Windows.Forms.CheckBox();
-            this.CheckPart = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.statusBox = new System.Windows.Forms.ComboBox();
+            this.CheckCat = new System.Windows.Forms.CheckBox();
+            this.CategoryButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.CheckSport = new System.Windows.Forms.CheckBox();
+            this.SportButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ExitButton
             // 
             this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ExitButton.Location = new System.Drawing.Point(352, 337);
+            this.ExitButton.Location = new System.Drawing.Point(352, 248);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(87, 27);
             this.ExitButton.TabIndex = 44;
@@ -83,7 +74,7 @@
             // BriefInfo
             // 
             this.BriefInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BriefInfo.Location = new System.Drawing.Point(197, 279);
+            this.BriefInfo.Location = new System.Drawing.Point(197, 190);
             this.BriefInfo.Multiline = true;
             this.BriefInfo.Name = "BriefInfo";
             this.BriefInfo.Size = new System.Drawing.Size(242, 52);
@@ -110,61 +101,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(14, 282);
+            this.label9.Location = new System.Drawing.Point(14, 192);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(138, 15);
             this.label9.TabIndex = 33;
             this.label9.Text = "Краткая информация:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(14, 222);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 15);
-            this.label8.TabIndex = 32;
-            this.label8.Text = "Участники:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(14, 192);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 15);
-            this.label7.TabIndex = 31;
-            this.label7.Text = "Категория:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(14, 162);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 15);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Вид спорта:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(14, 132);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 15);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Судьи:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(14, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 15);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Организаторы:";
             // 
             // label3
             // 
@@ -199,7 +140,7 @@
             // OkButton
             // 
             this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OkButton.Location = new System.Drawing.Point(247, 337);
+            this.OkButton.Location = new System.Drawing.Point(262, 248);
             this.OkButton.Name = "OkButton";
             this.OkButton.Size = new System.Drawing.Size(87, 27);
             this.OkButton.TabIndex = 24;
@@ -207,117 +148,11 @@
             this.OkButton.UseVisualStyleBackColor = true;
             this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
-            // OrgButton
-            // 
-            this.OrgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OrgButton.Location = new System.Drawing.Point(262, 99);
-            this.OrgButton.Name = "OrgButton";
-            this.OrgButton.Size = new System.Drawing.Size(177, 24);
-            this.OrgButton.TabIndex = 45;
-            this.OrgButton.Text = "Добавить";
-            this.OrgButton.UseVisualStyleBackColor = true;
-            this.OrgButton.Click += new System.EventHandler(this.OrgButton_Click);
-            // 
-            // JudgeButton
-            // 
-            this.JudgeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.JudgeButton.Location = new System.Drawing.Point(262, 129);
-            this.JudgeButton.Name = "JudgeButton";
-            this.JudgeButton.Size = new System.Drawing.Size(177, 24);
-            this.JudgeButton.TabIndex = 46;
-            this.JudgeButton.Text = "Добавить";
-            this.JudgeButton.UseVisualStyleBackColor = true;
-            this.JudgeButton.Click += new System.EventHandler(this.JudgeButton_Click);
-            // 
-            // ParticipantButton
-            // 
-            this.ParticipantButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ParticipantButton.Location = new System.Drawing.Point(262, 219);
-            this.ParticipantButton.Name = "ParticipantButton";
-            this.ParticipantButton.Size = new System.Drawing.Size(177, 24);
-            this.ParticipantButton.TabIndex = 47;
-            this.ParticipantButton.Text = "Добавить";
-            this.ParticipantButton.UseVisualStyleBackColor = true;
-            this.ParticipantButton.Click += new System.EventHandler(this.ParticipantButton_Click);
-            // 
-            // CategoryButton
-            // 
-            this.CategoryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CategoryButton.Location = new System.Drawing.Point(262, 189);
-            this.CategoryButton.Name = "CategoryButton";
-            this.CategoryButton.Size = new System.Drawing.Size(177, 24);
-            this.CategoryButton.TabIndex = 48;
-            this.CategoryButton.Text = "Добавить";
-            this.CategoryButton.UseVisualStyleBackColor = true;
-            this.CategoryButton.Click += new System.EventHandler(this.CategoryButton_Click);
-            // 
-            // SportButton
-            // 
-            this.SportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SportButton.Location = new System.Drawing.Point(262, 159);
-            this.SportButton.Name = "SportButton";
-            this.SportButton.Size = new System.Drawing.Size(177, 24);
-            this.SportButton.TabIndex = 49;
-            this.SportButton.Text = "Добавить";
-            this.SportButton.UseVisualStyleBackColor = true;
-            this.SportButton.Click += new System.EventHandler(this.SportButton_Click);
-            // 
-            // CheckOrg
-            // 
-            this.CheckOrg.AutoCheck = false;
-            this.CheckOrg.AutoSize = true;
-            this.CheckOrg.Location = new System.Drawing.Point(241, 104);
-            this.CheckOrg.Name = "CheckOrg";
-            this.CheckOrg.Size = new System.Drawing.Size(15, 14);
-            this.CheckOrg.TabIndex = 50;
-            this.CheckOrg.UseVisualStyleBackColor = true;
-            // 
-            // CheckJudge
-            // 
-            this.CheckJudge.AutoCheck = false;
-            this.CheckJudge.AutoSize = true;
-            this.CheckJudge.Location = new System.Drawing.Point(241, 134);
-            this.CheckJudge.Name = "CheckJudge";
-            this.CheckJudge.Size = new System.Drawing.Size(15, 14);
-            this.CheckJudge.TabIndex = 51;
-            this.CheckJudge.UseVisualStyleBackColor = true;
-            // 
-            // CheckSport
-            // 
-            this.CheckSport.AutoCheck = false;
-            this.CheckSport.AutoSize = true;
-            this.CheckSport.Location = new System.Drawing.Point(241, 164);
-            this.CheckSport.Name = "CheckSport";
-            this.CheckSport.Size = new System.Drawing.Size(15, 14);
-            this.CheckSport.TabIndex = 52;
-            this.CheckSport.UseVisualStyleBackColor = true;
-            this.CheckSport.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
-            // 
-            // CheckCat
-            // 
-            this.CheckCat.AutoSize = true;
-            this.CheckCat.Enabled = false;
-            this.CheckCat.Location = new System.Drawing.Point(241, 194);
-            this.CheckCat.Name = "CheckCat";
-            this.CheckCat.Size = new System.Drawing.Size(15, 14);
-            this.CheckCat.TabIndex = 53;
-            this.CheckCat.UseVisualStyleBackColor = true;
-            // 
-            // CheckPart
-            // 
-            this.CheckPart.AutoCheck = false;
-            this.CheckPart.AutoSize = true;
-            this.CheckPart.Location = new System.Drawing.Point(241, 224);
-            this.CheckPart.Name = "CheckPart";
-            this.CheckPart.Size = new System.Drawing.Size(15, 14);
-            this.CheckPart.TabIndex = 54;
-            this.CheckPart.UseVisualStyleBackColor = true;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(14, 252);
+            this.label10.Location = new System.Drawing.Point(14, 102);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(50, 15);
             this.label10.TabIndex = 55;
@@ -330,39 +165,92 @@
             "Не начат",
             "Начат",
             "Закончён"});
-            this.statusBox.Location = new System.Drawing.Point(262, 249);
+            this.statusBox.Location = new System.Drawing.Point(262, 100);
             this.statusBox.Name = "statusBox";
             this.statusBox.Size = new System.Drawing.Size(177, 23);
             this.statusBox.TabIndex = 56;
+            // 
+            // CheckCat
+            // 
+            this.CheckCat.AutoSize = true;
+            this.CheckCat.Enabled = false;
+            this.CheckCat.Location = new System.Drawing.Point(240, 135);
+            this.CheckCat.Name = "CheckCat";
+            this.CheckCat.Size = new System.Drawing.Size(15, 14);
+            this.CheckCat.TabIndex = 86;
+            this.CheckCat.UseVisualStyleBackColor = true;
+            // 
+            // CategoryButton
+            // 
+            this.CategoryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CategoryButton.Location = new System.Drawing.Point(261, 130);
+            this.CategoryButton.Name = "CategoryButton";
+            this.CategoryButton.Size = new System.Drawing.Size(177, 24);
+            this.CategoryButton.TabIndex = 85;
+            this.CategoryButton.Text = "Добавить";
+            this.CategoryButton.UseVisualStyleBackColor = true;
+            this.CategoryButton.Click += new System.EventHandler(this.CategoryButton_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(14, 132);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 15);
+            this.label7.TabIndex = 82;
+            this.label7.Text = "Категория:";
+            // 
+            // CheckSport
+            // 
+            this.CheckSport.AutoCheck = false;
+            this.CheckSport.AutoSize = true;
+            this.CheckSport.Location = new System.Drawing.Point(240, 165);
+            this.CheckSport.Name = "CheckSport";
+            this.CheckSport.Size = new System.Drawing.Size(15, 14);
+            this.CheckSport.TabIndex = 90;
+            this.CheckSport.UseVisualStyleBackColor = true;
+            // 
+            // SportButton
+            // 
+            this.SportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SportButton.Location = new System.Drawing.Point(261, 160);
+            this.SportButton.Name = "SportButton";
+            this.SportButton.Size = new System.Drawing.Size(177, 24);
+            this.SportButton.TabIndex = 89;
+            this.SportButton.Text = "Добавить";
+            this.SportButton.UseVisualStyleBackColor = true;
+            this.SportButton.Click += new System.EventHandler(this.SportButton_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(14, 162);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 15);
+            this.label6.TabIndex = 88;
+            this.label6.Text = "Вид спорта:";
             // 
             // AddCompetition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 376);
+            this.ClientSize = new System.Drawing.Size(451, 290);
+            this.Controls.Add(this.CheckSport);
+            this.Controls.Add(this.SportButton);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.CheckCat);
+            this.Controls.Add(this.CategoryButton);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.statusBox);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.CheckPart);
-            this.Controls.Add(this.CheckCat);
-            this.Controls.Add(this.CheckSport);
-            this.Controls.Add(this.CheckJudge);
-            this.Controls.Add(this.CheckOrg);
-            this.Controls.Add(this.SportButton);
-            this.Controls.Add(this.CategoryButton);
-            this.Controls.Add(this.ParticipantButton);
-            this.Controls.Add(this.JudgeButton);
-            this.Controls.Add(this.OrgButton);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.BriefInfo);
             this.Controls.Add(this.PlaceLocation);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -372,7 +260,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddCompetition";
             this.Text = "Добавление соревнования";
-            this.Load += new System.EventHandler(this.AddCompetition_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,26 +272,17 @@
         private System.Windows.Forms.TextBox PlaceLocation;
         private System.Windows.Forms.TextBox Title;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button OkButton;
-        private System.Windows.Forms.Button OrgButton;
-        private System.Windows.Forms.Button JudgeButton;
-        private System.Windows.Forms.Button ParticipantButton;
-        private System.Windows.Forms.Button CategoryButton;
-        private System.Windows.Forms.Button SportButton;
-        protected internal System.Windows.Forms.CheckBox CheckOrg;
-        protected internal System.Windows.Forms.CheckBox CheckJudge;
-        protected internal System.Windows.Forms.CheckBox CheckSport;
-        protected internal System.Windows.Forms.CheckBox CheckCat;
-        protected internal System.Windows.Forms.CheckBox CheckPart;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox statusBox;
+        protected internal System.Windows.Forms.CheckBox CheckCat;
+        private System.Windows.Forms.Button CategoryButton;
+        private System.Windows.Forms.Label label7;
+        protected internal System.Windows.Forms.CheckBox CheckSport;
+        private System.Windows.Forms.Button SportButton;
+        private System.Windows.Forms.Label label6;
     }
 }

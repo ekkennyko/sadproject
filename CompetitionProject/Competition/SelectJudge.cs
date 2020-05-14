@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataBaseArch;
 using System.Data.Entity;
+using CompetitionProject.Migrations;
 
 namespace CompetitionProject.Competition
 {
@@ -29,7 +30,7 @@ namespace CompetitionProject.Competition
                 bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
                 if (converted == false)
                     return;
-                AddCompetition.judge = AddCompetition.db.Judges.Include(temp => temp.Judge).FirstOrDefault(temp => temp.Id == id);
+                EditCompetition.judge = EditCompetition.db.Judges.Include(temp => temp.Judge).FirstOrDefault(temp => temp.Id == id);
             }
             else
             {
@@ -78,8 +79,8 @@ namespace CompetitionProject.Competition
 
         private void loadToList()
         {
-            AddCompetition.db.Judges.Load();
-            var result = from judge in AddCompetition.db.Judges
+            EditCompetition.db.Judges.Load();
+            var result = from judge in EditCompetition.db.Judges
                          select new
                          {
                              Код = judge.Id,
