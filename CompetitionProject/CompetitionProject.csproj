@@ -151,12 +151,6 @@
       <DependentUpon>SelectSportType.cs</DependentUpon>
     </Compile>
     <Compile Include="ContextDb.cs" />
-    <Compile Include="EditResult.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditResult.Designer.cs">
-      <DependentUpon>EditResult.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -394,9 +388,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Competition\SelectSportType.resx">
       <DependentUpon>SelectSportType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditResult.resx">
-      <DependentUpon>EditResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReport.resx">
       <DependentUpon>FormReport.cs</DependentUpon>

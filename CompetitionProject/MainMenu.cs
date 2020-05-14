@@ -52,8 +52,8 @@ namespace CompetitionProject
 
         private void button4_Click(object sender, EventArgs e)
         {
-            FormReport formReport = new FormReport();
-            formReport.Show();
+            FormResult formResult = new FormResult();
+            formResult.Show();
         }
 
         private void CategoryButton_Click(object sender, EventArgs e)
