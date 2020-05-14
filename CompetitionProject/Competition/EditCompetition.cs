@@ -88,12 +88,6 @@ namespace CompetitionProject.Migrations
             judge.CompetitionId = competition.CompetitionId;
             organizator.CompetitionId = competition.CompetitionId;
             participant.CompetitionId = competition.CompetitionId;
-
-            //MessageBox.Show(judge.CompetitionId.ToString() + " " + judge.Judge.FirstName.ToString() + " = " + competition.CompetitionId.ToString());
-            //MessageBox.Show(organizator.CompetitionId.ToString() + " " + organizator.Organizator.FirstName.ToString() + " = " + competition.CompetitionId.ToString());
-            //MessageBox.Show(participant.CompetitionId.ToString() + " " + participant.LastName.ToString() + " = " + competition.CompetitionId.ToString());
-            //MessageBox.Show(competition.SportTypeId.ToString() + " " + competition.Title.ToString() + " = " + sportType.Id.ToString() + " " + sportType.Name.ToString());
-            //MessageBox.Show(competition.CategoryId.ToString() + " " + competition.Title.ToString() + " = " + category.CategoryId.ToString() + " " + category.Name.ToString());
         }
 
         private void OkButton_Click(object sender, EventArgs e)
@@ -101,7 +95,6 @@ namespace CompetitionProject.Migrations
             competition.Location = PlaceLocation.Text;
             competition.DateCompetition = dateTimePicker1.Value;
             toList(competition);
-            //db.Entry(competition).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
         }
 

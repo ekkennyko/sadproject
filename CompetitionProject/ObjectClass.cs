@@ -26,8 +26,8 @@ namespace CompetitionClasses
         public string Password { get; set; }
         public string Job { get; set; }
 
-        public virtual ICollection<CompetitionJudge> CompetitionsJ { get; set; }
-        public virtual ICollection<CompetitionOrganizator> CompetitionsO { get; set; }
+        public virtual List<CompetitionJudge> CompetitionsJ { get; set; }
+        public virtual List<CompetitionOrganizator> CompetitionsO { get; set; }
     }
 
     public class CompetitionJudge
@@ -123,10 +123,10 @@ namespace CompetitionClasses
         public int? CategoryId { get; set; }
         [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
-        public virtual ICollection<CompetitionResult> CompetitionResults { get; set; }
-        public virtual ICollection<CompetitionJudge> Judges { get; set; }
-        public virtual ICollection<CompetitionOrganizator> Organizators { get; set; }
-        public virtual ICollection<Participant> Participants { get; set; }
+        public virtual List<CompetitionResult> CompetitionResults { get; set; }
+        public virtual List<CompetitionJudge> Judges { get; set; }
+        public virtual List<CompetitionOrganizator> Organizators { get; set; }
+        public virtual List<Participant> Participants { get; set; }
         public Competition()
         {
             CompetitionResults = new List<CompetitionResult>();
@@ -144,7 +144,7 @@ namespace CompetitionClasses
         public string Name { get; set; }
         public string Type { get; set; }
 
-        public virtual ICollection<Competition> Competitions { get; set; }
+        public virtual List<Competition> Competitions { get; set; }
     }
 
     public class Category
@@ -157,6 +157,6 @@ namespace CompetitionClasses
         public string Weight { get; set; }
         public string Gender { get; set; }
 
-        public virtual ICollection<Competition> Competitions { get; set; }
+        public virtual List<Competition> Competitions { get; set; }
     }
 }

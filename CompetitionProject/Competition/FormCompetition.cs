@@ -126,15 +126,11 @@ namespace CompetitionProject
         {
             if (dataGridView1.SelectedRows.Count == 1)
             {
-                int number = 0;
-                List<Participant> participants = new List<Participant>();
-                List<CompetitionJudge> judges = new List<CompetitionJudge>();
-                List<CompetitionOrganizator> orgs = new List<CompetitionOrganizator>();
                 int index = dataGridView1.SelectedRows[0].Index;
                 bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out int id);
                 if (converted == false)
                     return;
-                CompetitionClasses.Competition competition = db.Competitions.Find(id);
+                CompetitionClasses.Competition competition = db.Competitions.Find(id);     
                 InfoCompetition infoCompetition = new InfoCompetition();
                 infoCompetition.Title.Text = competition.Title;
                 infoCompetition.PlaceLocation.Text = competition.Location;
@@ -143,33 +139,36 @@ namespace CompetitionProject
                 infoCompetition.TypeSport.Text = db.SportTypes.FirstOrDefault(temp => temp.Id == competition.SportTypeId).Name;
                 infoCompetition.Category.Text = db.Categories.FirstOrDefault(temp => temp.CategoryId == competition.CategoryId).Name;
 
-                MessageBox.Show(participants.Count.ToString());
-                for (int i = 0; i < participants.Count; i++)
+                competition = db.Competitions.Include(t => t.Participants).Where(t => t.CompetitionId == id).FirstOrDefault();
+                if (competition.Participants != null)
                 {
-                    infoCompetition.participantBox.Text = participants.FirstOrDefault(t => t.CompetitionId == competition.CompetitionId).LastName + " ";
-                    infoCompetition.participantBox.Text = participants.FirstOrDefault(t => t.CompetitionId == competition.CompetitionId).FirstName + " ";
-                    infoCompetition.participantBox.Text = participants.FirstOrDefault(t => t.CompetitionId == competition.CompetitionId).MiddleName + "\n";
-                }
-
-                //infoCompetition.participantBox.Text = db.Participants.FirstOrDefault(t => t.CompetitionId == competition.CompetitionId).LastName + " " + db.Participants.FirstOrDefault(t => t.CompetitionId == competition.CompetitionId).FirstName + " " + db.Participants.FirstOrDefault(t => t.CompetitionId == competition.CompetitionId).MiddleName + "\n";
-
-                //infoCompetition.participantBox.Text = db.Judges.FirstOrDefault(t => t.CompetitionId == competition.CompetitionId).Judge.LastName + " " + db.Judges.FirstOrDefault(t => t.CompetitionId == competition.CompetitionId).Judge.FirstName + " " + db.Judges.FirstOrDefault(t => t.CompetitionId == competition.CompetitionId).Judge.MiddleName + "\n";
-
-                number = 0;
-                foreach (CompetitionClasses.Competition ct in db.Competitions.Include(ct => ct.Organizators).ToList())
-                {
-                    foreach (CompetitionOrganizator pc in ct.Organizators.ToList())
+                    foreach(Participant pc in competition.Participants)
                     {
-                        number++;
-                        infoCompetition.orgBox.Text = number.ToString() + ". " + db.Employees.Include(t => t.CompetitionsO).FirstOrDefault(f => f.PersonId == pc.OrganizatorId).LastName + " " + db.Employees.Include(t => t.CompetitionsO).FirstOrDefault(f => f.PersonId == pc.OrganizatorId).FirstName + " " + db.Employees.Include(t => t.CompetitionsO).FirstOrDefault(f => f.PersonId == pc.OrganizatorId).MiddleName + "\n";
+                        infoCompetition.participantBox.Text += pc.LastName + " ";
+                        infoCompetition.participantBox.Text += pc.FirstName + " ";
+                        infoCompetition.participantBox.Text += pc.MiddleName + '\n';
                     }
                 }
-
-                //infoCompetition.JudgeList.DataSource = judges;
-                //infoCompetition.JudgeList.DisplayMember = "FirstName";
-
-                //infoCompetition.OrgList.DataSource = orgs;
-                //infoCompetition.OrgList.DisplayMember = "FirstName";
+                competition = db.Competitions.Include(t => t.Judges.Select(c=>c.Judge)).Where(t => t.CompetitionId == id).FirstOrDefault();
+                if (competition.Judges != null)
+                {
+                    foreach (CompetitionJudge pc in competition.Judges)
+                    {
+                        infoCompetition.judgeBox.Text += pc.Judge.LastName + " ";
+                        infoCompetition.judgeBox.Text += pc.Judge.FirstName + " ";
+                        infoCompetition.judgeBox.Text += pc.Judge.MiddleName + '\n';
+                    }
+                }
+                competition = db.Competitions.Include(t => t.Organizators.Select(c => c.Organizator)).Where(t => t.CompetitionId == id).FirstOrDefault();
+                if (competition.Organizators != null)
+                {
+                    foreach (CompetitionOrganizator pc in competition.Organizators)
+                    {
+                        infoCompetition.orgBox.Text += pc.Organizator.LastName + " ";
+                        infoCompetition.orgBox.Text += pc.Organizator.FirstName + " ";
+                        infoCompetition.orgBox.Text += pc.Organizator.MiddleName + '\n';
+                    }
+                }
 
                 infoCompetition.ShowDialog();
             }

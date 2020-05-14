@@ -217,6 +217,10 @@
     <Compile Include="Migrations\202005080904021_seventhsad41.designer.cs">
       <DependentUpon>202005080904021_seventhsad41.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005141307120_SeventhSad5.cs" />
+    <Compile Include="Migrations\202005141307120_SeventhSad5.designer.cs">
+      <DependentUpon>202005141307120_SeventhSad5.cs</DependentUpon>
+    </Compile>
     <Compile Include="ObjectClass.cs" />
     <Compile Include="Participant\AddParticipant.cs">
       <SubType>Form</SubType>
@@ -436,6 +440,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005080904021_seventhsad41.resx">
       <DependentUpon>202005080904021_seventhsad41.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005141307120_SeventhSad5.resx">
+      <DependentUpon>202005141307120_SeventhSad5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Participant\AddParticipant.resx">
       <DependentUpon>AddParticipant.cs</DependentUpon>

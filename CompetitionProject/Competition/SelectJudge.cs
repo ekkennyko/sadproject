@@ -23,8 +23,7 @@ namespace CompetitionProject.Competition
 
         private void okButton_Click(object sender, EventArgs e)
         {
-
-            if (dataGridView2.Rows.Count > 0)
+            if (dataGridView2.Rows.Count - 1 > 0)
             {
                 int index = dataGridView2.Rows[0].Index;
                 bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
