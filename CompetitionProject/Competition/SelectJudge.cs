@@ -25,17 +25,20 @@ namespace CompetitionProject.Competition
         {
             if (dataGridView2.Rows.Count - 1 > 0)
             {
-                int index = dataGridView2.Rows[0].Index;
-                bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
-                if (converted == false)
-                    return;
-                EditCompetition.judge = EditCompetition.db.Judges.Include(temp => temp.Judge).FirstOrDefault(temp => temp.Id == id);
+                for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
+                {
+                    int index = dataGridView2.Rows[0].Index;
+                    bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
+                    if (converted == false)
+                        return;
+                    EditCompetition.judge = EditCompetition.db.Judges.Include(temp => temp.Judge).FirstOrDefault(temp => temp.Id == id);
+                    EditCompetition.toJudge();
+                }
             }
             else
             {
                 MessageBox.Show("Добавьте судью");
             }
-
         }
 
         private void addButton_Click(object sender, EventArgs e)

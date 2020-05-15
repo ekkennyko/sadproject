@@ -33,6 +33,7 @@ namespace CompetitionProject.Competition
                     if (converted == false)
                         return;
                     EditCompetition.organizator = EditCompetition.db.Organizators.Include(temp => temp.Organizator).FirstOrDefault(temp => temp.Id == id);
+                    EditCompetition.toOrganizator();
                 }
             }
             else

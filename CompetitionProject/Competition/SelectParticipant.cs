@@ -26,11 +26,15 @@ namespace CompetitionProject.Competition
         {
             if (dataGridView2.Rows.Count > 0)
             {
-                int index = dataGridView2.Rows[0].Index;
-                bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
-                if (converted == false)
-                    return;
-                EditCompetition.participant = EditCompetition.db.Participants.FirstOrDefault(temp => temp.PersonId == id);
+                for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
+                {
+                    int index = dataGridView2.Rows[0].Index;
+                    bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
+                    if (converted == false)
+                        return;
+                    EditCompetition.participant = EditCompetition.db.Participants.FirstOrDefault(temp => temp.PersonId == id);
+                    EditCompetition.toParticipant();
+                }
             }
             else
             {

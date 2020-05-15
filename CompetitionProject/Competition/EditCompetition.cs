@@ -49,7 +49,20 @@ namespace CompetitionProject.Migrations
 
         }
 
-        
+        public static void toJudge()
+        {
+            judge.CompetitionId = competition.CompetitionId;
+        }
+
+        public static void toOrganizator()
+        {
+            organizator.CompetitionId = competition.CompetitionId;
+        }
+
+        public static void toParticipant()
+        {
+            participant.CompetitionId = competition.CompetitionId;
+        }
 
         private void JudgeButton_Click(object sender, EventArgs e)
         {
@@ -83,18 +96,10 @@ namespace CompetitionProject.Migrations
             }
         }
 
-        private void toList(CompetitionClasses.Competition competition)
-        {
-            judge.CompetitionId = competition.CompetitionId;
-            organizator.CompetitionId = competition.CompetitionId;
-            participant.CompetitionId = competition.CompetitionId;
-        }
-
         private void OkButton_Click(object sender, EventArgs e)
         {
             competition.Location = PlaceLocation.Text;
             competition.DateCompetition = dateTimePicker1.Value;
-            toList(competition);
             db.SaveChanges();
         }
 

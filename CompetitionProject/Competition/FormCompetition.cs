@@ -43,42 +43,11 @@ namespace CompetitionProject
                     return;
                 CompetitionClasses.Competition competition = db.Competitions.Find(id);
 
-                //var tempParticipant = db.Participants.Where(c => c.CompetitionId == id).Select(t => new
-                //{
-                //    compId = t.CompetitionId,
-                //    partId = t.PersonId
-                //}
-                //    ).FirstOrDefault();
+                
 
-                //CompetitionClasses.Competition competition1 = new CompetitionClasses.Competition
-                //{
-                //    CompetitionId = (int)tempParticipant.compId,
-                //    Participants = new List<Participant>
-                //    {
-                //        new Participant
-                //        {
-                //            PersonId = tempParticipant.partId,
-                //            CompetitionId = tempParticipant.compId
-                //        }
-                //    }
-                //};
-
-                //db.Competitions.Attach(competition1);
-                //db.Entry(competition1.Participants.First()).State = System.Data.Entity.EntityState.Deleted;
-                    
-
-                //foreach (CompetitionClasses.Competition ct in db.Competitions.Include(ct => ct.Participants))
-                //{
-                //    foreach (Participant pc in ct.Participants)
-                //    {
-                //        pc.Competition = db.Participants.FirstOrDefault(temp => temp.CompetitionId == id).Competition;
-                //        pc.CompetitionId = db.Participants.FirstOrDefault(temp => temp.CompetitionId == id).CompetitionId;
-                //    }
-                //}
-
-                //db.Competitions.Remove(competition);
-                //db.SaveChanges();
-                //MessageBox.Show("Соревнование удалено");
+                db.Competitions.Remove(competition);
+                db.SaveChanges();
+                MessageBox.Show("Соревнование удалено");
             }
             else
             {
