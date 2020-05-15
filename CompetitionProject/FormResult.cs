@@ -43,5 +43,10 @@ namespace CompetitionProject
         {
 
         }
+
+        private void MenuButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

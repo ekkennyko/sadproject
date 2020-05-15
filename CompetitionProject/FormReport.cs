@@ -13,6 +13,7 @@ using System.IO;
 using iTextSharp;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Microsoft.Office.Interop.Excel;
 
 namespace CompetitionProject
 {
@@ -87,6 +88,28 @@ namespace CompetitionProject
                 FileStream fs = (FileStream)saveFileDialog1.OpenFile();
                 dgvtopdf(dataGridView1, saveFileDialog1.FileName);
                 fs.Close();
+            }
+        }
+
+        private void ExcelButton_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application excelExport = new Microsoft.Office.Interop.Excel.Application();
+                excelExport.Application.Workbooks.Add(Type.Missing);
+                for (int i = 1; i < dataGridView1.Columns.Count + 1; i++)
+                {
+                    excelExport.Cells[1, i] = dataGridView1.Columns[i - 1].HeaderText;
+                }
+                for (int i = 0; i < dataGridView1.Rows.Count + 1; i++)
+                {
+                    for (int j = 0; j < dataGridView1.Columns.Count + 1; j++)
+                    {
+                        excelExport.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                excelExport.Columns.AutoFit();
+                excelExport.Visible = true;
             }
         }
     }

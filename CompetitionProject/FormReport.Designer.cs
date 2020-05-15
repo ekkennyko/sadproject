@@ -36,6 +36,7 @@ namespace CompetitionProject
             this.button3 = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.excelButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,11 +86,22 @@ namespace CompetitionProject
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // excelButton
+            // 
+            this.excelButton.Location = new System.Drawing.Point(419, 117);
+            this.excelButton.Name = "excelButton";
+            this.excelButton.Size = new System.Drawing.Size(124, 47);
+            this.excelButton.TabIndex = 5;
+            this.excelButton.Text = "Экспорт в Excel";
+            this.excelButton.UseVisualStyleBackColor = true;
+            this.excelButton.Click += new System.EventHandler(this.ExcelButton_Click);
+            // 
             // FormReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 298);
+            this.Controls.Add(this.excelButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
@@ -114,5 +126,6 @@ namespace CompetitionProject
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button excelButton;
     }
 }
