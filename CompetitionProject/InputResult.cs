@@ -20,13 +20,27 @@ namespace CompetitionProject
         public inputResult()
         {
             InitializeComponent();
+           
         }
 
-        private void selectParticipant_SelectedIndexChanged(object sender, EventArgs e)
+        
+        private void inputResult_Load(object sender, EventArgs e)
         {
-
+            List<Participant> participants = (from participant in db.Participants
+                                        select participant).Take(4).ToList();
+            participants.Insert(0, new Participant
+            {
+                PersonId = 0,
+                FirstName = "Please select"
+            });
+            selectParticipant.DataSource = participants;
+            selectParticipant.DisplayMember = "FirstName";
+            selectParticipant.ValueMember = "PersonId";
         }
-
+        private void selectParticipant_SelectedIndexChanged(object sender, EventArgs e)
+            {
+                
+            }
         private void okButton_Click(object sender, EventArgs e)
         {
             {
