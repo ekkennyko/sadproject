@@ -66,6 +66,28 @@ namespace CompetitionProject
             }
         }
 
+        public void nagrazhdenie()
+        {
+            var doc = new iTextSharp.text.Document(PageSize.A4, 20, 20, 30, 20);
+
+            string ttf = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "ARIALNBI.TTF");
+            var baseFont = BaseFont.CreateFont(ttf, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+            var font = new iTextSharp.text.Font(baseFont, iTextSharp.text.Font.DEFAULTSIZE, iTextSharp.text.Font.NORMAL);
+
+            using (var writer = PdfWriter.GetInstance(doc, new FileStream("Nagrazhdenie.pdf", FileMode.Create)))
+            {
+                doc.Open();
+
+                var logo = iTextSharp.text.Image.GetInstance(new FileStream(@"Resources\gramota.jpg", FileMode.Open));
+                logo.SetAbsolutePosition(440, 758);
+                writer.DirectContent.AddImage(logo);
+                doc.Add(new Paragraph("Награждается", font));
+
+                doc.Close();
+                writer.Close();
+            }
+        }
+
         private void Button3_Click(object sender, EventArgs e)
         {
             this.Close();
