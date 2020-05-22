@@ -20,23 +20,35 @@ namespace CompetitionProject
         public inputResult()
         {
             InitializeComponent();
-           
+            //loaddata();
         }
-
-        
+        /*
+        private void loaddata()
+        {
+            var participantList = db.Participants.ToList();
+            selectParticipant.Items.Add("choose one");
+            foreach (var FirstName in participantList)
+            {
+                selectParticipant.Items.Add(FirstName.FirstName);
+            }
+        }
+        */
         private void inputResult_Load(object sender, EventArgs e)
         {
-            List<Participant> participants = (from participant in db.Participants
-                                        select participant).Take(4).ToList();
-            participants.Insert(0, new Participant
-            {
-                PersonId = 0,
-                FirstName = "Please select"
-            });
-            selectParticipant.DataSource = participants;
-            selectParticipant.DisplayMember = "FirstName";
-            selectParticipant.ValueMember = "PersonId";
-        }
+            /*var customers = (from c in db.Customers
+                             select new { c.ContactName, c.CustomerID }).Distinct().ToList();
+            cboCustomer.DataSource = customers;
+            cboCustomer.ValueMember = "ContactName";
+            cboCustomer.DisplayMember = "CustomerID";
+            */
+            
+           var participants = (from p in db.Participants
+                                                  select new { p.FirstName, p.PersonId});
+                selectParticipant.DataSource = participants;
+                selectParticipant.DisplayMember = "FirstName";
+                selectParticipant.ValueMember = "PersonId";
+            }
+        
         private void selectParticipant_SelectedIndexChanged(object sender, EventArgs e)
             {
                 
