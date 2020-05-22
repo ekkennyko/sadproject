@@ -33,7 +33,6 @@ namespace CompetitionProject.Migrations
             selectParticipant.ShowDialog();
             if (selectParticipant.DialogResult == DialogResult.OK)
             {
-                MessageBox.Show(participant.LastName);
                 CheckPart.Checked = true;
             }
             else
@@ -42,26 +41,45 @@ namespace CompetitionProject.Migrations
             }
         }
 
-       
-
-        private void AddCompetition_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public static void toJudge()
         {
-            judge.CompetitionId = competition.CompetitionId;
+            MessageBox.Show(judge.Judge.LastName + judge.CompetitionId + " " + competition.CompetitionId);
+            if (judge.CompetitionId == null || judge.CompetitionId != competition.CompetitionId)
+            {
+                judge.CompetitionId = competition.CompetitionId;
+                MessageBox.Show("2 " + judge.CompetitionId);
+            }
         }
 
         public static void toOrganizator()
         {
-            organizator.CompetitionId = competition.CompetitionId;
+            if (organizator.CompetitionId == null || organizator.CompetitionId != competition.CompetitionId)
+            {
+                organizator.CompetitionId = competition.CompetitionId;          
+            }
         }
 
         public static void toParticipant()
         {
-            participant.CompetitionId = competition.CompetitionId;
+            if (participant.CompetitionId == null || participant.CompetitionId != competition.CompetitionId)
+            {
+                participant.CompetitionId = competition.CompetitionId;           
+            }
+        }
+
+        public static void offJudge()
+        {
+            judge.CompetitionId = null;
+        }
+
+        public static void offOrganizator()
+        {
+            organizator.CompetitionId = null;
+        }
+
+        public static void offParticipant()
+        {
+            participant.CompetitionId = null;
         }
 
         private void JudgeButton_Click(object sender, EventArgs e)
@@ -70,8 +88,6 @@ namespace CompetitionProject.Migrations
             selectJudge.ShowDialog();
             if (selectJudge.DialogResult == DialogResult.OK)
             {
-                MessageBox.Show(judge.JudgeId.ToString());
-                MessageBox.Show(judge.Judge.LastName);
                 CheckJudge.Checked = true;
             }
             else
@@ -86,8 +102,6 @@ namespace CompetitionProject.Migrations
             selectOrganizator.ShowDialog();
             if (selectOrganizator.DialogResult == DialogResult.OK)
             {
-                MessageBox.Show(organizator.OrganizatorId.ToString());
-                MessageBox.Show(organizator.Organizator.LastName);
                 CheckOrg.Checked = true;
             }
             else

@@ -19,6 +19,7 @@ namespace CompetitionProject.Competition
         {
             InitializeComponent();
             loadToList();
+            loadToList2();
         }
 
         private void okButton_Click(object sender, EventArgs e)
@@ -27,10 +28,12 @@ namespace CompetitionProject.Competition
             {
                 for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
                 {
-                    int index = dataGridView2.Rows[0].Index;
+                    MessageBox.Show(dataGridView2.Rows.Count.ToString() + i);
+                    int index = dataGridView2.Rows[i].Index;
                     bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
                     if (converted == false)
                         return;
+                    MessageBox.Show(id.ToString());
                     EditCompetition.judge = EditCompetition.db.Judges.Include(temp => temp.Judge).FirstOrDefault(temp => temp.Id == id);
                     EditCompetition.toJudge();
                 }
@@ -63,20 +66,18 @@ namespace CompetitionProject.Competition
         {
             if (dataGridView2.SelectedRows.Count > 0)
             {
-                int index = dataGridView2.SelectedRows[0].Index;
+                int index = dataGridView2.SelectedRows[0].Index;    
+                for (int i = 0; i < dataGridView2.SelectedRows.Count; i++)
+                {
+                    bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
+                    if (converted == false)
+                        return;
+                    EditCompetition.judge = EditCompetition.db.Judges.Include(temp => temp.Judge).FirstOrDefault(temp => temp.Id == id);
+                    EditCompetition.offJudge();
+                }
                 dataGridView2.Rows.RemoveAt(index);
             }
             dataGridView2.Refresh();
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void loadToList()
@@ -91,6 +92,26 @@ namespace CompetitionProject.Competition
                              Отчество = judge.Judge.MiddleName,
                          };
             dataGridView1.DataSource = result.ToList();
+        }
+
+        private void loadToList2()
+        {
+            using (CompetitionDB db = new CompetitionDB())
+            {
+                CompetitionClasses.Competition competition = db.Competitions.Include(t => t.Judges.Select(c => c.Judge)).Where(t => t.CompetitionId == FormCompetition.id).FirstOrDefault();
+                if (competition.Judges != null)
+                {
+                    foreach (CompetitionClasses.CompetitionJudge pc in competition.Judges)
+                    {
+                        DataGridViewRow row = (DataGridViewRow)dataGridView2.Rows[0].Clone();
+                        row.Cells[0].Value = pc.Id;
+                        row.Cells[1].Value = pc.Judge.LastName;
+                        row.Cells[2].Value = pc.Judge.FirstName;
+                        row.Cells[3].Value = pc.Judge.MiddleName;
+                        dataGridView2.Rows.Add(row);
+                    }
+                }
+            }
         }
     }
 }

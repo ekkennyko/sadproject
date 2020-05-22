@@ -47,11 +47,11 @@
             this.MiddleName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // CancelButton
+            // exitButton
             // 
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exitButton.Location = new System.Drawing.Point(244, 224);
-            this.exitButton.Name = "CancelButton";
+            this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(87, 27);
             this.exitButton.TabIndex = 44;
             this.exitButton.Text = "Отмена";
@@ -223,6 +223,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.OkButton);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditParticipant";
             this.Text = "Редактирование участника";

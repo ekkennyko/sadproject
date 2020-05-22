@@ -20,7 +20,7 @@ namespace CompetitionProject
 {
     public partial class FormCompetition : Form
     {
-        public static CompetitionDB db = new CompetitionDB();
+        public static int id;
         public FormCompetition()
         {
             InitializeComponent();
@@ -35,23 +35,26 @@ namespace CompetitionProject
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
+            using (CompetitionDB db = new CompetitionDB())
             {
-                int index = dataGridView1.SelectedRows[0].Index;
-                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out int id);
-                if (converted == false)
-                    return;
-                CompetitionClasses.Competition competition = db.Competitions.Find(id);
+                if (dataGridView1.SelectedRows.Count == 1)
+                {
+                    int index = dataGridView1.SelectedRows[0].Index;
+                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out int id);
+                    if (converted == false)
+                        return;
+                    CompetitionClasses.Competition competition = db.Competitions.Find(id);
 
-                
 
-                db.Competitions.Remove(competition);
-                db.SaveChanges();
-                MessageBox.Show("Соревнование удалено");
-            }
-            else
-            {
-                MessageBox.Show("Выберите соревнование");
+
+                    db.Competitions.Remove(competition);
+                    db.SaveChanges();
+                    MessageBox.Show("Соревнование удалено");
+                }
+                else
+                {
+                    MessageBox.Show("Выберите соревнование");
+                }
             }
         }
 
@@ -62,103 +65,100 @@ namespace CompetitionProject
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
+            using (CompetitionDB db = new CompetitionDB())
             {
-                int index = dataGridView1.SelectedRows[0].Index;
-                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out int id);
-                if (converted == false)
-                    return;
-                CompetitionClasses.Competition competition = db.Competitions.Find(id);
-                EditCompetition.competition = db.Competitions.Find(id);
-
-                EditCompetition editCompetition = new EditCompetition();
-                editCompetition.TitleLabel.Text = competition.Title;
-                editCompetition.PlaceLocation.Text = competition.Location;
-                editCompetition.dateTimePicker1.Value = competition.DateCompetition;
-                editCompetition.statusBox.Text = competition.Status;
-
-                
-                editCompetition.ShowDialog();
-
-                if (editCompetition.DialogResult == DialogResult.OK)
+                if (dataGridView1.SelectedRows.Count == 1)
                 {
-                    MessageBox.Show("Информация о соревновании обновлена");
+                    int index = dataGridView1.SelectedRows[0].Index;
+                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                    if (converted == false)
+                        return;
+                    CompetitionClasses.Competition competition = db.Competitions.Find(id);
+                    EditCompetition.competition = db.Competitions.Find(id);
+
+                    EditCompetition editCompetition = new EditCompetition();
+                    editCompetition.TitleLabel.Text = competition.Title;
+                    editCompetition.PlaceLocation.Text = competition.Location;
+                    editCompetition.dateTimePicker1.Value = competition.DateCompetition;
+                    editCompetition.statusBox.Text = competition.Status;
+
+
+                    editCompetition.ShowDialog();
+
+                    if (editCompetition.DialogResult == DialogResult.OK)
+                    {
+                        MessageBox.Show("Информация о соревновании обновлена");
+                    }
                 }
-            }
-            else
-            {
-                MessageBox.Show("Выберите соревнование");
+                else
+                {
+                    MessageBox.Show("Выберите соревнование");
+                }
             }
         }
 
         private void InfoButton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
+            using (CompetitionDB db = new CompetitionDB())
             {
-                int index = dataGridView1.SelectedRows[0].Index;
-                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out int id);
-                if (converted == false)
-                    return;
-                CompetitionClasses.Competition competition = db.Competitions.Find(id);     
-                InfoCompetition infoCompetition = new InfoCompetition();
-                infoCompetition.Title.Text = competition.Title;
-                infoCompetition.PlaceLocation.Text = competition.Location;
-                infoCompetition.TimeDate.Text = competition.DateCompetition.ToString();
-                infoCompetition.BriefInfo.Text = competition.BriefInformation;
-                infoCompetition.TypeSport.Text = db.SportTypes.FirstOrDefault(temp => temp.Id == competition.SportTypeId).Name;
-                infoCompetition.Category.Text = db.Categories.FirstOrDefault(temp => temp.CategoryId == competition.CategoryId).Name;
+                if (dataGridView1.SelectedRows.Count == 1)
+                {
+                    int index = dataGridView1.SelectedRows[0].Index;
+                    bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out int id);
+                    if (converted == false)
+                        return;
+                    CompetitionClasses.Competition competition = db.Competitions.Find(id);
+                    InfoCompetition infoCompetition = new InfoCompetition();
+                    infoCompetition.Title.Text = competition.Title;
+                    infoCompetition.PlaceLocation.Text = competition.Location;
+                    infoCompetition.TimeDate.Text = competition.DateCompetition.ToString();
+                    infoCompetition.BriefInfo.Text = competition.BriefInformation;
+                    infoCompetition.TypeSport.Text = db.SportTypes.FirstOrDefault(temp => temp.Id == competition.SportTypeId).Name;
+                    infoCompetition.Category.Text = db.Categories.FirstOrDefault(temp => temp.CategoryId == competition.CategoryId).Name;
 
-                competition = db.Competitions.Include(t => t.Participants).Where(t => t.CompetitionId == id).FirstOrDefault();
-                if (competition.Participants != null)
-                {
-                    foreach(Participant pc in competition.Participants)
+                    competition = db.Competitions.Include(t => t.Participants).Where(t => t.CompetitionId == id).FirstOrDefault();
+                    if (competition.Participants != null)
                     {
-                        infoCompetition.participantBox.Text += pc.LastName + " ";
-                        infoCompetition.participantBox.Text += pc.FirstName + " ";
-                        infoCompetition.participantBox.Text += pc.MiddleName + '\n';
+                        foreach (Participant pc in competition.Participants)
+                        {
+                            infoCompetition.participantBox.Text += pc.LastName + " ";
+                            infoCompetition.participantBox.Text += pc.FirstName + " ";
+                            infoCompetition.participantBox.Text += pc.MiddleName + '\n';
+                        }
                     }
-                }
-                competition = db.Competitions.Include(t => t.Judges.Select(c=>c.Judge)).Where(t => t.CompetitionId == id).FirstOrDefault();
-                if (competition.Judges != null)
-                {
-                    foreach (CompetitionJudge pc in competition.Judges)
+                    competition = db.Competitions.Include(t => t.Judges.Select(c => c.Judge)).Where(t => t.CompetitionId == id).FirstOrDefault();
+                    if (competition.Judges != null)
                     {
-                        infoCompetition.judgeBox.Text += pc.Judge.LastName + " ";
-                        infoCompetition.judgeBox.Text += pc.Judge.FirstName + " ";
-                        infoCompetition.judgeBox.Text += pc.Judge.MiddleName + '\n';
+                        foreach (CompetitionJudge pc in competition.Judges)
+                        {
+                            infoCompetition.judgeBox.Text += pc.Judge.LastName + " ";
+                            infoCompetition.judgeBox.Text += pc.Judge.FirstName + " ";
+                            infoCompetition.judgeBox.Text += pc.Judge.MiddleName + '\n';
+                        }
                     }
-                }
-                competition = db.Competitions.Include(t => t.Organizators.Select(c => c.Organizator)).Where(t => t.CompetitionId == id).FirstOrDefault();
-                if (competition.Organizators != null)
-                {
-                    foreach (CompetitionOrganizator pc in competition.Organizators)
+                    competition = db.Competitions.Include(t => t.Organizators.Select(c => c.Organizator)).Where(t => t.CompetitionId == id).FirstOrDefault();
+                    if (competition.Organizators != null)
                     {
-                        infoCompetition.orgBox.Text += pc.Organizator.LastName + " ";
-                        infoCompetition.orgBox.Text += pc.Organizator.FirstName + " ";
-                        infoCompetition.orgBox.Text += pc.Organizator.MiddleName + '\n';
+                        foreach (CompetitionOrganizator pc in competition.Organizators)
+                        {
+                            infoCompetition.orgBox.Text += pc.Organizator.LastName + " ";
+                            infoCompetition.orgBox.Text += pc.Organizator.FirstName + " ";
+                            infoCompetition.orgBox.Text += pc.Organizator.MiddleName + '\n';
+                        }
                     }
-                }
 
-                infoCompetition.ShowDialog();
+                    infoCompetition.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Выберите соревнование");
+                }
             }
-            else
-            {
-                MessageBox.Show("Выберите соревнование");
-            }
-        }
-
-        private void FormCompetition_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void RefreshButton_Click_1(object sender, EventArgs e)
         {
+            CompetitionDB db = new CompetitionDB();
             db.Competitions.Load();
             var result = from competition in db.Competitions
                          select new

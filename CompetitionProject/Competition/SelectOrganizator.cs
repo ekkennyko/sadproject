@@ -29,7 +29,7 @@ namespace CompetitionProject.Competition
                 {
                     MessageBox.Show(dataGridView2.Rows.Count.ToString() + " " + i.ToString());
                     int index = dataGridView2.Rows[i].Index;
-                    bool converted = Int32.TryParse(dataGridView2[i, index].Value.ToString(), out int id);
+                    bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
                     if (converted == false)
                         return;
                     EditCompetition.organizator = EditCompetition.db.Organizators.Include(temp => temp.Organizator).FirstOrDefault(temp => temp.Id == id);
@@ -75,9 +75,37 @@ namespace CompetitionProject.Competition
             if (dataGridView2.SelectedRows.Count > 0)
             {
                 int index = dataGridView2.SelectedRows[0].Index;
+                for (int i = 0; i < dataGridView2.SelectedRows.Count; i++)
+                {
+                    bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out int id);
+                    if (converted == false)
+                        return;
+                    EditCompetition.organizator = EditCompetition.db.Organizators.Include(temp => temp.Organizator).FirstOrDefault(temp => temp.Id == id);
+                    EditCompetition.offOrganizator();
+                }
                 dataGridView2.Rows.RemoveAt(index);
             }
             dataGridView2.Refresh();
+        }
+
+        private void loadToList2()
+        {
+            using (CompetitionDB db = new CompetitionDB())
+            {
+                CompetitionClasses.Competition competition = db.Competitions.Include(t => t.Organizators.Select(c => c.Organizator)).Where(t => t.CompetitionId == FormCompetition.id).FirstOrDefault();
+                if (competition.Organizators != null)
+                {
+                    foreach (CompetitionClasses.CompetitionOrganizator pc in competition.Organizators)
+                    {
+                        DataGridViewRow row = (DataGridViewRow)dataGridView2.Rows[0].Clone();
+                        row.Cells[0].Value = pc.Id;
+                        row.Cells[1].Value = pc.Organizator.LastName;
+                        row.Cells[2].Value = pc.Organizator.FirstName;
+                        row.Cells[3].Value = pc.Organizator.MiddleName;
+                        dataGridView2.Rows.Add(row);
+                    }
+                }
+            }
         }
     }
 }

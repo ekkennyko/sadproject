@@ -44,7 +44,7 @@
             this.RefreshButton.Location = new System.Drawing.Point(645, 169);
             this.RefreshButton.Margin = new System.Windows.Forms.Padding(2);
             this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(128, 31);
+            this.RefreshButton.Size = new System.Drawing.Size(183, 31);
             this.RefreshButton.TabIndex = 20;
             this.RefreshButton.Text = "Обновить";
             this.RefreshButton.UseVisualStyleBackColor = true;
@@ -55,7 +55,7 @@
             this.MenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MenuButton.Location = new System.Drawing.Point(645, 327);
             this.MenuButton.Name = "MenuButton";
-            this.MenuButton.Size = new System.Drawing.Size(128, 31);
+            this.MenuButton.Size = new System.Drawing.Size(182, 31);
             this.MenuButton.TabIndex = 19;
             this.MenuButton.Text = "Главное меню";
             this.MenuButton.UseVisualStyleBackColor = true;
@@ -63,13 +63,16 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(13, 13);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(616, 346);
+            this.dataGridView1.Size = new System.Drawing.Size(616, 345);
             this.dataGridView1.TabIndex = 18;
             // 
             // RemoveButton
@@ -78,7 +81,7 @@
             this.RemoveButton.Location = new System.Drawing.Point(645, 117);
             this.RemoveButton.Margin = new System.Windows.Forms.Padding(2);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(128, 31);
+            this.RemoveButton.Size = new System.Drawing.Size(183, 31);
             this.RemoveButton.TabIndex = 16;
             this.RemoveButton.Text = "Удалить";
             this.RemoveButton.UseVisualStyleBackColor = true;
@@ -90,7 +93,7 @@
             this.EditButton.Location = new System.Drawing.Point(645, 65);
             this.EditButton.Margin = new System.Windows.Forms.Padding(2);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(128, 31);
+            this.EditButton.Size = new System.Drawing.Size(183, 31);
             this.EditButton.TabIndex = 15;
             this.EditButton.Text = "Редактировать";
             this.EditButton.UseVisualStyleBackColor = true;
@@ -102,7 +105,7 @@
             this.AddButton.Location = new System.Drawing.Point(645, 13);
             this.AddButton.Margin = new System.Windows.Forms.Padding(2);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(128, 31);
+            this.AddButton.Size = new System.Drawing.Size(183, 31);
             this.AddButton.TabIndex = 14;
             this.AddButton.Text = "Добавить";
             this.AddButton.UseVisualStyleBackColor = true;
@@ -112,7 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 370);
+            this.ClientSize = new System.Drawing.Size(839, 370);
             this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.MenuButton);
             this.Controls.Add(this.dataGridView1);
@@ -120,6 +123,7 @@
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.AddButton);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormEmployeeAdmin";
             this.Text = "Сотрудники";
