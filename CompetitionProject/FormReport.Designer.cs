@@ -37,12 +37,13 @@ namespace CompetitionProject
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SaveButton = new System.Windows.Forms.Button();
             this.excelButton = new System.Windows.Forms.Button();
+            this.jpgtopdf = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(419, 12);
+            this.button2.Location = new System.Drawing.Point(514, 12);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(124, 48);
@@ -58,12 +59,12 @@ namespace CompetitionProject
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(401, 265);
+            this.dataGridView1.Size = new System.Drawing.Size(496, 320);
             this.dataGridView1.TabIndex = 2;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(419, 230);
+            this.button3.Location = new System.Drawing.Point(514, 285);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(124, 47);
             this.button3.TabIndex = 3;
@@ -77,7 +78,7 @@ namespace CompetitionProject
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(419, 64);
+            this.SaveButton.Location = new System.Drawing.Point(514, 64);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(124, 48);
@@ -88,19 +89,30 @@ namespace CompetitionProject
             // 
             // excelButton
             // 
-            this.excelButton.Location = new System.Drawing.Point(419, 117);
+            this.excelButton.Location = new System.Drawing.Point(514, 117);
             this.excelButton.Name = "excelButton";
             this.excelButton.Size = new System.Drawing.Size(124, 47);
             this.excelButton.TabIndex = 5;
-            this.excelButton.Text = "Экспорт в Excel";
+            this.excelButton.Text = "Отчет в Excel";
             this.excelButton.UseVisualStyleBackColor = true;
             this.excelButton.Click += new System.EventHandler(this.ExcelButton_Click);
+            // 
+            // jpgtopdf
+            // 
+            this.jpgtopdf.Location = new System.Drawing.Point(514, 170);
+            this.jpgtopdf.Name = "jpgtopdf";
+            this.jpgtopdf.Size = new System.Drawing.Size(124, 44);
+            this.jpgtopdf.TabIndex = 6;
+            this.jpgtopdf.Text = "Экспорт в PDF";
+            this.jpgtopdf.UseVisualStyleBackColor = true;
+            this.jpgtopdf.Click += new System.EventHandler(this.Jpgtopdf_Click);
             // 
             // FormReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 298);
+            this.ClientSize = new System.Drawing.Size(650, 344);
+            this.Controls.Add(this.jpgtopdf);
             this.Controls.Add(this.excelButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.button3);
@@ -127,5 +139,6 @@ namespace CompetitionProject
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button excelButton;
+        private System.Windows.Forms.Button jpgtopdf;
     }
 }

@@ -14,6 +14,8 @@ using iTextSharp;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using Microsoft.Office.Interop.Excel;
+using PdfSharp.Pdf;
+using PdfSharp.Drawing;
 
 namespace CompetitionProject
 {
@@ -56,7 +58,7 @@ namespace CompetitionProject
             {
                 using (FileStream stream = new FileStream(savefiledialoge.FileName,FileMode.Create))
                 {
-                    Document pdfdoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                    Document pdfdoc = new Document(iTextSharp.text.PageSize.A4, 10f, 10f, 10f, 0f);
                     PdfWriter.GetInstance(pdfdoc, stream);
                     pdfdoc.Open();
                     pdfdoc.Add(pdftable);
@@ -66,27 +68,29 @@ namespace CompetitionProject
             }
         }
 
-        public void nagrazhdenie()
-        {
-            var doc = new iTextSharp.text.Document(PageSize.A4, 20, 20, 30, 20);
+        //public void nagrazhdenie()
+        //{
+        //    var doc = new iTextSharp.text.Document(PageSize.A4, 20, 20, 30, 20);
 
-            string ttf = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "ARIALNBI.TTF");
-            var baseFont = BaseFont.CreateFont(ttf, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-            var font = new iTextSharp.text.Font(baseFont, iTextSharp.text.Font.DEFAULTSIZE, iTextSharp.text.Font.NORMAL);
+        //    string ttf = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "ARIALNBI.TTF");
+        //    var baseFont = BaseFont.CreateFont(ttf, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+        //    var font = new iTextSharp.text.Font(baseFont, iTextSharp.text.Font.DEFAULTSIZE, iTextSharp.text.Font.NORMAL);
 
-            using (var writer = PdfWriter.GetInstance(doc, new FileStream("Nagrazhdenie.pdf", FileMode.Create)))
-            {
-                doc.Open();
+        //    using (var writer = PdfWriter.GetInstance(doc, new FileStream("Nagrazhdenie.pdf", FileMode.Create)))
+        //    {
+        //        doc.Open();
 
-                var logo = iTextSharp.text.Image.GetInstance(new FileStream(@"Resources\gramota.jpg", FileMode.Open));
-                logo.SetAbsolutePosition(440, 758);
-                writer.DirectContent.AddImage(logo);
-                doc.Add(new Paragraph("Награждается", font));
+        //        var logo = iTextSharp.text.Image.GetInstance(new FileStream(@"Resources\gramota.jpg", FileMode.Open));
+        //        logo.SetAbsolutePosition(440, 758);
+        //        writer.DirectContent.AddImage(logo);
+        //        doc.Add(new Paragraph("Награждается", font));
 
-                doc.Close();
-                writer.Close();
-            }
-        }
+        //        doc.Close();
+        //        writer.Close();
+        //    }
+        //}
+
+        
 
         private void Button3_Click(object sender, EventArgs e)
         {
@@ -133,6 +137,38 @@ namespace CompetitionProject
                 excelExport.Columns.AutoFit();
                 excelExport.Visible = true;
             }
+        }
+
+        private void Jpgtopdf_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.InitialDirectory = "C:\\Users";
+            dlg.Filter = "JPG files (*.jpg)|*.jpg|All files (*.*)|*.*";
+            dlg.Multiselect = true;
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                PdfSharp.Pdf.PdfDocument doc = new PdfSharp.Pdf.PdfDocument();
+                doc.Info.Title = "made by Pechal' Project";
+
+                foreach (string fileSpec in dlg.FileNames)
+                {
+                    PdfSharp.Pdf.PdfPage page = doc.AddPage();
+                    XGraphics gfx = XGraphics.FromPdfPage(page);
+                    DrawImage(gfx, fileSpec, 0, 0, (int)page.Width, (int)page.Height);
+                }
+                
+                if (doc.PageCount > 0)
+                {
+                    doc.Save(@"C:\Users\User\Download\Result.pdf");
+                }
+            }
+        }
+
+        void DrawImage(XGraphics gfx, string jpegSamplePath, int x, int y, int width, int height)
+        {
+            XImage image = XImage.FromFile(jpegSamplePath);
+            gfx.DrawImage(image, x, y, width, height);
         }
     }
 }
