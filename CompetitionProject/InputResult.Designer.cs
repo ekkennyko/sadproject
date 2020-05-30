@@ -34,9 +34,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Position = new System.Windows.Forms.TextBox();
             this.selectParticipant = new System.Windows.Forms.ComboBox();
+            this.participantBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.participantBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.participantBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,15 +68,16 @@
             // 
             // selectParticipant
             // 
-            this.selectParticipant.DataSource = this.participantBindingSource;
-            this.selectParticipant.DisplayMember = "FirstName";
             this.selectParticipant.FormattingEnabled = true;
             this.selectParticipant.Location = new System.Drawing.Point(127, 36);
             this.selectParticipant.Name = "selectParticipant";
             this.selectParticipant.Size = new System.Drawing.Size(131, 24);
             this.selectParticipant.TabIndex = 4;
-            this.selectParticipant.ValueMember = "LastName";
             this.selectParticipant.SelectedIndexChanged += new System.EventHandler(this.selectParticipant_SelectedIndexChanged);
+            // 
+            // participantBindingSource
+            // 
+            this.participantBindingSource.DataSource = typeof(CompetitionClasses.Participant);
             // 
             // okButton
             // 
@@ -97,10 +98,6 @@
             this.cancelButton.Text = "Отмена";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
-            // participantBindingSource
-            // 
-            this.participantBindingSource.DataSource = typeof(CompetitionClasses.Participant);
             // 
             // inputResult
             // 
