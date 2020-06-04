@@ -27,7 +27,7 @@ namespace CompetitionProject
         {
                 selectParticipant.DataSource = DB.Participants.ToList();
                 selectParticipant.ValueMember = "PersonId";
-                selectParticipant.DisplayMember = "FirstName";
+                selectParticipant.DisplayMember = "Email";
                 
             }
         

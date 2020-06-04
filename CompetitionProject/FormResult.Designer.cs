@@ -31,84 +31,32 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormResult));
             this.dataResults = new System.Windows.Forms.DataGridView();
-            this.personIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Place = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.participantBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inputResult = new System.Windows.Forms.Button();
             this.outReport = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.menuButton = new System.Windows.Forms.Button();
+            this.participantBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataResults)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.participantBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataResults
             // 
-            this.dataResults.AutoGenerateColumns = false;
+            this.dataResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.personIdDataGridViewTextBoxColumn,
-            this.firstNameDataGridViewTextBoxColumn,
-            this.middleNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.Place});
-            this.dataResults.DataSource = this.participantBindingSource;
             this.dataResults.Location = new System.Drawing.Point(24, 59);
             this.dataResults.Name = "dataResults";
             this.dataResults.RowHeadersWidth = 51;
             this.dataResults.RowTemplate.Height = 24;
             this.dataResults.Size = new System.Drawing.Size(457, 228);
             this.dataResults.TabIndex = 0;
-            // 
-            // personIdDataGridViewTextBoxColumn
-            // 
-            this.personIdDataGridViewTextBoxColumn.DataPropertyName = "PersonId";
-            this.personIdDataGridViewTextBoxColumn.HeaderText = "PersonId";
-            this.personIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.personIdDataGridViewTextBoxColumn.Name = "personIdDataGridViewTextBoxColumn";
-            this.personIdDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // middleNameDataGridViewTextBoxColumn
-            // 
-            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
-            this.middleNameDataGridViewTextBoxColumn.HeaderText = "MiddleName";
-            this.middleNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
-            this.middleNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // Place
-            // 
-            this.Place.HeaderText = "Место";
-            this.Place.MinimumWidth = 6;
-            this.Place.Name = "Place";
-            this.Place.Width = 125;
-            // 
-            // participantBindingSource
-            // 
-            this.participantBindingSource.DataSource = typeof(CompetitionClasses.Participant);
-            this.participantBindingSource.CurrentChanged += new System.EventHandler(this.participantBindingSource_CurrentChanged);
+            this.dataResults.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataResults_CellContentClick);
             // 
             // inputResult
             // 
+            this.inputResult.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.inputResult.Location = new System.Drawing.Point(487, 59);
             this.inputResult.Name = "inputResult";
             this.inputResult.Size = new System.Drawing.Size(143, 45);
@@ -119,6 +67,7 @@
             // 
             // outReport
             // 
+            this.outReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.outReport.Location = new System.Drawing.Point(487, 119);
             this.outReport.Name = "outReport";
             this.outReport.Size = new System.Drawing.Size(143, 45);
@@ -139,6 +88,7 @@
             // 
             // menuButton
             // 
+            this.menuButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.menuButton.Location = new System.Drawing.Point(487, 242);
             this.menuButton.Name = "menuButton";
             this.menuButton.Size = new System.Drawing.Size(143, 45);
@@ -146,6 +96,11 @@
             this.menuButton.Text = "Главное меню";
             this.menuButton.UseVisualStyleBackColor = true;
             this.menuButton.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
+            // participantBindingSource
+            // 
+            this.participantBindingSource.DataSource = typeof(CompetitionClasses.Participant);
+            this.participantBindingSource.CurrentChanged += new System.EventHandler(this.participantBindingSource_CurrentChanged);
             // 
             // FormResult
             // 
@@ -160,6 +115,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormResult";
             this.Text = "Результаты";
+            this.Load += new System.EventHandler(this.FormResult_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataResults)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.participantBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -173,11 +129,6 @@
         private System.Windows.Forms.Button inputResult;
         private System.Windows.Forms.Button outReport;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn personIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Place;
         private System.Windows.Forms.BindingSource participantBindingSource;
         private System.Windows.Forms.Button menuButton;
     }

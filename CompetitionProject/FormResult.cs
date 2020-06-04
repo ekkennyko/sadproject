@@ -16,7 +16,7 @@ namespace CompetitionProject
 {
     public partial class FormResult : Form
     {
-        public CompetitionDB db = new CompetitionDB();
+        public CompetitionDB DB { get; set; }
         public FormResult()
         {
             InitializeComponent();
@@ -25,7 +25,9 @@ namespace CompetitionProject
         private void inputResult_Click(object sender, EventArgs e)
         {
             inputResult inputResult = new inputResult();
+            inputResult.DB = this.DB;
             inputResult.ShowDialog();
+            dataResults.DataSource = DB.CompetitionsResults.ToList();
         }
 
         private void outReport_Click(object sender, EventArgs e)
@@ -47,6 +49,20 @@ namespace CompetitionProject
         private void MenuButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dataResults_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void FormResult_Load(object sender, EventArgs e)
+        {
+            DB = new CompetitionDB();
+            dataResults.DataSource = DB.CompetitionsResults.ToList();
+            dataResults.Columns[0].Visible = false;
+            dataResults.Columns[1].HeaderText = "id результатов соревнования";
+            dataResults.Columns[2].HeaderText = "Позиция";
+            dataResults.Columns[3].HeaderText = "Участник";
         }
     }
 }
