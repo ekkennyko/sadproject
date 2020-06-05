@@ -21,6 +21,7 @@ namespace CompetitionProject
 {
     public partial class FormReport : Form
     {
+        string a;
         public FormReport()
         {
             InitializeComponent();
@@ -133,7 +134,10 @@ namespace CompetitionProject
                     XGraphics gfx = XGraphics.FromPdfPage(page);
                     DrawImage(gfx, fileSpec, 0, 0, (int)page.Width, (int)page.Height);
                     XFont font = new XFont("Verdana", 20, XFontStyle.BoldItalic);
-                    gfx.DrawString("Zdes' dolzhnobit' imya i mesto", font, XBrushes.Black, new XRect(0, 0, page.Width, page.Height), XStringFormats.Center);
+                    
+
+                        gfx.DrawString(a, font, XBrushes.Black, new XRect(0, 0, page.Width, page.Height), XStringFormats.Center);
+                    
                 }
                 
                 if (doc.PageCount > 0)
@@ -147,6 +151,11 @@ namespace CompetitionProject
         {
             XImage image = XImage.FromFile(jpegSamplePath);
             gfx.DrawImage(image, x, y, width, height);
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            a = Convert.ToString(comboBox1.SelectedValue);   
         }
     }
 }

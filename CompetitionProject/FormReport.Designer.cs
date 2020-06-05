@@ -30,6 +30,7 @@ namespace CompetitionProject
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReport));
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -40,11 +41,13 @@ namespace CompetitionProject
             this.jpgtopdf = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.fourthSad1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fourthSad1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -138,14 +141,6 @@ namespace CompetitionProject
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Награждение";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 53);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(338, 24);
-            this.comboBox1.TabIndex = 9;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -154,6 +149,20 @@ namespace CompetitionProject
             this.label1.Size = new System.Drawing.Size(146, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "Выберите участника";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.fourthSad1BindingSource;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(6, 53);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(338, 24);
+            this.comboBox1.TabIndex = 9;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
+            // 
+            // fourthSad1BindingSource
+            // 
+            this.fourthSad1BindingSource.DataSource = typeof(CompetitionProject.Migrations.FourthSad1);
             // 
             // FormReport
             // 
@@ -171,6 +180,7 @@ namespace CompetitionProject
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fourthSad1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,5 +202,6 @@ namespace CompetitionProject
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource fourthSad1BindingSource;
     }
 }
