@@ -60,9 +60,25 @@ namespace CompetitionProject
             DB = new CompetitionDB();
             dataResults.DataSource = DB.CompetitionsResults.ToList();
             dataResults.Columns[0].Visible = false;
-            dataResults.Columns[1].HeaderText = "id результатов соревнования";
+            dataResults.Columns[1].HeaderText = "id";
             dataResults.Columns[2].HeaderText = "Позиция";
             dataResults.Columns[3].HeaderText = "Участник";
+            dataResults.Columns[4].Visible = false;
+            dataResults.Columns[5].Visible = false;
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            DB = new CompetitionDB();
+            DB.CompetitionsResults.Load();
+            var result = from competition in DB.CompetitionsResults
+                         select new
+                         {
+                             id = competition.CompetitionId,
+                             Позиция = competition.Position,
+                             Участник = competition.Participant,
+                         };
+            dataResults.DataSource = result.ToList();
         }
     }
 }

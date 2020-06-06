@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.menuButton = new System.Windows.Forms.Button();
             this.participantBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.refreshButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataResults)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.participantBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -102,11 +103,23 @@
             this.participantBindingSource.DataSource = typeof(CompetitionClasses.Participant);
             this.participantBindingSource.CurrentChanged += new System.EventHandler(this.participantBindingSource_CurrentChanged);
             // 
+            // refreshButton
+            // 
+            this.refreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.refreshButton.Location = new System.Drawing.Point(487, 180);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(143, 45);
+            this.refreshButton.TabIndex = 5;
+            this.refreshButton.Text = "Обновить";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
             // FormResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 314);
+            this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.outReport);
@@ -131,5 +144,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource participantBindingSource;
         private System.Windows.Forms.Button menuButton;
+        private System.Windows.Forms.Button refreshButton;
     }
 }

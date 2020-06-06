@@ -25,9 +25,10 @@ namespace CompetitionProject
         
         private void inputResult_Load(object sender, EventArgs e)
         {
+                //почему то не работает, не может найти данные
                 selectParticipant.DataSource = DB.Participants.ToList();
                 selectParticipant.ValueMember = "PersonId";
-                selectParticipant.DisplayMember = "Email";
+                selectParticipant.DisplayMember = "FirstName";
                 
             }
         
@@ -40,9 +41,9 @@ namespace CompetitionProject
             {
                CompetitionResult newResult = new CompetitionResult()
                 {
-                    Participant = selectParticipant.Text,
                     Position = Position.Text,
-                };
+                   Participant = selectParticipant.Text,
+               };
                 if (selectParticipant.SelectedValue != null)
                 {
                     newResult.CompResId = Convert.ToInt32(selectParticipant.SelectedValue);
