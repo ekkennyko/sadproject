@@ -25,11 +25,13 @@ namespace CompetitionProject
         
         private void inputResult_Load(object sender, EventArgs e)
         {
-                //почему то не работает, не может найти данные
-                selectParticipant.DataSource = DB.Participants.ToList();
+            //почему то не работает, не может найти данные
+
+            var part = from Participant in DB.Participants select Participant;
+                selectParticipant.DataSource = part.ToList();
                 selectParticipant.ValueMember = "PersonId";
                 selectParticipant.DisplayMember = "FirstName";
-                
+            
             }
         
         private void selectParticipant_SelectedIndexChanged(object sender, EventArgs e)
