@@ -22,6 +22,7 @@ namespace CompetitionProject
     public partial class FormReport : Form
     {
         string a;
+        public CompetitionDB DB { get; set; }
         public FormReport()
         {
             InitializeComponent();
@@ -156,6 +157,14 @@ namespace CompetitionProject
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             a = Convert.ToString(comboBox1.SelectedValue);   
+        }
+
+        private void FormReport_Load(object sender, EventArgs e)
+        {
+            var part = from Participant in DB.Participants select Participant;
+            comboBox1.DataSource = part.ToList();
+            comboBox1.ValueMember = "PersonId";
+            comboBox1.DisplayMember = "FirstName";
         }
     }
 }

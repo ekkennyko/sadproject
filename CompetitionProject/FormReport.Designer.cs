@@ -176,6 +176,7 @@ namespace CompetitionProject
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormReport";
             this.Text = "Отчеты";
+            this.Load += new System.EventHandler(this.FormReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
