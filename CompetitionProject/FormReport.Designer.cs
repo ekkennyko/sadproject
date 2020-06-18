@@ -158,7 +158,6 @@ namespace CompetitionProject
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(338, 24);
             this.comboBox1.TabIndex = 9;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // fourthSad1BindingSource
             // 

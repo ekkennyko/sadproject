@@ -21,7 +21,7 @@ namespace CompetitionProject
 {
     public partial class FormReport : Form
     {
-        string a;
+        string a, b;
         public CompetitionDB DB { get; set; }
         public FormReport()
         {
@@ -135,15 +135,20 @@ namespace CompetitionProject
                     XGraphics gfx = XGraphics.FromPdfPage(page);
                     DrawImage(gfx, fileSpec, 0, 0, (int)page.Width, (int)page.Height);
                     XFont font = new XFont("Verdana", 20, XFontStyle.BoldItalic);
-                    
+                    a = Convert.ToString(comboBox1.SelectedValue);
+                    b = Convert.ToString(comboBox1.SelectedItem);
 
-                        gfx.DrawString(a, font, XBrushes.Black, new XRect(0, 0, page.Width, page.Height), XStringFormats.Center);
-                    
+                    gfx.DrawString("Награждается", font, XBrushes.Black, new XRect(0, 0, page.Width, page.Height), XStringFormats.Center);
+                    gfx.DrawString(a, font, XBrushes.Black, new XRect(0, 25, page.Width, page.Height), XStringFormats.Center);
+                    gfx.DrawString("Занявший", font, XBrushes.Black, new XRect(0, 50, page.Width, page.Height), XStringFormats.Center);
+                    gfx.DrawString(b, font, XBrushes.Black, new XRect(0, 75, page.Width, page.Height), XStringFormats.Center);
+                    gfx.DrawString("место", font, XBrushes.Black, new XRect(0, 100, page.Width, page.Height), XStringFormats.Center);
+
                 }
                 
                 if (doc.PageCount > 0)
                 {
-                    doc.Save(@"C:\Users\User\Download\Result.pdf");
+                    doc.Save(@"C:\Users\User\Downloads\Result.pdf");
                 }
             }
         }
@@ -152,11 +157,6 @@ namespace CompetitionProject
         {
             XImage image = XImage.FromFile(jpegSamplePath);
             gfx.DrawImage(image, x, y, width, height);
-        }
-
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            a = Convert.ToString(comboBox1.SelectedValue);   
         }
 
         private void FormReport_Load(object sender, EventArgs e)
