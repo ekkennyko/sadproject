@@ -14,29 +14,26 @@ using CompetitionProject.Competition;
 namespace CompetitionProject
 {
     public partial class inputResult : Form
+
     {
-        public static CompetitionClasses.CompetitionResult result;
-        public static CompetitionDB db = new CompetitionDB();
+        public CompetitionDB DB { get; set; }
         public inputResult()
         {
             InitializeComponent();
            
         }
-
         
         private void inputResult_Load(object sender, EventArgs e)
         {
-            List<Participant> participants = (from participant in db.Participants
-                                        select participant).Take(4).ToList();
-            participants.Insert(0, new Participant
-            {
-                PersonId = 0,
-                FirstName = "Please select"
-            });
-            selectParticipant.DataSource = participants;
-            selectParticipant.DisplayMember = "FirstName";
-            selectParticipant.ValueMember = "PersonId";
-        }
+            //почему то не работает, не может найти данные
+
+            var part = from Participant in DB.Participants select Participant;
+                selectParticipant.DataSource = part.ToList();
+                selectParticipant.ValueMember = "PersonId";
+                selectParticipant.DisplayMember = "FirstName";
+            
+            }
+        
         private void selectParticipant_SelectedIndexChanged(object sender, EventArgs e)
             {
                 
@@ -44,49 +41,26 @@ namespace CompetitionProject
         private void okButton_Click(object sender, EventArgs e)
         {
             {
-                bool res = false;
-                int count = 0;
-                CompetitionClasses.CompetitionResult newResult = new CompetitionClasses.CompetitionResult()
+               CompetitionResult newResult = new CompetitionResult()
                 {
-                    Participant = selectParticipant.Text,
                     Position = Position.Text,
-                };
+                   Participant = selectParticipant.Text,
+               };
+                if (selectParticipant.SelectedValue != null)
+                {
+                    newResult.CompResId = Convert.ToInt32(selectParticipant.SelectedValue);
+                }
+                DB.CompetitionsResults.Add(newResult);
                 try
                 {
-                    var Result = db.CompetitionsResults.ToList();
-                    foreach (CompetitionClasses.CompetitionResult el in Result)
-                    {
-                        int max= 3;
-                        if (count == max - 1)
-                        {
-                            {
-                                db.CompetitionsResults.Add(newResult);
-                                db.SaveChanges();
-                                MessageBox.Show(newResult.CompResId.ToString());
-                                MessageBox.Show("Результат добавлен");
-                                res = true;
-                                this.Close();
-                            }
-                            count++;
-
-                        }
-                        else
-                        {
-                            res = true;
-                            MessageBox.Show("Такой результат уже существует");
-                        }
-                    }
-                    if (res == false)
-                    {
-                        db.CompetitionsResults.Add(newResult);
-                        db.SaveChanges();
-                        MessageBox.Show("Результат добавлен");
-                        this.Close();
-                    }
-                }
-                catch (Exception ex)
+                    DB.SaveChanges();
+                    MessageBox.Show(newResult.CompResId.ToString());
+                    MessageBox.Show("Результат добавлен");
+                    this.Close();
+                }   
+                catch (Exception err)
                 {
-                    MessageBox.Show("Ошибка при добавлении:\n" + ex);
+                    MessageBox.Show(err.Message);
                 }
             }
         }
